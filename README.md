@@ -1,6 +1,6 @@
 # SwiftyCloudKit
 
-[![CI Status](http://img.shields.io/travis/Simen Gangstad/SwiftyCloudKit.svg?style=flat)](https://travis-ci.org/Simen Gangstad/SwiftyCloudKit)
+[![CI Status](http://img.shields.io/travis/simengangstad/SwiftyCloudKit.svg?style=flat)](https://travis-ci.org/simengangstad/SwiftyCloudKit)
 
 [![Version](https://img.shields.io/cocoapods/v/SwiftyCloudKit.svg?style=flat)](http://cocoapods.org/pods/SwiftyCloudKit)
 
