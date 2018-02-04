@@ -1,0 +1,6 @@
+framework module Pods_SwiftyCloudKit_Example {
+  umbrella header "Pods-SwiftyCloudKit_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

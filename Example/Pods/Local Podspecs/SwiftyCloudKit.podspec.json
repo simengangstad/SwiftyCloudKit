@@ -1,0 +1,22 @@
+{
+  "name": "SwiftyCloudKit",
+  "version": "0.1.0",
+  "summary": "A short description of SwiftyCloudKit.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/Simen Gangstad/SwiftyCloudKit",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Simen Gangstad": "simen.gangstad@me.com"
+  },
+  "source": {
+    "git": "https://github.com/Simen Gangstad/SwiftyCloudKit.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "SwiftyCloudKit/Classes/**/*"
+}
