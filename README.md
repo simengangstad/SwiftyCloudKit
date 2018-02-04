@@ -14,6 +14,9 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Requirements
 
+- Swift 4.0
+- Build for iOS 10 or newer
+
 ## Installation
 
 SwiftyCloudKit is available through [CocoaPods](http://cocoapods.org). To install

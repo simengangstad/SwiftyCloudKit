@@ -1,9 +1,7 @@
-import Foundation
-import UIKit
 import CloudKit
 import ObjectiveC
 
-extension CKRecord {
+public extension CKRecord {
 
     public func image(_ key: String) -> UIImage? {
         return (self[key] as? CKAsset)?.image

@@ -1,7 +1,7 @@
 import CloudKit
 
 @available (iOS 10.0, *)
-protocol CloudKitSubscriber: CloudKitErrorHandler {
+public protocol CloudKitSubscriber: CloudKitErrorHandler {
     var database: CKDatabase { get }
     var cloudKitObserver: NSObjectProtocol? { get set }
     var subscription: CKQuerySubscription { get }
@@ -25,7 +25,7 @@ func associateObject(base: AnyObject, key: UnsafePointer<UInt8>, value: AnyObjec
 }
 
 @available (iOS 10.0, *)
-extension CloudKitSubscriber {
+public extension CloudKitSubscriber {
 
     public var cloudKitObserver: NSObjectProtocol? {
         get { return associatedObject(base: self, key: &observerKey) { return nil } as! NSObjectProtocol? }

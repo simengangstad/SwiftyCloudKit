@@ -1,6 +1,6 @@
 import CloudKit
 
-protocol CloudKitFetcher: CloudKitErrorHandler {
+public protocol CloudKitFetcher: CloudKitErrorHandler {
     var database: CKDatabase { get }
     var query: CKQuery? { get }
     var existingRecords: [CKRecord] { get }
@@ -9,11 +9,11 @@ protocol CloudKitFetcher: CloudKitErrorHandler {
     var moreToFetch: Bool { get set }
 
     func fetch()
-    func terminateFetchRequest()
+    func terminatingFetchRequest()
     func parseResult(records: [CKRecord])
 }
 
-extension CloudKitFetcher {
+public extension CloudKitFetcher {
 
     public func fetch() {
         var operation: CKQueryOperation!

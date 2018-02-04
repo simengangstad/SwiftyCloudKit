@@ -1,5 +1,5 @@
 import CloudKit
 
-protocol CloudKitErrorHandler: class {
+public protocol CloudKitErrorHandler: class {
     func handleCloudKitError(error: CKError)
 }

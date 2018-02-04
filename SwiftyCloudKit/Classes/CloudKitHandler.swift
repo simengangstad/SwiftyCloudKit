@@ -1,7 +1,7 @@
 import CloudKit
 
 @available(iOS 10.0, *)
-protocol CloudKitHandler: CloudKitErrorHandler {
+public protocol CloudKitHandler: CloudKitErrorHandler {
     var database: CKDatabase { get }
 
     func upload(record: CKRecord, withCompletionHandler completionHandler: ((CKRecord?) -> Void)?)
@@ -9,7 +9,7 @@ protocol CloudKitHandler: CloudKitErrorHandler {
 }
 
 @available(iOS 10.0, *)
-extension CloudKitHandler {
+public extension CloudKitHandler {
     public func upload(record: CKRecord, withCompletionHandler completionHandler: ((CKRecord?) -> Void)?) {
         database.save(record) { [unowned self] (savedRecord, error) in
             if let error = error as? CKError {
