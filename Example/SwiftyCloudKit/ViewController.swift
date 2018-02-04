@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyCloudKit
 
 class ViewController: UIViewController {
 

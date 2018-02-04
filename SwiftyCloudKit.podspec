@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SwiftyCloudKit'
-  s.version          = '1.0.0'
+  s.version          = '0.1.0'
   s.summary          = 'A simple library for adding iCloud support.'
 
 # This description is used to generate tags and improve search results.
@@ -21,14 +21,14 @@ Pod::Spec.new do |s|
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://github.com/Simen Gangstad/SwiftyCloudKit'
+  s.homepage         = 'https://github.com/simengangstad/SwiftyCloudKit'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Simen Gangstad' => 'simen.gangstad@me.com' }
-  s.source           = { :git => 'https://github.com/Simen Gangstad/SwiftyCloudKit.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/simengangstad/SwiftyCloudKit.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '10.0'
 
   s.source_files = 'SwiftyCloudKit/Classes/**/*'
   
