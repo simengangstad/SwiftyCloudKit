@@ -30,7 +30,7 @@ public extension CloudKitFetcher {
         if cursor == nil {
             guard let query = query else {
                 handleCloudKitError(error: CKError(_nsError: NSError(domain: "ck fetch", code: CKError.serviceUnavailable.rawValue, userInfo: nil)))
-                terminateFetchRequest()
+                terminatingFetchRequest()
 
                 return
             }
@@ -58,7 +58,7 @@ public extension CloudKitFetcher {
 
             if let error = error as? CKError {
                 self.handleCloudKitError(error: error)
-                self.terminateFetchRequest()
+                self.terminatingFetchRequest()
             }
             else {
                 self.parseResult(records: array)
