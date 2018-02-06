@@ -1,8 +1,27 @@
 import CloudKit
 import ObjectiveC
 
-public extension CKRecord {
+public protocol PropertyStoring {
+    associatedtype T
+    func getAssociatedObject(_ key: UnsafePointer<UInt8>, defaultValue: T) -> T
+    func setAssociatedObject(_ key: UnsafePointer<UInt8>, value: T)
+}
 
+public extension PropertyStoring {
+    public func getAssociatedObject(_ key: UnsafePointer<UInt8>, defaultValue: T) -> T {
+        guard let value = objc_getAssociatedObject(self, key) as? T else {
+            return defaultValue
+        }
+        return value
+    }
+    
+    public func setAssociatedObject(_ key: UnsafePointer<UInt8>, value: T) {
+        return objc_setAssociatedObject(self, key, value, .OBJC_ASSOCIATION_RETAIN)
+    }
+}
+
+public extension CKRecord {
+    
     public func image(_ key: String) -> UIImage? {
         return (self[key] as? CKAsset)?.image
     }
@@ -115,13 +134,13 @@ public extension CKRecord {
     }
 }
 
-struct CloudKitNotifications {
-    static let NotificationReceived = "iCloudRemoteNotificationReceived"
-    static let NotificationKey = "Notification"
+public struct CloudKitNotifications {
+    public static let NotificationReceived = "iCloudRemoteNotificationReceived"
+    public static let NotificationKey = "Notification"
 }
 
 
-enum ImageFileType {
+public enum ImageFileType {
     case JPG(compressionQuality: CGFloat)
     case PNG
 
@@ -135,12 +154,12 @@ enum ImageFileType {
     }
 }
 
-enum ImageError: Error {
+public enum ImageError: Error {
     case UnableToConvertImageToData
 }
 
-extension CKAsset {
-    convenience init(image: UIImage, fileType: ImageFileType = .JPG(compressionQuality: 70)) throws {
+public extension CKAsset {
+    public convenience init(image: UIImage, fileType: ImageFileType = .JPG(compressionQuality: 70)) throws {
         let url = try image.saveToTempLocationWithFileType(fileType: fileType)
         self.init(fileURL: url)
     }
@@ -155,7 +174,7 @@ extension CKAsset {
     }
 }
 
-extension Data {
+public extension Data {
     static func retrieveOrCreateFile(withDataURL fileURL: URL, andFileName fileName: String, recreateIfFileExists recreate: Bool) -> URL? {
         let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
         let destinationPath = NSURL(fileURLWithPath: documentsPath).appendingPathComponent("\(fileName).mov", isDirectory: false)
@@ -178,7 +197,7 @@ extension Data {
     }
 }
 
-extension UIImage {
+public extension UIImage {
     fileprivate func saveToTempLocationWithFileType(fileType: ImageFileType) throws -> URL {
         let imageData: NSData?
 
