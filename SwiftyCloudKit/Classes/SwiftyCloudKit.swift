@@ -1,6 +1,9 @@
 import CloudKit
 import ObjectiveC
 
+/**
+ Makes it possible to store properties in extensions.
+ */
 public protocol PropertyStoring {
     associatedtype T
     func getAssociatedObject(_ key: UnsafePointer<UInt8>, defaultValue: T) -> T
@@ -132,11 +135,6 @@ public extension CKRecord {
             self[key] = date as CKRecordValue
         }
     }
-}
-
-public struct CloudKitNotifications {
-    public static let NotificationReceived = "iCloudRemoteNotificationReceived"
-    public static let NotificationKey = "Notification"
 }
 
 

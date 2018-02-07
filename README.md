@@ -26,6 +26,13 @@ it, simply add the following line to your Podfile:
 pod 'SwiftyCloudKit'
 ```
 
+## Use
+
+- add remote-notification to UIBackgroundModes in info.plist
+- register for remote notifications in app delegate and deal with them
+- Set up records in cloud kit dashboard, as well as indices
+- Set up subscription in cloud kit dashboard, nope, is done automatically
+
 ## Author
 
 Simen Gangstad, simen.gangstad@me.com

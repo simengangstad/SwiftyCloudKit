@@ -9,11 +9,14 @@ import UIKit
 import CloudKit
 import SwiftyCloudKit
 
-class SwiftyCloudKitTableViewController: UITableViewController, CloudKitFetcher, CloudKitHandler {
+class SwiftyCloudKitTableViewController: UITableViewController, CloudKitFetcher, CloudKitHandler, CloudKitSubscriber {
 
     // MARK: Model
     
+    // The text field in our record
     let CloudKitTextField = "Text"
+    
+    // The key to our record
     let CloudKitRecordType = "Record"
     var records = [CKRecord]()
     
@@ -32,15 +35,28 @@ class SwiftyCloudKitTableViewController: UITableViewController, CloudKitFetcher,
         super.viewDidLoad()
         activityIndicator.hidesWhenStopped = true
         
+        // We start fetching
         fetch()
         startActivityIndicator()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        subscribeToUpdates()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        unsubscribeToUpdates()
+    }
+    
     // MARK: Cloud Kit Fetcher
     
+    // Specify the database, could also be the publicCloudDatabase if one were to share data between multiple users
     var database: CKDatabase = CKContainer.default().privateCloudDatabase
     
     var query: CKQuery? {
+        // Specify that we want all records using the TRUEPREDICATE predicate, and that we'll sort them by when they were created
         let query = CKQuery(recordType: CloudKitRecordType, predicate: NSPredicate(format: "TRUEPREDICATE"))
         query.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
         return query
@@ -52,6 +68,7 @@ class SwiftyCloudKitTableViewController: UITableViewController, CloudKitFetcher,
     
     var cursor: CKQueryCursor?
     
+    // Append the fetched records to the table view
     func parseResult(records: [CKRecord]) {
         DispatchQueue.main.async { [unowned self] in
             print("Retrieved records, reloading table view...")
@@ -71,6 +88,76 @@ class SwiftyCloudKitTableViewController: UITableViewController, CloudKitFetcher,
     func terminatingFetchRequest() {
         DispatchQueue.main.async {
             self.stopActivityIndicator()
+        }
+    }
+    
+    // MARK: Cloud kit subscriber
+    
+    // Specify that we want to listen to all updates concering the CloudKitRecordType
+    var subscription: CKQuerySubscription {
+        let subscription = CKQuerySubscription(recordType: CloudKitRecordType,
+                                               predicate: NSPredicate(format: "TRUEPREDICATE"),
+                                               subscriptionID: "All records creation, deletions and updates",
+                                               options: [.firesOnRecordCreation, .firesOnRecordDeletion, .firesOnRecordUpdate])
+        
+        let notificationInfo = CKNotificationInfo()
+        notificationInfo.alertLocalizationKey = "New Records"
+        notificationInfo.shouldBadge = true
+        subscription.notificationInfo = notificationInfo
+        
+        return subscription
+    }
+    
+    // Deal with the different types of subscription notifications
+    func handleSubscriptionNotification(ckqn: CKQueryNotification) {
+        if ckqn.subscriptionID == subscription.subscriptionID {
+            if let recordID = ckqn.recordID {
+                switch ckqn.queryNotificationReason {
+                    
+                case .recordCreated:
+                    startActivityIndicator()
+                    database.fetch(withRecordID: recordID) { (record, error) in
+                        
+                        if let error = error as? CKError {
+                            self.handle(cloudKitError: error)
+                        }
+                        else {
+                            if let record = record {
+                                DispatchQueue.main.async {
+                                    self.records.insert(record, at: 0)
+                                    self.tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: UITableViewRowAnimation.top)
+                                    self.stopActivityIndicator()
+                                }
+                            }
+                        }
+                    }
+                
+                case .recordDeleted:
+                    DispatchQueue.main.async {
+                        let index = self.records.index(where: { $0.recordID == recordID })
+                        self.records.remove(at: index!)
+                        self.tableView.deleteRows(at: [IndexPath(row: index!, section: 0)], with: UITableViewRowAnimation.bottom)
+                    }
+                    
+                case .recordUpdated:
+                    startActivityIndicator()
+                    database.fetch(withRecordID: recordID) { (record, error) in
+                        if let error = error as? CKError {
+                            self.handle(cloudKitError: error)
+                        }
+                        else {
+                            if let record = record {
+                                DispatchQueue.main.async {
+                                    let index = self.records.index(where: { $0.recordID == record.recordID })!
+                                    self.records[index] = record
+                                    self.tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
+                                    self.stopActivityIndicator()
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
     
@@ -118,6 +205,7 @@ class SwiftyCloudKitTableViewController: UITableViewController, CloudKitFetcher,
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellIdentifier", for: indexPath)
+        // Notice how we access our field, with a call to string passing our constant for the text field type
         cell.textLabel?.text = records[indexPath.row].string(CloudKitTextField)
         return cell
     }
@@ -150,7 +238,7 @@ class SwiftyCloudKitTableViewController: UITableViewController, CloudKitFetcher,
 
 // MARK: Cloud Kit Error Handler
 extension SwiftyCloudKitTableViewController {
-    func handleCloudKitError(error: CKError) {
+    func handle(cloudKitError error: CKError) {
         
         var errorMessage: String!
         

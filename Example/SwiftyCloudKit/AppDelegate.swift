@@ -7,16 +7,40 @@
 //
 
 import UIKit
+import UserNotifications
+import CloudKit
+import SwiftyCloudKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
+            print("Notification authorization was granted: \(granted)")
+            
+            if let error = error {
+                print(error.localizedDescription)
+            }
+        
+            // Handle errors
+        }
+        
+        application.registerForRemoteNotifications()
+        
         return true
+    }
+    
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        
+        let ckqn = CKQueryNotification(fromRemoteNotificationDictionary: userInfo as! [String:NSObject])
+        
+        let notification = Notification(name: NSNotification.Name(rawValue: CloudKitNotifications.NotificationReceived),
+                                        object: self,
+                                        userInfo: [CloudKitNotifications.NotificationKey: ckqn])
+        NotificationCenter.default.post(notification)
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
