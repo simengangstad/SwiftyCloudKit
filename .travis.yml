@@ -2,11 +2,13 @@
 # * http://www.objc.io/issue-6/travis-ci.html
 # * https://github.com/supermarin/xcpretty#usage
 
+language: swift 
 os: osx
 osx_image: xcode9.2
-language: swift 
+swift:
+- "4.0"
 cache: cocoapods
-podfile: Example/Podfile
+podfile: Example/podfile
 before_install:
 - gem install cocoapods 
 - git submodule update --init --recursive
