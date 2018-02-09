@@ -1,3 +1,4 @@
 - [ ] Create example project
 - [ ] Write instructions
-- [ ] Write documentation
+- [x] Write documentation
+- [ ] Travis for 10.0
