@@ -5,8 +5,8 @@ osx_image: xcode9.2
 podfile: Example/podfile
 before install:
 - gem install cocoapods
-#script:
-#pod install --project-directory=Example
-#- set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/SwiftyCloudKit.xcworkspace -scheme SwiftyCloudKit-Example -sdk iphonesimulator10.0 ONLY_ACTIVE_ARCH=NO | xcpretty
+script:
+pod install --project-directory=Example
+- set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/SwiftyCloudKit.xcworkspace -scheme SwiftyCloudKit-Example -sdk iphonesimulator10.0 ONLY_ACTIVE_ARCH=NO | xcpretty
 #- pod lib lint
 
