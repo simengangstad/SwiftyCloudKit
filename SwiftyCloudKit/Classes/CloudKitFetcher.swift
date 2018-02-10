@@ -20,12 +20,6 @@ public protocol CloudKitFetcher: CloudKitErrorHandler, PropertyStoring {
     var query: CKQuery? { get }
     
     /**
-     A reference to the existing records fetched. Set this to the model in the given view controller. If this isn't set the
-     fetcher won't have the ability to append the next batch of records to the existing records.
-     */
-    var existingRecords: [CKRecord] { get }
-    
-    /**
      The amount of records fetched per batch.
     */
     var interval: Int { get }
@@ -44,8 +38,7 @@ public protocol CloudKitFetcher: CloudKitErrorHandler, PropertyStoring {
      Parses the fetched records. This is where the cloud kit fetcher returns the records it has fetched.
      
      - parameters:
-        - records: The records fetched in the fetch() function. This will include the records previously fetched, in other terms it'll return all the
-                    records which have been fetched.
+        - records: The records fetched in the fetch() function.
      
      - important:
     This function will get called from a global asynchronous thread. Switch to the main thread before you make changes to the UI, e.g. reloading the data in a table view.
@@ -86,15 +79,7 @@ public extension CloudKitFetcher {
     
     public func fetch() {
         var operation: CKQueryOperation!
-        var array: [CKRecord]!
-
-        // Prevents duplicates
-        if cursor == nil && fetchState == .more {
-            array = [CKRecord]()
-        }
-        else {
-            array = existingRecords
-        }
+        var array = [CKRecord]()
 
         if cursor == nil {
             guard let query = query else {
