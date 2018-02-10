@@ -1,4 +1,5 @@
-- [ ] Create example project
-- [ ] Write instructions
+- [x] Create example project
 - [x] Write documentation
 - [x] Travis for 10.0
+- [ ] Write instructions
+- [ ] Write proper tests
