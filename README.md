@@ -263,7 +263,10 @@ override func viewDidDisappear(_ animated: Bool) {
 
 ## Todo
 
-- [ ] Support type lists
+- [x] Support type lists
+- [ ] Add tests
+- [ ] Add image support for macOS
+- [ ] Test on tvOS, watchOS and macOS
 
 ## Author
 
@@ -272,4 +275,3 @@ Simen Gangstad, simen.gangstad@me.com
 ## License
 
 SwiftyCloudKit is available under the MIT license. See the LICENSE file for more info.
-

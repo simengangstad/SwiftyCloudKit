@@ -15,6 +15,7 @@ class SwiftyCloudKitTableViewController: UITableViewController, CloudKitFetcher,
     
     // The text field in our record
     let CloudKitTextField = "Text"
+    let CloudKitTextArrayField = "TextArray"
     
     // The key to our record
     let CloudKitRecordType = "Record"
@@ -76,6 +77,13 @@ class SwiftyCloudKitTableViewController: UITableViewController, CloudKitFetcher,
         DispatchQueue.main.async { [unowned self] in
             print("Retrieved records, reloading table view...")
             self.records.append(contentsOf: records)
+         
+            records.forEach({ (record) in
+                if record.strings(self.CloudKitTextArrayField) != nil {
+                    record.set(strings: ["Testing", "this"], key: self.CloudKitTextArrayField)
+                    self.upload(record: record, withCompletionHandler: nil)
+                }
+            })
             
             if self.records.count > self.interval {
                 self.tableView.reloadData()

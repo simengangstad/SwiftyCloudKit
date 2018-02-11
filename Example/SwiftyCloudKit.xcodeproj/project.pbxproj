@@ -13,8 +13,7 @@
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		AD20C1D6202A3E9000DA003F /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD20C1D5202A3E9000DA003F /* CloudKit.framework */; };
-		ADF2EBF92029B7F000452059 /* todo in Resources */ = {isa = PBXBuildFile; fileRef = ADF2EBF82029B7F000452059 /* todo */; };
-		ADF2EC032029BCD500452059 /* SwiftyCloudKitTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF2EC022029BCD500452059 /* SwiftyCloudKitTableViewController.swift */; };
+		AD9E5CF82030C8AB00922106 /* SwiftyCloudKitTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9E5CF72030C8AB00922106 /* SwiftyCloudKitTableViewController.swift */; };
 		B15A29BD67F08A73918123E5 /* Pods_SwiftyCloudKit_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 390AC867882B01244B9C8A7C /* Pods_SwiftyCloudKit_Tests.framework */; };
 		CB5F8E3DDA259144A862A180 /* Pods_SwiftyCloudKit_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F3F7BD7B8CD26638D536A04 /* Pods_SwiftyCloudKit_Example.framework */; };
 /* End PBXBuildFile section */
@@ -46,8 +45,7 @@
 		89520218A6687CCB6FB3345B /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		AD20C1D4202A3E8200DA003F /* SwiftyCloudKit_Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftyCloudKit_Example.entitlements; sourceTree = "<group>"; };
 		AD20C1D5202A3E9000DA003F /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
-		ADF2EBF82029B7F000452059 /* todo */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = todo; path = ../todo; sourceTree = "<group>"; };
-		ADF2EC022029BCD500452059 /* SwiftyCloudKitTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SwiftyCloudKitTableViewController.swift; path = /Users/simengangstad/Desktop/SwiftyCloudKit/Example/SwiftyCloudKit/SwiftyCloudKitTableViewController.swift; sourceTree = "<absolute>"; };
+		AD9E5CF72030C8AB00922106 /* SwiftyCloudKitTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyCloudKitTableViewController.swift; sourceTree = "<group>"; };
 		B7C281D1D120BDF9C29797B6 /* Pods-SwiftyCloudKit_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyCloudKit_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftyCloudKit_Example/Pods-SwiftyCloudKit_Example.release.xcconfig"; sourceTree = "<group>"; };
 		C2E263EECBD18AE0E7E45162 /* Pods-SwiftyCloudKit_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyCloudKit_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftyCloudKit_Tests/Pods-SwiftyCloudKit_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		D732B828A3902EE00A98565D /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
@@ -100,7 +98,6 @@
 			isa = PBXGroup;
 			children = (
 				AD20C1D4202A3E8200DA003F /* SwiftyCloudKit_Example.entitlements */,
-				ADF2EBF82029B7F000452059 /* todo */,
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
 				607FACD21AFB9204008FA782 /* Example for SwiftyCloudKit */,
 				607FACE81AFB9204008FA782 /* Tests */,
@@ -123,7 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
-				ADF2EC022029BCD500452059 /* SwiftyCloudKitTableViewController.swift */,
+				AD9E5CF72030C8AB00922106 /* SwiftyCloudKitTableViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -269,7 +266,6 @@
 			files = (
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
-				ADF2EBF92029B7F000452059 /* todo in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -399,7 +395,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ADF2EC032029BCD500452059 /* SwiftyCloudKitTableViewController.swift in Sources */,
+				AD9E5CF82030C8AB00922106 /* SwiftyCloudKitTableViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

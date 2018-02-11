@@ -25,6 +25,7 @@ public extension PropertyStoring {
 
 public extension CKRecord {
     
+    // MARK: Custom types
     public func image(_ key: String) -> UIImage? {
         return (self[key] as? CKAsset)?.image
     }
@@ -56,6 +57,7 @@ public extension CKRecord {
         }
     }
 
+    // MARK: Types
     public func string(_ key: String) -> String? {
         return self[key] as? String
     }
@@ -133,6 +135,88 @@ public extension CKRecord {
     public func set(date: Date?, key: String) {
         if let date = date {
             self[key] = date as CKRecordValue
+        }
+    }
+    
+    
+    // MARK: Lists
+    public func strings(_ key: String) -> [String]? {
+        return self[key] as? [String]
+    }
+    
+    public func set(strings: [String]?, key: String) {
+        if let strings = strings {
+            self[key] = strings as CKRecordValue
+        }
+    }
+    
+    public func references(_ key: String) -> [CKReference]? {
+        return self[key] as? [CKReference]
+    }
+    
+    public func set(references: [CKReference]?, key: String) {
+        if let references = references {
+            self[key] = references as CKRecordValue
+        }
+    }
+    
+    public func data(_ key: String) -> [Data]? {
+        return self[key] as? [Data]
+    }
+    
+    public func set(data: [Data]?, key: String) {
+        if let data = data {
+            self[key] = data as CKRecordValue
+        }
+    }
+    
+    public func assets(_ key: String) -> [CKAsset]? {
+        return self[key] as? [CKAsset]
+    }
+    
+    public func set(assets: [CKAsset]?, key: String) {
+        if let assets = assets {
+            self[key] = assets as CKRecordValue
+        }
+    }
+    
+    public func ints(_ key: String) -> [Int]? {
+        return self[key] as? [Int]
+    }
+    
+    public func set(ints: [Int]?, key: String) {
+        if let ints = ints {
+            self[key] = ints as CKRecordValue
+        }
+    }
+    
+    public func doubles(_ key: String) -> [Double]? {
+        return self[key] as? [Double]
+    }
+    
+    public func set(doubles: [Double]?, key: String) {
+        if let doubles = doubles {
+            self[key] = doubles as CKRecordValue
+        }
+    }
+    
+    public func locations(_ key: String) -> [CLLocation]? {
+        return self[key] as? [CLLocation]
+    }
+    
+    public func set(locations: [CLLocation]?, key: String) {
+        if let locations = locations {
+            self[key] = locations as CKRecordValue
+        }
+    }
+    
+    public func dates(_ key: String) -> [Date]? {
+        return self[key] as? [Date]
+    }
+    
+    public func set(dates: [Date]?, key: String) {
+        if let dates = dates {
+            self[key] = dates as CKRecordValue
         }
     }
 }
