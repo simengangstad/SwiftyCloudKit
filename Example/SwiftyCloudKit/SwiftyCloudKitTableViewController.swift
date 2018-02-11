@@ -34,24 +34,22 @@ class SwiftyCloudKitTableViewController: UITableViewController, CloudKitFetcher,
     override func viewDidLoad() {
         super.viewDidLoad()
         activityIndicator.hidesWhenStopped = true
-        
-        // We start fetching
-        fetch()
-        
-        Timer.scheduledTimer(withTimeInterval: 10, repeats: false) { [unowned self] (timer) in
-            self.fetch()
-        }
-        
-        startActivityIndicator()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        // We start fetching. Don't want to fetch every time the view appears on screen.
+        if records.isEmpty {
+            fetch()
+            startActivityIndicator()
+        }
+        
         subscribeToUpdates()
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
         unsubscribeToUpdates()
     }
     

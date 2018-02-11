@@ -2,16 +2,19 @@
 
 [![CI Status](http://img.shields.io/travis/simengangstad/SwiftyCloudKit.svg?style=flat)](https://travis-ci.org/simengangstad/SwiftyCloudKit) [![Version](https://img.shields.io/cocoapods/v/SwiftyCloudKit.svg?style=flat)](http://cocoapods.org/pods/SwiftyCloudKit) [![License](https://img.shields.io/cocoapods/l/SwiftyCloudKit.svg?style=flat)](http://cocoapods.org/pods/SwiftyCloudKit) [![Platform](https://img.shields.io/cocoapods/p/SwiftyCloudKit.svg?style=flat)](http://cocoapods.org/pods/SwiftyCloudKit)
 
-SwiftyCloudKit is a thin layer above Cloud Kit which makes it easy to implement cloud support into an iOS app. The library is structured into modules which can be used independently or together, all after need.
+SwiftyCloudKit is a thin layer above Cloud Kit which makes it easy to implement cloud support into an . The library is structured into modules which can be used independently or together, all after need.
 
 ## Example
 
-To run the example project, clone the repo, and run `pod install` from the Example directory. It is strongly recommended to run through the tutorial with the example project open.
+To run the example project, clone the repo, and run `pod install` from the Example directory. It is strongly recommended to run through the tutorial with the example project.
 
 ## Requirements
 
 - Swift 4.0
-- iOS 10.0 or newer
+- iOS: 10.0+
+- macOS: 10.12+ (not tested)
+- watchOS: 3.0+ (not tested)
+- tvOS: 10.0+
 
 ## Installation
 
@@ -28,7 +31,7 @@ There are four submodules – or protocols – of SwiftyCloudKit: CloudKitFetch
 
 ### CloudKitErrorHandler
 
-All the following modules will call the error handler when an error occurs. Therefore it is required to implement this protocol:
+All the other submodules will call the error handler when an error occurs. Therefore it is required to conform to:
 
 ```
 func handle(cloudKitError error: CKError) {
@@ -40,8 +43,8 @@ func handle(cloudKitError error: CKError) {
 
 The cloud kit fetcher protocol requires you to give it a database, a query and an fetch interval (how many records per batch). You also have to implement `parseResult(records: [CKRecord])`, which returns the records fetched, and `terminatingFetchRequest()`, which gets fired when a fetch request terminated because of some error.
 
-In order to fetch from iCloud there is one prerequisite:
-- Setup a record type in the cloud kit dashboard with field types. In the example project a record type with the name "Record" and a string field type named "Text" is required.
+In order to fetch from iCloud there's one prerequisite:
+- Setup a record type in the cloud kit dashboard. In the example project a record type with the name "Record" and a string field type named "Text" is required.
 
 We define a simple model:
 
@@ -101,6 +104,8 @@ func terminatingFetchRequest() {
 }
 ```
 
+Then call `fetch()` in e.g. viewDidAppear to fetch the records.
+
 #### Accessing values
 
 To access values from records you specify a field key, e.g. `let CloudKitTextField = "Text"` and acess it with the `string(_ key: String) -> String?` function, as seen in the table view data source in the example project:
@@ -148,6 +153,7 @@ A subscription is useful when there are multiple units having read and write acc
 The prerequisites for subscriptions are:
 - Adding remote-notification to UIBackgroundModes in info.plist
 - Specify some notification keys, e.g.:
+
 ```
 public struct CloudKitNotifications {
     public static let NotificationReceived = "iCloudRemoteNotificationReceived"
@@ -238,6 +244,20 @@ func handleSubscriptionNotification(ckqn: CKQueryNotification) {
             }
         }
     }
+}
+```
+
+And the final step is to subscribe to and unsubscribe from updates. This is necessary as subscribtions are quite expensive:
+
+```
+override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    subscribeToUpdates()
+}
+
+override func viewDidDisappear(_ animated: Bool) {
+    super.viewDidDisappear(animated)
+    unsubscribeToUpdates()
 }
 ```
 
