@@ -40,11 +40,17 @@ func handle(cloudKitError error: CKError) {
 
 The cloud kit fetcher fetches records from iCloud. You specify a database, a query, a reference to your existing records and an fetch interval (in terms of records) and you are more or less good to go. You also have to implement the `parseResult(records: [CKRecord])`  function, which returns the records fetched, and the `terminatingFetchRequest()` function, which allows you to know when a fetch request was terminated because of some error. This example is built with a UITableViewController (taken from the example project).
 
+In order to fetch from iCloud there is one prerequisite:
+- Setup a record type in the cloud kit dashboard with field types. In the example project a record type with the name "Record" and a string type named "Text" is required.
+
 We define a simple model:
 
 ```
 // The key to our record
 let CloudKitRecordType = "Record"
+// The text field in our record
+let CloudKitTextField = "Text"
+
 // Model
 var records = [CKRecord]()
 ```
@@ -92,8 +98,6 @@ func terminatingFetchRequest() {
 }
 ```
 
-Setup a record type in the cloud kit dashboard and you should be up and running.
-
 ##### Accessing values
 
 To access values from records you specify a field key, e.g. `let CloudKitTextField = "Text"` and acess it with the `string(_ key: String) -> String?` function, as seen in the table view data source in the example project:
@@ -139,13 +143,106 @@ If an upload or deletion fails, the cloud kit handler will retry the operation a
 
 ### CloudKitSubscriber
 
-- add remote-notification to UIBackgroundModes in info.plist
-- register for remote notifications in app delegate and deal with them
+A subscription is useful when there are multiple units having read and write access to the same data. An example would be an app which allows multiple users to collaborate on a spreadsheet. The subscription fires a notification when new data is appended, when data is deleted and when data is modified. The example project includes a demo concering this (be aware that the iOS simulator can't send these notifications, only receive, so test between two iOS devices).
+
+The prerequisites for the subscription are:
+- Adding remote-notification to UIBackgroundModes in info.plist
+- Specify some notification keys
+- Register for remote notifications in the app delegate, which is done the following way:
+
+```
+// Specifies the notification keys
+public struct CloudKitNotifications {
+    public static let NotificationReceived = "iCloudRemoteNotificationReceived"
+    public static let NotificationKey = "Notification"
+}
+
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    // Requests authorization to interact with the user when the external notification arrives
+    UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
+        if let error = error {
+            print(error.localizedDescription)
+        }
+    }
+    application.registerForRemoteNotifications()
+    return true
+}
+
+func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+    // Decode the notification as a CKQueryNotification
+    let ckqn = CKQueryNotification(fromRemoteNotificationDictionary: userInfo as! [String:NSObject])
+    // Initiate a new notification with the notification keys
+    let notification = Notification(name: NSNotification.Name(rawValue: CloudKitNotifications.NotificationReceived),
+                                    object: self,
+                                    userInfo: [CloudKitNotifications.NotificationKey: ckqn])
+    // Post the notification
+    NotificationCenter.default.post(notification)
+}
+```
+
+The next step is to conform to the protocol:
+
+```
+// Specify that we want to listen to all updates concering the CloudKitRecordType
+var subscription: CKQuerySubscription {
+    let subscription = CKQuerySubscription(recordType: CloudKitRecordType,
+                                           predicate: NSPredicate(format: "TRUEPREDICATE"),
+                                           subscriptionID: "All records creation, deletions and updates",
+                                           options: [.firesOnRecordCreation, .firesOnRecordDeletion, .firesOnRecordUpdate])
+
+    let notificationInfo = CKNotificationInfo()
+    notificationInfo.alertLocalizationKey = "New Records"
+    notificationInfo.shouldBadge = true
+    subscription.notificationInfo = notificationInfo
+
+    return subscription
+}
+
+// Deal with the different types of subscription notifications
+func handleSubscriptionNotification(ckqn: CKQueryNotification) {
+    // If it's not our notification, why do anything?
+    if ckqn.subscriptionID == subscription.subscriptionID {
+        if let recordID = ckqn.recordID {
+            switch ckqn.queryNotificationReason {
+                case .recordCreated:
+                database.fetch(withRecordID: recordID) { (record, error) in
+                    if let error = error as? CKError {
+                        self.handle(cloudKitError: error)
+                    }
+                    else {
+                        if let record = record {
+                            self.records.insert(record, at: 0)
+                        }
+                    }
+                }
+
+                case .recordDeleted:
+                let index = self.records.index(where: { $0.recordID == recordID })
+                self.records.remove(at: index!)
+
+                case .recordUpdated:
+                database.fetch(withRecordID: recordID) { (record, error) in
+                    if let error = error as? CKError {
+                        self.handle(cloudKitError: error)
+                    }
+                    else {
+                        if let record = record {
+                            let index = self.records.index(where: { $0.recordID == record.recordID })!
+                            self.records[index] = record
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+```
+
+That's the whole deal.
 
 ## Todo
 
 - [ ] Support type lists
-- [ ] Make error handling more clear (e.g. in handler)
 
 ## Author
 
@@ -154,3 +251,4 @@ Simen Gangstad, simen.gangstad@me.com
 ## License
 
 SwiftyCloudKit is available under the MIT license. See the LICENSE file for more info.
+

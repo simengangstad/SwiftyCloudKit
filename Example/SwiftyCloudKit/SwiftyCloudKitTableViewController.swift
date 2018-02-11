@@ -10,7 +10,7 @@ import CloudKit
 import SwiftyCloudKit
 
 class SwiftyCloudKitTableViewController: UITableViewController, CloudKitFetcher, CloudKitHandler, CloudKitSubscriber {
-
+    
     // MARK: Model
     
     // The text field in our record
