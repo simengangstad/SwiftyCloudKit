@@ -41,10 +41,10 @@ class SwiftyCloudKitTableViewController: UITableViewController, CloudKitFetcher,
         super.viewDidAppear(animated)
         
         // We start fetching. Don't want to fetch every time the view appears on screen.
-        if records.isEmpty {
+        /*if records.isEmpty {
             fetch()
             startActivityIndicator()
-        }
+        }*/
         
         subscribeToUpdates()
     }
@@ -112,7 +112,9 @@ class SwiftyCloudKitTableViewController: UITableViewController, CloudKitFetcher,
                                                options: [.firesOnRecordCreation, .firesOnRecordDeletion, .firesOnRecordUpdate])
         
         let notificationInfo = CKNotificationInfo()
-        notificationInfo.alertLocalizationKey = "New Records"
+        #if os(iOS) || os(macOS)
+            notificationInfo.alertLocalizationKey = "New Records"
+        #endif
         notificationInfo.shouldBadge = true
         subscription.notificationInfo = notificationInfo
         
@@ -191,18 +193,26 @@ class SwiftyCloudKitTableViewController: UITableViewController, CloudKitFetcher,
     }
     
     // MARK: Activity indicator
-    let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+    #if os(iOS)
+        let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+    #elseif os(tvOS)
+        let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .white)
+    #endif
 
     func startActivityIndicator() {
-        if navigationItem.leftBarButtonItem == nil {
-            navigationItem.leftBarButtonItem = UIBarButtonItem(customView: activityIndicator)
-        }
-        
-        activityIndicator.startAnimating()
+        #if os(iOS) || os(tvOS)
+            if navigationItem.leftBarButtonItem == nil {
+                navigationItem.leftBarButtonItem = UIBarButtonItem(customView: activityIndicator)
+            }
+    
+            activityIndicator.startAnimating()
+        #endif
     }
     
     func stopActivityIndicator() {
-        activityIndicator.stopAnimating()
+        #if os(iOS) || os(tvOS)
+            activityIndicator.stopAnimating()
+        #endif
     }
     
     // MARK: Table view data source

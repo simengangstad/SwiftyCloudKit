@@ -7,18 +7,37 @@
 //
 
 import UIKit
+import UserNotifications
+import SwiftyCloudKit
+import CloudKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        // Requests authorization to interact with the user when the external notification arrives
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
+            if let error = error {
+                print(error.localizedDescription)
+            }
+        }
+        application.registerForRemoteNotifications()
         return true
     }
-
+    
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        // Decode the notification as a CKQueryNotification
+        let ckqn = CKQueryNotification(fromRemoteNotificationDictionary: userInfo as! [String:NSObject])
+        // Initiate a new notification with the notification keys
+        let notification = Notification(name: NSNotification.Name(rawValue: CloudKitNotifications.NotificationReceived),
+                                        object: self,
+                                        userInfo: [CloudKitNotifications.NotificationKey: ckqn])
+        // Post the notification
+        NotificationCenter.default.post(notification)
+    }
+    
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.

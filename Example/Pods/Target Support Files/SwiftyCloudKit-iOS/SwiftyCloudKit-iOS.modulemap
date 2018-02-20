@@ -1,0 +1,6 @@
+framework module SwiftyCloudKit {
+  umbrella header "SwiftyCloudKit-iOS-umbrella.h"
+
+  export *
+  module * { export * }
+}
