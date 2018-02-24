@@ -1,0 +1,6 @@
+framework module Pods_SwiftyCloudKit_watchOS_Extension {
+  umbrella header "Pods-SwiftyCloudKit_watchOS Extension-umbrella.h"
+
+  export *
+  module * { export * }
+}

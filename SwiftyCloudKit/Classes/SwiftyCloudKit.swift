@@ -1,5 +1,6 @@
 import CloudKit
 import ObjectiveC
+import UIKit
 
 /**
  Makes it possible to store properties in extensions.

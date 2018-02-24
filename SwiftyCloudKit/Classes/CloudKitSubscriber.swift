@@ -32,7 +32,9 @@ import CloudKit
         }
  
  */
-@available (iOS 10.0, *)
+
+#if !os(watchOS)
+@available (iOS 10.0, tvOS 10.0, OSX 10.12, *)
 public protocol CloudKitSubscriber: CloudKitErrorHandler, PropertyStoring {
     
     /**
@@ -127,3 +129,4 @@ public extension CloudKitSubscriber {
         NotificationCenter.default.removeObserver(self.cloudKitObserver as Any)
     }
 }
+#endif

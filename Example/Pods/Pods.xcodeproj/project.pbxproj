@@ -14,7 +14,7 @@
 		0A1A3DC52B83AA8A153A008710FCBFFA /* NBSMockedApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D1E103702ABBD58F315C182A4866454 /* NBSMockedApplication.m */; };
 		0A2CA8B0DD7E300ABFCF1956E6B58248 /* Nimble.h in Headers */ = {isa = PBXBuildFile; fileRef = 40BD6C92C04852276647CF58AD53276A /* Nimble.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0D2762B25D56D89E3EDD46C155164B26 /* ExampleHooks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68BEAADD3D502C3823DD093E5EE7E265 /* ExampleHooks.swift */; };
-		0F5A5933C7F9B435AAAE1110967C0264 /* Pods-SwifyCloudKit_tvOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 73768B7DE7367DBC385BF5EC30F5ECBE /* Pods-SwifyCloudKit_tvOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0F5A5933C7F9B435AAAE1110967C0264 /* Pods-SwifyCloudKit_tvOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6B72A080D68DB5E70D8C9966D9A80B34 /* Pods-SwifyCloudKit_tvOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		17C8EE7DF3F57C8F99EAF63C6E61EA99 /* FailureMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C764AC540C4E0FE3477F5F61F53C36 /* FailureMessage.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		18DDFD2C11AF0226C03F2189282F604C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F866A3A01E45396201922A1F3BCECFE /* Foundation.framework */; };
 		1A3E19B9F5EEB773C3BB61CA42F8BF62 /* DSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A7D15DFB7100207E56A080910768F3 /* DSL.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
@@ -60,7 +60,7 @@
 		4734BBCA43ED01141732F3A720489F89 /* Closures.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3B9455664D13744657268D75172AD1 /* Closures.swift */; };
 		483FDA74FEC933E1A53FA25E794A0443 /* XCTestObservationCenter+CurrentTestCaseTracker.h in Headers */ = {isa = PBXBuildFile; fileRef = 61E7D7F94796C8273534EBD4E460E922 /* XCTestObservationCenter+CurrentTestCaseTracker.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4995797A21B300783BAB182A384C11BC /* QuickConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = 486BEA084A74A7D96BBC96B4F7CCF311 /* QuickConfiguration.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4B4C1C78365CC253339AF15FD0AEA28A /* Pods-SwiftyCloudKit_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EE7835F1CBE772A4E66B376FDD66C75D /* Pods-SwiftyCloudKit_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4B4C1C78365CC253339AF15FD0AEA28A /* Pods-SwiftyCloudKit_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C7E4A64F71E7407DF23B5CC5D330584 /* Pods-SwiftyCloudKit_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4CDACD8A5A6CFB688838AA988E7D1E43 /* Nimble-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC11D1D8ABC1AD353758D26B68DF9DF /* Nimble-dummy.m */; };
 		4FABBF5CA8F735F48035BE4144613CB7 /* Expression.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1300A88E757F3EDCAC601D580051806 /* Expression.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		50698F14E7847E18B907E9373FBF4C21 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F866A3A01E45396201922A1F3BCECFE /* Foundation.framework */; };
@@ -106,17 +106,18 @@
 		841FF232C33C7D49C58CEFDBE7EEB92B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1628EB512DB5941D07833E7C615D5F8F /* UIKit.framework */; };
 		895AA3EB617AE0F707497138E91C4BE5 /* Quick.h in Headers */ = {isa = PBXBuildFile; fileRef = 31FC529A313E129D424327BC2C388015 /* Quick.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8A1A5BEF9F90B78771D61315ABDC4221 /* QCKDSL.h in Headers */ = {isa = PBXBuildFile; fileRef = BFB91EE2B34BCD507A8EAF07F231C380 /* QCKDSL.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8AE03890A544320CD689B238B1F25590 /* Pods-SwiftyCloudKit_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B10B6310FA94052960EB22ABA6E3E5 /* Pods-SwiftyCloudKit_Example-dummy.m */; };
+		8AE03890A544320CD689B238B1F25590 /* Pods-SwiftyCloudKit_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DA6A2CFBB67A4D97BBFA8F506486DAFF /* Pods-SwiftyCloudKit_Example-dummy.m */; };
 		8AE837286BCB6CCF49DFB59F44460C17 /* Behavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8958E6A104616DC4782A7B97FDA3B19B /* Behavior.swift */; };
 		8B55BD430033027AD5FF22D630DD9F62 /* DSL.m in Sources */ = {isa = PBXBuildFile; fileRef = EA23EE0A80D318077C28121C5AD51D0D /* DSL.m */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		8FAAF446EC1CCE0E2A8200322C650FCB /* CloudKitFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE97F910912986C947F3C912D76DB76 /* CloudKitFetcher.swift */; };
 		91D0138ACFAD733E4061F12E450C336C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F866A3A01E45396201922A1F3BCECFE /* Foundation.framework */; };
 		91D400CC851F516E785B032662E4FDD8 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 798C1F85CADC2D3708BA36EA15685603 /* Nimble.framework */; };
+		94A65E26825F0D515D50186715C380EC /* Pods-SwiftyCloudKit_watchOS Extension-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9033C9E429686AF243C45FEDA68E571B /* Pods-SwiftyCloudKit_watchOS Extension-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		96132E7432F8DD315A88A07C6B4F9C72 /* NMBStringify.h in Headers */ = {isa = PBXBuildFile; fileRef = E43274BDDF946146643879824D00EC31 /* NMBStringify.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9631BA6D4ABC63EC100BE05484681C61 /* CloudKitFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE97F910912986C947F3C912D76DB76 /* CloudKitFetcher.swift */; };
 		9673CF780F48C8E4EC2A331717B1F67C /* FBSnapshotTestCase.h in Headers */ = {isa = PBXBuildFile; fileRef = C3D41F703F26B177ACAAD1FFB6C0AAE1 /* FBSnapshotTestCase.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		988EED125395950177DC14AF9BC87D8D /* HaveCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA927ABEA5A603E8961BF9D9EE2F03F5 /* HaveCount.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
-		99B4965E0FDC6EBE2B13A08AA6A80D61 /* Pods-SwiftyCloudKit_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A267DE9E8BD33F76158B494B7E964AC /* Pods-SwiftyCloudKit_Tests-dummy.m */; };
+		99B4965E0FDC6EBE2B13A08AA6A80D61 /* Pods-SwiftyCloudKit_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D62FBEFF4C716C8F9B589113ED4EBEA /* Pods-SwiftyCloudKit_Tests-dummy.m */; };
 		99ED13BA15822FD5AEE570B9002C37A8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1628EB512DB5941D07833E7C615D5F8F /* UIKit.framework */; };
 		A272932A4DF9AC2D3B0A21AC70606F6D /* CwlBadInstructionException.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63105B920EC55A2CC7444F7E0FAE8401 /* CwlBadInstructionException.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		A2ACDD3235110F6981004483CE60476F /* CurrentTestCaseTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE1860DD854B4063F37DBC53610D94A /* CurrentTestCaseTracker.swift */; };
@@ -127,7 +128,7 @@
 		A7C13C62E4116CA964A3E82179092AD5 /* NMBObjCMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13AF186DBC7A1387C1B58C1C9300B648 /* NMBObjCMatcher.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		AA1C00EF14AA90B2B3902EC87DFF0B6A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F866A3A01E45396201922A1F3BCECFE /* Foundation.framework */; };
 		AAA2830BBCD86431B3EEB0ED968DF4A3 /* CwlCatchException.h in Headers */ = {isa = PBXBuildFile; fileRef = 162F9491190264048BD2A6E7CD8D9A07 /* CwlCatchException.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		ABBF685F0A439565571701D111EE2582 /* Pods-SwifyCloudKit_tvOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F5123758B61A7F0F10522A468864863 /* Pods-SwifyCloudKit_tvOS-dummy.m */; };
+		ABBF685F0A439565571701D111EE2582 /* Pods-SwifyCloudKit_tvOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C14A38E0BE756E40AF81EB8779AA2CE /* Pods-SwifyCloudKit_tvOS-dummy.m */; };
 		ADEE95A3A188BE3095990E20766BCCC8 /* DSL+Wait.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F3724885AEE3A9FD220E7F2DE0CC84 /* DSL+Wait.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		AE4DA49ECD693BF384CD824DF02D7C6E /* NMBStringify.m in Sources */ = {isa = PBXBuildFile; fileRef = D20712BF889E8F3E37D4075A45B3047E /* NMBStringify.m */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		AED58B976AB8F62FBFB0DA437861E088 /* PrettyDynamicTypeSyntax.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21B8D3C4E2547445883AD8CD24D0ED7 /* PrettyDynamicTypeSyntax.swift */; };
@@ -155,19 +156,21 @@
 		C89AFDB74F093530794264BF33F0AB32 /* Nimble-Snapshots-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0610E7B35C11D51CE9CFF63BEBF4E0CA /* Nimble-Snapshots-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C907DC9A1F3C78CD7F5DBDB699289C0F /* Nimble-Snapshots-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DDFBAF22E15C973ED8D2968C738E484A /* Nimble-Snapshots-dummy.m */; };
 		C90F056A6C6119B25DCFA7622EB1852E /* SwiftyCloudKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1DF94E6AE5C733C5D767A94FFC0801 /* SwiftyCloudKit.swift */; };
-		C9C20ED307E5BCA139A15A0482C0F863 /* Pods-SwiftyCloudKit_watchOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A0EA5C70EF05322F6368F44E5960F9E6 /* Pods-SwiftyCloudKit_watchOS-dummy.m */; };
+		C9C20ED307E5BCA139A15A0482C0F863 /* Pods-SwiftyCloudKit_watchOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D1C244F7F12FF64289FDC249E7C4E1 /* Pods-SwiftyCloudKit_watchOS-dummy.m */; };
 		CAFA5E486BCE117A7D8C0FBF9DA6666B /* UIImage+Compare.h in Headers */ = {isa = PBXBuildFile; fileRef = 57C61E223803DB9246247DB99B53B72C /* UIImage+Compare.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		CCDAF11E7AF29E720C587B038145F622 /* BeginWith.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B625B502FA7FC9EDB2A28355AE9011 /* BeginWith.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		CCE65420D140B38F9F05EA3906A6EC35 /* QuickSpecBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 8C06CDDA0FCF3A2728D85F41F725918B /* QuickSpecBase.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		CD10B964060FD8E5292EF091239BB2B5 /* ExampleMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C71DF19B75D27352FBD0AE9FF127BEA /* ExampleMetadata.swift */; };
 		CF54E27E142946A85187B0A7D7C1DDBB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BAF341224A16330E5A20B27FCC79860 /* Foundation.framework */; };
 		CF55697859D633C852C3586384647EB6 /* NimbleXCTestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11021259140D59C15B4E5E8A32774767 /* NimbleXCTestHandler.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
-		D6C42EE81B32B538D20318A396184369 /* Pods-SwiftyCloudKit_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 27672DC8414CCBBA0E21628DB8F40D39 /* Pods-SwiftyCloudKit_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D6C42EE81B32B538D20318A396184369 /* Pods-SwiftyCloudKit_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 56AD4CB0DC181DC0CB712AC6D1F53EF1 /* Pods-SwiftyCloudKit_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D7AEC22C987AF4BE5B6AFF4829E1DEF7 /* Pods-SwiftyCloudKit_watchOS Extension-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 26CF21060DBE4BC1C69958D1F8B4F489 /* Pods-SwiftyCloudKit_watchOS Extension-dummy.m */; };
 		D856D2C893082990C60C45B1E2240F5F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ED9ABAFD155AF5B38D36585FA2CE1EB /* Foundation.framework */; };
 		D9E62C41794D0B5D2CD68CA92C4BA836 /* mach_excServer.c in Sources */ = {isa = PBXBuildFile; fileRef = A2372AF16AA32C9907B0C68D9D693950 /* mach_excServer.c */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		DAC312474749D361EE3F240F146B23CA /* URL+FileName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C28CDC2D0F144C4E68C9BA7FC2CDCA2 /* URL+FileName.swift */; };
 		DB7A106243AC974FC7EBEB00B506C786 /* FBSnapshotTestCasePlatform.m in Sources */ = {isa = PBXBuildFile; fileRef = 445B5D0FA45396EF0BB8E92D62546F80 /* FBSnapshotTestCasePlatform.m */; };
 		DCA71BFA4DB36FB2556684C3D8B4D586 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23B667DFD8E75D7AB4C30355EA4EFB0 /* Filter.swift */; };
+		DE96AE281268E73ABCA2F80DDBB20C91 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BAF341224A16330E5A20B27FCC79860 /* Foundation.framework */; };
 		DF026F6F406A4FB6CEA63B0A4B9E27DD /* AllPass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D3B0C900E8CAAD1E3FD246B3B4F65A /* AllPass.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		E00B8D919B22B9740684201B27105D88 /* QuickSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E8052367487C857440067EC33D18F05 /* QuickSpec.m */; };
 		E276586EA57847970DECAB65615C8302 /* World+DSL.h in Headers */ = {isa = PBXBuildFile; fileRef = A19225C3D73CFBCA4B12272C9F3058FF /* World+DSL.h */; settings = {ATTRIBUTES = (Project, ); }; };
@@ -186,7 +189,7 @@
 		F4BD249C60F21F5E0F7C1FAC8A5BC2AF /* BeIdenticalTo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305683F6DC5ABB2EBE67B92E7DCBAAAB /* BeIdenticalTo.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		F6DE93460E4060E4F6DA85AEFD24FEA6 /* CloudKitSubscriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = C173B94E6ECB3414AC0ACD409E9BFA09 /* CloudKitSubscriber.swift */; };
 		F9649DD59BAEE88C6864EEFE73ECA88C /* AdapterProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F954044A82CFADBC52547F095D9282 /* AdapterProtocols.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
-		F9B59B51DEF0C9A494293C9B17DC9562 /* Pods-SwiftyCloudKit_watchOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 74FB92805938F913B5A9585F7641AAC7 /* Pods-SwiftyCloudKit_watchOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F9B59B51DEF0C9A494293C9B17DC9562 /* Pods-SwiftyCloudKit_watchOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 03418FA58FADF783DBBE61789AEB37B4 /* Pods-SwiftyCloudKit_watchOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FB433A84B0A557CD5E5948A8B6705024 /* DSL.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F610D358CCBE4031DC469CFEBA0EC88 /* DSL.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FCFAD471CB33370FCFD7D79DBB8ED039 /* NSString+C99ExtendedIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF3D1AECDF53E3723EF1CB7BEC461CC /* NSString+C99ExtendedIdentifier.swift */; };
 /* End PBXBuildFile section */
@@ -248,6 +251,13 @@
 			remoteGlobalIDString = 34CD2E3428AB802BACA62286FF5074B1;
 			remoteInfo = FBSnapshotTestCase;
 		};
+		9A0E9EC281FEDE2EDD8BB58CA40FEBDF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 55647C7DC9F7B6DC77E48C6A061FC19F;
+			remoteInfo = "SwiftyCloudKit-watchOS";
+		};
 		BB4030AEE5E39FBE9B78B471D824B197 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
@@ -258,17 +268,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		01C6BDFA288B31E001EF4614FFFBE327 /* Pods-SwiftyCloudKit_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SwiftyCloudKit_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		01FD8FF250692C040658177EFA90C0E0 /* BeGreaterThan.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeGreaterThan.swift; path = Sources/Nimble/Matchers/BeGreaterThan.swift; sourceTree = "<group>"; };
 		022B021D1697A1B527875D5C550412C0 /* UIImage+Snapshot.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Snapshot.m"; path = "FBSnapshotTestCase/Categories/UIImage+Snapshot.m"; sourceTree = "<group>"; };
 		02A4535D1894CE234782E1C507F0CFD8 /* Quick-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Quick-dummy.m"; sourceTree = "<group>"; };
-		0472B4346370A7F602B03BE8AB845283 /* Pods-SwiftyCloudKit_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SwiftyCloudKit_Tests.modulemap"; sourceTree = "<group>"; };
+		03418FA58FADF783DBBE61789AEB37B4 /* Pods-SwiftyCloudKit_watchOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SwiftyCloudKit_watchOS-umbrella.h"; sourceTree = "<group>"; };
 		04D3C0AA5C1097304FF3968C197044E8 /* SourceLocation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SourceLocation.swift; path = Sources/Nimble/Utils/SourceLocation.swift; sourceTree = "<group>"; };
-		051CF0046E00D93AF70C913C160CC633 /* Pods-SwiftyCloudKit_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SwiftyCloudKit_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		05032873EB08D2DACA8C00218C6C630A /* Pods-SwifyCloudKit_tvOS-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SwifyCloudKit_tvOS-acknowledgements.plist"; sourceTree = "<group>"; };
+		05FEB04AA02007AD0026B26A4889379B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0610E7B35C11D51CE9CFF63BEBF4E0CA /* Nimble-Snapshots-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Nimble-Snapshots-umbrella.h"; sourceTree = "<group>"; };
-		07FE70173233CFF54702B6540DAF3752 /* Pods_SwiftyCloudKit_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SwiftyCloudKit_Tests.framework; path = "Pods-SwiftyCloudKit_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0999D8E772AB02DD29403AF44FF3BFE5 /* QCKDSL.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = QCKDSL.m; path = Sources/QuickObjectiveC/DSL/QCKDSL.m; sourceTree = "<group>"; };
 		09FFB8DE4A4FBBFAD4F83F78D3C76331 /* HaveValidDynamicTypeSnapshot.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HaveValidDynamicTypeSnapshot.swift; path = DynamicType/HaveValidDynamicTypeSnapshot.swift; sourceTree = "<group>"; };
 		0A2186FBAB5A1673CF4DD01DB664F151 /* FBSnapshotTestCase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FBSnapshotTestCase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0A5AA8945F3FBD4286A3A3C7AFEAD4BA /* Pods-SwifyCloudKit_tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwifyCloudKit_tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		0AD77CD1FD4FCF047E861849B8A77C74 /* Example.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Example.swift; path = Sources/Quick/Example.swift; sourceTree = "<group>"; };
 		0B211AA6101054EFDBA79B84F38C2420 /* Nimble.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Nimble.modulemap; sourceTree = "<group>"; };
 		0B5B1CC88E728E5D75B10FB1CB4B58F5 /* SwiftyCloudKit-iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "SwiftyCloudKit-iOS.modulemap"; sourceTree = "<group>"; };
@@ -285,29 +297,29 @@
 		126F692A2B496C582F9EF2242AB35AE0 /* CloudKitHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CloudKitHandler.swift; path = SwiftyCloudKit/Classes/CloudKitHandler.swift; sourceTree = "<group>"; };
 		1335B873C56217DFC32AE983C03A7E63 /* ExpectationMessage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpectationMessage.swift; path = Sources/Nimble/ExpectationMessage.swift; sourceTree = "<group>"; };
 		13AF186DBC7A1387C1B58C1C9300B648 /* NMBObjCMatcher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NMBObjCMatcher.swift; path = Sources/Nimble/Adapters/NMBObjCMatcher.swift; sourceTree = "<group>"; };
+		15BBA5F9CE2CF41AA6C26B29171864C4 /* Pods-SwiftyCloudKit_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftyCloudKit_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		1628EB512DB5941D07833E7C615D5F8F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		162F9491190264048BD2A6E7CD8D9A07 /* CwlCatchException.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CwlCatchException.h; path = Carthage/Checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchException.h; sourceTree = "<group>"; };
 		1658F8A4008FAA5DD5B755B469EC5776 /* SwiftyCloudKit-watchOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "SwiftyCloudKit-watchOS.xcconfig"; path = "../SwiftyCloudKit-watchOS/SwiftyCloudKit-watchOS.xcconfig"; sourceTree = "<group>"; };
-		16605FB4FD58C54512F2D2E3A7272098 /* Pods-SwiftyCloudKit_watchOS-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SwiftyCloudKit_watchOS-resources.sh"; sourceTree = "<group>"; };
-		1728A1F4EDCBEC2C88FE26D9D28C9912 /* Pods-SwiftyCloudKit_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SwiftyCloudKit_Tests-frameworks.sh"; sourceTree = "<group>"; };
-		1786F5A8320CE6C30A61818C05926B72 /* Pods-SwiftyCloudKit_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SwiftyCloudKit_Tests-resources.sh"; sourceTree = "<group>"; };
-		18A67ACD1E0A9AA3E369FA24EE59B72A /* Pods-SwiftyCloudKit_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SwiftyCloudKit_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		17B930409CB779FB6AC4D14D2E82323B /* Pods-SwiftyCloudKit_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SwiftyCloudKit_Example-resources.sh"; sourceTree = "<group>"; };
 		18AF1D5EA3078A777701EC421BECC328 /* SwiftSupport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftSupport.swift; path = FBSnapshotTestCase/SwiftSupport.swift; sourceTree = "<group>"; };
-		18C428E2EE046449946BEEAFB7CCEC65 /* Pods-SwiftyCloudKit_watchOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftyCloudKit_watchOS.debug.xcconfig"; sourceTree = "<group>"; };
 		1AD41EB748BF83453B0E36E7ACB021BF /* FBSnapshotTestController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSnapshotTestController.h; path = FBSnapshotTestCase/FBSnapshotTestController.h; sourceTree = "<group>"; };
 		1C2B4EE34B662AA57C8981A7E42660D9 /* Nimble-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Nimble-umbrella.h"; sourceTree = "<group>"; };
+		1D62FBEFF4C716C8F9B589113ED4EBEA /* Pods-SwiftyCloudKit_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SwiftyCloudKit_Tests-dummy.m"; sourceTree = "<group>"; };
+		1D98149027668D97956816605B97EA88 /* Pods_SwiftyCloudKit_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SwiftyCloudKit_Tests.framework; path = "Pods-SwiftyCloudKit_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DB8E658518C228C1595B706255635B4 /* FBSnapshotTestCase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = FBSnapshotTestCase.framework; path = FBSnapshotTestCase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1EC93DC009057E928DB7C8D7C82E4917 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1EDA1AB6AA40DB83B1DE92DC01060BB3 /* Quick.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Quick.modulemap; sourceTree = "<group>"; };
 		22530E9D334DADCF7884E45EA87E629E /* NMBExceptionCapture.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NMBExceptionCapture.m; path = Sources/NimbleObjectiveC/NMBExceptionCapture.m; sourceTree = "<group>"; };
 		22FBCE7282A34B68225BB329B0118DB2 /* XCTestObservationCenter+CurrentTestCaseTracker.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "XCTestObservationCenter+CurrentTestCaseTracker.m"; sourceTree = "<group>"; };
 		23AA761E8E2F43DD26856C44D08B448D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2447F03C57F4EF57261C9C77F8D6E4CB /* Quick.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Quick.framework; path = Quick.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2480CEE3C4AE53F3F54A69E133506393 /* AssertionRecorder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AssertionRecorder.swift; path = Sources/Nimble/Adapters/AssertionRecorder.swift; sourceTree = "<group>"; };
 		25B26A98F04E23CACE8BF6A277E65DA5 /* ThrowAssertion.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ThrowAssertion.swift; path = Sources/Nimble/Matchers/ThrowAssertion.swift; sourceTree = "<group>"; };
-		27672DC8414CCBBA0E21628DB8F40D39 /* Pods-SwiftyCloudKit_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SwiftyCloudKit_Tests-umbrella.h"; sourceTree = "<group>"; };
+		26CF21060DBE4BC1C69958D1F8B4F489 /* Pods-SwiftyCloudKit_watchOS Extension-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SwiftyCloudKit_watchOS Extension-dummy.m"; sourceTree = "<group>"; };
 		2A382A8C5E020C39679DAEBC57B7E792 /* Nimble-Snapshots.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Nimble-Snapshots.modulemap"; sourceTree = "<group>"; };
-		2BCA33DF7FCF149FB61E556AE0D1EBD1 /* Pods-SwiftyCloudKit_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SwiftyCloudKit_Example-frameworks.sh"; sourceTree = "<group>"; };
+		2C7E4A64F71E7407DF23B5CC5D330584 /* Pods-SwiftyCloudKit_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SwiftyCloudKit_Example-umbrella.h"; sourceTree = "<group>"; };
+		2E06649A8FE0911E2DEE30CD114AEF1F /* Pods-SwiftyCloudKit_watchOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SwiftyCloudKit_watchOS.modulemap"; sourceTree = "<group>"; };
 		2E0C2858995215CB8559FF5348DE0110 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../SwiftyCloudKit-tvOS/Info.plist"; sourceTree = "<group>"; };
-		2E7A676002DA4E4A9C9F54B8F740E020 /* Pods-SwiftyCloudKit_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SwiftyCloudKit_Example-resources.sh"; sourceTree = "<group>"; };
 		2E8052367487C857440067EC33D18F05 /* QuickSpec.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = QuickSpec.m; path = Sources/QuickObjectiveC/QuickSpec.m; sourceTree = "<group>"; };
 		2EB742A75AEF00BC86208DFFF9FF1978 /* SwiftyCloudKit-watchOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "SwiftyCloudKit-watchOS-umbrella.h"; path = "../SwiftyCloudKit-watchOS/SwiftyCloudKit-watchOS-umbrella.h"; sourceTree = "<group>"; };
 		2FC8E310A0A5BB8BB56CBD3D44C4D7FD /* mach_excServer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = mach_excServer.h; path = Carthage/Checkouts/CwlPreconditionTesting/Sources/CwlMachBadInstructionHandler/mach_excServer.h; sourceTree = "<group>"; };
@@ -319,6 +331,7 @@
 		329D9CBE260B63EEF23DCEE07DFD1FCF /* CwlMachBadInstructionHandler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CwlMachBadInstructionHandler.h; path = Carthage/Checkouts/CwlPreconditionTesting/Sources/CwlMachBadInstructionHandler/include/CwlMachBadInstructionHandler.h; sourceTree = "<group>"; };
 		340829F151652115C1F660E0627B5A3D /* Nimble.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Nimble.xcconfig; sourceTree = "<group>"; };
 		3419B294CA6C43D40AA9176EAC20A068 /* BeEmpty.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeEmpty.swift; path = Sources/Nimble/Matchers/BeEmpty.swift; sourceTree = "<group>"; };
+		34A0C6A8AEA1F3C1CB9F3D501F573D6C /* Pods-SwiftyCloudKit_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SwiftyCloudKit_Tests.modulemap"; sourceTree = "<group>"; };
 		3517D06A6D12FA4A26028D09C6B5D7F8 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		3531CE5F730F1DEC4FDBB944E7A8B12E /* CurrentTestCaseTracker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CurrentTestCaseTracker.h; path = Sources/NimbleObjectiveC/CurrentTestCaseTracker.h; sourceTree = "<group>"; };
 		3559DFB37ED916E7C52954A6BC6C1736 /* ToSucceed.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ToSucceed.swift; path = Sources/Nimble/Matchers/ToSucceed.swift; sourceTree = "<group>"; };
@@ -327,12 +340,10 @@
 		37CDB70A47093EFA025A84CC82BDE3B1 /* UIImage+Diff.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+Diff.h"; path = "FBSnapshotTestCase/Categories/UIImage+Diff.h"; sourceTree = "<group>"; };
 		38CB8C91B44DFA94D543228EB3934E5B /* PrettySyntax.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PrettySyntax.swift; sourceTree = "<group>"; };
 		39007EAC9C06A13F1FC9101C4843B8ED /* World.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = World.h; path = Sources/QuickObjectiveC/World.h; sourceTree = "<group>"; };
-		3A4EE421CEF3035AE9AEED20168E6F13 /* Pods_SwifyCloudKit_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SwifyCloudKit_tvOS.framework; path = "Pods-SwifyCloudKit_tvOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BE97F910912986C947F3C912D76DB76 /* CloudKitFetcher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CloudKitFetcher.swift; path = SwiftyCloudKit/Classes/CloudKitFetcher.swift; sourceTree = "<group>"; };
+		3EA5483D7E584C3E90B3394AD9DEB294 /* Pods-SwiftyCloudKit_watchOS-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SwiftyCloudKit_watchOS-resources.sh"; sourceTree = "<group>"; };
 		3F6A13633C66B8A587030C9A32C0E7BA /* NMBExceptionCapture.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NMBExceptionCapture.h; path = Sources/NimbleObjectiveC/NMBExceptionCapture.h; sourceTree = "<group>"; };
 		40BD6C92C04852276647CF58AD53276A /* Nimble.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Nimble.h; path = Sources/Nimble/Nimble.h; sourceTree = "<group>"; };
-		40C8073714F46C5585C83DB135EBF99E /* Pods-SwifyCloudKit_tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwifyCloudKit_tvOS.debug.xcconfig"; sourceTree = "<group>"; };
-		40DF918201E4725A1A68D8220229B257 /* Pods-SwiftyCloudKit_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SwiftyCloudKit_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		42B22EC6FE4AA48E5CAD5B01A5D16C11 /* BeAnInstanceOf.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeAnInstanceOf.swift; path = Sources/Nimble/Matchers/BeAnInstanceOf.swift; sourceTree = "<group>"; };
 		44486D4DB989823442DC4F41407A9336 /* Stringers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Stringers.swift; path = Sources/Nimble/Utils/Stringers.swift; sourceTree = "<group>"; };
 		445B5D0FA45396EF0BB8E92D62546F80 /* FBSnapshotTestCasePlatform.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSnapshotTestCasePlatform.m; path = FBSnapshotTestCase/FBSnapshotTestCasePlatform.m; sourceTree = "<group>"; };
@@ -341,38 +352,38 @@
 		45AD349F38ECA4ABB58E0067EDC9DD03 /* SwiftyCloudKit-tvOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "SwiftyCloudKit-tvOS-dummy.m"; path = "../SwiftyCloudKit-tvOS/SwiftyCloudKit-tvOS-dummy.m"; sourceTree = "<group>"; };
 		486BEA084A74A7D96BBC96B4F7CCF311 /* QuickConfiguration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QuickConfiguration.h; path = Sources/QuickObjectiveC/Configuration/QuickConfiguration.h; sourceTree = "<group>"; };
 		4A0899F1B4CA18747F7A62B6CA14F9ED /* Configuration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Configuration.swift; path = Sources/Quick/Configuration/Configuration.swift; sourceTree = "<group>"; };
-		4A267DE9E8BD33F76158B494B7E964AC /* Pods-SwiftyCloudKit_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SwiftyCloudKit_Tests-dummy.m"; sourceTree = "<group>"; };
 		4BB39C57AE03999ABF85A055EC616AD8 /* NSBundle+CurrentTestBundle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSBundle+CurrentTestBundle.swift"; path = "Sources/Quick/NSBundle+CurrentTestBundle.swift"; sourceTree = "<group>"; };
 		50335E65CB73D3026538F6CCBF527C6B /* SwiftyCloudKit-watchOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; name = "SwiftyCloudKit-watchOS.modulemap"; path = "../SwiftyCloudKit-watchOS/SwiftyCloudKit-watchOS.modulemap"; sourceTree = "<group>"; };
 		505240E629748CB9BB87D3295D8D2D28 /* FBSnapshotTestCase-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FBSnapshotTestCase-prefix.pch"; sourceTree = "<group>"; };
-		534857C253BAC2977A5897136F20C229 /* SwiftyCloudKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftyCloudKit.framework; path = "SwiftyCloudKit-tvOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		551B8EC228469BBEBBE953C20F95E853 /* Pods-SwiftyCloudKit_watchOS Extension-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SwiftyCloudKit_watchOS Extension-resources.sh"; sourceTree = "<group>"; };
 		55F954044A82CFADBC52547F095D9282 /* AdapterProtocols.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AdapterProtocols.swift; path = Sources/Nimble/Adapters/AdapterProtocols.swift; sourceTree = "<group>"; };
+		56AD4CB0DC181DC0CB712AC6D1F53EF1 /* Pods-SwiftyCloudKit_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SwiftyCloudKit_Tests-umbrella.h"; sourceTree = "<group>"; };
 		57C61E223803DB9246247DB99B53B72C /* UIImage+Compare.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+Compare.h"; path = "FBSnapshotTestCase/Categories/UIImage+Compare.h"; sourceTree = "<group>"; };
 		5972DEF6E1E52CBA5B71F172004C9AEA /* BeLogical.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeLogical.swift; path = Sources/Nimble/Matchers/BeLogical.swift; sourceTree = "<group>"; };
 		5AC11D1D8ABC1AD353758D26B68DF9DF /* Nimble-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Nimble-dummy.m"; sourceTree = "<group>"; };
-		5ADF3BED68BF37E132857DEDA701786D /* Nimble.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Nimble.framework; path = Nimble.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C14A38E0BE756E40AF81EB8779AA2CE /* Pods-SwifyCloudKit_tvOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SwifyCloudKit_tvOS-dummy.m"; sourceTree = "<group>"; };
+		5DB2456A2ACEF19964DF48C0B6B8447D /* Pods-SwifyCloudKit_tvOS-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SwifyCloudKit_tvOS-frameworks.sh"; sourceTree = "<group>"; };
 		5DFE55DF4FD332B7D1E67786379FD744 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F866A3A01E45396201922A1F3BCECFE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		5FDB9476167F418C840E6169F8C341F7 /* Pods-SwifyCloudKit_tvOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SwifyCloudKit_tvOS.modulemap"; sourceTree = "<group>"; };
 		5FE9051659CAAC18D4016CE8F6FA952D /* SwiftyCloudKit-watchOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "SwiftyCloudKit-watchOS-dummy.m"; path = "../SwiftyCloudKit-watchOS/SwiftyCloudKit-watchOS-dummy.m"; sourceTree = "<group>"; };
 		61E7D7F94796C8273534EBD4E460E922 /* XCTestObservationCenter+CurrentTestCaseTracker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "XCTestObservationCenter+CurrentTestCaseTracker.h"; sourceTree = "<group>"; };
+		620A1CE035B8848217DDD3065F218AAB /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		62F3724885AEE3A9FD220E7F2DE0CC84 /* DSL+Wait.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DSL+Wait.swift"; path = "Sources/Nimble/DSL+Wait.swift"; sourceTree = "<group>"; };
 		63105B920EC55A2CC7444F7E0FAE8401 /* CwlBadInstructionException.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CwlBadInstructionException.swift; path = Carthage/Checkouts/CwlPreconditionTesting/Sources/CwlPreconditionTesting/CwlBadInstructionException.swift; sourceTree = "<group>"; };
-		63AF9E0E81F5A8B1A0F6B5B72A2D6C89 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		646D0D06E5892DD252C59D60921AE0EE /* EndWith.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EndWith.swift; path = Sources/Nimble/Matchers/EndWith.swift; sourceTree = "<group>"; };
 		6477CA974B8756B00D88083B124A3CB1 /* CloudKitErrorHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CloudKitErrorHandler.swift; path = SwiftyCloudKit/Classes/CloudKitErrorHandler.swift; sourceTree = "<group>"; };
 		651D93388AD56D3C1723DD86341A6A35 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		658FA835CF2FC425230C4A55B86D371F /* Quick.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Quick.xcconfig; sourceTree = "<group>"; };
-		65B10B6310FA94052960EB22ABA6E3E5 /* Pods-SwiftyCloudKit_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SwiftyCloudKit_Example-dummy.m"; sourceTree = "<group>"; };
 		66F0C13A4949984F243C86DAF8D5790E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../SwiftyCloudKit-watchOS/Info.plist"; sourceTree = "<group>"; };
 		689E7B6147B0557F4661EE830E5F31A2 /* SwiftyCloudKit-tvOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; name = "SwiftyCloudKit-tvOS.modulemap"; path = "../SwiftyCloudKit-tvOS/SwiftyCloudKit-tvOS.modulemap"; sourceTree = "<group>"; };
 		689EEE4B5D2EE989525D994B3D81D715 /* FBSnapshotTestCasePlatform.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSnapshotTestCasePlatform.h; path = FBSnapshotTestCase/FBSnapshotTestCasePlatform.h; sourceTree = "<group>"; };
 		68BEAADD3D502C3823DD093E5EE7E265 /* ExampleHooks.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExampleHooks.swift; path = Sources/Quick/Hooks/ExampleHooks.swift; sourceTree = "<group>"; };
 		6917F3CBD77923D8B13BCA172F479ED3 /* BeNil.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeNil.swift; path = Sources/Nimble/Matchers/BeNil.swift; sourceTree = "<group>"; };
-		6A1C71B6D7F2F137FB70EBB49143872C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6A1DF94E6AE5C733C5D767A94FFC0801 /* SwiftyCloudKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftyCloudKit.swift; path = SwiftyCloudKit/Classes/SwiftyCloudKit.swift; sourceTree = "<group>"; };
-		6A6E7C354E50B3675A75ADC0BD2B70CB /* Pods-SwifyCloudKit_tvOS-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SwifyCloudKit_tvOS-frameworks.sh"; sourceTree = "<group>"; };
 		6A95C68633B48D78F51EB68727ED083F /* CwlCatchException.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CwlCatchException.m; path = Carthage/Checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/CwlCatchException.m; sourceTree = "<group>"; };
 		6AC8B203A9973AF61F939CF61D619C41 /* QuickSelectedTestSuiteBuilder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = QuickSelectedTestSuiteBuilder.swift; path = Sources/Quick/QuickSelectedTestSuiteBuilder.swift; sourceTree = "<group>"; };
+		6B72A080D68DB5E70D8C9966D9A80B34 /* Pods-SwifyCloudKit_tvOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SwifyCloudKit_tvOS-umbrella.h"; sourceTree = "<group>"; };
 		6C71DF19B75D27352FBD0AE9FF127BEA /* ExampleMetadata.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExampleMetadata.swift; path = Sources/Quick/ExampleMetadata.swift; sourceTree = "<group>"; };
 		6F610D358CCBE4031DC469CFEBA0EC88 /* DSL.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DSL.h; path = Sources/NimbleObjectiveC/DSL.h; sourceTree = "<group>"; };
 		708FA9A68C102B8FD7CC33D8003F2DB1 /* Expectation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Expectation.swift; path = Sources/Nimble/Expectation.swift; sourceTree = "<group>"; };
@@ -380,16 +391,14 @@
 		716B8AB51715BE5FB084529BE052EBB1 /* MatcherFunc.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MatcherFunc.swift; path = Sources/Nimble/Matchers/MatcherFunc.swift; sourceTree = "<group>"; };
 		722B65BCF6B5C842506A8955E6161CD9 /* PostNotification.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PostNotification.swift; path = Sources/Nimble/Matchers/PostNotification.swift; sourceTree = "<group>"; };
 		73732D2BDBC248B39BBFEBDAD9697F1A /* SuiteHooks.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SuiteHooks.swift; path = Sources/Quick/Hooks/SuiteHooks.swift; sourceTree = "<group>"; };
-		73768B7DE7367DBC385BF5EC30F5ECBE /* Pods-SwifyCloudKit_tvOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SwifyCloudKit_tvOS-umbrella.h"; sourceTree = "<group>"; };
-		74FB92805938F913B5A9585F7641AAC7 /* Pods-SwiftyCloudKit_watchOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SwiftyCloudKit_watchOS-umbrella.h"; sourceTree = "<group>"; };
-		758F617B7F6996DD9E5217F2F566E297 /* Pods-SwiftyCloudKit_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftyCloudKit_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		75F0DA47512A6809DD49FE9F0115E8F3 /* Pods_SwiftyCloudKit_watchOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SwiftyCloudKit_watchOS.framework; path = "Pods-SwiftyCloudKit_watchOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		76218D1B247EDAF54E948C9337C697A3 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		7632C27C5695470D79E1F7BEA55107F1 /* XCTestObservationCenter+Register.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "XCTestObservationCenter+Register.m"; path = "Sources/NimbleObjectiveC/XCTestObservationCenter+Register.m"; sourceTree = "<group>"; };
 		76A7D15DFB7100207E56A080910768F3 /* DSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DSL.swift; path = Sources/Nimble/DSL.swift; sourceTree = "<group>"; };
 		76CA3B9C2A51D7AADB8F4C6DCF48EDA4 /* Functional.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Functional.swift; path = Sources/Nimble/Utils/Functional.swift; sourceTree = "<group>"; };
+		775067BDAA2B47CFA9DCDC081BA8744E /* Pods-SwiftyCloudKit_watchOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftyCloudKit_watchOS.debug.xcconfig"; sourceTree = "<group>"; };
 		779063E0472A73A529BBDB8BD9564106 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		77BA863BE47E3BF0C50B1C91C6ACF212 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		78543B89592CF3828854995C19F6F2B7 /* Nimble_Snapshots.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Nimble_Snapshots.framework; path = "Nimble-Snapshots.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		78C764AC540C4E0FE3477F5F61F53C36 /* FailureMessage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FailureMessage.swift; path = Sources/Nimble/FailureMessage.swift; sourceTree = "<group>"; };
 		795A90F46534585D6C119CDB2FE89316 /* FBSnapshotTestController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSnapshotTestController.m; path = FBSnapshotTestCase/FBSnapshotTestController.m; sourceTree = "<group>"; };
 		798C1F85CADC2D3708BA36EA15685603 /* Nimble.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Nimble.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -399,42 +408,47 @@
 		840FD64E1CCF77D2557E76A7102D5CA2 /* HooksPhase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HooksPhase.swift; path = Sources/Quick/Hooks/HooksPhase.swift; sourceTree = "<group>"; };
 		85AAA89DAB01AD9D269DF6A919DDE6AE /* SwiftyCloudKit-watchOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "SwiftyCloudKit-watchOS-prefix.pch"; path = "../SwiftyCloudKit-watchOS/SwiftyCloudKit-watchOS-prefix.pch"; sourceTree = "<group>"; };
 		8958E6A104616DC4782A7B97FDA3B19B /* Behavior.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Behavior.swift; path = Sources/Quick/Behavior.swift; sourceTree = "<group>"; };
-		8AAC67E761335DBAE9450034D54AB257 /* Pods-SwiftyCloudKit_watchOS-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SwiftyCloudKit_watchOS-frameworks.sh"; sourceTree = "<group>"; };
+		899EC14DF48D29B43DD5EA84120562BC /* Pods-SwifyCloudKit_tvOS-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SwifyCloudKit_tvOS-acknowledgements.markdown"; sourceTree = "<group>"; };
 		8AEEE59D038DD6ECD5D9D0768105B4C4 /* Async.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Async.swift; path = Sources/Nimble/Utils/Async.swift; sourceTree = "<group>"; };
-		8B6ABB22EDA67235AEF25A5780DEBB1F /* Pods-SwiftyCloudKit_watchOS-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SwiftyCloudKit_watchOS-acknowledgements.markdown"; sourceTree = "<group>"; };
-		8B706E3F998D6C5468F02C4036EA236C /* Pods-SwiftyCloudKit_watchOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SwiftyCloudKit_watchOS.modulemap"; sourceTree = "<group>"; };
 		8C06CDDA0FCF3A2728D85F41F725918B /* QuickSpecBase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QuickSpecBase.h; path = Sources/QuickSpecBase/include/QuickSpecBase.h; sourceTree = "<group>"; };
 		8C28CDC2D0F144C4E68C9BA7FC2CDCA2 /* URL+FileName.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "URL+FileName.swift"; path = "Sources/Quick/URL+FileName.swift"; sourceTree = "<group>"; };
-		8CDDBEBA50F6AE650258CBBE37AD4B59 /* Pods-SwifyCloudKit_tvOS-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SwifyCloudKit_tvOS-acknowledgements.markdown"; sourceTree = "<group>"; };
 		8D694368D187804B512BA2E735768105 /* CwlDarwinDefinitions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CwlDarwinDefinitions.swift; path = Carthage/Checkouts/CwlPreconditionTesting/Sources/CwlPreconditionTesting/CwlDarwinDefinitions.swift; sourceTree = "<group>"; };
 		8E12EC59B1967A097C51218AEE9AAAF8 /* SatisfyAnyOf.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SatisfyAnyOf.swift; path = Sources/Nimble/Matchers/SatisfyAnyOf.swift; sourceTree = "<group>"; };
-		8F5123758B61A7F0F10522A468864863 /* Pods-SwifyCloudKit_tvOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SwifyCloudKit_tvOS-dummy.m"; sourceTree = "<group>"; };
 		9030B9DA15090504D63071F9E24A5367 /* Nimble-Snapshots-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Nimble-Snapshots-prefix.pch"; sourceTree = "<group>"; };
+		9033C9E429686AF243C45FEDA68E571B /* Pods-SwiftyCloudKit_watchOS Extension-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SwiftyCloudKit_watchOS Extension-umbrella.h"; sourceTree = "<group>"; };
 		908046FDEA40A697C514A36B26DCEED8 /* SwiftyCloudKit-iOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyCloudKit-iOS-umbrella.h"; sourceTree = "<group>"; };
 		911BAA281ED929043C3DE08BDF136325 /* CwlCatchBadInstruction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CwlCatchBadInstruction.swift; path = Carthage/Checkouts/CwlPreconditionTesting/Sources/CwlPreconditionTesting/CwlCatchBadInstruction.swift; sourceTree = "<group>"; };
 		918657EA4E3C6E897CB251D29FC692A0 /* UIImage+Compare.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Compare.m"; path = "FBSnapshotTestCase/Categories/UIImage+Compare.m"; sourceTree = "<group>"; };
-		93162DD42AE34F7A6F22D78BCAD396BB /* Pods-SwifyCloudKit_tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwifyCloudKit_tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		92D10E1BF7F2AB2DD40723E6B094D839 /* Pods-SwiftyCloudKit_watchOS Extension-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SwiftyCloudKit_watchOS Extension-acknowledgements.markdown"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		96C54B19656F02867EE42CC3BADC08C3 /* SwiftyCloudKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftyCloudKit.framework; path = "SwiftyCloudKit-iOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		940AE3491D6A07D95B3ECBBA028A9D1F /* Pods-SwifyCloudKit_tvOS-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SwifyCloudKit_tvOS-resources.sh"; sourceTree = "<group>"; };
+		94DF7D379C36A536738C7F6D094715B8 /* Pods-SwiftyCloudKit_watchOS Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftyCloudKit_watchOS Extension.debug.xcconfig"; sourceTree = "<group>"; };
 		970EA0CBED9435FED98FE9B15A0EC31A /* ErrorUtility.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ErrorUtility.swift; path = Sources/Quick/ErrorUtility.swift; sourceTree = "<group>"; };
 		99E9C685ED2679C8E3F406AEF933416D /* Quick-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Quick-umbrella.h"; sourceTree = "<group>"; };
-		9B98F21023EA53ADB001C98B2E48BED0 /* SwiftyCloudKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftyCloudKit.framework; path = "SwiftyCloudKit-watchOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B59E28255FE37E42B7DCEC0682784A4 /* Pods_SwiftyCloudKit_watchOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SwiftyCloudKit_watchOS.framework; path = "Pods-SwiftyCloudKit_watchOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C9FA21E45890FA4F54D43899482FB6F /* Pods-SwiftyCloudKit_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SwiftyCloudKit_Tests-resources.sh"; sourceTree = "<group>"; };
 		9E3B55C53EB21C5DB6665D3A4EDBB295 /* AssertionDispatcher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AssertionDispatcher.swift; path = Sources/Nimble/Adapters/AssertionDispatcher.swift; sourceTree = "<group>"; };
+		9E7E414F1B8EC2D6EA171DCECDBABFEB /* Pods-SwiftyCloudKit_watchOS-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SwiftyCloudKit_watchOS-acknowledgements.markdown"; sourceTree = "<group>"; };
 		9EA09A8854AAC8031E0498FD4845D6DE /* SwiftyCloudKit-tvOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "SwiftyCloudKit-tvOS.xcconfig"; path = "../SwiftyCloudKit-tvOS/SwiftyCloudKit-tvOS.xcconfig"; sourceTree = "<group>"; };
 		9FA7DA19DC0A8E43ED839051EB1B5C66 /* CwlMachBadInstructionHandler.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CwlMachBadInstructionHandler.m; path = Carthage/Checkouts/CwlPreconditionTesting/Sources/CwlMachBadInstructionHandler/CwlMachBadInstructionHandler.m; sourceTree = "<group>"; };
-		A0EA5C70EF05322F6368F44E5960F9E6 /* Pods-SwiftyCloudKit_watchOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SwiftyCloudKit_watchOS-dummy.m"; sourceTree = "<group>"; };
 		A15E1D72A1A003CA4F24635B21B0268C /* Nimble-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Nimble-prefix.pch"; sourceTree = "<group>"; };
 		A19225C3D73CFBCA4B12272C9F3058FF /* World+DSL.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "World+DSL.h"; path = "Sources/QuickObjectiveC/DSL/World+DSL.h"; sourceTree = "<group>"; };
 		A1BDD669767495985B6B920B8B75808D /* NimbleEnvironment.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NimbleEnvironment.swift; path = Sources/Nimble/Adapters/NimbleEnvironment.swift; sourceTree = "<group>"; };
 		A2372AF16AA32C9907B0C68D9D693950 /* mach_excServer.c */ = {isa = PBXFileReference; includeInIndex = 1; name = mach_excServer.c; path = Carthage/Checkouts/CwlPreconditionTesting/Sources/CwlMachBadInstructionHandler/mach_excServer.c; sourceTree = "<group>"; };
 		A34923597F66A31B2E505D121DA14F74 /* FBSnapshotTestCase-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FBSnapshotTestCase-dummy.m"; sourceTree = "<group>"; };
 		A505EA37252ABA7F979E6544C8C857AA /* QuickConfiguration.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = QuickConfiguration.m; path = Sources/QuickObjectiveC/Configuration/QuickConfiguration.m; sourceTree = "<group>"; };
-		A8D1278BAD62E625775134123B976D0D /* Pods-SwiftyCloudKit_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftyCloudKit_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		A72D352C35CF59AE57A7A48D27E66352 /* Pods-SwifyCloudKit_tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwifyCloudKit_tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		A9195F567182B394182211E421BBC86E /* Pods-SwiftyCloudKit_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SwiftyCloudKit_Example.modulemap"; sourceTree = "<group>"; };
+		A98EA10A43953DBE99B8AEBD5A09F380 /* Pods-SwiftyCloudKit_watchOS Extension-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SwiftyCloudKit_watchOS Extension-frameworks.sh"; sourceTree = "<group>"; };
+		AA63C7A445DDE69706576F729CA93FAE /* Pods-SwiftyCloudKit_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftyCloudKit_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		AABBC948D55BAFACF392F30C8D27B6F3 /* DSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DSL.swift; path = Sources/Quick/DSL/DSL.swift; sourceTree = "<group>"; };
-		AAF2EFE0705E21DA79BE40C17CAEF321 /* Pods-SwiftyCloudKit_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftyCloudKit_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		AAD5D3F2DDECEF214929D6471F15AB27 /* Pods_SwiftyCloudKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SwiftyCloudKit_Example.framework; path = "Pods-SwiftyCloudKit_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC1C00B9B8FA7B9826C298ED4E8D59EB /* SwiftyCloudKit-iOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "SwiftyCloudKit-iOS.xcconfig"; sourceTree = "<group>"; };
-		ACB0C2C570F52934990E52D96902D243 /* Pods-SwiftyCloudKit_watchOS-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SwiftyCloudKit_watchOS-acknowledgements.plist"; sourceTree = "<group>"; };
 		ACEB2127A47162166BDABA88DB4578CD /* XCTestSuite+QuickTestSuiteBuilder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "XCTestSuite+QuickTestSuiteBuilder.m"; path = "Sources/QuickObjectiveC/XCTestSuite+QuickTestSuiteBuilder.m"; sourceTree = "<group>"; };
+		AD9D0ABEF8A23418042ACA528ABBB33A /* Pods-SwiftyCloudKit_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SwiftyCloudKit_Tests-frameworks.sh"; sourceTree = "<group>"; };
+		ADFD8B3675E59A302CDB96C82C23A345 /* Quick.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Quick.framework; path = Quick.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF8AB7D33C4DEC245368AD79EC1FA2C8 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AFC1ACB51A6478CFEDA7689C16CD9796 /* Pods-SwiftyCloudKit_watchOS Extension.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SwiftyCloudKit_watchOS Extension.modulemap"; sourceTree = "<group>"; };
 		AFFE37A421B0965F0B0AEA5CFCC4888D /* BeVoid.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeVoid.swift; path = Sources/Nimble/Matchers/BeVoid.swift; sourceTree = "<group>"; };
 		B02741A8FEEDDE2BA675FC363CC805BF /* QuickSpec.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QuickSpec.h; path = Sources/QuickObjectiveC/QuickSpec.h; sourceTree = "<group>"; };
 		B0D3B0C900E8CAAD1E3FD246B3B4F65A /* AllPass.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AllPass.swift; path = Sources/Nimble/Matchers/AllPass.swift; sourceTree = "<group>"; };
@@ -442,58 +456,65 @@
 		B246820CCE60238C0DA7085397B0A4F0 /* SwiftyCloudKit-tvOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "SwiftyCloudKit-tvOS-umbrella.h"; path = "../SwiftyCloudKit-tvOS/SwiftyCloudKit-tvOS-umbrella.h"; sourceTree = "<group>"; };
 		B32BBBDDC59BABFB2B02807EAA9ED7E2 /* CwlPreconditionTesting.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CwlPreconditionTesting.h; path = Carthage/Checkouts/CwlPreconditionTesting/Sources/CwlPreconditionTesting/Mach/CwlPreconditionTesting.h; sourceTree = "<group>"; };
 		B41C6D06731AEA313DD5A5EC8B9B56AF /* Callsite.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Callsite.swift; path = Sources/Quick/Callsite.swift; sourceTree = "<group>"; };
+		B453BAADED634AD0639F9D4D4D08ADE4 /* Nimble.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Nimble.framework; path = Nimble.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B546346775FFFAA1E908EB5EA481F49A /* Pods-SwiftyCloudKit_watchOS-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SwiftyCloudKit_watchOS-frameworks.sh"; sourceTree = "<group>"; };
 		B5514F68155E9A3F5433C78678D35489 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
 		B5C67BFE2590E6B51BEB2BD4428FEA7E /* FBSnapshotTestCase.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSnapshotTestCase.m; path = FBSnapshotTestCase/FBSnapshotTestCase.m; sourceTree = "<group>"; };
+		B6D1C244F7F12FF64289FDC249E7C4E1 /* Pods-SwiftyCloudKit_watchOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SwiftyCloudKit_watchOS-dummy.m"; sourceTree = "<group>"; };
+		B82437A3354B3FF3C3C2E373F652AAAF /* SwiftyCloudKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftyCloudKit.framework; path = "SwiftyCloudKit-iOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B87CBE26A3C7F4052BFF8E113461E21E /* NBSMockedApplication.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NBSMockedApplication.h; path = DynamicType/NBSMockedApplication.h; sourceTree = "<group>"; };
 		B8C211D266DA9534E8B6DF13D9A0CE11 /* Nimble-Snapshots.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Nimble-Snapshots.xcconfig"; sourceTree = "<group>"; };
-		B905EB0142BD7D4D9697B90E050AAA05 /* Pods-SwifyCloudKit_tvOS-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SwifyCloudKit_tvOS-resources.sh"; sourceTree = "<group>"; };
 		B9B625B502FA7FC9EDB2A28355AE9011 /* BeginWith.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeginWith.swift; path = Sources/Nimble/Matchers/BeginWith.swift; sourceTree = "<group>"; };
-		BA93F425A33147163E84917574400E48 /* Pods-SwiftyCloudKit_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftyCloudKit_Example.release.xcconfig"; sourceTree = "<group>"; };
 		BB37EB7FD8BBAE989114934A1AABD6C7 /* BeLessThan.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeLessThan.swift; path = Sources/Nimble/Matchers/BeLessThan.swift; sourceTree = "<group>"; };
+		BE8EDE0F155F1C384CFC6641F7D4FED9 /* SwiftyCloudKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftyCloudKit.framework; path = "SwiftyCloudKit-watchOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFAB0B2662AEA74473DF3AD30B70C3CF /* ContainElementSatisfying.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ContainElementSatisfying.swift; path = Sources/Nimble/Matchers/ContainElementSatisfying.swift; sourceTree = "<group>"; };
 		BFB91EE2B34BCD507A8EAF07F231C380 /* QCKDSL.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QCKDSL.h; path = Sources/QuickObjectiveC/DSL/QCKDSL.h; sourceTree = "<group>"; };
+		C0A63E21B1014AB98BE557F02F8FF40A /* Pods-SwiftyCloudKit_watchOS Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftyCloudKit_watchOS Extension.release.xcconfig"; sourceTree = "<group>"; };
 		C173B94E6ECB3414AC0ACD409E9BFA09 /* CloudKitSubscriber.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CloudKitSubscriber.swift; path = SwiftyCloudKit/Classes/CloudKitSubscriber.swift; sourceTree = "<group>"; };
 		C21B8D3C4E2547445883AD8CD24D0ED7 /* PrettyDynamicTypeSyntax.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PrettyDynamicTypeSyntax.swift; path = DynamicType/PrettyDynamicTypeSyntax.swift; sourceTree = "<group>"; };
-		C35A8C66767398439952B8AF88484D4A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C3612030462D107BF373B18930C54AA8 /* HaveValidSnapshot.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HaveValidSnapshot.swift; sourceTree = "<group>"; };
 		C369CE793024AD22D67676510BAF74BB /* World+DSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "World+DSL.swift"; path = "Sources/Quick/DSL/World+DSL.swift"; sourceTree = "<group>"; };
 		C3D41F703F26B177ACAAD1FFB6C0AAE1 /* FBSnapshotTestCase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSnapshotTestCase.h; path = FBSnapshotTestCase/FBSnapshotTestCase.h; sourceTree = "<group>"; };
-		C4C5439CDF0927089F418B5DE479E577 /* Pods_SwiftyCloudKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SwiftyCloudKit_Example.framework; path = "Pods-SwiftyCloudKit_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C6544A7352CFA75EBB91DBC7E5AE8F37 /* Pods-SwiftyCloudKit_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SwiftyCloudKit_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		C62A2D6027EB739A6773B6B98ACC7B56 /* SwiftyCloudKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftyCloudKit.framework; path = "SwiftyCloudKit-tvOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C641D430C79579CE52BCBFE7A22AADAC /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CAF3D1AECDF53E3723EF1CB7BEC461CC /* NSString+C99ExtendedIdentifier.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSString+C99ExtendedIdentifier.swift"; path = "Sources/Quick/NSString+C99ExtendedIdentifier.swift"; sourceTree = "<group>"; };
 		CCE425BCFF433709EF78844B6E3F6B53 /* BeAKindOf.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeAKindOf.swift; path = Sources/Nimble/Matchers/BeAKindOf.swift; sourceTree = "<group>"; };
+		CF9B0161739F4FDB65E66BA1BE5FFA64 /* Pods-SwiftyCloudKit_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SwiftyCloudKit_Example-frameworks.sh"; sourceTree = "<group>"; };
 		D18C2A53134FEDDD80B6D431CA482157 /* UIImage+Snapshot.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+Snapshot.h"; path = "FBSnapshotTestCase/Categories/UIImage+Snapshot.h"; sourceTree = "<group>"; };
 		D20712BF889E8F3E37D4075A45B3047E /* NMBStringify.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NMBStringify.m; path = Sources/NimbleObjectiveC/NMBStringify.m; sourceTree = "<group>"; };
 		D23B667DFD8E75D7AB4C30355EA4EFB0 /* Filter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Filter.swift; path = Sources/Quick/Filter.swift; sourceTree = "<group>"; };
 		D2C313C37A5A308DFD4A73609F4865F3 /* World.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = World.swift; path = Sources/Quick/World.swift; sourceTree = "<group>"; };
+		D2D1CF4BDB3EFA8B0E0226E3F43B6B93 /* Pods_SwiftyCloudKit_watchOS_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SwiftyCloudKit_watchOS_Extension.framework; path = "Pods-SwiftyCloudKit_watchOS Extension.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D509629743F64F25121CDF60E4610A4D /* SwiftyCloudKit-iOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyCloudKit-iOS-prefix.pch"; sourceTree = "<group>"; };
-		D5A84DD68FBBC9B2FAB0A3640CC1BBC8 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D6993558631F877FA082206FA003021C /* QuickTestSuite.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = QuickTestSuite.swift; path = Sources/Quick/QuickTestSuite.swift; sourceTree = "<group>"; };
-		D7E03C07E48FEF8530AB67802C036F9F /* Pods-SwifyCloudKit_tvOS-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SwifyCloudKit_tvOS-acknowledgements.plist"; sourceTree = "<group>"; };
-		D89922C993C86B717C1B736FA8FFE058 /* Pods-SwifyCloudKit_tvOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SwifyCloudKit_tvOS.modulemap"; sourceTree = "<group>"; };
+		D6A32F75C18AD28BF2D36C1EBE1AEB2C /* Pods-SwiftyCloudKit_watchOS-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SwiftyCloudKit_watchOS-acknowledgements.plist"; sourceTree = "<group>"; };
+		D7BB50FCC4240DAF5287A8CE9EF76EB5 /* Pods-SwiftyCloudKit_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SwiftyCloudKit_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		DA6A2CFBB67A4D97BBFA8F506486DAFF /* Pods-SwiftyCloudKit_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SwiftyCloudKit_Example-dummy.m"; sourceTree = "<group>"; };
 		DB3B9455664D13744657268D75172AD1 /* Closures.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Closures.swift; path = Sources/Quick/Hooks/Closures.swift; sourceTree = "<group>"; };
 		DDFBAF22E15C973ED8D2968C738E484A /* Nimble-Snapshots-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Nimble-Snapshots-dummy.m"; sourceTree = "<group>"; };
+		DE106E46E2192435F26FB97BD4DDEB32 /* Pods-SwiftyCloudKit_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftyCloudKit_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		DEA97AD1B112D7D556398EC0F0ED5AAB /* SwiftyCloudKit-tvOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "SwiftyCloudKit-tvOS-prefix.pch"; path = "../SwiftyCloudKit-tvOS/SwiftyCloudKit-tvOS-prefix.pch"; sourceTree = "<group>"; };
 		DFF2FA218539C32BD5B77CA1512BEBD0 /* SwiftyCloudKit-iOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftyCloudKit-iOS-dummy.m"; sourceTree = "<group>"; };
+		E07A81FC47B23CE555606B8CB2888D3D /* Pods-SwiftyCloudKit_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SwiftyCloudKit_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		E1A719A29C2B67E99375B04E27DD60BE /* Pods_SwifyCloudKit_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SwifyCloudKit_tvOS.framework; path = "Pods-SwifyCloudKit_tvOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E286B9A3CA7FCE64AA267CBEF4682D51 /* ThrowError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ThrowError.swift; path = Sources/Nimble/Matchers/ThrowError.swift; sourceTree = "<group>"; };
-		E312EEB16F235173836AFF3F0C2239B0 /* Nimble_Snapshots.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Nimble_Snapshots.framework; path = "Nimble-Snapshots.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E43274BDDF946146643879824D00EC31 /* NMBStringify.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NMBStringify.h; path = Sources/NimbleObjectiveC/NMBStringify.h; sourceTree = "<group>"; };
 		E5F0D51611FC77F830A66707083F3D5C /* BeLessThanOrEqual.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeLessThanOrEqual.swift; path = Sources/Nimble/Matchers/BeLessThanOrEqual.swift; sourceTree = "<group>"; };
-		E81B31592181E48CA2E55D0E511C8DFA /* Pods-SwiftyCloudKit_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SwiftyCloudKit_Example.modulemap"; sourceTree = "<group>"; };
+		E7458DD7A6AE8F1AB050ABCE2B6D6A0D /* Pods-SwiftyCloudKit_watchOS Extension-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SwiftyCloudKit_watchOS Extension-acknowledgements.plist"; sourceTree = "<group>"; };
 		E9886C16D199E02B88589CED67D85A51 /* CwlCatchException.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CwlCatchException.swift; path = Carthage/Checkouts/CwlCatchException/Sources/CwlCatchException/CwlCatchException.swift; sourceTree = "<group>"; };
 		EA23EE0A80D318077C28121C5AD51D0D /* DSL.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DSL.m; path = Sources/NimbleObjectiveC/DSL.m; sourceTree = "<group>"; };
 		EDE8698DB0F11FC587C0881A15B87B25 /* Equal.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Equal.swift; path = Sources/Nimble/Matchers/Equal.swift; sourceTree = "<group>"; };
-		EE7835F1CBE772A4E66B376FDD66C75D /* Pods-SwiftyCloudKit_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SwiftyCloudKit_Example-umbrella.h"; sourceTree = "<group>"; };
 		EEB27A274F6AB06ECC6865F72275203E /* Contain.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Contain.swift; path = Sources/Nimble/Matchers/Contain.swift; sourceTree = "<group>"; };
 		EF864E31CDE2263A0321BDEE8E679E22 /* NMBExpectation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NMBExpectation.swift; path = Sources/Nimble/Adapters/NMBExpectation.swift; sourceTree = "<group>"; };
+		F1A8BC44EF0E3C4F773C9470F7EB30A2 /* Pods-SwiftyCloudKit_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftyCloudKit_Example.release.xcconfig"; sourceTree = "<group>"; };
 		F603B296227BBABC70245D537E904B4F /* AsyncMatcherWrapper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AsyncMatcherWrapper.swift; path = Sources/Nimble/Matchers/AsyncMatcherWrapper.swift; sourceTree = "<group>"; };
 		F71F3874830C1E55FDD692CCAAF91A6B /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		F893250228CB5A19E805F4C333611455 /* UIImage+Diff.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Diff.m"; path = "FBSnapshotTestCase/Categories/UIImage+Diff.m"; sourceTree = "<group>"; };
-		F931C65D69BF7BC2C56444D34ED16F25 /* Pods-SwiftyCloudKit_watchOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftyCloudKit_watchOS.release.xcconfig"; sourceTree = "<group>"; };
 		FA927ABEA5A603E8961BF9D9EE2F03F5 /* HaveCount.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HaveCount.swift; path = Sources/Nimble/Matchers/HaveCount.swift; sourceTree = "<group>"; };
 		FB533D80A719D46F060BC6BBF4D446F3 /* SwiftyCloudKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = SwiftyCloudKit.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		FD6ED91E3A14EAF8A2EADE49712548D4 /* Pods-SwiftyCloudKit_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SwiftyCloudKit_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		FDA030634701A34F233F8D4099BFE8E3 /* QuickSpecBase.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = QuickSpecBase.m; path = Sources/QuickSpecBase/QuickSpecBase.m; sourceTree = "<group>"; };
-		FDAA5B4684E2973918C43651EB9244EF /* FBSnapshotTestCase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = FBSnapshotTestCase.framework; path = FBSnapshotTestCase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FDBE13AA3ACA6FA0A56F454373D32014 /* Pods-SwiftyCloudKit_watchOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftyCloudKit_watchOS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -513,6 +534,14 @@
 				B27DFD6025D94758785918F1D6F6C060 /* QuartzCore.framework in Frameworks */,
 				841FF232C33C7D49C58CEFDBE7EEB92B /* UIKit.framework in Frameworks */,
 				7E9B14D5F8842A86CA86F2AF45230725 /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2936DE5C8850B7DA3A397591E9E23A7E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE96AE281268E73ABCA2F80DDBB20C91 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -615,17 +644,6 @@
 			);
 			name = FBSnapshotTestCase;
 			path = FBSnapshotTestCase;
-			sourceTree = "<group>";
-		};
-		3A32225B9DE3AA78E1D58CC4E5CA16AC /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				606543BFDE0903381368E16832C55580 /* Pods-SwiftyCloudKit_Example */,
-				88937515493541D103A8CFA8B29003BE /* Pods-SwiftyCloudKit_Tests */,
-				EA42FEE8283EACDEEFCD616C5EA7D752 /* Pods-SwiftyCloudKit_watchOS */,
-				B2FDFCA390CDACEC25C46B54A72E6C02 /* Pods-SwifyCloudKit_tvOS */,
-			);
-			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
 		3DA95784254DD9EB0F834723EE8D3C8D /* Core */ = {
@@ -791,24 +809,6 @@
 			path = Nimble;
 			sourceTree = "<group>";
 		};
-		606543BFDE0903381368E16832C55580 /* Pods-SwiftyCloudKit_Example */ = {
-			isa = PBXGroup;
-			children = (
-				6A1C71B6D7F2F137FB70EBB49143872C /* Info.plist */,
-				E81B31592181E48CA2E55D0E511C8DFA /* Pods-SwiftyCloudKit_Example.modulemap */,
-				C6544A7352CFA75EBB91DBC7E5AE8F37 /* Pods-SwiftyCloudKit_Example-acknowledgements.markdown */,
-				18A67ACD1E0A9AA3E369FA24EE59B72A /* Pods-SwiftyCloudKit_Example-acknowledgements.plist */,
-				65B10B6310FA94052960EB22ABA6E3E5 /* Pods-SwiftyCloudKit_Example-dummy.m */,
-				2BCA33DF7FCF149FB61E556AE0D1EBD1 /* Pods-SwiftyCloudKit_Example-frameworks.sh */,
-				2E7A676002DA4E4A9C9F54B8F740E020 /* Pods-SwiftyCloudKit_Example-resources.sh */,
-				EE7835F1CBE772A4E66B376FDD66C75D /* Pods-SwiftyCloudKit_Example-umbrella.h */,
-				AAF2EFE0705E21DA79BE40C17CAEF321 /* Pods-SwiftyCloudKit_Example.debug.xcconfig */,
-				BA93F425A33147163E84917574400E48 /* Pods-SwiftyCloudKit_Example.release.xcconfig */,
-			);
-			name = "Pods-SwiftyCloudKit_Example";
-			path = "Target Support Files/Pods-SwiftyCloudKit_Example";
-			sourceTree = "<group>";
-		};
 		6A2ED9B51C38A55C1DC0BE43CBF88424 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -823,6 +823,24 @@
 			path = "../Target Support Files/Quick";
 			sourceTree = "<group>";
 		};
+		6B8045C9178F9D05558DF99BD98079FA /* Pods-SwiftyCloudKit_Example */ = {
+			isa = PBXGroup;
+			children = (
+				620A1CE035B8848217DDD3065F218AAB /* Info.plist */,
+				A9195F567182B394182211E421BBC86E /* Pods-SwiftyCloudKit_Example.modulemap */,
+				D7BB50FCC4240DAF5287A8CE9EF76EB5 /* Pods-SwiftyCloudKit_Example-acknowledgements.markdown */,
+				FD6ED91E3A14EAF8A2EADE49712548D4 /* Pods-SwiftyCloudKit_Example-acknowledgements.plist */,
+				DA6A2CFBB67A4D97BBFA8F506486DAFF /* Pods-SwiftyCloudKit_Example-dummy.m */,
+				CF9B0161739F4FDB65E66BA1BE5FFA64 /* Pods-SwiftyCloudKit_Example-frameworks.sh */,
+				17B930409CB779FB6AC4D14D2E82323B /* Pods-SwiftyCloudKit_Example-resources.sh */,
+				2C7E4A64F71E7407DF23B5CC5D330584 /* Pods-SwiftyCloudKit_Example-umbrella.h */,
+				AA63C7A445DDE69706576F729CA93FAE /* Pods-SwiftyCloudKit_Example.debug.xcconfig */,
+				F1A8BC44EF0E3C4F773C9470F7EB30A2 /* Pods-SwiftyCloudKit_Example.release.xcconfig */,
+			);
+			name = "Pods-SwiftyCloudKit_Example";
+			path = "Target Support Files/Pods-SwiftyCloudKit_Example";
+			sourceTree = "<group>";
+		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
@@ -830,8 +848,8 @@
 				F3464084B2E3BD7792D402563D43FE58 /* Development Pods */,
 				96081966A51FCE4FE3A0FA5DE0B1EDD3 /* Frameworks */,
 				82FB7CFF656A6DEE32FE73ED691D76F4 /* Pods */,
-				9178FF1731525942C3731B0EE30D5155 /* Products */,
-				3A32225B9DE3AA78E1D58CC4E5CA16AC /* Targets Support Files */,
+				E9D5D85CFA6C9CA39D0992A021F74A0C /* Products */,
+				CEB58A316053AD06D3DD841402ACF363 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -846,42 +864,6 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		88937515493541D103A8CFA8B29003BE /* Pods-SwiftyCloudKit_Tests */ = {
-			isa = PBXGroup;
-			children = (
-				C35A8C66767398439952B8AF88484D4A /* Info.plist */,
-				0472B4346370A7F602B03BE8AB845283 /* Pods-SwiftyCloudKit_Tests.modulemap */,
-				051CF0046E00D93AF70C913C160CC633 /* Pods-SwiftyCloudKit_Tests-acknowledgements.markdown */,
-				40DF918201E4725A1A68D8220229B257 /* Pods-SwiftyCloudKit_Tests-acknowledgements.plist */,
-				4A267DE9E8BD33F76158B494B7E964AC /* Pods-SwiftyCloudKit_Tests-dummy.m */,
-				1728A1F4EDCBEC2C88FE26D9D28C9912 /* Pods-SwiftyCloudKit_Tests-frameworks.sh */,
-				1786F5A8320CE6C30A61818C05926B72 /* Pods-SwiftyCloudKit_Tests-resources.sh */,
-				27672DC8414CCBBA0E21628DB8F40D39 /* Pods-SwiftyCloudKit_Tests-umbrella.h */,
-				758F617B7F6996DD9E5217F2F566E297 /* Pods-SwiftyCloudKit_Tests.debug.xcconfig */,
-				A8D1278BAD62E625775134123B976D0D /* Pods-SwiftyCloudKit_Tests.release.xcconfig */,
-			);
-			name = "Pods-SwiftyCloudKit_Tests";
-			path = "Target Support Files/Pods-SwiftyCloudKit_Tests";
-			sourceTree = "<group>";
-		};
-		9178FF1731525942C3731B0EE30D5155 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				FDAA5B4684E2973918C43651EB9244EF /* FBSnapshotTestCase.framework */,
-				5ADF3BED68BF37E132857DEDA701786D /* Nimble.framework */,
-				E312EEB16F235173836AFF3F0C2239B0 /* Nimble_Snapshots.framework */,
-				C4C5439CDF0927089F418B5DE479E577 /* Pods_SwiftyCloudKit_Example.framework */,
-				07FE70173233CFF54702B6540DAF3752 /* Pods_SwiftyCloudKit_Tests.framework */,
-				75F0DA47512A6809DD49FE9F0115E8F3 /* Pods_SwiftyCloudKit_watchOS.framework */,
-				3A4EE421CEF3035AE9AEED20168E6F13 /* Pods_SwifyCloudKit_tvOS.framework */,
-				2447F03C57F4EF57261C9C77F8D6E4CB /* Quick.framework */,
-				9B98F21023EA53ADB001C98B2E48BED0 /* SwiftyCloudKit.framework */,
-				534857C253BAC2977A5897136F20C229 /* SwiftyCloudKit.framework */,
-				96C54B19656F02867EE42CC3BADC08C3 /* SwiftyCloudKit.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		96081966A51FCE4FE3A0FA5DE0B1EDD3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -892,6 +874,24 @@
 				CD0E7BF790F77FDA7DB937669CA0C121 /* watchOS */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		984DF73639D9D45543ABB8B00A143FF1 /* Pods-SwiftyCloudKit_watchOS Extension */ = {
+			isa = PBXGroup;
+			children = (
+				05FEB04AA02007AD0026B26A4889379B /* Info.plist */,
+				AFC1ACB51A6478CFEDA7689C16CD9796 /* Pods-SwiftyCloudKit_watchOS Extension.modulemap */,
+				92D10E1BF7F2AB2DD40723E6B094D839 /* Pods-SwiftyCloudKit_watchOS Extension-acknowledgements.markdown */,
+				E7458DD7A6AE8F1AB050ABCE2B6D6A0D /* Pods-SwiftyCloudKit_watchOS Extension-acknowledgements.plist */,
+				26CF21060DBE4BC1C69958D1F8B4F489 /* Pods-SwiftyCloudKit_watchOS Extension-dummy.m */,
+				A98EA10A43953DBE99B8AEBD5A09F380 /* Pods-SwiftyCloudKit_watchOS Extension-frameworks.sh */,
+				551B8EC228469BBEBBE953C20F95E853 /* Pods-SwiftyCloudKit_watchOS Extension-resources.sh */,
+				9033C9E429686AF243C45FEDA68E571B /* Pods-SwiftyCloudKit_watchOS Extension-umbrella.h */,
+				94DF7D379C36A536738C7F6D094715B8 /* Pods-SwiftyCloudKit_watchOS Extension.debug.xcconfig */,
+				C0A63E21B1014AB98BE557F02F8FF40A /* Pods-SwiftyCloudKit_watchOS Extension.release.xcconfig */,
+			);
+			name = "Pods-SwiftyCloudKit_watchOS Extension";
+			path = "Target Support Files/Pods-SwiftyCloudKit_watchOS Extension";
 			sourceTree = "<group>";
 		};
 		A412642961AABB0DC6FADB9F5E8AD4CB /* SwiftyCloudKit */ = {
@@ -909,22 +909,22 @@
 			path = ../..;
 			sourceTree = "<group>";
 		};
-		B2FDFCA390CDACEC25C46B54A72E6C02 /* Pods-SwifyCloudKit_tvOS */ = {
+		A96E79ABEA0E55B9164E973E24905B52 /* Pods-SwiftyCloudKit_Tests */ = {
 			isa = PBXGroup;
 			children = (
-				63AF9E0E81F5A8B1A0F6B5B72A2D6C89 /* Info.plist */,
-				D89922C993C86B717C1B736FA8FFE058 /* Pods-SwifyCloudKit_tvOS.modulemap */,
-				8CDDBEBA50F6AE650258CBBE37AD4B59 /* Pods-SwifyCloudKit_tvOS-acknowledgements.markdown */,
-				D7E03C07E48FEF8530AB67802C036F9F /* Pods-SwifyCloudKit_tvOS-acknowledgements.plist */,
-				8F5123758B61A7F0F10522A468864863 /* Pods-SwifyCloudKit_tvOS-dummy.m */,
-				6A6E7C354E50B3675A75ADC0BD2B70CB /* Pods-SwifyCloudKit_tvOS-frameworks.sh */,
-				B905EB0142BD7D4D9697B90E050AAA05 /* Pods-SwifyCloudKit_tvOS-resources.sh */,
-				73768B7DE7367DBC385BF5EC30F5ECBE /* Pods-SwifyCloudKit_tvOS-umbrella.h */,
-				40C8073714F46C5585C83DB135EBF99E /* Pods-SwifyCloudKit_tvOS.debug.xcconfig */,
-				93162DD42AE34F7A6F22D78BCAD396BB /* Pods-SwifyCloudKit_tvOS.release.xcconfig */,
+				AF8AB7D33C4DEC245368AD79EC1FA2C8 /* Info.plist */,
+				34A0C6A8AEA1F3C1CB9F3D501F573D6C /* Pods-SwiftyCloudKit_Tests.modulemap */,
+				01C6BDFA288B31E001EF4614FFFBE327 /* Pods-SwiftyCloudKit_Tests-acknowledgements.markdown */,
+				E07A81FC47B23CE555606B8CB2888D3D /* Pods-SwiftyCloudKit_Tests-acknowledgements.plist */,
+				1D62FBEFF4C716C8F9B589113ED4EBEA /* Pods-SwiftyCloudKit_Tests-dummy.m */,
+				AD9D0ABEF8A23418042ACA528ABBB33A /* Pods-SwiftyCloudKit_Tests-frameworks.sh */,
+				9C9FA21E45890FA4F54D43899482FB6F /* Pods-SwiftyCloudKit_Tests-resources.sh */,
+				56AD4CB0DC181DC0CB712AC6D1F53EF1 /* Pods-SwiftyCloudKit_Tests-umbrella.h */,
+				DE106E46E2192435F26FB97BD4DDEB32 /* Pods-SwiftyCloudKit_Tests.debug.xcconfig */,
+				15BBA5F9CE2CF41AA6C26B29171864C4 /* Pods-SwiftyCloudKit_Tests.release.xcconfig */,
 			);
-			name = "Pods-SwifyCloudKit_tvOS";
-			path = "Target Support Files/Pods-SwifyCloudKit_tvOS";
+			name = "Pods-SwiftyCloudKit_Tests";
+			path = "Target Support Files/Pods-SwiftyCloudKit_Tests";
 			sourceTree = "<group>";
 		};
 		CD0E7BF790F77FDA7DB937669CA0C121 /* watchOS */ = {
@@ -933,6 +933,36 @@
 				0BAF341224A16330E5A20B27FCC79860 /* Foundation.framework */,
 			);
 			name = watchOS;
+			sourceTree = "<group>";
+		};
+		CEB58A316053AD06D3DD841402ACF363 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				6B8045C9178F9D05558DF99BD98079FA /* Pods-SwiftyCloudKit_Example */,
+				A96E79ABEA0E55B9164E973E24905B52 /* Pods-SwiftyCloudKit_Tests */,
+				D0AF78095560651BAB95A7E96EF8CBDE /* Pods-SwiftyCloudKit_watchOS */,
+				984DF73639D9D45543ABB8B00A143FF1 /* Pods-SwiftyCloudKit_watchOS Extension */,
+				D9CEA639835655699DB99E59CCB7A2BB /* Pods-SwifyCloudKit_tvOS */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		D0AF78095560651BAB95A7E96EF8CBDE /* Pods-SwiftyCloudKit_watchOS */ = {
+			isa = PBXGroup;
+			children = (
+				1EC93DC009057E928DB7C8D7C82E4917 /* Info.plist */,
+				2E06649A8FE0911E2DEE30CD114AEF1F /* Pods-SwiftyCloudKit_watchOS.modulemap */,
+				9E7E414F1B8EC2D6EA171DCECDBABFEB /* Pods-SwiftyCloudKit_watchOS-acknowledgements.markdown */,
+				D6A32F75C18AD28BF2D36C1EBE1AEB2C /* Pods-SwiftyCloudKit_watchOS-acknowledgements.plist */,
+				B6D1C244F7F12FF64289FDC249E7C4E1 /* Pods-SwiftyCloudKit_watchOS-dummy.m */,
+				B546346775FFFAA1E908EB5EA481F49A /* Pods-SwiftyCloudKit_watchOS-frameworks.sh */,
+				3EA5483D7E584C3E90B3394AD9DEB294 /* Pods-SwiftyCloudKit_watchOS-resources.sh */,
+				03418FA58FADF783DBBE61789AEB37B4 /* Pods-SwiftyCloudKit_watchOS-umbrella.h */,
+				775067BDAA2B47CFA9DCDC081BA8744E /* Pods-SwiftyCloudKit_watchOS.debug.xcconfig */,
+				FDBE13AA3ACA6FA0A56F454373D32014 /* Pods-SwiftyCloudKit_watchOS.release.xcconfig */,
+			);
+			name = "Pods-SwiftyCloudKit_watchOS";
+			path = "Target Support Files/Pods-SwiftyCloudKit_watchOS";
 			sourceTree = "<group>";
 		};
 		D62C4D1D9CAC4A9E9AA7E617BF67BA9F /* tvOS */ = {
@@ -954,6 +984,24 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
+		D9CEA639835655699DB99E59CCB7A2BB /* Pods-SwifyCloudKit_tvOS */ = {
+			isa = PBXGroup;
+			children = (
+				C641D430C79579CE52BCBFE7A22AADAC /* Info.plist */,
+				5FDB9476167F418C840E6169F8C341F7 /* Pods-SwifyCloudKit_tvOS.modulemap */,
+				899EC14DF48D29B43DD5EA84120562BC /* Pods-SwifyCloudKit_tvOS-acknowledgements.markdown */,
+				05032873EB08D2DACA8C00218C6C630A /* Pods-SwifyCloudKit_tvOS-acknowledgements.plist */,
+				5C14A38E0BE756E40AF81EB8779AA2CE /* Pods-SwifyCloudKit_tvOS-dummy.m */,
+				5DB2456A2ACEF19964DF48C0B6B8447D /* Pods-SwifyCloudKit_tvOS-frameworks.sh */,
+				940AE3491D6A07D95B3ECBBA028A9D1F /* Pods-SwifyCloudKit_tvOS-resources.sh */,
+				6B72A080D68DB5E70D8C9966D9A80B34 /* Pods-SwifyCloudKit_tvOS-umbrella.h */,
+				0A5AA8945F3FBD4286A3A3C7AFEAD4BA /* Pods-SwifyCloudKit_tvOS.debug.xcconfig */,
+				A72D352C35CF59AE57A7A48D27E66352 /* Pods-SwifyCloudKit_tvOS.release.xcconfig */,
+			);
+			name = "Pods-SwifyCloudKit_tvOS";
+			path = "Target Support Files/Pods-SwifyCloudKit_tvOS";
+			sourceTree = "<group>";
+		};
 		E57B0B627473253F6AB1D52E7E2088D9 /* SwiftSupport */ = {
 			isa = PBXGroup;
 			children = (
@@ -962,22 +1010,23 @@
 			name = SwiftSupport;
 			sourceTree = "<group>";
 		};
-		EA42FEE8283EACDEEFCD616C5EA7D752 /* Pods-SwiftyCloudKit_watchOS */ = {
+		E9D5D85CFA6C9CA39D0992A021F74A0C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D5A84DD68FBBC9B2FAB0A3640CC1BBC8 /* Info.plist */,
-				8B706E3F998D6C5468F02C4036EA236C /* Pods-SwiftyCloudKit_watchOS.modulemap */,
-				8B6ABB22EDA67235AEF25A5780DEBB1F /* Pods-SwiftyCloudKit_watchOS-acknowledgements.markdown */,
-				ACB0C2C570F52934990E52D96902D243 /* Pods-SwiftyCloudKit_watchOS-acknowledgements.plist */,
-				A0EA5C70EF05322F6368F44E5960F9E6 /* Pods-SwiftyCloudKit_watchOS-dummy.m */,
-				8AAC67E761335DBAE9450034D54AB257 /* Pods-SwiftyCloudKit_watchOS-frameworks.sh */,
-				16605FB4FD58C54512F2D2E3A7272098 /* Pods-SwiftyCloudKit_watchOS-resources.sh */,
-				74FB92805938F913B5A9585F7641AAC7 /* Pods-SwiftyCloudKit_watchOS-umbrella.h */,
-				18C428E2EE046449946BEEAFB7CCEC65 /* Pods-SwiftyCloudKit_watchOS.debug.xcconfig */,
-				F931C65D69BF7BC2C56444D34ED16F25 /* Pods-SwiftyCloudKit_watchOS.release.xcconfig */,
+				1DB8E658518C228C1595B706255635B4 /* FBSnapshotTestCase.framework */,
+				B453BAADED634AD0639F9D4D4D08ADE4 /* Nimble.framework */,
+				78543B89592CF3828854995C19F6F2B7 /* Nimble_Snapshots.framework */,
+				AAD5D3F2DDECEF214929D6471F15AB27 /* Pods_SwiftyCloudKit_Example.framework */,
+				1D98149027668D97956816605B97EA88 /* Pods_SwiftyCloudKit_Tests.framework */,
+				9B59E28255FE37E42B7DCEC0682784A4 /* Pods_SwiftyCloudKit_watchOS.framework */,
+				D2D1CF4BDB3EFA8B0E0226E3F43B6B93 /* Pods_SwiftyCloudKit_watchOS_Extension.framework */,
+				E1A719A29C2B67E99375B04E27DD60BE /* Pods_SwifyCloudKit_tvOS.framework */,
+				ADFD8B3675E59A302CDB96C82C23A345 /* Quick.framework */,
+				BE8EDE0F155F1C384CFC6641F7D4FED9 /* SwiftyCloudKit.framework */,
+				C62A2D6027EB739A6773B6B98ACC7B56 /* SwiftyCloudKit.framework */,
+				B82437A3354B3FF3C3C2E373F652AAAF /* SwiftyCloudKit.framework */,
 			);
-			name = "Pods-SwiftyCloudKit_watchOS";
-			path = "Target Support Files/Pods-SwiftyCloudKit_watchOS";
+			name = Products;
 			sourceTree = "<group>";
 		};
 		EF140300C48CE12B6336E20905BAB042 /* Core */ = {
@@ -1094,6 +1143,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3C652D287C11985F3422893B74360FBF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94A65E26825F0D515D50186715C380EC /* Pods-SwiftyCloudKit_watchOS Extension-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4FF9A84C7CE82218A6D2861AF01B81D0 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -1179,6 +1236,24 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		063DA361F8D0AEC25B14E57D7BE84EDA /* Pods-SwiftyCloudKit_watchOS Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A165C7443BDA99C0F0A0770A14D1460C /* Build configuration list for PBXNativeTarget "Pods-SwiftyCloudKit_watchOS Extension" */;
+			buildPhases = (
+				77651802BA907976FB7B33994B207BAC /* Sources */,
+				2936DE5C8850B7DA3A397591E9E23A7E /* Frameworks */,
+				3C652D287C11985F3422893B74360FBF /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4979D3DC2AD7C27D92C34DD93E9C0F42 /* PBXTargetDependency */,
+			);
+			name = "Pods-SwiftyCloudKit_watchOS Extension";
+			productName = "Pods-SwiftyCloudKit_watchOS Extension";
+			productReference = D2D1CF4BDB3EFA8B0E0226E3F43B6B93 /* Pods_SwiftyCloudKit_watchOS_Extension.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		1854DA6A08F065E1B28F3B91A75A97E4 /* Pods-SwiftyCloudKit_watchOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F5EF02ED5716148E6A979816FF5147E7 /* Build configuration list for PBXNativeTarget "Pods-SwiftyCloudKit_watchOS" */;
@@ -1194,7 +1269,7 @@
 			);
 			name = "Pods-SwiftyCloudKit_watchOS";
 			productName = "Pods-SwiftyCloudKit_watchOS";
-			productReference = 75F0DA47512A6809DD49FE9F0115E8F3 /* Pods_SwiftyCloudKit_watchOS.framework */;
+			productReference = 9B59E28255FE37E42B7DCEC0682784A4 /* Pods_SwiftyCloudKit_watchOS.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		20752150E7B779C15AB15EC3DA73E849 /* SwiftyCloudKit-tvOS */ = {
@@ -1211,7 +1286,7 @@
 			);
 			name = "SwiftyCloudKit-tvOS";
 			productName = "SwiftyCloudKit-tvOS";
-			productReference = 534857C253BAC2977A5897136F20C229 /* SwiftyCloudKit.framework */;
+			productReference = C62A2D6027EB739A6773B6B98ACC7B56 /* SwiftyCloudKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		2F0B63FA567288104556DBB3B68B834F /* Pods-SwiftyCloudKit_Tests */ = {
@@ -1232,7 +1307,7 @@
 			);
 			name = "Pods-SwiftyCloudKit_Tests";
 			productName = "Pods-SwiftyCloudKit_Tests";
-			productReference = 07FE70173233CFF54702B6540DAF3752 /* Pods_SwiftyCloudKit_Tests.framework */;
+			productReference = 1D98149027668D97956816605B97EA88 /* Pods_SwiftyCloudKit_Tests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		33AF1792DDB2502D5FCA8537E8E953F6 /* Quick */ = {
@@ -1249,7 +1324,7 @@
 			);
 			name = Quick;
 			productName = Quick;
-			productReference = 2447F03C57F4EF57261C9C77F8D6E4CB /* Quick.framework */;
+			productReference = ADFD8B3675E59A302CDB96C82C23A345 /* Quick.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		34CD2E3428AB802BACA62286FF5074B1 /* FBSnapshotTestCase */ = {
@@ -1266,7 +1341,7 @@
 			);
 			name = FBSnapshotTestCase;
 			productName = FBSnapshotTestCase;
-			productReference = FDAA5B4684E2973918C43651EB9244EF /* FBSnapshotTestCase.framework */;
+			productReference = 1DB8E658518C228C1595B706255635B4 /* FBSnapshotTestCase.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		55647C7DC9F7B6DC77E48C6A061FC19F /* SwiftyCloudKit-watchOS */ = {
@@ -1283,7 +1358,7 @@
 			);
 			name = "SwiftyCloudKit-watchOS";
 			productName = "SwiftyCloudKit-watchOS";
-			productReference = 9B98F21023EA53ADB001C98B2E48BED0 /* SwiftyCloudKit.framework */;
+			productReference = BE8EDE0F155F1C384CFC6641F7D4FED9 /* SwiftyCloudKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		6B8D2C966D4D7E5D2DF4A6BADFEF6290 /* Nimble-Snapshots */ = {
@@ -1302,7 +1377,7 @@
 			);
 			name = "Nimble-Snapshots";
 			productName = "Nimble-Snapshots";
-			productReference = E312EEB16F235173836AFF3F0C2239B0 /* Nimble_Snapshots.framework */;
+			productReference = 78543B89592CF3828854995C19F6F2B7 /* Nimble_Snapshots.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		943F2B2C2E215765494A0FFB55BB563B /* SwiftyCloudKit-iOS */ = {
@@ -1319,7 +1394,7 @@
 			);
 			name = "SwiftyCloudKit-iOS";
 			productName = "SwiftyCloudKit-iOS";
-			productReference = 96C54B19656F02867EE42CC3BADC08C3 /* SwiftyCloudKit.framework */;
+			productReference = B82437A3354B3FF3C3C2E373F652AAAF /* SwiftyCloudKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		DD7C8BF89FE8053D0A2A2D88BB49CF07 /* Nimble */ = {
@@ -1336,7 +1411,7 @@
 			);
 			name = Nimble;
 			productName = Nimble;
-			productReference = 5ADF3BED68BF37E132857DEDA701786D /* Nimble.framework */;
+			productReference = B453BAADED634AD0639F9D4D4D08ADE4 /* Nimble.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		E6D70EC3F7AD4AF2DE6864E4CADFC8EC /* Pods-SwiftyCloudKit_Example */ = {
@@ -1354,7 +1429,7 @@
 			);
 			name = "Pods-SwiftyCloudKit_Example";
 			productName = "Pods-SwiftyCloudKit_Example";
-			productReference = C4C5439CDF0927089F418B5DE479E577 /* Pods_SwiftyCloudKit_Example.framework */;
+			productReference = AAD5D3F2DDECEF214929D6471F15AB27 /* Pods_SwiftyCloudKit_Example.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		FD298A7B1A8DD44D66042D9E39EE72A2 /* Pods-SwifyCloudKit_tvOS */ = {
@@ -1372,7 +1447,7 @@
 			);
 			name = "Pods-SwifyCloudKit_tvOS";
 			productName = "Pods-SwifyCloudKit_tvOS";
-			productReference = 3A4EE421CEF3035AE9AEED20168E6F13 /* Pods_SwifyCloudKit_tvOS.framework */;
+			productReference = E1A719A29C2B67E99375B04E27DD60BE /* Pods_SwifyCloudKit_tvOS.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -1392,7 +1467,7 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 9178FF1731525942C3731B0EE30D5155 /* Products */;
+			productRefGroup = E9D5D85CFA6C9CA39D0992A021F74A0C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -1402,6 +1477,7 @@
 				E6D70EC3F7AD4AF2DE6864E4CADFC8EC /* Pods-SwiftyCloudKit_Example */,
 				2F0B63FA567288104556DBB3B68B834F /* Pods-SwiftyCloudKit_Tests */,
 				1854DA6A08F065E1B28F3B91A75A97E4 /* Pods-SwiftyCloudKit_watchOS */,
+				063DA361F8D0AEC25B14E57D7BE84EDA /* Pods-SwiftyCloudKit_watchOS Extension */,
 				FD298A7B1A8DD44D66042D9E39EE72A2 /* Pods-SwifyCloudKit_tvOS */,
 				33AF1792DDB2502D5FCA8537E8E953F6 /* Quick */,
 				943F2B2C2E215765494A0FFB55BB563B /* SwiftyCloudKit-iOS */,
@@ -1541,6 +1617,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		77651802BA907976FB7B33994B207BAC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7AEC22C987AF4BE5B6AFF4829E1DEF7 /* Pods-SwiftyCloudKit_watchOS Extension-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		77E295C6D55EB63D234A86776EFE3F27 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1636,6 +1720,12 @@
 			name = "SwiftyCloudKit-watchOS";
 			target = 55647C7DC9F7B6DC77E48C6A061FC19F /* SwiftyCloudKit-watchOS */;
 			targetProxy = 6F831FB83F5223853A785472418E62D8 /* PBXContainerItemProxy */;
+		};
+		4979D3DC2AD7C27D92C34DD93E9C0F42 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "SwiftyCloudKit-watchOS";
+			target = 55647C7DC9F7B6DC77E48C6A061FC19F /* SwiftyCloudKit-watchOS */;
+			targetProxy = 9A0E9EC281FEDE2EDD8BB58CA40FEBDF /* PBXContainerItemProxy */;
 		};
 		67AF943B37E0628084EFB4DD300BAC7E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1930,9 +2020,44 @@
 			};
 			name = Debug;
 		};
+		3B6455AEAA90F6B282D8ADD1B61CCA3C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C0A63E21B1014AB98BE557F02F8FF40A /* Pods-SwiftyCloudKit_watchOS Extension.release.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-SwiftyCloudKit_watchOS Extension/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SwiftyCloudKit_watchOS Extension/Pods-SwiftyCloudKit_watchOS Extension.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_SwiftyCloudKit_watchOS_Extension;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+			};
+			name = Release;
+		};
 		5C3156120685FFBE69FDAD9205C132AE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 93162DD42AE34F7A6F22D78BCAD396BB /* Pods-SwifyCloudKit_tvOS.release.xcconfig */;
+			baseConfigurationReference = A72D352C35CF59AE57A7A48D27E66352 /* Pods-SwifyCloudKit_tvOS.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -2125,7 +2250,7 @@
 		};
 		8095F54AD5CFF531AB7B5227A63F4D5A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 758F617B7F6996DD9E5217F2F566E297 /* Pods-SwiftyCloudKit_Tests.debug.xcconfig */;
+			baseConfigurationReference = DE106E46E2192435F26FB97BD4DDEB32 /* Pods-SwiftyCloudKit_Tests.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -2192,7 +2317,7 @@
 		};
 		89C988F6B0E39F832F220D965B434A4F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AAF2EFE0705E21DA79BE40C17CAEF321 /* Pods-SwiftyCloudKit_Example.debug.xcconfig */;
+			baseConfigurationReference = AA63C7A445DDE69706576F729CA93FAE /* Pods-SwiftyCloudKit_Example.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -2227,7 +2352,7 @@
 		};
 		99D6EE587D0D78AE5EFEDE046EC5E376 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BA93F425A33147163E84917574400E48 /* Pods-SwiftyCloudKit_Example.release.xcconfig */;
+			baseConfigurationReference = F1A8BC44EF0E3C4F773C9470F7EB30A2 /* Pods-SwiftyCloudKit_Example.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -2262,7 +2387,7 @@
 		};
 		A806BF40FCBD270B580E14B4B0649FDD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 18C428E2EE046449946BEEAFB7CCEC65 /* Pods-SwiftyCloudKit_watchOS.debug.xcconfig */;
+			baseConfigurationReference = 775067BDAA2B47CFA9DCDC081BA8744E /* Pods-SwiftyCloudKit_watchOS.debug.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -2297,7 +2422,7 @@
 		};
 		A8E70C595C17CC535896EF79F4D35648 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 40C8073714F46C5585C83DB135EBF99E /* Pods-SwifyCloudKit_tvOS.debug.xcconfig */;
+			baseConfigurationReference = 0A5AA8945F3FBD4286A3A3C7AFEAD4BA /* Pods-SwifyCloudKit_tvOS.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -2331,7 +2456,7 @@
 		};
 		B397158A9E6EEE75D73DE7EF0CBD16BB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F931C65D69BF7BC2C56444D34ED16F25 /* Pods-SwiftyCloudKit_watchOS.release.xcconfig */;
+			baseConfigurationReference = FDBE13AA3ACA6FA0A56F454373D32014 /* Pods-SwiftyCloudKit_watchOS.release.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -2364,9 +2489,44 @@
 			};
 			name = Release;
 		};
+		C0A953B7A4F403A5D2536C9D5E376341 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 94DF7D379C36A536738C7F6D094715B8 /* Pods-SwiftyCloudKit_watchOS Extension.debug.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-SwiftyCloudKit_watchOS Extension/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SwiftyCloudKit_watchOS Extension/Pods-SwiftyCloudKit_watchOS Extension.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_SwiftyCloudKit_watchOS_Extension;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 4;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+			};
+			name = Debug;
+		};
 		C71BB473B639AFE882CC9FA0057F1816 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A8D1278BAD62E625775134123B976D0D /* Pods-SwiftyCloudKit_Tests.release.xcconfig */;
+			baseConfigurationReference = 15BBA5F9CE2CF41AA6C26B29171864C4 /* Pods-SwiftyCloudKit_Tests.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -2586,6 +2746,15 @@
 			buildConfigurations = (
 				31DB66A3C5C30DE2480AEE08344F03BE /* Debug */,
 				0F94057088C95F9ED8CB0387BC24C6CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A165C7443BDA99C0F0A0770A14D1460C /* Build configuration list for PBXNativeTarget "Pods-SwiftyCloudKit_watchOS Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C0A953B7A4F403A5D2536C9D5E376341 /* Debug */,
+				3B6455AEAA90F6B282D8ADD1B61CCA3C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

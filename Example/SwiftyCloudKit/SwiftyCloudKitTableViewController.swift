@@ -8,14 +8,14 @@
 import UIKit
 import CloudKit
 import SwiftyCloudKit
+import WatchConnectivity
 
-class SwiftyCloudKitTableViewController: UITableViewController, CloudKitFetcher, CloudKitHandler, CloudKitSubscriber {
+class SwiftyCloudKitTableViewController: UITableViewController, CloudKitFetcher, CloudKitHandler, CloudKitSubscriber, WCSessionDelegate {
     
     // MARK: Model
     
     // The text field in our record
     let CloudKitTextField = "Text"
-    let CloudKitTextArrayField = "TextArray"
     
     // The key to our record
     let CloudKitRecordType = "Record"
@@ -35,16 +35,22 @@ class SwiftyCloudKitTableViewController: UITableViewController, CloudKitFetcher,
     override func viewDidLoad() {
         super.viewDidLoad()
         activityIndicator.hidesWhenStopped = true
+        
+        if WCSession.isSupported() {
+            let session = WCSession.default
+            session.delegate = self
+            session.activate()
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         // We start fetching. Don't want to fetch every time the view appears on screen.
-        /*if records.isEmpty {
+        if records.isEmpty {
             fetch()
             startActivityIndicator()
-        }*/
+        }
         
         subscribeToUpdates()
     }
@@ -77,13 +83,8 @@ class SwiftyCloudKitTableViewController: UITableViewController, CloudKitFetcher,
         DispatchQueue.main.async { [unowned self] in
             print("Retrieved records, reloading table view...")
             self.records.append(contentsOf: records)
-         
-            records.forEach({ (record) in
-                if record.strings(self.CloudKitTextArrayField) != nil {
-                    record.set(strings: ["Testing", "this"], key: self.CloudKitTextArrayField)
-                    self.upload(record: record, withCompletionHandler: nil)
-                }
-            })
+            
+            self.update(recordsForWatch: self.records)
             
             if self.records.count > self.interval {
                 self.tableView.reloadData()
@@ -138,6 +139,7 @@ class SwiftyCloudKitTableViewController: UITableViewController, CloudKitFetcher,
                             if let record = record {
                                 DispatchQueue.main.async {
                                     self.records.insert(record, at: 0)
+                                    self.update(recordsForWatch: self.records)
                                     self.tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: UITableViewRowAnimation.top)
                                     self.stopActivityIndicator()
                                 }
@@ -149,6 +151,7 @@ class SwiftyCloudKitTableViewController: UITableViewController, CloudKitFetcher,
                     DispatchQueue.main.async {
                         let index = self.records.index(where: { $0.recordID == recordID })
                         self.records.remove(at: index!)
+                        self.update(recordsForWatch: self.records)
                         self.tableView.deleteRows(at: [IndexPath(row: index!, section: 0)], with: UITableViewRowAnimation.bottom)
                     }
                     
@@ -163,6 +166,7 @@ class SwiftyCloudKitTableViewController: UITableViewController, CloudKitFetcher,
                                 DispatchQueue.main.async {
                                     let index = self.records.index(where: { $0.recordID == record.recordID })!
                                     self.records[index] = record
+                                    self.update(recordsForWatch: self.records)
                                     self.tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
                                     self.stopActivityIndicator()
                                 }
@@ -186,6 +190,7 @@ class SwiftyCloudKitTableViewController: UITableViewController, CloudKitFetcher,
                     self.stopActivityIndicator()
                     print("Record uploaded")
                     self.records.insert(uploadedRecord, at: 0)
+                    self.update(recordsForWatch: self.records)
                     self.tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .top)
                 }
             }
@@ -292,5 +297,44 @@ extension SwiftyCloudKitTableViewController {
         }
 
         displayDestructiveAlertMessage(withTitle: "iCloud", andMessage: "\(errorMessage!) - \(error.localizedDescription)")
+    }
+    
+    // MARK: WCSessionDelegate
+    
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+        /*switch activationState {
+        case .notActivated:
+         
+        case .inactive:
+         
+        case: .active
+            
+        }*/
+    }
+    
+    func sessionDidBecomeInactive(_ session: WCSession) {
+        
+    }
+    
+    func sessionDidDeactivate(_ session: WCSession) {
+        
+    }
+    
+    // MARK: Watch kit
+    
+    func update(recordsForWatch records: [CKRecord]) {
+        if WCSession.default.isReachable {
+            var context = [String:CKRecord]()
+            for (index, record) in records.enumerated() {
+                context[index.description] = record
+            }
+
+            do {
+                try WCSession.default.updateApplicationContext(context)
+            }
+            catch let error {
+                print(error)
+            }
+        }
     }
 }
