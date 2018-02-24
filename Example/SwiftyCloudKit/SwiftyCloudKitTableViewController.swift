@@ -4,13 +4,14 @@
 //
 //  Created by Simen Gangstad on 06.02.2018.
 //
-
 import UIKit
 import CloudKit
 import SwiftyCloudKit
+#if !os(tvOS)
 import WatchConnectivity
+#endif
 
-class SwiftyCloudKitTableViewController: UITableViewController, CloudKitFetcher, CloudKitHandler, CloudKitSubscriber, WCSessionDelegate {
+class SwiftyCloudKitTableViewController: UITableViewController, CloudKitFetcher, CloudKitHandler, CloudKitSubscriber {
     
     // MARK: Model
     
@@ -36,11 +37,13 @@ class SwiftyCloudKitTableViewController: UITableViewController, CloudKitFetcher,
         super.viewDidLoad()
         activityIndicator.hidesWhenStopped = true
         
+        #if !os(tvOS)
         if WCSession.isSupported() {
             let session = WCSession.default
             session.delegate = self
             session.activate()
         }
+        #endif
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -84,7 +87,9 @@ class SwiftyCloudKitTableViewController: UITableViewController, CloudKitFetcher,
             print("Retrieved records, reloading table view...")
             self.records.append(contentsOf: records)
             
+            #if !os(tvOS)
             self.update(recordsForWatch: self.records)
+            #endif
             
             if self.records.count > self.interval {
                 self.tableView.reloadData()
@@ -139,7 +144,9 @@ class SwiftyCloudKitTableViewController: UITableViewController, CloudKitFetcher,
                             if let record = record {
                                 DispatchQueue.main.async {
                                     self.records.insert(record, at: 0)
+                                    #if !os(tvOS)
                                     self.update(recordsForWatch: self.records)
+                                    #endif
                                     self.tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: UITableViewRowAnimation.top)
                                     self.stopActivityIndicator()
                                 }
@@ -151,7 +158,9 @@ class SwiftyCloudKitTableViewController: UITableViewController, CloudKitFetcher,
                     DispatchQueue.main.async {
                         let index = self.records.index(where: { $0.recordID == recordID })
                         self.records.remove(at: index!)
+                        #if !os(tvOS)
                         self.update(recordsForWatch: self.records)
+                        #endif
                         self.tableView.deleteRows(at: [IndexPath(row: index!, section: 0)], with: UITableViewRowAnimation.bottom)
                     }
                     
@@ -166,7 +175,9 @@ class SwiftyCloudKitTableViewController: UITableViewController, CloudKitFetcher,
                                 DispatchQueue.main.async {
                                     let index = self.records.index(where: { $0.recordID == record.recordID })!
                                     self.records[index] = record
+                                    #if !os(tvOS)
                                     self.update(recordsForWatch: self.records)
+                                    #endif
                                     self.tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
                                     self.stopActivityIndicator()
                                 }
@@ -190,7 +201,9 @@ class SwiftyCloudKitTableViewController: UITableViewController, CloudKitFetcher,
                     self.stopActivityIndicator()
                     print("Record uploaded")
                     self.records.insert(uploadedRecord, at: 0)
+                    #if !os(tvOS)
                     self.update(recordsForWatch: self.records)
+                    #endif
                     self.tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .top)
                 }
             }
@@ -298,18 +311,21 @@ extension SwiftyCloudKitTableViewController {
 
         displayDestructiveAlertMessage(withTitle: "iCloud", andMessage: "\(errorMessage!) - \(error.localizedDescription)")
     }
-    
+}
+
+#if !os(tvOS)
+extension SwiftyCloudKitTableViewController: WCSessionDelegate {
     // MARK: WCSessionDelegate
     
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
         /*switch activationState {
-        case .notActivated:
+         case .notActivated:
          
-        case .inactive:
+         case .inactive:
          
-        case: .active
-            
-        }*/
+         case: .active
+         
+         }*/
     }
     
     func sessionDidBecomeInactive(_ session: WCSession) {
@@ -328,7 +344,7 @@ extension SwiftyCloudKitTableViewController {
             for (index, record) in records.enumerated() {
                 context[index.description] = record
             }
-
+            
             do {
                 try WCSession.default.updateApplicationContext(context)
             }
@@ -338,3 +354,4 @@ extension SwiftyCloudKitTableViewController {
         }
     }
 }
+#endif
