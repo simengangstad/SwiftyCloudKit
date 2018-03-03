@@ -27,7 +27,7 @@ pod 'SwiftyCloudKit'
 
 ## Use
 
-There are four submodules – or protocols – of SwiftyCloudKit: CloudKitFetcher, CloudKitHandler, CloudKitSubscriber and CloudKitErrorHandler.
+There are four submodules – or protocols – of SwiftyCloudKit: CloudKitFetcher, CloudKitHandler, CloudKitSubscriber and CloudKitErrorHandler. For more information on how these are implemented see the example project or the documentation in the respective files in the library.
 
 ### CloudKitErrorHandler
 
@@ -63,14 +63,14 @@ Then call `fetch()` in e.g. viewDidAppear to fetch the records.
 
 #### Accessing and setting values of records
 
-There exist helper functions for every type supported by CloudKit. So you can retrieve strings, references, data, assets, ints, doubles, locations, dates. lists of the these types, as well as images and videos using the helper functions. If you store a image in the record you'll retrieve an optional UIImage when asking for the image, for a video you'll receive an optional URL to a temporary local file which can be used in an AVPlayer. In that way you don't have to deal with conversion.
+There exist helper functions for every type supported by CloudKit. So you can retrieve and set strings, references, data, assets, ints, doubles, locations, dates, lists of the these types, as well as images and videos using the helper functions. If you store a image in the record you'll retrieve an optional UIImage when asking for the image, for a video you'll receive an optional URL to a temporary local file which can be used in an AVPlayer. In that way you don't have to deal with conversion.
 
-To retrieve values, you use ```swift value(_ key: String)```. E.g.:
+To retrieve values, you use `value(_ key: String)`. E.g.:
 ```swift
 let myString = record.string(MyStringKey)
 ```
 
-In order to set field types, you use ```set(value: Value, key: String)```. E.g:
+In order to set values, you use `set(value: Value, key: String)`. E.g:
 ```swift
 record.set(string: "Hello World", key: MyStringKey)
 ```
@@ -79,9 +79,12 @@ record.set(string: "Hello World", key: MyStringKey)
 
 Cloud kit handler simply allows you to upload and delete records in the database. There are two functions:
 
-```swift upload(record: CKRecord, withCompletionHandler completionHandler: ((CKRecord?) -> Void)?)```
-
-```swift delete(record: CKRecord, withCompletionHandler completionHandler: ((CKRecordID?) -> Void)?)```
+```swift
+upload(record: CKRecord, withCompletionHandler completionHandler: ((CKRecord?) -> Void)?)
+```
+```swift
+delete(record: CKRecord, withCompletionHandler completionHandler: ((CKRecordID?) -> Void)?)
+```
 
 An example:
 ```swift
@@ -99,7 +102,7 @@ If an upload or deletion fails, the cloud kit handler will retry the operation a
 
 ### CloudKitSubscriber
 
-A subscription is useful when there are multiple units having read and write access to the same data. An example would be an app which allows multiple users to collaborate on a spreadsheet. The subscription fires a notification when new data is appended, when data is deleted and when data is modified. The example project includes a demo concering this (be aware that the iOS simulator can't send these notifications, only receive, so test between two iOS devices).
+A subscription is useful when there are multiple units having read and write access to the same data. An example would be an app which allows multiple users to collaborate on a spreadsheet. The subscription fires a notification when new data is appended, when data is deleted and when data is modified. The example project includes a demo concerning this (be aware that the iOS simulator can't send these notifications, only receive, so test between two iOS devices).
 
 The prerequisites for subscriptions are:
 - Adding remote-notification to UIBackgroundModes in info.plist
