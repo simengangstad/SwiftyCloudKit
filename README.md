@@ -33,7 +33,7 @@ There are four submodules – or protocols – of SwiftyCloudKit: CloudKitFetch
 
 All the other submodules will call the error handler when an error occurs. Therefore it is required to conform to:
 
-```
+```swift
 func handle(cloudKitError error: CKError) {
     // Handle errors
 }
@@ -41,106 +41,57 @@ func handle(cloudKitError error: CKError) {
 
 ### CloudKitFetcher
 
-The cloud kit fetcher protocol requires you to give it a database, a query and an fetch interval (how many records per batch). You also have to implement `parseResult(records: [CKRecord])`, which returns the records fetched, and `terminatingFetchRequest()`, which gets fired when a fetch request terminated because of some error.
+The cloud kit fetcher fetches records from iCloud. Remember to set up a record type in cloud kit dashboard first. The protocol requires you to implement these variables and functions:
 
-In order to fetch from iCloud there's one prerequisite:
-- Setup a record type in the cloud kit dashboard. In the example project a record type with the name "Record" and a string field type named "Text" is required.
+```swift
 
-We define a simple model:
-
-```
-// The key to our record
-let CloudKitRecordType = "Record"
-// The text field in our record
-let CloudKitTextField = "Text"
-
-// Model
-var records = [CKRecord]()
-```
-
-And conform to the CloudKitFetcher protocol:
-
-```
-// Specify the database, could also be the publicCloudDatabase if one were to share
-// data between multiple users, but in this case we fetch from our private iCloud database
-var database: CKDatabase = CKContainer.default().privateCloudDatabase
-
-var query: CKQuery? {
-    // Specify that we want all the records stored in the database using the
-    // "TRUEPREDICATE" predicate, and that we'll sort them by when they were created
-    let query = CKQuery(recordType: CloudKitRecordType, predicate: NSPredicate(format: "TRUEPREDICATE"))
-    query.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
-    return query
-}
-
-// The amount of records we'll fetch for each request
-var interval: Int = 10
-
-// The cursor is an object which helps us keep track of which records we've fetched,
-// and which records we are to fetch during the next batch. Can be set to nil to start fetching from the start.
+var database: CKDatabase
+var query: CKQuery?
+var interval: Int
 var cursor: CKQueryCursor?
 
-// Append the fetched records to our model and reload table view
 func parseResult(records: [CKRecord]) {
-    DispatchQueue.main.async { [unowned self] in
-        print("Retrieved records, reloading table view...")
-        self.records.append(contentsOf: records)
-
-        if self.records.count > self.interval {
-            self.tableView.reloadData()
-        }
-        else {
-            self.tableView.reloadSections(IndexSet(integer: 0), with: .top)
-        }
-        self.stopActivityIndicator()
-    }
+    // Do something with the records fetched
 }
 
-// If there occured an error we stop e.g. activity indicators
 func terminatingFetchRequest() {
-    DispatchQueue.main.async {
-        self.stopActivityIndicator()
-    }
+    // Do something if the fetch failed
 }
 ```
 
 Then call `fetch()` in e.g. viewDidAppear to fetch the records.
 
-#### Accessing values
+#### Accessing and setting values of records
 
-To access values from records you specify a field key, e.g. `let CloudKitTextField = "Text"` and acess it with the `string(_ key: String) -> String?` function, as seen in the table view data source in the example project:
+There exist helper functions for every type supported by CloudKit. So you can retrieve strings, references, data, assets, ints, doubles, locations, dates. lists of the these types, as well as images and videos using the helper functions. If you store a image in the record you'll retrieve an optional UIImage when asking for the image, for a video you'll receive an optional URL to a temporary local file which can be used in an AVPlayer. In that way you don't have to deal with conversion.
 
-```
-override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: "cellIdentifier", for: indexPath)
-    // Notice how we access our field, with a call to string passing our constant for the text field type
-    cell.textLabel?.text = records[indexPath.row].string(CloudKitTextField)
-    return cell
-}
+To retrieve values, you use ```swift value(_ key: String)```. E.g.:
+```swift
+let myString = record.string(MyStringKey)
 ```
 
-There exist such helper functions for every type exept the list types. So you can retrieve strings, references, data, assets, ints, doubles, locations, dates as well as images and videos using the helper functions. If you store a image in the record you'll retrieve an optional UIImage when asking for the image, for a video you'll receive an optional URL to a temporary local file which can be used in an AVPlayer. In that way you don't have to deal with conversion.
-
-In order to set field types, you use `set(type: Type, key: String)`. E.g: `record.set(string: "Hello World", key: "StringFieldKey")`
+In order to set field types, you use ```set(value: Value, key: String)```. E.g:
+```swift
+record.set(string: "Hello World", key: MyStringKey)
+```
 
 ### CloudKitHandler
 
 Cloud kit handler simply allows you to upload and delete records in the database. There are two functions:
 
-`upload(record: CKRecord, withCompletionHandler completionHandler: ((CKRecord?) -> Void)?)`
-`delete(record: CKRecord, withCompletionHandler completionHandler: ((CKRecordID?) -> Void)?)`
+```swift upload(record: CKRecord, withCompletionHandler completionHandler: ((CKRecord?) -> Void)?)```
 
-In the example project the upload function is used when a bar button item is touched. It uploads a record with a string field consisting of the count of amount of records plus one:
+```swift delete(record: CKRecord, withCompletionHandler completionHandler: ((CKRecordID?) -> Void)?)```
 
-```
-@IBAction func addItem(_ sender: UIBarButtonItem) {
-    let record = CKRecord(recordType: CloudKitRecordType)
-    record.set(string: "\(records.count + 1)", key: CloudKitTextField)
-    upload(record: record) { [unowned self] (uploadedRecord) in
-        if let uploadedRecord = record {
-            self.records.insert(uploadedRecord, at: 0)
-        }
-    }
+An example:
+```swift
+let record = CKRecord(recordType: MyRecordType)
+record.set(string: "Hello World", key: MyStringKey)
+upload(record: record) { (uploadedRecord) in
+    // Do something with the uploaded record
+}
+delete(record: record) { (deletedRecordID) in
+    // Do something when the record is deleted
 }
 ```
 
@@ -152,113 +103,42 @@ A subscription is useful when there are multiple units having read and write acc
 
 The prerequisites for subscriptions are:
 - Adding remote-notification to UIBackgroundModes in info.plist
-- Specify some notification keys, e.g.:
+- Register for remote notifications in the app delegate and post notifications around the app when we receive a push notification, which is done the following way:
 
-```
-public struct CloudKitNotifications {
-    public static let NotificationReceived = "iCloudRemoteNotificationReceived"
-    public static let NotificationKey = "Notification"
-}
-```
-
-- Register for remote notifications in the app delegate, which is done the following way:
-
-```
+```swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-    // Requests authorization to interact with the user when the external notification arrives
     UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
-        if let error = error {
-            print(error.localizedDescription)
-        }
+        // Handle error
     }
     application.registerForRemoteNotifications()
     return true
 }
 
 func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-    // Decode the notification as a CKQueryNotification
     let ckqn = CKQueryNotification(fromRemoteNotificationDictionary: userInfo as! [String:NSObject])
-    // Initiate a new notification with the notification keys
-    let notification = Notification(name: NSNotification.Name(rawValue: CloudKitNotifications.NotificationReceived),
+    let notification = Notification(name: NSNotification.Name(rawValue: MyNotificationReceivedKey),
                                     object: self,
-                                    userInfo: [CloudKitNotifications.NotificationKey: ckqn])
-    // Post the notification
+                                    userInfo: [MyNotificationKey: ckqn])
     NotificationCenter.default.post(notification)
 }
 ```
 
 The next step is to conform to the protocol:
 
-```
-// Specify that we want to listen to all updates concering the CloudKitRecordType
-var subscription: CKQuerySubscription {
-    let subscription = CKQuerySubscription(recordType: CloudKitRecordType,
-                                           predicate: NSPredicate(format: "TRUEPREDICATE"),
-                                           subscriptionID: "All records creation, deletions and updates",
-                                           options: [.firesOnRecordCreation,
-                                                     .firesOnRecordDeletion,
-                                                     .firesOnRecordUpdate])
+```swift
+var subscription: CKQuerySubscription
 
-    let notificationInfo = CKNotificationInfo()
-    notificationInfo.alertLocalizationKey = "New Records"
-    notificationInfo.shouldBadge = true
-    subscription.notificationInfo = notificationInfo
-
-    return subscription
-}
-
-// Deal with the different types of subscription notifications
-func handleSubscriptionNotification(ckqn: CKQueryNotification) {
-    // If it's not our notification, why do anything?
-    if ckqn.subscriptionID == subscription.subscriptionID {
-        if let recordID = ckqn.recordID {
-            switch ckqn.queryNotificationReason {
-                case .recordCreated:
-                database.fetch(withRecordID: recordID) { (record, error) in
-                    if let error = error as? CKError {
-                        self.handle(cloudKitError: error)
-                    }
-                    else {
-                        if let record = record {
-                            self.records.insert(record, at: 0)
-                        }
-                    }
-                }
-
-                case .recordDeleted:
-                let index = self.records.index(where: { $0.recordID == recordID })
-                self.records.remove(at: index!)
-
-                case .recordUpdated:
-                database.fetch(withRecordID: recordID) { (record, error) in
-                    if let error = error as? CKError {
-                        self.handle(cloudKitError: error)
-                    }
-                    else {
-                        if let record = record {
-                            let index = self.records.index(where: { $0.recordID == record.recordID })!
-                            self.records[index] = record
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
+func handleSubscriptionNotification(ckqn: CKQueryNotification) {}
 ```
 
 And the final step is to subscribe to and unsubscribe from updates. This is necessary as subscribtions are quite expensive:
 
-```
-override func viewDidAppear(_ animated: Bool) {
-    super.viewDidAppear(animated)
-    subscribeToUpdates()
-}
+```swift
+// Call in e.g. viewDidAppear
+subscribeToUpdates()
 
-override func viewDidDisappear(_ animated: Bool) {
-    super.viewDidDisappear(animated)
-    unsubscribeToUpdates()
-}
+// Call in e.g. viewDidDisappear
+unsubscribeToUpdates()
 ```
 
 ## Todo
