@@ -4,7 +4,7 @@ import CloudKit
  The protocol defining upload and delete operations to and from iCloud.
  */
 @available(iOS 10.0, *)
-public protocol CloudKitHandler: CloudKitErrorHandler {
+public protocol CloudKitHandler: AnyObject {
     /**
      The database the handler uploads to and deletes from.
     */
@@ -15,38 +15,37 @@ public protocol CloudKitHandler: CloudKitErrorHandler {
      
      - parameters:
         - record: The record to upload.
-        - completionHandler: Is fired when the record is uploaded and includes it in the parameters. If an error occurred during
-                             the operation the handle(cloudKitError error: CKError) from the CloudKitErrorHandler is called.
+        - completionHandler: Is fired after an upload attempt.
      
      - important:
      The completion handler is called from a global asynchronous thread, switch to the main queue before making changes to e.g. the UI.
      */
-    func upload(record: CKRecord, withCompletionHandler completionHandler: ((CKRecord?) -> Void)?)
+    func upload(record: CKRecord, withCompletionHandler completionHandler: ((CKRecord?, CKError?) -> Void)?)
+    
+    func retryUploadAfter(error: Error?, withRecord record: CKRecord, andCompletionHandler completionHandler: ((CKRecord?, CKError?) -> Void)?)
     
     /**
      Deletes a CKRecord from the specified database conformed in the protocol.
      
      - parameters:
         - record: The record to delete.
-        - completionHandler: Is fired when the record is deleted and includes its recordID in the parameters. If an error occurred during
-                             the operation the handle(cloudKitError error: CKError) from the CloudKitErrorHandler is called.
+        - completionHandler: Is fired after a deletion attempt.
      
      - important:
      The completion handler is called from a global asynchronous thread, switch to the main queue before making changes to e.g. the UI.
      */
-    func delete(record: CKRecord, withCompletionHandler completionHandler: ((CKRecordID?) -> Void)?)
+    func delete(record: CKRecord, withCompletionHandler completionHandler: ((CKRecordID?, CKError?) -> Void)?)
+    
+    func retryDeletionAfter(error: Error?, withRecord record: CKRecord, andCompletionHandler completionHandler: ((CKRecordID?, CKError?) -> Void)?)
 }
 
 @available(iOS 10.0, *)
 public extension CloudKitHandler {
-    public func upload(record: CKRecord, withCompletionHandler completionHandler: ((CKRecord?) -> Void)?) {
-        database.save(record) { [unowned self] (savedRecord, error) in
-            if let error = error as? CKError {
-                self.handle(cloudKitError: error)
-                self.retryUploadAfter(error: error, withRecord: record, andCompletionHandler: completionHandler)
-            }
-            else {
-                completionHandler?(savedRecord)
+    
+    public func upload(record: CKRecord, withCompletionHandler completionHandler: ((CKRecord?, CKError?) -> Void)?) {
+        database.save(record) { (savedRecord, error) in
+            if let completionHandler = completionHandler {
+                completionHandler(savedRecord, error as? CKError)
             }
         }
     }
@@ -59,7 +58,7 @@ public extension CloudKitHandler {
         - record: The record which the handler will try to upload again
         - completionHandler: The completion handler given to the upload function
     */
-    public func retryUploadAfter(error: Error?, withRecord record: CKRecord, andCompletionHandler completionHandler: ((CKRecord?) -> Void)?) {
+    public func retryUploadAfter(error: Error?, withRecord record: CKRecord, andCompletionHandler completionHandler: ((CKRecord?, CKError?) -> Void)?) {
         if let retryInterval = (error as? CKError)?.userInfo[CKErrorRetryAfterKey] as? TimeInterval {
             DispatchQueue.main.async {
                 Timer.scheduledTimer(withTimeInterval: retryInterval, repeats: false) { [unowned self] (timer) in
@@ -69,14 +68,10 @@ public extension CloudKitHandler {
         }
     }
 
-    public func delete(record: CKRecord, withCompletionHandler completionHandler: ((CKRecordID?) -> Void)?) {
+    public func delete(record: CKRecord, withCompletionHandler completionHandler: ((CKRecordID?, CKError?) -> Void)?) {
         database.delete(withRecordID: record.recordID) { (deletedRecordID, error) in
-            if let error = error as? CKError {
-                self.handle(cloudKitError: error)
-                self.retryDeletionAfter(error: error, withRecord: record, andCompletionHandler: completionHandler)
-            }
-            else {
-                completionHandler?(deletedRecordID)
+            if let completionHandler = completionHandler {
+                completionHandler(deletedRecordID, error as? CKError)
             }
         }
     }
@@ -89,7 +84,7 @@ public extension CloudKitHandler {
         - record: The record which the handler will try to delete again
         - completionHandler: The completion handler given to the delete function
      */
-    public func retryDeletionAfter(error: Error?, withRecord record: CKRecord, andCompletionHandler completionHandler: ((CKRecordID?) -> Void)?) {
+    public func retryDeletionAfter(error: Error?, withRecord record: CKRecord, andCompletionHandler completionHandler: ((CKRecordID?, CKError?) -> Void)?) {
         if let retryInterval = (error as? CKError)?.userInfo[CKErrorRetryAfterKey] as? TimeInterval {
             DispatchQueue.main.async {
                 Timer.scheduledTimer(withTimeInterval: retryInterval, repeats: false) { [unowned self] (timer) in

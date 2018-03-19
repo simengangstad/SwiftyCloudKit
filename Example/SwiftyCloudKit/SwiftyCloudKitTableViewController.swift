@@ -46,21 +46,88 @@ class SwiftyCloudKitTableViewController: UITableViewController, CloudKitFetcher,
         #endif
     }
     
+    var countOfLocalRecords: Int!
+    
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         // We start fetching. Don't want to fetch every time the view appears on screen.
         if records.isEmpty {
-            fetch()
+            fetch(withCompletionHandler: { (fetchedRecords, error) in
+                DispatchQueue.main.async { [unowned self] in
+                    
+                    if let localRecords = self.loadLocalRecords() {
+                        self.localRecords = localRecords
+                        self.countOfLocalRecords = self.localRecords.count
+                    }
+                    
+                    if let error = error {
+                        print(error.localizedDescription)
+                        self.stopActivityIndicator()
+                    }
+                    else {
+                        print("Retrieved records, reloading table view...")
+                        
+                        if let fetchedRecords = fetchedRecords {
+                            self.records.append(contentsOf: fetchedRecords)
+                            
+                            #if !os(tvOS)
+                                self.update(recordsForWatch: self.records)
+                            #endif
+                        }
+                        
+                        // We got connection to iCloud, upload the local records
+                        
+                        if !self.localRecords.isEmpty {
+                            let completionHandler: ((CKRecord?, CKError?) -> Void) = { (localRecordUploaded, error) in
+                                if let recordUploaded = localRecordUploaded {
+                                    print("Successfully uploaded record \(self.countOfLocalRecords - self.localRecords.count + 1)/\(self.countOfLocalRecords)")
+                                    self.localRecords.remove(at: self.localRecords.index(of: recordUploaded)!)
+                                    if !self.saveLocalRecords() {
+                                        print("Error updating local records")
+                                    }
+                                }
+                            }
+                            
+                            print("Uploading local records (\(self.localRecords.count)")
+                            
+                            self.localRecords.forEach({ (record) in
+                                self.upload(record: record, withCompletionHandler: { (uploadedRecord, error) in
+                                    guard error == nil else {
+                                        self.retryUploadAfter(error: error, withRecord: record, andCompletionHandler: completionHandler)
+                                        return
+                                    }
+                                    
+                                    completionHandler(uploadedRecord, error)
+                                })
+                            })
+                        }
+    
+                        self.stopActivityIndicator()
+                    }
+                    
+                    self.records.append(contentsOf: self.localRecords)
+                    // Sort records
+                    
+                    if self.records.count > self.interval {
+                        self.tableView.reloadData()
+                    }
+                    else {
+                        self.tableView.reloadSections(IndexSet(integer: 0), with: .top)
+                    }
+                }
+            })
+            
             startActivityIndicator()
         }
         
-        subscribeToUpdates()
+        subscribe(nil)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        unsubscribeToUpdates()
+        unsubscribe(nil)
     }
     
     // MARK: Cloud Kit Fetcher
@@ -80,33 +147,6 @@ class SwiftyCloudKitTableViewController: UITableViewController, CloudKitFetcher,
     
     // The cursor is an object which helps us keep track of which records we've fetched, and which records we are to fetch during the next batch. Can be set to nil to start fetching from the start.
     var cursor: CKQueryCursor?
-    
-    // Append the fetched records to our model and reload table view
-    func parseResult(records: [CKRecord]) {
-        DispatchQueue.main.async { [unowned self] in
-            print("Retrieved records, reloading table view...")
-            self.records.append(contentsOf: records)
-            
-            #if !os(tvOS)
-            self.update(recordsForWatch: self.records)
-            #endif
-            
-            if self.records.count > self.interval {
-                self.tableView.reloadData()
-            }
-            else {
-                self.tableView.reloadSections(IndexSet(integer: 0), with: .top)
-            }
-            self.stopActivityIndicator()
-        }
-    }
-    
-    // If there occured an error we stop e.g. activity indicators
-    func terminatingFetchRequest() {
-        DispatchQueue.main.async {
-            self.stopActivityIndicator()
-        }
-    }
     
     // MARK: Cloud kit subscriber
     
@@ -189,22 +229,62 @@ class SwiftyCloudKitTableViewController: UITableViewController, CloudKitFetcher,
         }
     }
     
+    // MARK: Local records
+    
+    static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
+    static let ArchiveURL = DocumentsDirectory.appendingPathComponent("records")
+
+    func saveLocalRecords() -> Bool {
+        return NSKeyedArchiver.archiveRootObject(localRecords, toFile: SwiftyCloudKitTableViewController.ArchiveURL.path)
+    }
+    
+    func loadLocalRecords() -> [CKRecord]? {
+        return NSKeyedUnarchiver.unarchiveObject(withFile: SwiftyCloudKitTableViewController.ArchiveURL.path) as? [CKRecord]
+    }
+    
+    var localRecords = [CKRecord]()
+    
     // MARK: Adding items
     
     @IBAction func addItem(_ sender: UIBarButtonItem) {
         let record = CKRecord(recordType: CloudKitRecordType)
         record.set(string: "\(records.count + 1)", key: CloudKitTextField)
         startActivityIndicator()
-        upload(record: record) { [unowned self] (uploadedRecord) in
+        
+        upload(record: record) { [unowned self] (uploadedRecord, error) in
             DispatchQueue.main.async {
-                if let uploadedRecord = uploadedRecord {
+                if let error = error {
+                    
+                    switch error.code {
+                    case .networkUnavailable, .networkFailure, .serviceUnavailable, .requestRateLimited:
+                        // Saving locally
+                        self.localRecords.insert(record, at: 0)
+                        self.records.insert(record, at: 0)
+                        self.tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .top)
+                        
+                        if self.saveLocalRecords() {
+                            print("Managed to save record locally")
+                        }
+                        else {
+                            print("Failed to save locally")
+                        }
+                    default:
+                        print(error.localizedDescription)
+                    }
+                    
                     self.stopActivityIndicator()
-                    print("Record uploaded")
-                    self.records.insert(uploadedRecord, at: 0)
-                    #if !os(tvOS)
-                    self.update(recordsForWatch: self.records)
-                    #endif
-                    self.tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .top)
+                }
+                else {
+                    
+                    if let uploadedRecord = uploadedRecord {
+                        self.stopActivityIndicator()
+                        print("Record uploaded")
+                        self.records.insert(uploadedRecord, at: 0)
+                        #if !os(tvOS)
+                            self.update(recordsForWatch: self.records)
+                        #endif
+                        self.tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .top)
+                    }
                 }
             }
         }
@@ -250,7 +330,8 @@ class SwiftyCloudKitTableViewController: UITableViewController, CloudKitFetcher,
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            delete(record: records[indexPath.row], withCompletionHandler: { [unowned self] (deletedRecordID) in
+            
+            delete(record: records[indexPath.row], withCompletionHandler: { [unowned self] (recordID, error) in
                 DispatchQueue.main.async {
                     print("Record deleted")
                     self.records.remove(at: indexPath.row)

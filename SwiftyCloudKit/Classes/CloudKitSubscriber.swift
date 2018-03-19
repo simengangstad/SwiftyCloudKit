@@ -35,7 +35,7 @@ import CloudKit
 
 #if !os(watchOS)
 @available (iOS 10.0, tvOS 10.0, OSX 10.12, *)
-public protocol CloudKitSubscriber: CloudKitErrorHandler, PropertyStoring {
+public protocol CloudKitSubscriber: AnyObject, PropertyStoring {
     
     /**
      The database the subscriber gets its updates from.
@@ -53,7 +53,7 @@ public protocol CloudKitSubscriber: CloudKitErrorHandler, PropertyStoring {
      - important:
     Subscription is expensive, so limit it to only when needed.
     */
-    func subscribeToUpdates()
+    func subscribe(_ completionHandler: ((CKError?) -> Void)?)
     
     /**
      Makes the subscriber stop listening to updates.
@@ -61,7 +61,7 @@ public protocol CloudKitSubscriber: CloudKitErrorHandler, PropertyStoring {
      - important:
      Make sure to unsubscribe when the subscription is not in use.
     */
-    func unsubscribeToUpdates()
+    func unsubscribe(_ completionHandler: ((CKError?) -> Void)?)
     
     /**
      Gets called when there are updates to the database within the terms specified by the query.
@@ -97,13 +97,10 @@ public extension CloudKitSubscriber {
         set { return setAssociatedObject(&observerKey, value: newValue) }
     }
 
-    public func subscribeToUpdates() {
+    public func subscribe(_ completionHandler: ((CKError?) -> Void)?) {
         database.save(subscription) { (savedSubscription, error) in
-            if let error = error as? CKError {
-                self.handle(cloudKitError: error)
-            }
-            else {
-                print("Subscription to '\(self.subscription.subscriptionID)' successfull")
+            if let completionHandler = completionHandler {
+                completionHandler(error as? CKError)
             }
         }
 
@@ -116,13 +113,10 @@ public extension CloudKitSubscriber {
         }
     }
 
-    public func unsubscribeToUpdates() {
-        database.delete(withSubscriptionID: subscription.subscriptionID) { [unowned self] (removedSubscription, error) in
-            if let error = error as? CKError {
-                self.handle(cloudKitError: error)
-            }
-            else {
-                print("Sucessful unsubscription from: \(self.subscription.subscriptionID)")
+    public func unsubscribe(_ completionHandler: ((CKError?) -> Void)?) {
+        database.delete(withSubscriptionID: subscription.subscriptionID) { (removedSubscription, error) in
+            if let completionHandler = completionHandler {
+                completionHandler(error as? CKError)
             }
         }
 

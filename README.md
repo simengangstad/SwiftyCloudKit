@@ -147,6 +147,8 @@ unsubscribeToUpdates()
 ## Todo
 
 - [x] Support type lists
+- [ ] Update readme
+- [ ] Include local and offline capabilities into the library
 - [ ] Add tests
 - [ ] Add image support for macOS
 - [ ] Test on tvOS, watchOS and macOS

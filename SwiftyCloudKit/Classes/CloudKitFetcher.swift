@@ -5,7 +5,7 @@ import CloudKit
  example fetch records in an interval of 10. In a case where there is a total of 25 records, it'll fetch record 1-10, then 11-20, thereafter
  21-25. It uses the CKQueryCursor to know which records it'll fetch during the next batch.
  */
-public protocol CloudKitFetcher: CloudKitErrorHandler, PropertyStoring {
+public protocol CloudKitFetcher: AnyObject, PropertyStoring {
     
     /**
      The database the fetcher fetches records from, can either be the private or the public database.
@@ -23,7 +23,7 @@ public protocol CloudKitFetcher: CloudKitErrorHandler, PropertyStoring {
      The amount of records fetched per batch.
     */
     var interval: Int { get }
-    
+
     /**
      The cursor which keeps control over which records that are to be fetched during the next batch. Is set to nil when all the records are fetched.
      */
@@ -31,28 +31,11 @@ public protocol CloudKitFetcher: CloudKitErrorHandler, PropertyStoring {
 
     /**
      Fetches the records stored in iCloud based on the parameters given to the cloud kit fetcher.
+     
+     - parameters
+        - completionHandler: encapsulates the records fetched and errors, if any.
      */
-    func fetch()
-    
-    /**
-     Parses the fetched records. This is where the cloud kit fetcher returns the records it has fetched.
-     
-     - parameters:
-        - records: The records fetched in the fetch() function.
-     
-     - important:
-    This function will get called from a global asynchronous thread. Switch to the main thread before you make changes to the UI, e.g. reloading the data in a table view.
-    */
-    func parseResult(records: [CKRecord])
-    
-    /**
-     Is called when an error occurred during the fetch operation and the fetch request had to be terminated. Use this function to stop loading animations
-     and similar things.
-     
-     - important:
-    This function will get called from a global asynchronous thread.
-    */
-    func terminatingFetchRequest()
+    func fetch(withCompletionHandler completionHandler: @escaping ([CKRecord]?, CKError?) -> Void)
 }
 
 /**
@@ -77,17 +60,16 @@ public extension CloudKitFetcher {
         set { return setAssociatedObject(&fetchKey, value: newValue)}
     }
     
-    public func fetch() {
+    public func fetch(withCompletionHandler completionHandler: @escaping ([CKRecord]?, CKError?) -> Void) {
         var operation: CKQueryOperation!
         var array = [CKRecord]()
 
         if cursor == nil {
             guard let query = query else {
-                handle(cloudKitError: CKError(_nsError: NSError(domain: "ck fetch", code: CKError.serviceUnavailable.rawValue, userInfo: nil)))
-                terminatingFetchRequest()
+                completionHandler(nil, CKError(_nsError: NSError(domain: "ck fetch", code: CKError.serviceUnavailable.rawValue, userInfo: nil)))
                 return
             }
-
+        
             operation = CKQueryOperation(query: query)
         }
         else {
@@ -95,12 +77,14 @@ public extension CloudKitFetcher {
         }
 
         operation.resultsLimit = interval
+        operation.qualityOfService = .userInitiated
         operation.recordFetchedBlock = { [unowned self] in
             if self.fetchState == .more {
                 array.append($0)
             }
         }
-
+        
+        // TODO: Completion handler is never fired when the device isn't connected to the internet
         operation.queryCompletionBlock = { [unowned self] (cursor, error) in
             if cursor != nil {
                 self.cursor = cursor
@@ -108,14 +92,8 @@ public extension CloudKitFetcher {
             else {
                 self.fetchState = .none
             }
-
-            if let error = error as? CKError {
-                self.handle(cloudKitError: error)
-                self.terminatingFetchRequest()
-            }
-            else {
-                self.parseResult(records: array)
-            }
+            
+            completionHandler(array, error as? CKError)
         }
 
         database.add(operation)
