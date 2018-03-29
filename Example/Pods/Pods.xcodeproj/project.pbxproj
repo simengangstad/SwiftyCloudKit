@@ -106,12 +106,10 @@
 		8AE03890A544320CD689B238B1F25590 /* Pods-SwiftyCloudKit_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DA6A2CFBB67A4D97BBFA8F506486DAFF /* Pods-SwiftyCloudKit_Example-dummy.m */; };
 		8AE837286BCB6CCF49DFB59F44460C17 /* Behavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8958E6A104616DC4782A7B97FDA3B19B /* Behavior.swift */; };
 		8B55BD430033027AD5FF22D630DD9F62 /* DSL.m in Sources */ = {isa = PBXBuildFile; fileRef = EA23EE0A80D318077C28121C5AD51D0D /* DSL.m */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
-		8FAAF446EC1CCE0E2A8200322C650FCB /* CloudKitFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE97F910912986C947F3C912D76DB76 /* CloudKitFetcher.swift */; };
 		91D0138ACFAD733E4061F12E450C336C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F866A3A01E45396201922A1F3BCECFE /* Foundation.framework */; };
 		91D400CC851F516E785B032662E4FDD8 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 798C1F85CADC2D3708BA36EA15685603 /* Nimble.framework */; };
 		94A65E26825F0D515D50186715C380EC /* Pods-SwiftyCloudKit_watchOS Extension-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9033C9E429686AF243C45FEDA68E571B /* Pods-SwiftyCloudKit_watchOS Extension-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		96132E7432F8DD315A88A07C6B4F9C72 /* NMBStringify.h in Headers */ = {isa = PBXBuildFile; fileRef = E43274BDDF946146643879824D00EC31 /* NMBStringify.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9631BA6D4ABC63EC100BE05484681C61 /* CloudKitFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE97F910912986C947F3C912D76DB76 /* CloudKitFetcher.swift */; };
 		9673CF780F48C8E4EC2A331717B1F67C /* FBSnapshotTestCase.h in Headers */ = {isa = PBXBuildFile; fileRef = C3D41F703F26B177ACAAD1FFB6C0AAE1 /* FBSnapshotTestCase.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		988EED125395950177DC14AF9BC87D8D /* HaveCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA927ABEA5A603E8961BF9D9EE2F03F5 /* HaveCount.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		99B4965E0FDC6EBE2B13A08AA6A80D61 /* Pods-SwiftyCloudKit_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D62FBEFF4C716C8F9B589113ED4EBEA /* Pods-SwiftyCloudKit_Tests-dummy.m */; };
@@ -145,7 +143,6 @@
 		C06FA100C1BBEE34B863BCB8A65359C1 /* MatcherFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716B8AB51715BE5FB084529BE052EBB1 /* MatcherFunc.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		C0B959B797DB51EDFF8D41DA3CF877CD /* Callsite.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41C6D06731AEA313DD5A5EC8B9B56AF /* Callsite.swift */; };
 		C1D862177DC2999FAC710AC25F253BD0 /* BeAnInstanceOf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B22EC6FE4AA48E5CAD5B01A5D16C11 /* BeAnInstanceOf.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
-		C1DC5685C55005566C8ECDD31B01FD34 /* CloudKitFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE97F910912986C947F3C912D76DB76 /* CloudKitFetcher.swift */; };
 		C2467221FCD579800B9CD8FBBDB10B4D /* CwlCatchBadInstruction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911BAA281ED929043C3DE08BDF136325 /* CwlCatchBadInstruction.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		C2E75F9BCD361C4E72B0FC2EE1463B3B /* CloudKitSubscriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = C173B94E6ECB3414AC0ACD409E9BFA09 /* CloudKitSubscriber.swift */; };
 		C365D0F41EBC7BDE6877581CB2494E03 /* XCTestObservationCenter+CurrentTestCaseTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 22FBCE7282A34B68225BB329B0118DB2 /* XCTestObservationCenter+CurrentTestCaseTracker.m */; };
@@ -337,7 +334,6 @@
 		37CDB70A47093EFA025A84CC82BDE3B1 /* UIImage+Diff.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+Diff.h"; path = "FBSnapshotTestCase/Categories/UIImage+Diff.h"; sourceTree = "<group>"; };
 		38CB8C91B44DFA94D543228EB3934E5B /* PrettySyntax.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PrettySyntax.swift; sourceTree = "<group>"; };
 		39007EAC9C06A13F1FC9101C4843B8ED /* World.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = World.h; path = Sources/QuickObjectiveC/World.h; sourceTree = "<group>"; };
-		3BE97F910912986C947F3C912D76DB76 /* CloudKitFetcher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CloudKitFetcher.swift; path = SwiftyCloudKit/Classes/CloudKitFetcher.swift; sourceTree = "<group>"; };
 		3EA5483D7E584C3E90B3394AD9DEB294 /* Pods-SwiftyCloudKit_watchOS-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SwiftyCloudKit_watchOS-resources.sh"; sourceTree = "<group>"; };
 		3F6A13633C66B8A587030C9A32C0E7BA /* NMBExceptionCapture.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NMBExceptionCapture.h; path = Sources/NimbleObjectiveC/NMBExceptionCapture.h; sourceTree = "<group>"; };
 		40BD6C92C04852276647CF58AD53276A /* Nimble.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Nimble.h; path = Sources/Nimble/Nimble.h; sourceTree = "<group>"; };
@@ -890,7 +886,6 @@
 		A412642961AABB0DC6FADB9F5E8AD4CB /* SwiftyCloudKit */ = {
 			isa = PBXGroup;
 			children = (
-				3BE97F910912986C947F3C912D76DB76 /* CloudKitFetcher.swift */,
 				126F692A2B496C582F9EF2242AB35AE0 /* CloudKitHandler.swift */,
 				C173B94E6ECB3414AC0ACD409E9BFA09 /* CloudKitSubscriber.swift */,
 				6A1DF94E6AE5C733C5D767A94FFC0801 /* SwiftyCloudKit.swift */,
@@ -1491,7 +1486,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C1DC5685C55005566C8ECDD31B01FD34 /* CloudKitFetcher.swift in Sources */,
 				27326899B89ADFF92922184F360BCA20 /* CloudKitHandler.swift in Sources */,
 				33CD28B5AAA76394C505ADB9C591C825 /* CloudKitSubscriber.swift in Sources */,
 				2B73C9BD5E3BA2B6070EE0A7F24EA951 /* SwiftyCloudKit-tvOS-dummy.m in Sources */,
@@ -1619,7 +1613,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9631BA6D4ABC63EC100BE05484681C61 /* CloudKitFetcher.swift in Sources */,
 				5CADA60656FBB3B60035FC10733BC3DF /* CloudKitHandler.swift in Sources */,
 				F6DE93460E4060E4F6DA85AEFD24FEA6 /* CloudKitSubscriber.swift in Sources */,
 				3F3825D8D392F7EE65043A53B514ACD6 /* SwiftyCloudKit-watchOS-dummy.m in Sources */,
@@ -1631,7 +1624,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8FAAF446EC1CCE0E2A8200322C650FCB /* CloudKitFetcher.swift in Sources */,
 				04E2C37C178151E1D9F051FC62554D11 /* CloudKitHandler.swift in Sources */,
 				C2E75F9BCD361C4E72B0FC2EE1463B3B /* CloudKitSubscriber.swift in Sources */,
 				6E0F0188556056DC183FDC64A2872164 /* SwiftyCloudKit-iOS-dummy.m in Sources */,

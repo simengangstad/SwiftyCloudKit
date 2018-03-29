@@ -70,7 +70,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AF83079EFC3C0C229D613B71708B1371"
+               BlueprintIdentifier = "E6D70EC3F7AD4AF2DE6864E4CADFC8EC"
                BuildableName = "Pods_SwiftyCloudKit_Example.framework"
                BlueprintName = "Pods-SwiftyCloudKit_Example"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">

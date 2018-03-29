@@ -11,7 +11,7 @@ import SwiftyCloudKit
 import WatchConnectivity
 #endif
 
-class SwiftyCloudKitTableViewController: UITableViewController, CloudKitFetcher, CloudKitHandler, CloudKitSubscriber {
+class SwiftyCloudKitTableViewController: UITableViewController, CloudKitHandler, CloudKitSubscriber {
     
     // MARK: Model
     
@@ -56,59 +56,21 @@ class SwiftyCloudKitTableViewController: UITableViewController, CloudKitFetcher,
         if records.isEmpty {
             fetch(withCompletionHandler: { (fetchedRecords, error) in
                 DispatchQueue.main.async { [unowned self] in
-                    
-                    if let localRecords = self.loadLocalRecords() {
-                        self.localRecords = localRecords
-                        self.countOfLocalRecords = self.localRecords.count
-                    }
-                    
                     if let error = error {
                         print(error.localizedDescription)
-                        self.stopActivityIndicator()
                     }
-                    else {
-                        print("Retrieved records, reloading table view...")
+
+                    print("Retrieved records, reloading table view...")
+                    
+                    if let fetchedRecords = fetchedRecords {
+                        self.records.append(contentsOf: fetchedRecords)
                         
-                        if let fetchedRecords = fetchedRecords {
-                            self.records.append(contentsOf: fetchedRecords)
-                            
-                            #if !os(tvOS)
-                                self.update(recordsForWatch: self.records)
-                            #endif
-                        }
-                        
-                        // We got connection to iCloud, upload the local records
-                        
-                        if !self.localRecords.isEmpty {
-                            let completionHandler: ((CKRecord?, CKError?) -> Void) = { (localRecordUploaded, error) in
-                                if let recordUploaded = localRecordUploaded {
-                                    print("Successfully uploaded record \(self.countOfLocalRecords - self.localRecords.count + 1)/\(self.countOfLocalRecords)")
-                                    self.localRecords.remove(at: self.localRecords.index(of: recordUploaded)!)
-                                    if !self.saveLocalRecords() {
-                                        print("Error updating local records")
-                                    }
-                                }
-                            }
-                            
-                            print("Uploading local records (\(self.localRecords.count)")
-                            
-                            self.localRecords.forEach({ (record) in
-                                self.upload(record: record, withCompletionHandler: { (uploadedRecord, error) in
-                                    guard error == nil else {
-                                        self.retryUploadAfter(error: error, withRecord: record, andCompletionHandler: completionHandler)
-                                        return
-                                    }
-                                    
-                                    completionHandler(uploadedRecord, error)
-                                })
-                            })
-                        }
-    
-                        self.stopActivityIndicator()
+                        #if !os(tvOS)
+                            self.update(recordsForWatch: self.records)
+                        #endif
                     }
                     
-                    self.records.append(contentsOf: self.localRecords)
-                    // Sort records
+                    self.stopActivityIndicator()
                     
                     if self.records.count > self.interval {
                         self.tableView.reloadData()
@@ -130,7 +92,7 @@ class SwiftyCloudKitTableViewController: UITableViewController, CloudKitFetcher,
         unsubscribe(nil)
     }
     
-    // MARK: Cloud Kit Fetcher
+    // MARK: Cloud Kit Handler
     
     // Specify the database, could also be the publicCloudDatabase if one were to share data between multiple users, but in this case we fetch from our private iCloud database
     var database: CKDatabase = CKContainer.default().privateCloudDatabase
@@ -141,6 +103,8 @@ class SwiftyCloudKitTableViewController: UITableViewController, CloudKitFetcher,
         query.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
         return query
     }
+    
+    var offlineSupport: Bool = true
     
     // The amount of records we'll fetch for each request
     var interval: Int = 10
@@ -228,21 +192,7 @@ class SwiftyCloudKitTableViewController: UITableViewController, CloudKitFetcher,
             }
         }
     }
-    
-    // MARK: Local records
-    
-    static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
-    static let ArchiveURL = DocumentsDirectory.appendingPathComponent("records")
 
-    func saveLocalRecords() -> Bool {
-        return NSKeyedArchiver.archiveRootObject(localRecords, toFile: SwiftyCloudKitTableViewController.ArchiveURL.path)
-    }
-    
-    func loadLocalRecords() -> [CKRecord]? {
-        return NSKeyedUnarchiver.unarchiveObject(withFile: SwiftyCloudKitTableViewController.ArchiveURL.path) as? [CKRecord]
-    }
-    
-    var localRecords = [CKRecord]()
     
     // MARK: Adding items
     
@@ -251,40 +201,22 @@ class SwiftyCloudKitTableViewController: UITableViewController, CloudKitFetcher,
         record.set(string: "\(records.count + 1)", key: CloudKitTextField)
         startActivityIndicator()
         
-        upload(record: record) { [unowned self] (uploadedRecord, error) in
+        upload(record: record) { [unowned self] (addedRecord, error) in
             DispatchQueue.main.async {
-                if let error = error {
-                    
-                    switch error.code {
-                    case .networkUnavailable, .networkFailure, .serviceUnavailable, .requestRateLimited:
-                        // Saving locally
-                        self.localRecords.insert(record, at: 0)
-                        self.records.insert(record, at: 0)
-                        self.tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .top)
-                        
-                        if self.saveLocalRecords() {
-                            print("Managed to save record locally")
-                        }
-                        else {
-                            print("Failed to save locally")
-                        }
-                    default:
-                        print(error.localizedDescription)
-                    }
-                    
+                
+                if let error = error as? CKError {
+                    print(error.localizedDescription)
                     self.stopActivityIndicator()
                 }
-                else {
-                    
-                    if let uploadedRecord = uploadedRecord {
-                        self.stopActivityIndicator()
-                        print("Record uploaded")
-                        self.records.insert(uploadedRecord, at: 0)
-                        #if !os(tvOS)
-                            self.update(recordsForWatch: self.records)
-                        #endif
-                        self.tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .top)
-                    }
+
+                if let addedRecord = addedRecord {
+                    self.stopActivityIndicator()
+                    print("Record uploaded/added to local storage")
+                    self.records.insert(addedRecord, at: 0)
+                    #if !os(tvOS)
+                        self.update(recordsForWatch: self.records)
+                    #endif
+                    self.tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .top)
                 }
             }
         }
