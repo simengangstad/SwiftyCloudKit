@@ -31,7 +31,7 @@ SwiftyCloudKit consists of two submodules: CloudKitHandler and CloudKitSubscribe
 
 ### CloudKitHandler
 
-The cloud kit handler fetches records from iCloud and allows you to upload records to the iCloud database and remove records from it. Remember to set up a record type at the [CloudKit Dashboard](https://icloud.developer.apple.com/dashboard) first. The protocol requires you to implement five variables (read more about these in the documentation or in the example project), which define how the fetch is executed. If `offlineSupport` is set to true, the library will handle the cases where the device is offline and store the records temporarily locally, and upload them once internet connection is present.
+The CloudKitHandler fetches records from iCloud and allows you to upload records to the iCloud database and remove records from it. Remember to set up a record type at the [CloudKit Dashboard](https://icloud.developer.apple.com/dashboard) first. The protocol requires you to implement five variables (read more about these in the documentation or in the example project), which define how the fetch is executed. If `offlineSupport` is set to true, the library will handle the cases where the device is offline and store the records temporarily locally, and upload them once internet connection is present.
 
 ```swift
 
