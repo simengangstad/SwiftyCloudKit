@@ -75,14 +75,14 @@ delete(record: record, withCompletionHandler: { [unowned self] (recordID, error)
 
 #### Accessing and setting values of records
 
-There exist helper functions for every type supported by CloudKit. So you can retrieve and set strings, references, data, assets, ints, doubles, locations, dates, lists of the these types, as well as images and videos using the helper functions. If you store a image in the record you'll retrieve an optional UIImage when asking for the image, for a video you'll receive an optional URL to a temporary local file which can be used in an AVPlayer. In that way you don't have to deal with conversion. *Note: As the videos are stored locally as cache, it's necessary to clear the cache at times. Call `deleteLocalVideos()` in e.g. `applicationWillTerminate(_ application: UIApplication)` in the AppDelegate order to remove them.*
+There exist helper functions for every type supported by CloudKit. So you can retrieve and set strings, references, data, assets, ints, doubles, locations, dates, lists of the these types, as well as images and videos using the helper functions. If you store a image in the record you'll retrieve an optional UIImage when asking for the image, for a video you'll receive an optional URL to a temporary local file which can be used in an AVPlayer. In that way you don't have to deal with conversion. *Note: As the videos are stored locally as cache, it's necessary to clear the cache at times. Call `deleteLocalVideos()` in e.g. `applicationWillTerminate(_ application: UIApplication)` in the AppDelegate to remove them.*
 
-To retrieve values, you use `value(_ key: String)`. E.g.:
+To retrieve values, use `value(_ key: String)`. E.g.:
 ```swift
 let myString = record.string(MyStringKey)
 ```
 
-In order to set values, you use `set(value: Value, key: String)`. E.g:
+In order to set values, use `set(value: Value, key: String)`. E.g:
 ```swift
 record.set(string: "Hello World", key: MyStringKey)
 ```
@@ -94,7 +94,7 @@ A subscription is useful when there are multiple units having read and write acc
 
 The prerequisites for subscriptions are:
 - Adding remote-notification to UIBackgroundModes in info.plist
-- Register for remote notifications in the app delegate and post notifications around the app when we receive a push notification, which is done the following way:
+- Register for remote notifications in the app delegate and post notifications around the app when a push notification is received, which is done the following way:
 
 ```swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -122,14 +122,14 @@ var subscription: CKQuerySubscription
 func handleSubscriptionNotification(ckqn: CKQueryNotification) {}
 ```
 
-And the final step is to subscribe to and unsubscribe from updates. This is necessary as subscribtions are quite expensive:
+And the final step is to subscribe to and unsubscribe from updates. This is necessary as subscriptions are quite expensive:
 
 ```swift
 // Call in e.g. viewDidAppear
-subscribeToUpdates()
+subscribe(_ completionHandler: ((CKError?) -> Void)?)
 
 // Call in e.g. viewDidDisappear
-unsubscribeToUpdates()
+unsubscribe(_ completionHandler: ((CKError?) -> Void)?)
 ```
 
 ## Todo
