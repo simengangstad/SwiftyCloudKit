@@ -2,7 +2,7 @@
 
 [![CI Status](http://img.shields.io/travis/simengangstad/SwiftyCloudKit.svg?style=flat)](https://travis-ci.org/simengangstad/SwiftyCloudKit) [![Version](https://img.shields.io/cocoapods/v/SwiftyCloudKit.svg?style=flat)](http://cocoapods.org/pods/SwiftyCloudKit) [![License](https://img.shields.io/cocoapods/l/SwiftyCloudKit.svg?style=flat)](http://cocoapods.org/pods/SwiftyCloudKit) [![Platform](https://img.shields.io/cocoapods/p/SwiftyCloudKit.svg?style=flat)](http://cocoapods.org/pods/SwiftyCloudKit)
 
-SwiftyCloudKit is a thin layer above Cloud Kit which makes it easy to implement cloud support into iOS/macOS/tvOS/watchOS apps. The library is structured into modules which can be used independently or together, all after need.
+SwiftyCloudKit is a thin layer above Cloud Kit which makes it easy to implement cloud support into iOS/macOS/tvOS/watchOS apps.
 
 ## Example
 
@@ -27,21 +27,11 @@ pod 'SwiftyCloudKit'
 
 ## Use
 
-There are four submodules – or protocols – of SwiftyCloudKit: CloudKitFetcher, CloudKitHandler, CloudKitSubscriber and CloudKitErrorHandler. For more information on how these are implemented see the example project or the documentation in the respective files in the library.
+SwiftyCloudKit consists of two submodules: CloudKitHandler and CloudKitSubscriber. For more information on how these are implemented read further on, see the example project or the documentation in the respective files in the library.
 
-### CloudKitErrorHandler
+### CloudKitHandler
 
-All the other submodules will call the error handler when an error occurs. Therefore it is required to conform to:
-
-```swift
-func handle(cloudKitError error: CKError) {
-    // Handle errors
-}
-```
-
-### CloudKitFetcher
-
-The cloud kit fetcher fetches records from iCloud. Remember to set up a record type in cloud kit dashboard first. The protocol requires you to implement these variables and functions:
+The cloud kit handler fetches records from iCloud and allows you to upload records to the iCloud database and remove records from it. Remember to set up a record type at the [CloudKit Dashboard](https://icloud.developer.apple.com/dashboard) first. The protocol requires you to implement five variables (read more about these in the documentation or in the example project), which define how the fetch is executed. If `offlineSupport` is set to true, the library will handle the cases where the device is offline and store the records temporarily locally, and upload them once internet connection is present.
 
 ```swift
 
@@ -49,21 +39,43 @@ var database: CKDatabase
 var query: CKQuery?
 var interval: Int
 var cursor: CKQueryCursor?
-
-func parseResult(records: [CKRecord]) {
-    // Do something with the records fetched
-}
-
-func terminatingFetchRequest() {
-    // Do something if the fetch failed
-}
+var offlineSupport: Bool
 ```
 
-Then call `fetch()` in e.g. viewDidAppear to fetch the records.
+Then simply call the fetch function in e.g. viewDidAppear to fetch the records:
+
+```swift
+fetch(withCompletionHandler: { (records, error) in
+    // Do something with the fetched records.
+})
+```
+
+#### Uploading and deleting records
+
+Uploading and deleting records are done with the following methods. If an upload or deletion operation fails because of an iCloud error, the error included in the completion handler will be a CKError. If the operation fails because the library didn't detect an internet connection and failed to save or delete locally, it will return a LocalStorageError.
+
+```swift
+upload(record: CKRecord, withCompletionHandler completionHandler: ((CKRecord?, Error?) -> Void)?)
+```
+```swift
+delete(record: CKRecord, withCompletionHandler completionHandler: ((CKRecordID?, Error?) -> Void)?)
+```
+
+An example:
+```swift
+let record = CKRecord(recordType: MyRecordType)
+record.set(string: "Hello World", key: MyStringKey)
+upload(record: record, withCompletionHandler: { [unowned self] (record, error) in
+    // Do something with the uploaded record
+})
+delete(record: record, withCompletionHandler: { [unowned self] (recordID, error) in
+    // Do something when the record is deleted
+})
+```
 
 #### Accessing and setting values of records
 
-There exist helper functions for every type supported by CloudKit. So you can retrieve and set strings, references, data, assets, ints, doubles, locations, dates, lists of the these types, as well as images and videos using the helper functions. If you store a image in the record you'll retrieve an optional UIImage when asking for the image, for a video you'll receive an optional URL to a temporary local file which can be used in an AVPlayer. In that way you don't have to deal with conversion.
+There exist helper functions for every type supported by CloudKit. So you can retrieve and set strings, references, data, assets, ints, doubles, locations, dates, lists of the these types, as well as images and videos using the helper functions. If you store a image in the record you'll retrieve an optional UIImage when asking for the image, for a video you'll receive an optional URL to a temporary local file which can be used in an AVPlayer. In that way you don't have to deal with conversion. *Note: As the videos are stored locally as cache, it's necessary to clear the cache at times. Call `deleteLocalVideos()` in e.g. `applicationWillTerminate(_ application: UIApplication)` in the AppDelegate order to remove them.*
 
 To retrieve values, you use `value(_ key: String)`. E.g.:
 ```swift
@@ -75,30 +87,6 @@ In order to set values, you use `set(value: Value, key: String)`. E.g:
 record.set(string: "Hello World", key: MyStringKey)
 ```
 
-### CloudKitHandler
-
-Cloud kit handler simply allows you to upload and delete records in the database. There are two functions:
-
-```swift
-upload(record: CKRecord, withCompletionHandler completionHandler: ((CKRecord?) -> Void)?)
-```
-```swift
-delete(record: CKRecord, withCompletionHandler completionHandler: ((CKRecordID?) -> Void)?)
-```
-
-An example:
-```swift
-let record = CKRecord(recordType: MyRecordType)
-record.set(string: "Hello World", key: MyStringKey)
-upload(record: record) { (uploadedRecord) in
-    // Do something with the uploaded record
-}
-delete(record: record) { (deletedRecordID) in
-    // Do something when the record is deleted
-}
-```
-
-If an upload or deletion fails, the cloud kit handler will retry the operation after a time interval. If the operation can't be completed after a few times, it'll call the cloud kit error handler.
 
 ### CloudKitSubscriber
 
@@ -147,8 +135,8 @@ unsubscribeToUpdates()
 ## Todo
 
 - [x] Support type lists
-- [ ] Update readme
-- [ ] Include local and offline capabilities into the library
+- [x] Update readme
+- [x] Include local and offline capabilities into the library
 - [ ] Add tests
 - [ ] Add image support for macOS
 - [ ] Test on tvOS, watchOS and macOS

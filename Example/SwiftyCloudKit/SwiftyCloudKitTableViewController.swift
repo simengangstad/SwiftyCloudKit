@@ -107,7 +107,7 @@ class SwiftyCloudKitTableViewController: UITableViewController, CloudKitHandler,
     var offlineSupport: Bool = true
     
     // The amount of records we'll fetch for each request
-    var interval: Int = 10
+    var interval: Int = 50
     
     // The cursor is an object which helps us keep track of which records we've fetched, and which records we are to fetch during the next batch. Can be set to nil to start fetching from the start.
     var cursor: CKQueryCursor?
@@ -133,6 +133,7 @@ class SwiftyCloudKitTableViewController: UITableViewController, CloudKitHandler,
     
     // Deal with the different types of subscription notifications
     func handleSubscriptionNotification(ckqn: CKQueryNotification) {
+        
         if ckqn.subscriptionID == subscription.subscriptionID {
             if let recordID = ckqn.recordID {
                 switch ckqn.queryNotificationReason {
@@ -142,7 +143,7 @@ class SwiftyCloudKitTableViewController: UITableViewController, CloudKitHandler,
                     database.fetch(withRecordID: recordID) { (record, error) in
                         
                         if let error = error as? CKError {
-                            self.handle(cloudKitError: error)
+                            print(error.localizedDescription)
                         }
                         else {
                             if let record = record {
@@ -172,7 +173,7 @@ class SwiftyCloudKitTableViewController: UITableViewController, CloudKitHandler,
                     startActivityIndicator()
                     database.fetch(withRecordID: recordID) { (record, error) in
                         if let error = error as? CKError {
-                            self.handle(cloudKitError: error)
+                            print(error.localizedDescription)
                         }
                         else {
                             if let record = record {
@@ -210,7 +211,6 @@ class SwiftyCloudKitTableViewController: UITableViewController, CloudKitHandler,
                 }
 
                 if let addedRecord = addedRecord {
-                    self.stopActivityIndicator()
                     print("Record uploaded/added to local storage")
                     self.records.insert(addedRecord, at: 0)
                     #if !os(tvOS)
@@ -277,52 +277,6 @@ class SwiftyCloudKitTableViewController: UITableViewController, CloudKitHandler,
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: nil))
         present(alertController, animated: true, completion: nil)
-    }
-}
-
-// MARK: Cloud Kit Error Handler
-extension SwiftyCloudKitTableViewController {
-    func handle(cloudKitError error: CKError) {
-        
-        var errorMessage: String!
-        
-        switch error.code {
-            
-        case .networkUnavailable:
-            errorMessage = "Swifty cloud kit requires a network connection"
-            break
-            
-        case .networkFailure:
-            errorMessage = "There was an error establishing a successful connection to the network"
-            break
-            
-        case .serviceUnavailable:
-            errorMessage = "Could not establish a connection with iCloud's service, try agin later"
-            break
-            
-        case .requestRateLimited:
-            errorMessage = "Request rates for iCloud services are temporarily limited, try again later"
-            break
-            
-        case .notAuthenticated:
-            errorMessage = "Swifty cloud kit relies its services on Apple's servers through iCloud, therefore an iCloud login is required. Log on to iCloud."
-            break
-            
-        case .unknownItem:
-            errorMessage = "Entry does not exist anymore"
-            break
-            
-        case .quotaExceeded:
-            errorMessage = "Cannot save as this entry would exceed the device quota"
-            break
-            
-        default:
-            errorMessage = "Cloud kit request failed with error code \(error.errorCode)"
-            break
-            
-        }
-
-        displayDestructiveAlertMessage(withTitle: "iCloud", andMessage: "\(errorMessage!) - \(error.localizedDescription)")
     }
 }
 

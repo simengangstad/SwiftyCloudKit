@@ -253,7 +253,7 @@ public extension CKAsset {
     }
 
     public func video(withFilename filename: String) -> URL? {
-        return Data.retrieveOrCreateFile(withDataURL: fileURL, andFileName: "\(filename).mov", recreateIfFileExists: false)
+        return Data.retrieveOrCreateFile(withDataURL: fileURL, andFileName: "video_\(filename)", recreateIfFileExists: false)
     }
 }
 
@@ -333,6 +333,30 @@ extension Sequence where Iterator.Element : AnyObject {
                 }
             }
             return false
+        }
+    }
+}
+
+public func deleteLocalVideos() {
+    // We'll delete the videos in the documents directory if there are any. This is to make sure that it isn't filled
+    // with videos as time goes on
+    let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+    guard let items = try? FileManager.default.contentsOfDirectory(atPath: documentsPath) else {
+        return
+    }
+    
+    print("Deleting videos in documents directory...")
+    
+    for item in items {
+        if item.hasPrefix("video") {
+            let completePath = documentsPath.appending("/\(item)")
+            do {
+                try FileManager.default.removeItem(atPath: completePath)
+                print("Deleted: \(item)")
+            }
+            catch let error {
+                print("Error removing file: \(completePath), error: \(error)")
+            }
         }
     }
 }

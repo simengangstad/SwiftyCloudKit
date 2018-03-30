@@ -33,7 +33,7 @@ public protocol CloudKitHandler: AnyObject, PropertyStoring {
     
     /**
      Indicates whether the library should deal with offline situations where it stores records locally temporarily, and uploads them when a connection
-     is aquired. Default is true.
+     is aquired.
     */
     var offlineSupport: Bool { get set }
     
@@ -53,7 +53,7 @@ public protocol CloudKitHandler: AnyObject, PropertyStoring {
         - completionHandler: Is fired after an upload attempt.
      
      - important:
-     The completion handler is called from a global asynchronous thread, switch to the main queue before making changes to e.g. the UI.
+     The completion handler is called from a global asynchronous thread, switch to the main queue before making changes to e.g. the UI. If the method fails the completion handler can either include a CKError or a LocalStorageError depending on whether it failed to upload to iCloud or save locally.
      */
     func upload(record: CKRecord, withCompletionHandler completionHandler: ((CKRecord?, Error?) -> Void)?)
     
@@ -75,7 +75,7 @@ public protocol CloudKitHandler: AnyObject, PropertyStoring {
         - completionHandler: Is fired after a deletion attempt.
      
      - important:
-     The completion handler is called from a global asynchronous thread, switch to the main queue before making changes to e.g. the UI.
+     The completion handler is called from a global asynchronous thread, switch to the main queue before making changes to e.g. the UI. If the method fails the completion handler can either include a CKError or a LocalStorageError depending on whether it failed to delete from iCloud or delete from local storage.
      */
     func delete(record: CKRecord, withCompletionHandler completionHandler: ((CKRecordID?, Error?) -> Void)?)
     
@@ -137,7 +137,7 @@ public extension CloudKitHandler {
     private func delete(localRecord: CKRecord) -> Bool {
         var localRecords = loadLocalRecords()
         
-        if let index = localRecords.index(of: localRecord) {
+        if let index = localRecords.index(where: { $0.recordID == localRecord.recordID }) {
             print("Attempting to delete local record... \(localRecord)")
             localRecords.remove(at: index)
             
@@ -152,20 +152,18 @@ public extension CloudKitHandler {
     
     private func eraseLocalRecords() {
         if !loadLocalRecords().isEmpty {
+            let completed = NSKeyedArchiver.archiveRootObject([], toFile: ArchiveURL.path)
             print("Attempting to erease local records...")
-            print("Deletion completed sucessfully: \(NSKeyedArchiver.archiveRootObject([], toFile: ArchiveURL.path))")
+            print("Ereasing completed sucessfully: \(completed)")
         }
     }
     
     private func loadLocalRecords() -> [CKRecord] {
-        
-        if let records = NSKeyedUnarchiver.unarchiveObject(withFile: ArchiveURL.path) as? [CKRecord] {
-            print("Loading \(records.count) records from local storage")
-            
-            return records
+        guard let records = NSKeyedUnarchiver.unarchiveObject(withFile: ArchiveURL.path) as? [CKRecord] else {
+            return []
         }
 
-        return []
+        return records
     }
     
     // MARK: Fetching
@@ -202,22 +200,39 @@ public extension CloudKitHandler {
                 self.fetchState = .none
             }
             
-            let localRecords = self.loadLocalRecords()
+            var localRecords = self.loadLocalRecords()
+            print("Fetched \(localRecords.count) local records")
             // Local records
-            if self.offlineSupport, error != nil, !localRecords.isEmpty  {
+            if self.offlineSupport, !localRecords.isEmpty  {
                 // We erase the local storage after storing the records in memory so that we don't duplicate the array every time.
                 self.eraseLocalRecords()
 
+                let completion: ((CKRecord?, Error?) -> Void) = { (record, error) in
+                    // Move uploaded record over to the record and remove it from the local records if the upload is successful.
+                    if let record = record {
+                        print("Local record uploaded successfully, deleting from local storage")
+                        array.append(record)
+                        localRecords.remove(at: localRecords.index(of: record)!)
+                        _ = self.delete(localRecord: record)
+                    }
+                }
+                
                 localRecords.forEach({ (record) in
+                    print("Attempting to upload local record")
                     self.upload(record: record, withCompletionHandler: { (uploadedRecord, error) in
                         guard error == nil else {
                             self.retryUploadAfter(error: error as? CKError, withRecord: record, andCompletionHandler: nil)
                             return
                         }
+               
+                        completion(uploadedRecord, error)
                     })
                 })
                 
                 array.append(contentsOf: localRecords)
+                // This will try to sort by the given sort descriptors of the query, but if the record was created offline it will not include
+                // creation date and other parameters of the CKRecord as they seem to be assigned upon successfull upload.
+                // A workaround is to add own parameters for e.g. date and sort by them, as creationDate is read only.
                 if let sortDescriptors = self.query?.sortDescriptors {
                     array = array.sorted(sortDescriptors: sortDescriptors)
                 }
@@ -234,11 +249,14 @@ public extension CloudKitHandler {
     public func upload(record: CKRecord, withCompletionHandler completionHandler: ((CKRecord?, Error?) -> Void)?) {
         database.save(record) { (savedRecord, error) in
             
-            if self.offlineSupport, error != nil, !self.save(localRecord: record)  {
-                completionHandler?(nil, error)
-                return
+            if self.offlineSupport, error != nil  {
+                print("Upload failed, saving locally...")
+                if !self.save(localRecord: record) {
+                    completionHandler?(nil, error)
+                    return
+                }
             }
-            
+
             completionHandler?(savedRecord != nil ? savedRecord : record, error)
         }
     }
@@ -258,7 +276,7 @@ public extension CloudKitHandler {
         let localRecords = loadLocalRecords()
         
         // If the record to be deleted exist in the local records
-        if offlineSupport, let index = localRecords.index(of: record), !delete(localRecord: localRecords[index]) {
+        if offlineSupport, let index = localRecords.index(where: { $0.recordID == record.recordID }), !delete(localRecord: localRecords[index]) {
             completionHandler?(nil, LocalStorageError(description: "Could not delete local record..."))
         }
         else {
