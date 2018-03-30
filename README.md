@@ -75,7 +75,7 @@ delete(record: record, withCompletionHandler: { [unowned self] (recordID, error)
 
 #### Accessing and setting values of records
 
-There exist helper functions for every type supported by CloudKit. So you can retrieve and set strings, references, data, assets, ints, doubles, locations, dates, lists of the these types, as well as images and videos using the helper functions. If you store a image in the record you'll retrieve an optional UIImage when asking for the image, for a video you'll receive an optional URL to a temporary local file which can be used in an AVPlayer. In that way you don't have to deal with conversion. *Note: As the videos are stored locally as cache, it's necessary to clear the cache at times. Call `deleteLocalVideos()` in e.g. `applicationWillTerminate(_ application: UIApplication)` in the AppDelegate to remove them.*
+There exist helper functions for every type supported by CloudKit. So you can retrieve and set strings, references, data, assets, ints, doubles, locations, dates, lists of the these types, as well as images and videos using the helper functions. If you store a image in the record you'll retrieve an optional UIImage when asking for the image, for a video you'll receive an optional URL to a temporary local file which can be used in an AVPlayer. In that way you don't have to deal with conversion. *Note: As the videos are stored locally as cache, it's necessary to clear the cache from time to time. Call `deleteLocalVideos()` in e.g. `applicationWillTerminate(_ application: UIApplication)` in the AppDelegate to remove them.*
 
 To retrieve values, use `value(_ key: String)`. E.g.:
 ```swift
