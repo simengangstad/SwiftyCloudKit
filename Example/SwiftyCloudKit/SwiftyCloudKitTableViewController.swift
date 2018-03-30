@@ -52,7 +52,7 @@ class SwiftyCloudKitTableViewController: UITableViewController, CloudKitHandler,
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        // We start fetching. Don't want to fetch every time the view appears on screen.
+        // We start fetching, but don't want to fetch every time the view appears on screen, therefore we check if the records is empty or not
         if records.isEmpty {
             fetch(withCompletionHandler: { (fetchedRecords, error) in
                 DispatchQueue.main.async { [unowned self] in
