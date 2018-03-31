@@ -134,9 +134,7 @@ unsubscribe(_ completionHandler: ((CKError?) -> Void)?)
 
 ## Todo
 
-- [x] Support type lists
-- [x] Update readme
-- [x] Include local and offline capabilities into the library
+- [ ] Update readme with privacy functionality
 - [ ] Add tests
 - [ ] Add image support for macOS
 - [ ] Test on tvOS, watchOS and macOS

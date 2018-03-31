@@ -508,8 +508,137 @@ public extension CloudKitHandler {
             }
         }
     }
+    
+    // MARK: Restriction
+    
+    /**
+ 
+ TODO: doc
+ 
+    */
+    public func restrictTokens(forContainersWithAPITokens containerTokens: [CKContainer: String]) -> [CKContainer:String] {
+        var tokens = [CKContainer:String]()
+        
+        for container in Array(containerTokens.keys) {
+            guard let apiToken = containerTokens[container] else {
+                continue
+            }
+            
+            let fetchAuthorization = CKFetchWebAuthTokenOperation(apiToken: apiToken)
+            
+            fetchAuthorization.fetchWebAuthTokenCompletionBlock = { webToken, error in
+                guard let webToken = webToken, error == nil else {
+                    return
+                }
+                tokens[container] = webToken
+            }
+            
+            container.privateCloudDatabase.add(fetchAuthorization)
+        }
+        
+        return tokens
+    }
+    
+    /**
+     
+     TODO: doc
+     
+     */
+    private func requestRestriction(url: URL, completionHandler: @escaping (Error?) -> Void) {
+        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+            if let error = error {
+                completionHandler(error)
+                return
+            }
+            guard let httpResponse = response as? HTTPURLResponse,
+                (200...299).contains(httpResponse.statusCode) else {
+                    completionHandler(RestrictError.failure)
+                    return
+            }
+            
+            print("Restrict result", httpResponse)
+            
+            // Other than indicating success or failure, the `restrict` API doesn't return actionable data in its response.
+            if data != nil {
+                completionHandler(nil)
+            } else {
+                completionHandler(RestrictError.failure)
+            }
+        }
+        task.resume()
+    }
+    
+    /**
+     
+     TODO: doc
+     
+     */
+    private func encodeToken(_ token: String) -> String {
+        return token.addingPercentEncoding(withAllowedCharacters: CharacterSet(charactersIn: "+/=").inverted) ?? token
+    }
+    
+    /**
+     
+     TODO: doc
+     
+     */
+    public func restrict(container: CKContainer, apiToken: String, webToken: String, environment: Environment, completionHandler: @escaping (Error?) -> Void) {
+        let webToken = encodeToken(webToken)
+        
+        let identifier = container.containerIdentifier!
+        var env: String!
+        
+        switch environment {
+        case .development:
+            env = "development"
+        case .production:
+            env = "production"
+        }
+        
+        let baseURL = "https://api.apple-cloudkit.com/database/1/"
+        let apiPath = "\(identifier)/\(env)/private/users/restrict"
+        let query = "?ckAPIToken=\(apiToken)&ckWebAuthToken=\(webToken)"
+        
+        let url = URL(string: "\(baseURL)\(apiPath)\(query)")!
+        
+        requestRestriction(url: url, completionHandler: completionHandler)
+    }
+    
+    /**
+     
+     TODO: doc
+     
+     */
+    public func unrestrict(container: CKContainer, apiToken: String, webToken: String, environment: Environment, completionHandler: @escaping (Error?) -> Void) {
+        let webToken = encodeToken(webToken)
+        
+        let identifier = container.containerIdentifier!
+        var env: String!
+        
+        switch environment {
+        case .development:
+            env = "development"
+        case .production:
+            env = "production"
+        }
+        
+        let baseURL = "https://api.apple-cloudkit.com/database/1/"
+        let apiPath = "\(identifier)/\(env)/private/users/unrestrict"
+        let query = "?ckAPIToken=\(apiToken)&ckWebAuthToken=\(webToken)"
+        
+        let url = URL(string: "\(baseURL)\(apiPath)\(query)")!
+        
+        requestRestriction(url: url, completionHandler: completionHandler)
+    }
 }
 
+public enum Environment {
+    case development, production
+}
+
+enum RestrictError: Error {
+    case failure
+}
 
 extension CKDatabaseScope {
     static var cases: [CKDatabaseScope] {
