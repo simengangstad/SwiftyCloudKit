@@ -211,7 +211,7 @@ class SwiftyCloudKitTableViewController: UITableViewController, CloudKitHandler,
                 }
 
                 if let addedRecord = addedRecord {
-                    print("Record uploaded/added to local storage")
+                    print("Record saved")
                     self.records.insert(addedRecord, at: 0)
                     #if !os(tvOS)
                         self.update(recordsForWatch: self.records)
@@ -221,6 +221,21 @@ class SwiftyCloudKitTableViewController: UITableViewController, CloudKitHandler,
             }
         }
     }
+    
+    // MARK: Erasing items and user data
+    
+    @IBAction func eraseData(_ sender: UIBarButtonItem) {
+        erasePrivateData(inContainers: [CKContainer.default()]) { (error) in
+            guard error == nil else {
+                print(error!)
+                return
+            }
+            
+            self.records.removeAll()
+            self.tableView.reloadData()
+        }
+    }
+    
     
     // MARK: Activity indicator
     #if os(iOS)

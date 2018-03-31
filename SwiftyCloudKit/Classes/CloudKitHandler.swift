@@ -88,6 +88,56 @@ public protocol CloudKitHandler: AnyObject, PropertyStoring {
         - completionHandler: The completion handler given to the delete function
      */
     func retryDeletionAfter(error: CKError?, withRecord record: CKRecord, andCompletionHandler completionHandler: ((CKRecordID?, Error?) -> Void)?)
+    
+    /**
+     Retrieves all the records stored in the given containers (both public and private databases). See [Providing User Access to CloudKit Data](https://developer.apple.com/documentation/cloudkit/providing_user_access_to_cloudkit_data/)
+     
+     - parameters:
+         - containerRecordTypes: A dictionary of containers and record types, where the records of the given record types created by the user will be retrieved from the respective containers.
+     
+             **E.g.:**
+     
+             ```
+             let containerRecordTypes: [CKContainer: [String]] = [
+             defaultContainer: ["log", "verboseLog"],
+             documents: ["textDocument", "spreadsheet"],
+             settings: ["preference", "profile"]
+             ]
+             ```
+     
+     - returns: A dictionary of containers and records
+     */
+    func retrieveRecords(containerRecordTypes: [CKContainer: [String]]) -> [CKContainer: [CKRecord]]
+    
+    /**
+     Erases private user data stored in iCloud; Will remove everything in the private cloud databases in the containers passed to the function. See [Responding to Requests to Delete Data](https://developer.apple.com/documentation/cloudkit/responding_to_requests_to_delete_data/).
+     
+     - parameters:
+        - containers: an array of the containers which should be erased.
+        - completionHandler: gets fired after the erase
+     */
+    func erasePrivateData(inContainers containers: [CKContainer], completionHandler: @escaping (Error?) -> Void)
+    
+    /**
+     Erases public user data stored in iCloud; Will remove the records created by the user which are of the types passed to the function.
+     
+     - important: Make the record types queryable by user (createdBy) to make this function execute correctly.
+     - parameters:
+        - containerRecordTypes: A dictionary of containers and record types, where the records of the given record types created by the user will be deleted in the respective containers.
+     
+            **E.g.:**
+     
+             ```
+             let containerRecordTypes: [CKContainer: [String]] = [
+             defaultContainer: ["log", "verboseLog"],
+             documents: ["textDocument", "spreadsheet"],
+             settings: ["preference", "profile"]
+             ]
+             ```
+        - completionHandler: gets fired after the erase
+
+     */
+    func eraseUserCreatedPublicData(containerRecordTypes: [CKContainer: [String]], completionHandler: @escaping (Error?) -> Void)
 }
 
 /**
@@ -294,5 +344,175 @@ public extension CloudKitHandler {
                 }
             }
         }
+    }
+    
+    // MARK: Retrieving records
+    
+    /**
+     Returns all records with the given record types created by the current user from a given database.
+    
+     - parameters:
+        - recordTypes: The record types to fetch
+        - database: The database to fetch the records from
+    */
+    private func records(withRecordTypes recordTypes: [String], fromDatabase database: CKDatabase, withUserID userID: CKRecordID) -> [CKRecord] {
+        var allRecords = [CKRecord]()
+        
+        let reference = CKReference(recordID: userID, action: .none)
+        let predicate = NSPredicate(format: "creatorUserRecordID == %@", reference)
+        
+        database.fetchAllRecordZones { zones, error in
+            guard let zones = zones, error == nil else {
+                print(error!)
+                return
+            }
+            
+            for zone in zones {
+                for recordType in recordTypes {
+                    let query = CKQuery(recordType: recordType, predicate: predicate)
+                    database.perform(query, inZoneWith: zone.zoneID) { records, error in
+                        guard let records = records, error == nil else {
+                            print("An error occurred fetching these records.")
+                            return
+                        }
+                        
+                        allRecords.append(contentsOf: records)
+                    }
+                }
+            }
+        }
+        
+        return allRecords
+    }
+    
+    public func retrieveRecords(containerRecordTypes: [CKContainer: [String]]) -> [CKContainer: [CKRecord]] {
+        let containers = Array(containerRecordTypes.keys)
+        var recordDictionary = [CKContainer: [CKRecord]]()
+        
+        for container in containers {
+            
+            container.fetchUserRecordID { [unowned self] (userID, error) in
+                guard error == nil else {
+                    return
+                }
+                
+                if let userID = userID {
+                    for databaseScope in CKDatabaseScope.cases {
+                        recordDictionary[container]! += self.records(withRecordTypes: containerRecordTypes[container]!, fromDatabase: container.database(with: databaseScope), withUserID: userID)
+                    }
+                }
+            }
+        }
+        
+        return recordDictionary
+    }
+    
+    // MARK: Erasing data
+    
+    public func erasePrivateData(inContainers containers: [CKContainer], completionHandler: @escaping (Error?) -> Void) {
+        eraseLocalRecords()
+        
+        for container in containers {
+            
+            print("Erasing private data from container \(container.containerIdentifier!)")
+
+            container.privateCloudDatabase.fetchAllRecordZones { zones, error in
+                guard let zones = zones, error == nil else {
+                    completionHandler(error)
+                    return
+                }
+                
+                let zoneIDs = zones.map { $0.zoneID }
+                let deletionOperation = CKModifyRecordZonesOperation(recordZonesToSave: nil, recordZoneIDsToDelete: zoneIDs)
+                
+                deletionOperation.modifyRecordZonesCompletionBlock = { _, deletedZones, error in
+                    guard error == nil else {
+                        completionHandler(error)
+                        return
+                    }
+                    
+                    print("Records successfully deleted in zones \(deletedZones!)")
+                }
+                
+                container.privateCloudDatabase.add(deletionOperation)
+            }
+        }
+        
+        completionHandler(nil)
+    }
+    
+    public func eraseUserCreatedPublicData(containerRecordTypes: [CKContainer: [String]], completionHandler: @escaping (Error?) -> Void) {
+        eraseLocalRecords()
+
+        for container in Array(containerRecordTypes.keys) {
+            container.fetchUserRecordID { [unowned self] (userID, error) in
+                
+                guard error == nil else {
+                    completionHandler(error!)
+                    return
+                }
+                
+                if let userID = userID {
+                    print("Erasing user created public data from container \(container.containerIdentifier!)")
+                    
+                    for recordType in containerRecordTypes[container]! {
+                        self.removeAllInstances(inDatabase: container.publicCloudDatabase, ofRecordType: recordType, fromUserID: userID, completionHandler: completionHandler)
+                    }
+                }
+                
+                completionHandler(nil)
+            }
+        }
+    }
+
+    
+    /**
+     Removes all instances of a record type in a specific database from a user ID
+     
+     - parameters:
+         - database: The database to remove the records from
+         - recordType: The record type to remove
+         - userID: The userID to remove records from
+         - completionHandler: gets fired after the erase
+     */
+    private func removeAllInstances(inDatabase database: CKDatabase, ofRecordType recordType: String, fromUserID userID: CKRecordID, completionHandler: @escaping (Error?) -> Void) {
+        let reference = CKReference(recordID: userID, action: .none)
+        let predicate = NSPredicate(format: "creatorUserRecordID == %@", reference)
+        let query = CKQuery(recordType: recordType, predicate: predicate)
+        
+        database.fetchAllRecordZones { (zones, error) in
+            guard let zones = zones, error == nil else {
+                completionHandler(error)
+                return
+            }
+            
+            let zoneIDs = zones.map { $0.zoneID }
+            for zoneID in zoneIDs {
+                database.perform(query, inZoneWith: zoneID) { (records, error) in
+                    guard error == nil else {
+                        completionHandler(error!)
+                        return
+                    }
+                    
+                    if let records = records {
+                        records.forEach{ (record) in
+                            database.delete(withRecordID: record.recordID) { (recordID, error) in
+                                guard error == nil else {
+                                    completionHandler(error!)
+                                    return
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+extension CKDatabaseScope {
+    static var cases: [CKDatabaseScope] {
+        return [CKDatabaseScope.public, CKDatabaseScope.private, CKDatabaseScope.shared]
     }
 }

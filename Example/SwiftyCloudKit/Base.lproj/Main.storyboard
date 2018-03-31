@@ -33,6 +33,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Swifty Cloud Kit" id="62c-Mg-Syl">
+                        <barButtonItem key="leftBarButtonItem" title="Erase data" id="QUS-AP-QJj">
+                            <connections>
+                                <action selector="eraseData:" destination="EI6-WI-MXE" id="a0u-O0-Yo5"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="L0Q-gE-BsA">
                             <connections>
                                 <action selector="addItem:" destination="EI6-WI-MXE" id="lPd-xE-NNd"/>
