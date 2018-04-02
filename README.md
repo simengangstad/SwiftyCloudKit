@@ -152,13 +152,19 @@ eraseUserCreatedPublicData(containerRecordTypes: [CKContainer: [String]], comple
 
 ### Restriction
 
-Restricting and lifting restrictions on certain containers can be done with these two functions:
+In order to restrict databases and lift restrictions, use the following methods:
 
 ```swift
 restrict(container: CKContainer, apiToken: String, webToken: String, environment: Environment, completionHandler: @escaping (Error?) -> Void)
 ```
 ```swift
 unrestrict(container: CKContainer, apiToken: String, webToken: String, environment: Environment, completionHandler: @escaping (Error?) -> Void)
+```
+
+Reusable API tokens (created in CloudKit Dashboard) and web tokens are required for the requests to qualify. Create web tokens using:
+
+```swift
+restrictTokens(forContainersWithAPITokens containerTokens: [CKContainer: String]) -> [CKContainer:String]
 ```
 
 
