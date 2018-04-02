@@ -25,7 +25,7 @@ pod 'SwiftyCloudKit'
 
 ## Use
 
-SwiftyCloudKit is structured into three submodules: CloudKitFetcher, CloudKitHandler and CloudKitSubscriber. The library supports offline capabilities. If `offlineSupport` is set to true, and there is a case where an internet connection is not present, the library will store records temporarily locally, and upload them later.
+SwiftyCloudKit is structured into three submodules: CloudKitFetcher, CloudKitHandler and CloudKitSubscriber. *Note: The library supports offline capabilities. If `offlineSupport` is set to true, and there is a case where an internet connection is not present, the library will store records temporarily locally, and upload them later.*
 
 ### CloudKitFetcher
 
