@@ -47,7 +47,8 @@ public extension CloudKitHandler {
 
     public func upload(record: CKRecord, withCompletionHandler completionHandler: ((CKRecord?, Error?) -> Void)?) {
         database.save(record) { [unowned self] (savedRecord, error) in
-            guard error == nil else {
+            
+            if let error = error {
                 if Reachability.isConnectedToNetwork(), let error = error as? CKError {
                     self.retryUploadAfter(error: error, withRecord: record, andCompletionHandler: completionHandler)
                     return
@@ -59,8 +60,6 @@ public extension CloudKitHandler {
                         return
                     }
                 }
-                
-                return
             }
             
             completionHandler?(savedRecord != nil ? savedRecord : record, error)
@@ -91,17 +90,19 @@ public extension CloudKitHandler {
         let localRecords = LocalStorage.loadLocalRecords()
         
         // If the record to be deleted exist in the local records
-        if offlineSupport, let index = localRecords.index(where: { $0.recordID == record.recordID }), !LocalStorage.delete(localRecord: localRecords[index]) {
-            completionHandler?(nil, LocalStorageError(description: "Could not delete local record..."))
+        if offlineSupport, let index = localRecords.index(where: { $0.recordID == record.recordID }) {
+            let localRecord = localRecords[index]
+            if LocalStorage.delete(localRecord: localRecord) {
+                completionHandler?(localRecord.recordID, nil)
+            }
+            else {
+                completionHandler?(nil, LocalStorageError(description: "Could not delete local record..."))
+            }
         }
         else {
             database.delete(withRecordID: record.recordID) { [unowned self] (deletedRecordID, error) in
-                guard error == nil else {
-                    if let error = error as? CKError {
-                        self.retryDeletionAfter(error: error, withRecord: record, andCompletionHandler: completionHandler)
-                        return
-                    }
-                    
+                if let error = error as? CKError {
+                    self.retryDeletionAfter(error: error, withRecord: record, andCompletionHandler: completionHandler)
                     return
                 }
                 
