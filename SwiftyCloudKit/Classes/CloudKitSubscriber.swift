@@ -33,7 +33,6 @@ import CloudKit
  
  */
 
-#if !os(watchOS)
 @available (iOS 10.0, tvOS 10.0, OSX 10.12, *)
 public protocol CloudKitSubscriber: AnyObject, PropertyStoring {
     
@@ -50,16 +49,14 @@ public protocol CloudKitSubscriber: AnyObject, PropertyStoring {
     /**
      Makes the subscriber listen to updates.
      
-     - important:
-    Subscription is expensive, so limit it to only when needed.
+     - important: Subscription is expensive, so limit it to only when needed.
     */
     func subscribe(_ completionHandler: ((CKError?) -> Void)?)
     
     /**
      Makes the subscriber stop listening to updates.
      
-     - important:
-     Make sure to unsubscribe when the subscription is not in use.
+     - important: Make sure to unsubscribe when the subscription is not in use.
     */
     func unsubscribe(_ completionHandler: ((CKError?) -> Void)?)
     
@@ -69,8 +66,7 @@ public protocol CloudKitSubscriber: AnyObject, PropertyStoring {
      - parameters:
         - ckqn: The notification fired, includes information about the update.
      
-     - important:
-    This function will be called from a global asynchronous thread. Switch to the main thread before you make changes to the UI, e.g. reloading the data in a table view.
+     - important: This function will be called from a global asynchronous thread. Switch to the main thread before you make changes to the UI, e.g. reloading the data in a table view.
     */
     func handleSubscriptionNotification(ckqn: CKQueryNotification)
 }
@@ -123,4 +119,4 @@ public extension CloudKitSubscriber {
         NotificationCenter.default.removeObserver(self.cloudKitObserver as Any)
     }
 }
-#endif
+

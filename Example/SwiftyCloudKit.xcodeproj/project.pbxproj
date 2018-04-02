@@ -12,26 +12,17 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
-		78153525AB82FFE74839518F /* Pods_SwiftyCloudKit_watchOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D96DEF0AAAFDE86BAA9699A5 /* Pods_SwiftyCloudKit_watchOS.framework */; };
-		843D5BFF1265FA0427A35392 /* Pods_SwiftyCloudKit_watchOS_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DCE854B9C5BE78C793B833C /* Pods_SwiftyCloudKit_watchOS_Extension.framework */; };
+		7C01855E77F56C2D81C208A5 /* Pods_SwiftyCloudKit_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD9E5D142030D2F600922106 /* Pods_SwiftyCloudKit_Example.framework */; };
 		AD1C2D042032021800F0A646 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1C2D032032021800F0A646 /* AppDelegate.swift */; };
 		AD1C2D092032021800F0A646 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD1C2D072032021800F0A646 /* Main.storyboard */; };
 		AD1C2D0B2032021900F0A646 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD1C2D0A2032021900F0A646 /* Assets.xcassets */; };
 		AD1C2D102032065800F0A646 /* SwiftyCloudKitTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9E5CF72030C8AB00922106 /* SwiftyCloudKitTableViewController.swift */; };
 		AD1C2D1220322A7D00F0A646 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD9E5D0D2030D16A00922106 /* CloudKit.framework */; };
 		AD20C1D6202A3E9000DA003F /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD20C1D5202A3E9000DA003F /* CloudKit.framework */; };
-		AD56B450204150D200641422 /* CloudRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD56B44F204150D200641422 /* CloudRowController.swift */; };
 		AD9E5CF82030C8AB00922106 /* SwiftyCloudKitTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9E5CF72030C8AB00922106 /* SwiftyCloudKitTableViewController.swift */; };
-		ADEB6F79203CAB6D00C3C02D /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADEB6F77203CAB6D00C3C02D /* Interface.storyboard */; };
-		ADEB6F7B203CAB6D00C3C02D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADEB6F7A203CAB6D00C3C02D /* Assets.xcassets */; };
 		ADEB6F82203CAB6D00C3C02D /* SwiftyCloudKit_watchOS Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = ADEB6F81203CAB6D00C3C02D /* SwiftyCloudKit_watchOS Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		ADEB6F87203CAB6D00C3C02D /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEB6F86203CAB6D00C3C02D /* InterfaceController.swift */; };
-		ADEB6F89203CAB6D00C3C02D /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEB6F88203CAB6D00C3C02D /* ExtensionDelegate.swift */; };
-		ADEB6F8D203CAB6D00C3C02D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADEB6F8C203CAB6D00C3C02D /* Assets.xcassets */; };
-		ADEB6F92203CAB6D00C3C02D /* SwiftyCloudKit_watchOS.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = ADEB6F75203CAB6D00C3C02D /* SwiftyCloudKit_watchOS.app */; };
 		B15A29BD67F08A73918123E5 /* Pods_SwiftyCloudKit_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 390AC867882B01244B9C8A7C /* Pods_SwiftyCloudKit_Tests.framework */; };
 		CB5F8E3DDA259144A862A180 /* Pods_SwiftyCloudKit_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F3F7BD7B8CD26638D536A04 /* Pods_SwiftyCloudKit_Example.framework */; };
-		E39FF991E0C6C4A70F602A8D /* Pods_SwifyCloudKit_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC97CCD1C27EC0CEA701CD48 /* Pods_SwifyCloudKit_tvOS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,13 +40,6 @@
 			remoteGlobalIDString = ADEB6F80203CAB6D00C3C02D;
 			remoteInfo = "SwiftyCloudKit_watchOS Extension";
 		};
-		ADEB6F90203CAB6D00C3C02D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 607FACC81AFB9204008FA782 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = ADEB6F74203CAB6D00C3C02D;
-			remoteInfo = SwiftyCloudKit_watchOS;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -70,21 +54,9 @@
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		ADEB6F9A203CAB6D00C3C02D /* Embed Watch Content */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
-			dstSubfolderSpec = 16;
-			files = (
-				ADEB6F92203CAB6D00C3C02D /* SwiftyCloudKit_watchOS.app in Embed Watch Content */,
-			);
-			name = "Embed Watch Content";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		247BFA7D62E9451313631737 /* Pods-SwiftyCloudKit_watchOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyCloudKit_watchOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftyCloudKit_watchOS/Pods-SwiftyCloudKit_watchOS.debug.xcconfig"; sourceTree = "<group>"; };
 		2F881FC9397FFDC33A0755BC /* Pods-SwifyCloudKit_tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwifyCloudKit_tvOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwifyCloudKit_tvOS/Pods-SwifyCloudKit_tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		390AC867882B01244B9C8A7C /* Pods_SwiftyCloudKit_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftyCloudKit_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F3F7BD7B8CD26638D536A04 /* Pods_SwiftyCloudKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftyCloudKit_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -99,8 +71,6 @@
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		620BBDE9CCFC58A4B2CC9133 /* Pods-SwiftyCloudKit_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyCloudKit_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftyCloudKit_Tests/Pods-SwiftyCloudKit_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		6AE7C3CB5680D1C1E3993388 /* SwiftyCloudKit.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = SwiftyCloudKit.podspec; path = ../SwiftyCloudKit.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		6D6702711362E780BB6710C6 /* Pods-SwiftyCloudKit_watchOS Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyCloudKit_watchOS Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftyCloudKit_watchOS Extension/Pods-SwiftyCloudKit_watchOS Extension.release.xcconfig"; sourceTree = "<group>"; };
-		7DCE854B9C5BE78C793B833C /* Pods_SwiftyCloudKit_watchOS_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftyCloudKit_watchOS_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		89520218A6687CCB6FB3345B /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		AD1C2D012032021800F0A646 /* SwifyCloudKit_tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwifyCloudKit_tvOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD1C2D032032021800F0A646 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -110,29 +80,16 @@
 		AD1C2D1120322A6D00F0A646 /* SwifyCloudKit_tvOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwifyCloudKit_tvOS.entitlements; sourceTree = "<group>"; };
 		AD20C1D4202A3E8200DA003F /* SwiftyCloudKit_Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftyCloudKit_Example.entitlements; sourceTree = "<group>"; };
 		AD20C1D5202A3E9000DA003F /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
-		AD56B44F204150D200641422 /* CloudRowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudRowController.swift; sourceTree = "<group>"; };
 		AD9E5CF72030C8AB00922106 /* SwiftyCloudKitTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyCloudKitTableViewController.swift; sourceTree = "<group>"; };
 		AD9E5D0D2030D16A00922106 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS11.2.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
 		AD9E5D142030D2F600922106 /* Pods_SwiftyCloudKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_SwiftyCloudKit_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADEB6F75203CAB6D00C3C02D /* SwiftyCloudKit_watchOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftyCloudKit_watchOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		ADEB6F78203CAB6D00C3C02D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
-		ADEB6F7A203CAB6D00C3C02D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		ADEB6F7C203CAB6D00C3C02D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ADEB6F81203CAB6D00C3C02D /* SwiftyCloudKit_watchOS Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "SwiftyCloudKit_watchOS Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		ADEB6F86203CAB6D00C3C02D /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
-		ADEB6F88203CAB6D00C3C02D /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
-		ADEB6F8C203CAB6D00C3C02D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		ADEB6F8E203CAB6D00C3C02D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ADEB6F8F203CAB6D00C3C02D /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		B192268517754873FD2F242B /* Pods-SwifyCloudKit_tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwifyCloudKit_tvOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwifyCloudKit_tvOS/Pods-SwifyCloudKit_tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		B7C281D1D120BDF9C29797B6 /* Pods-SwiftyCloudKit_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyCloudKit_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftyCloudKit_Example/Pods-SwiftyCloudKit_Example.release.xcconfig"; sourceTree = "<group>"; };
 		C2E263EECBD18AE0E7E45162 /* Pods-SwiftyCloudKit_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyCloudKit_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftyCloudKit_Tests/Pods-SwiftyCloudKit_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		C736D2DF8FEA85D4553C8FC3 /* Pods-SwiftyCloudKit_watchOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyCloudKit_watchOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftyCloudKit_watchOS/Pods-SwiftyCloudKit_watchOS.release.xcconfig"; sourceTree = "<group>"; };
 		D732B828A3902EE00A98565D /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		D96DEF0AAAFDE86BAA9699A5 /* Pods_SwiftyCloudKit_watchOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftyCloudKit_watchOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4CB3469B7CD568DD8FD4325 /* Pods-SwiftyCloudKit_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyCloudKit_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftyCloudKit_Example/Pods-SwiftyCloudKit_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		F99CF0DD6B0AE39B4A9DD799 /* Pods-SwiftyCloudKit_watchOS Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyCloudKit_watchOS Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftyCloudKit_watchOS Extension/Pods-SwiftyCloudKit_watchOS Extension.debug.xcconfig"; sourceTree = "<group>"; };
-		FC97CCD1C27EC0CEA701CD48 /* Pods_SwifyCloudKit_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwifyCloudKit_tvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +99,7 @@
 			files = (
 				CB5F8E3DDA259144A862A180 /* Pods_SwiftyCloudKit_Example.framework in Frameworks */,
 				AD20C1D6202A3E9000DA003F /* CloudKit.framework in Frameworks */,
+				7C01855E77F56C2D81C208A5 /* Pods_SwiftyCloudKit_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,7 +115,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				78153525AB82FFE74839518F /* Pods_SwiftyCloudKit_watchOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,7 +122,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E39FF991E0C6C4A70F602A8D /* Pods_SwifyCloudKit_tvOS.framework in Frameworks */,
 				AD1C2D1220322A7D00F0A646 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -174,7 +130,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				843D5BFF1265FA0427A35392 /* Pods_SwiftyCloudKit_watchOS_Extension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,10 +145,6 @@
 				C2E263EECBD18AE0E7E45162 /* Pods-SwiftyCloudKit_Tests.release.xcconfig */,
 				B192268517754873FD2F242B /* Pods-SwifyCloudKit_tvOS.debug.xcconfig */,
 				2F881FC9397FFDC33A0755BC /* Pods-SwifyCloudKit_tvOS.release.xcconfig */,
-				247BFA7D62E9451313631737 /* Pods-SwiftyCloudKit_watchOS.debug.xcconfig */,
-				C736D2DF8FEA85D4553C8FC3 /* Pods-SwiftyCloudKit_watchOS.release.xcconfig */,
-				F99CF0DD6B0AE39B4A9DD799 /* Pods-SwiftyCloudKit_watchOS Extension.debug.xcconfig */,
-				6D6702711362E780BB6710C6 /* Pods-SwiftyCloudKit_watchOS Extension.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -206,9 +157,6 @@
 				AD20C1D5202A3E9000DA003F /* CloudKit.framework */,
 				3F3F7BD7B8CD26638D536A04 /* Pods_SwiftyCloudKit_Example.framework */,
 				390AC867882B01244B9C8A7C /* Pods_SwiftyCloudKit_Tests.framework */,
-				FC97CCD1C27EC0CEA701CD48 /* Pods_SwifyCloudKit_tvOS.framework */,
-				D96DEF0AAAFDE86BAA9699A5 /* Pods_SwiftyCloudKit_watchOS.framework */,
-				7DCE854B9C5BE78C793B833C /* Pods_SwiftyCloudKit_watchOS_Extension.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -220,8 +168,6 @@
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
 				607FACD21AFB9204008FA782 /* SwiftyCloudKit-iOS */,
 				AD1C2D022032021800F0A646 /* SwifyCloudKit_tvOS */,
-				ADEB6F76203CAB6D00C3C02D /* SwiftyCloudKit_watchOS */,
-				ADEB6F85203CAB6D00C3C02D /* SwiftyCloudKit_watchOS Extension */,
 				607FACE81AFB9204008FA782 /* Tests */,
 				607FACD11AFB9204008FA782 /* Products */,
 				1324196A707213A089EC190B /* Pods */,
@@ -302,29 +248,6 @@
 			path = SwifyCloudKit_tvOS;
 			sourceTree = "<group>";
 		};
-		ADEB6F76203CAB6D00C3C02D /* SwiftyCloudKit_watchOS */ = {
-			isa = PBXGroup;
-			children = (
-				ADEB6F77203CAB6D00C3C02D /* Interface.storyboard */,
-				ADEB6F7A203CAB6D00C3C02D /* Assets.xcassets */,
-				ADEB6F7C203CAB6D00C3C02D /* Info.plist */,
-			);
-			path = SwiftyCloudKit_watchOS;
-			sourceTree = "<group>";
-		};
-		ADEB6F85203CAB6D00C3C02D /* SwiftyCloudKit_watchOS Extension */ = {
-			isa = PBXGroup;
-			children = (
-				ADEB6F86203CAB6D00C3C02D /* InterfaceController.swift */,
-				AD56B44F204150D200641422 /* CloudRowController.swift */,
-				ADEB6F88203CAB6D00C3C02D /* ExtensionDelegate.swift */,
-				ADEB6F8C203CAB6D00C3C02D /* Assets.xcassets */,
-				ADEB6F8E203CAB6D00C3C02D /* Info.plist */,
-				ADEB6F8F203CAB6D00C3C02D /* PushNotificationPayload.apns */,
-			);
-			path = "SwiftyCloudKit_watchOS Extension";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -338,12 +261,10 @@
 				607FACCE1AFB9204008FA782 /* Resources */,
 				69BF90E831496B86ED099555 /* [CP] Embed Pods Frameworks */,
 				D15B8239D7F6497E969DBC8E /* [CP] Copy Pods Resources */,
-				ADEB6F9A203CAB6D00C3C02D /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				ADEB6F91203CAB6D00C3C02D /* PBXTargetDependency */,
 			);
 			name = SwiftyCloudKit_Example;
 			productName = SwiftyCloudKit;
@@ -395,11 +316,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ADEB6F99203CAB6D00C3C02D /* Build configuration list for PBXNativeTarget "SwiftyCloudKit_watchOS" */;
 			buildPhases = (
-				89783A488FD5FDF8BB2B0C06 /* [CP] Check Pods Manifest.lock */,
 				ADEB6F73203CAB6D00C3C02D /* Resources */,
 				ADEB6F98203CAB6D00C3C02D /* Embed App Extensions */,
 				688AFB72BAE370C1077CB6E3 /* Frameworks */,
-				7BE08A7D02D598B6C1E5319A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -415,12 +334,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ADEB6F97203CAB6D00C3C02D /* Build configuration list for PBXNativeTarget "SwiftyCloudKit_watchOS Extension" */;
 			buildPhases = (
-				7F39A8DECC83C142A61A46FD /* [CP] Check Pods Manifest.lock */,
 				ADEB6F7D203CAB6D00C3C02D /* Sources */,
 				ADEB6F7E203CAB6D00C3C02D /* Frameworks */,
 				ADEB6F7F203CAB6D00C3C02D /* Resources */,
-				6261F21677B974F7FDD1117E /* [CP] Embed Pods Frameworks */,
-				2188CA1523E960160E9A0C46 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -541,8 +457,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ADEB6F7B203CAB6D00C3C02D /* Assets.xcassets in Resources */,
-				ADEB6F79203CAB6D00C3C02D /* Interface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -550,28 +464,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ADEB6F8D203CAB6D00C3C02D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2188CA1523E960160E9A0C46 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftyCloudKit_watchOS Extension/Pods-SwiftyCloudKit_watchOS Extension-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		3FBDFA2BC1EC08E0D294A85D /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -626,24 +524,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftyCloudKit_Tests/Pods-SwiftyCloudKit_Tests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		6261F21677B974F7FDD1117E /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-SwiftyCloudKit_watchOS Extension/Pods-SwiftyCloudKit_watchOS Extension-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/SwiftyCloudKit-watchOS/SwiftyCloudKit.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyCloudKit.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftyCloudKit_watchOS Extension/Pods-SwiftyCloudKit_watchOS Extension-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		69BF90E831496B86ED099555 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -680,39 +560,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwifyCloudKit_tvOS/Pods-SwifyCloudKit_tvOS-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		7BE08A7D02D598B6C1E5319A /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftyCloudKit_watchOS/Pods-SwiftyCloudKit_watchOS-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7F39A8DECC83C142A61A46FD /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-SwiftyCloudKit_watchOS Extension-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		8708E9BDDFF7A6953BFECC33 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -725,24 +572,6 @@
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-SwiftyCloudKit_Tests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		89783A488FD5FDF8BB2B0C06 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-SwiftyCloudKit_watchOS-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -833,9 +662,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ADEB6F89203CAB6D00C3C02D /* ExtensionDelegate.swift in Sources */,
-				AD56B450204150D200641422 /* CloudRowController.swift in Sources */,
-				ADEB6F87203CAB6D00C3C02D /* InterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -851,11 +677,6 @@
 			isa = PBXTargetDependency;
 			target = ADEB6F80203CAB6D00C3C02D /* SwiftyCloudKit_watchOS Extension */;
 			targetProxy = ADEB6F83203CAB6D00C3C02D /* PBXContainerItemProxy */;
-		};
-		ADEB6F91203CAB6D00C3C02D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = ADEB6F74203CAB6D00C3C02D /* SwiftyCloudKit_watchOS */;
-			targetProxy = ADEB6F90203CAB6D00C3C02D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -882,14 +703,6 @@
 				AD1C2D082032021800F0A646 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		ADEB6F77203CAB6D00C3C02D /* Interface.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				ADEB6F78203CAB6D00C3C02D /* Base */,
-			);
-			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -1126,9 +939,7 @@
 		};
 		ADEB6F93203CAB6D00C3C02D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 247BFA7D62E9451313631737 /* Pods-SwiftyCloudKit_watchOS.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -1154,9 +965,7 @@
 		};
 		ADEB6F94203CAB6D00C3C02D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C736D2DF8FEA85D4553C8FC3 /* Pods-SwiftyCloudKit_watchOS.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -1180,7 +989,6 @@
 		};
 		ADEB6F95203CAB6D00C3C02D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F99CF0DD6B0AE39B4A9DD799 /* Pods-SwiftyCloudKit_watchOS Extension.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -1207,7 +1015,6 @@
 		};
 		ADEB6F96203CAB6D00C3C02D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6D6702711362E780BB6710C6 /* Pods-SwiftyCloudKit_watchOS Extension.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CLANG_ANALYZER_NONNULL = YES;

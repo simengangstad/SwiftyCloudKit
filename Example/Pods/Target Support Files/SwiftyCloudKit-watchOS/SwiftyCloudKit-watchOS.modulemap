@@ -1,6 +1,0 @@
-framework module SwiftyCloudKit {
-  umbrella header "SwiftyCloudKit-watchOS-umbrella.h"
-
-  export *
-  module * { export * }
-}

@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SwiftyCloudKit'
-  s.version          = '0.1.2'
+  s.version          = '0.1.3'
   s.summary          = 'A simple library for adding iCloud support.'
 
 # This description is used to generate tags and improve search results.
@@ -30,7 +30,7 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '10.0'
   s.tvos.deployment_target = '10.0'
-  s.watchos.deployment_target = '3.0'
+  # s.watchos.deployment_target = '3.0'
   # s.macos.deployment_target = '10.12'
 
   s.source_files = 'SwiftyCloudKit/Classes/**/*'

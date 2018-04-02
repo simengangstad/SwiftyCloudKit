@@ -1,8 +1,8 @@
 {
   "name": "SwiftyCloudKit",
-  "version": "0.1.0",
+  "version": "0.1.3",
   "summary": "A simple library for adding iCloud support.",
-  "description": "TODO: Add long description of the pod here.",
+  "description": "SwiftyCloudKit is a thin layer above CloudKit which makes it easy to add cloud capabilities to Apple environments.",
   "homepage": "https://github.com/simengangstad/SwiftyCloudKit",
   "license": {
     "type": "MIT",
@@ -13,13 +13,11 @@
   },
   "source": {
     "git": "https://github.com/simengangstad/SwiftyCloudKit.git",
-    "tag": "0.1.0"
+    "tag": "0.1.3"
   },
   "platforms": {
     "ios": "10.0",
-    "tvos": "10.0",
-    "watchos": "3.0",
-    "osx": "10.12"
+    "tvos": "10.0"
   },
   "source_files": "SwiftyCloudKit/Classes/**/*"
 }

@@ -11,7 +11,7 @@ PODS:
     - FBSnapshotTestCase (~> 2.0)
     - Nimble (~> 7.0)
   - Quick (1.2.0)
-  - SwiftyCloudKit (0.1.0)
+  - SwiftyCloudKit (0.1.3)
 
 DEPENDENCIES:
   - FBSnapshotTestCase (~> 2.1.4)
@@ -29,8 +29,8 @@ SPEC CHECKSUMS:
   Nimble: 7f5a9c447a33002645a071bddafbfb24ea70e0ac
   Nimble-Snapshots: f5459b5b091678dc942d03ec4741cacb58ba4a52
   Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
-  SwiftyCloudKit: f95eb11789b31a2d0f16513ca3c2e208391d49ae
+  SwiftyCloudKit: 48e4d9fdb5e8912f5887b7d508bf8ad126ba2c5b
 
-PODFILE CHECKSUM: e2d255c1c4c4049121c3a5151d44cb37a2f778ac
+PODFILE CHECKSUM: 7dfc437b297c000acbec0e6bb9f20675845a133b
 
 COCOAPODS: 1.4.0

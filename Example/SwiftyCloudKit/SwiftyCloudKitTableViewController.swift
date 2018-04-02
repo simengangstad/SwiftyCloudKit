@@ -7,11 +7,8 @@
 import UIKit
 import CloudKit
 import SwiftyCloudKit
-#if !os(tvOS)
-import WatchConnectivity
-#endif
 
-class SwiftyCloudKitTableViewController: UITableViewController, CloudKitHandler, CloudKitSubscriber {
+class SwiftyCloudKitTableViewController: UITableViewController, CloudKitFetcher, CloudKitHandler, CloudKitSubscriber {    
     
     // MARK: Model
     
@@ -36,14 +33,6 @@ class SwiftyCloudKitTableViewController: UITableViewController, CloudKitHandler,
     override func viewDidLoad() {
         super.viewDidLoad()
         activityIndicator.hidesWhenStopped = true
-        
-        #if !os(tvOS)
-        if WCSession.isSupported() {
-            let session = WCSession.default
-            session.delegate = self
-            session.activate()
-        }
-        #endif
     }
     
     var countOfLocalRecords: Int!
@@ -64,10 +53,6 @@ class SwiftyCloudKitTableViewController: UITableViewController, CloudKitHandler,
                     
                     if let fetchedRecords = fetchedRecords {
                         self.records.append(contentsOf: fetchedRecords)
-                        
-                        #if !os(tvOS)
-                            self.update(recordsForWatch: self.records)
-                        #endif
                     }
                     
                     self.stopActivityIndicator()
@@ -103,9 +88,7 @@ class SwiftyCloudKitTableViewController: UITableViewController, CloudKitHandler,
         query.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
         return query
     }
-    
-    var offlineSupport: Bool = true
-    
+        
     // The amount of records we'll fetch for each request
     var interval: Int = 50
     
@@ -149,9 +132,6 @@ class SwiftyCloudKitTableViewController: UITableViewController, CloudKitHandler,
                             if let record = record {
                                 DispatchQueue.main.async {
                                     self.records.insert(record, at: 0)
-                                    #if !os(tvOS)
-                                    self.update(recordsForWatch: self.records)
-                                    #endif
                                     self.tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: UITableViewRowAnimation.top)
                                     self.stopActivityIndicator()
                                 }
@@ -163,9 +143,6 @@ class SwiftyCloudKitTableViewController: UITableViewController, CloudKitHandler,
                     DispatchQueue.main.async {
                         let index = self.records.index(where: { $0.recordID == recordID })
                         self.records.remove(at: index!)
-                        #if !os(tvOS)
-                        self.update(recordsForWatch: self.records)
-                        #endif
                         self.tableView.deleteRows(at: [IndexPath(row: index!, section: 0)], with: UITableViewRowAnimation.bottom)
                     }
                     
@@ -180,9 +157,6 @@ class SwiftyCloudKitTableViewController: UITableViewController, CloudKitHandler,
                                 DispatchQueue.main.async {
                                     let index = self.records.index(where: { $0.recordID == record.recordID })!
                                     self.records[index] = record
-                                    #if !os(tvOS)
-                                    self.update(recordsForWatch: self.records)
-                                    #endif
                                     self.tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
                                     self.stopActivityIndicator()
                                 }
@@ -213,9 +187,6 @@ class SwiftyCloudKitTableViewController: UITableViewController, CloudKitHandler,
                 if let addedRecord = addedRecord {
                     print("Record saved")
                     self.records.insert(addedRecord, at: 0)
-                    #if !os(tvOS)
-                        self.update(recordsForWatch: self.records)
-                    #endif
                     self.tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .top)
                 }
             }
@@ -294,46 +265,3 @@ class SwiftyCloudKitTableViewController: UITableViewController, CloudKitHandler,
         present(alertController, animated: true, completion: nil)
     }
 }
-
-#if !os(tvOS)
-extension SwiftyCloudKitTableViewController: WCSessionDelegate {
-    // MARK: WCSessionDelegate
-    
-    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
-        /*switch activationState {
-         case .notActivated:
-         
-         case .inactive:
-         
-         case: .active
-         
-         }*/
-    }
-    
-    func sessionDidBecomeInactive(_ session: WCSession) {
-        
-    }
-    
-    func sessionDidDeactivate(_ session: WCSession) {
-        
-    }
-    
-    // MARK: Watch kit
-    
-    func update(recordsForWatch records: [CKRecord]) {
-        if WCSession.default.isReachable {
-            var context = [String:CKRecord]()
-            for (index, record) in records.enumerated() {
-                context[index.description] = record
-            }
-            
-            do {
-                try WCSession.default.updateApplicationContext(context)
-            }
-            catch let error {
-                print(error)
-            }
-        }
-    }
-}
-#endif
