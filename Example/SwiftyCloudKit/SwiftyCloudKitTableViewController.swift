@@ -66,7 +66,6 @@ class SwiftyCloudKitTableViewController: UITableViewController, CloudKitFetcher,
         startActivityIndicator()
         
         removeRecords = true
-        
         fetch(withCompletionHandler: parseResult)
     }
     
