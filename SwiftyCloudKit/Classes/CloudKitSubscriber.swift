@@ -34,7 +34,7 @@ import CloudKit
  */
 
 @available (iOS 10.0, tvOS 10.0, OSX 10.12, *)
-public protocol CloudKitSubscriber: AnyObject, PropertyStoring {
+public protocol CloudKitSubscriber: AnyObject {
     
     /**
      The database the subscriber gets its updates from.
@@ -82,15 +82,17 @@ public struct CloudKitNotifications {
 private var observerKey: UInt8 = 0
 
 public extension CloudKitSubscriber {
-
-    internal typealias T = NSObjectProtocol?
     
     /**
      The observer, which listens to subscription notifications given with the notification key
     */
     private var cloudKitObserver: NSObjectProtocol? {
-        get { return getAssociatedObject(&observerKey, defaultValue: nil as NSObjectProtocol?) }
-        set { return setAssociatedObject(&observerKey, value: newValue) }
+        get {
+            return PropertyStoring<NSObjectProtocol?>.getAssociatedObject(forObject: self, key: &observerKey, defaultValue: nil as NSObjectProtocol?)
+        }
+        set {
+            return PropertyStoring<NSObjectProtocol?>.setAssociatedObject(forObject: self, key: &observerKey, value: newValue)
+        }
     }
 
     public func subscribe(_ completionHandler: ((CKError?) -> Void)?) {

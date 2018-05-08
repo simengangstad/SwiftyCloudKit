@@ -7,8 +7,8 @@ import CloudKit
  thereafter 21-25. It uses the CKQueryCursor to know which records it'll fetch during the next batch.
  */
 @available (iOS 10.0, tvOS 10.0, OSX 10.12, *)
-public protocol CloudKitFetcher: CloudKitHandler, PropertyStoring {
-
+public protocol CloudKitFetcher: CloudKitHandler {
+    
     /**
      The database the fetcher fetches from.
      */
@@ -30,12 +30,12 @@ public protocol CloudKitFetcher: CloudKitHandler, PropertyStoring {
      The cursor which keeps control over which records that are to be fetched during the next batch. Is set to nil when all the records are fetched.
      */
     var cursor: CKQueryCursor? { get set }
-        
+    
     /**
      Fetches the records stored in iCloud based on the parameters given to the cloud kit fetcher.
      
      - parameters
-        - completionHandler: encapsulates the records fetched and errors, if any.
+     - completionHandler: encapsulates the records fetched and errors, if any.
      */
     func fetch(withCompletionHandler completionHandler: @escaping ([CKRecord]?, CKError?) -> Void)
 }
@@ -47,22 +47,26 @@ public enum FetchState {
     case more, none
 }
 
-private var fetchKey: UInt8 = 0
+fileprivate struct AssociatedKeys {
+    static fileprivate var fetchKey: UInt8 = 0
+}
 
 @available (iOS 10.0, tvOS 10.0, OSX 10.12, *)
 public extension CloudKitFetcher {
-    
-    typealias T = FetchState
     
     /**
      Makes it possible to control in further detail how multiple fetch request based on different parameters are executed.
      An example would be to fetch search results, where the cursor is set to nil, this state is set to more and another query is given based on the search terms.
      */
-    public var fetchState: FetchState {
-        get { return getAssociatedObject(&fetchKey, defaultValue: .more)}
-        set { return setAssociatedObject(&fetchKey, value: newValue)}
+    private var fetchState: FetchState {
+        get {
+            return PropertyStoring<FetchState>.getAssociatedObject(forObject: self, key: &AssociatedKeys.fetchKey, defaultValue: .more)
+        }
+        set(newValue) {
+            PropertyStoring<FetchState>.setAssociatedObject(forObject: self, key: &AssociatedKeys.fetchKey, value: newValue)
+        }
     }
-        
+    
     public func fetch(withCompletionHandler completionHandler: @escaping ([CKRecord]?, CKError?) -> Void) {
         var operation: CKQueryOperation!
         var array = [CKRecord]()
@@ -74,6 +78,7 @@ public extension CloudKitFetcher {
             }
             
             operation = CKQueryOperation(query: query)
+            fetchState = .more
         }
         else {
             operation = CKQueryOperation(cursor: cursor!)
@@ -92,7 +97,9 @@ public extension CloudKitFetcher {
                 self.cursor = cursor
             }
             else {
-                self.fetchState = .none
+                if Reachability.isConnectedToNetwork() {
+                    self.fetchState = .none
+                }
             }
             
             var localRecords = LocalStorage.loadLocalRecords()

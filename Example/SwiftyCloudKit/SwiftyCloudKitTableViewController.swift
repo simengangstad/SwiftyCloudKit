@@ -8,7 +8,7 @@ import UIKit
 import CloudKit
 import SwiftyCloudKit
 
-class SwiftyCloudKitTableViewController: UITableViewController, CloudKitFetcher, CloudKitHandler, CloudKitSubscriber {    
+class SwiftyCloudKitTableViewController: UITableViewController, CloudKitFetcher, CloudKitHandler, CloudKitSubscriber {
     
     // MARK: Model
     
@@ -33,6 +33,9 @@ class SwiftyCloudKitTableViewController: UITableViewController, CloudKitFetcher,
     override func viewDidLoad() {
         super.viewDidLoad()
         activityIndicator.hidesWhenStopped = true
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        tableView.refreshControl = refreshControl
     }
     
     var countOfLocalRecords: Int!
@@ -43,30 +46,7 @@ class SwiftyCloudKitTableViewController: UITableViewController, CloudKitFetcher,
         
         // We start fetching, but don't want to fetch every time the view appears on screen, therefore we check if the records is empty or not
         if records.isEmpty {
-            fetch(withCompletionHandler: { (fetchedRecords, error) in
-                DispatchQueue.main.async { [unowned self] in
-                    if let error = error {
-                        print(error.localizedDescription)
-                    }
-
-                    print("Retrieved records, reloading table view...")
-                    
-                    if let fetchedRecords = fetchedRecords {
-                        self.records.append(contentsOf: fetchedRecords)
-                    }
-                    
-                    self.stopActivityIndicator()
-                    
-                    if self.records.count > self.interval {
-                        self.tableView.reloadData()
-                    }
-                    else {
-                        self.tableView.reloadSections(IndexSet(integer: 0), with: .top)
-                    }
-                }
-            })
-            
-            startActivityIndicator()
+            refresh()
         }
         
         subscribe(nil)
@@ -75,6 +55,53 @@ class SwiftyCloudKitTableViewController: UITableViewController, CloudKitFetcher,
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         unsubscribe(nil)
+    }
+    
+    // Refresh table view
+    
+    private var removeRecords = true
+    
+    @objc private func refresh() {
+        cursor = nil
+        startActivityIndicator()
+        
+        removeRecords = true
+        
+        fetch(withCompletionHandler: parseResult)
+    }
+    
+    // MARK: Cloud kit fetcher
+    
+    private func parseResult(fetchedRecords: [CKRecord]?, error: CKError?) {
+        DispatchQueue.main.async { [unowned self] in
+            if let error = error {
+                print(error.localizedDescription)
+            }
+            
+            print("Retrieved records, reloading table view...")
+            
+            if self.removeRecords {
+                self.records.removeAll()
+            }
+            
+            if let fetchedRecords = fetchedRecords {
+                self.records.append(contentsOf: fetchedRecords)
+            }
+            
+            self.stopActivityIndicator()
+            self.tableView.refreshControl?.endRefreshing()
+            
+            if self.records.count > self.interval {
+                self.tableView.reloadData()
+            }
+            else {
+                self.tableView.beginUpdates()
+                self.tableView.reloadSections(IndexSet(integer: 0), with: .top)
+                self.tableView.endUpdates()
+            }
+            
+            self.removeRecords = false
+        }
     }
     
     // MARK: Cloud Kit Handler
@@ -90,7 +117,7 @@ class SwiftyCloudKitTableViewController: UITableViewController, CloudKitFetcher,
     }
         
     // The amount of records we'll fetch for each request
-    var interval: Int = 50
+    var interval: Int = 5
     
     // The cursor is an object which helps us keep track of which records we've fetched, and which records we are to fetch during the next batch. Can be set to nil to start fetching from the start.
     var cursor: CKQueryCursor?
@@ -132,7 +159,9 @@ class SwiftyCloudKitTableViewController: UITableViewController, CloudKitFetcher,
                             if let record = record {
                                 DispatchQueue.main.async {
                                     self.records.insert(record, at: 0)
+                                    self.tableView.beginUpdates()
                                     self.tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: UITableViewRowAnimation.top)
+                                    self.tableView.endUpdates()
                                     self.stopActivityIndicator()
                                 }
                             }
@@ -143,7 +172,9 @@ class SwiftyCloudKitTableViewController: UITableViewController, CloudKitFetcher,
                     DispatchQueue.main.async {
                         let index = self.records.index(where: { $0.recordID == recordID })
                         self.records.remove(at: index!)
+                        self.tableView.beginUpdates()
                         self.tableView.deleteRows(at: [IndexPath(row: index!, section: 0)], with: UITableViewRowAnimation.bottom)
+                        self.tableView.endUpdates()
                     }
                     
                 case .recordUpdated:
@@ -157,7 +188,9 @@ class SwiftyCloudKitTableViewController: UITableViewController, CloudKitFetcher,
                                 DispatchQueue.main.async {
                                     let index = self.records.index(where: { $0.recordID == record.recordID })!
                                     self.records[index] = record
+                                    self.tableView.beginUpdates()
                                     self.tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
+                                    self.tableView.endUpdates()
                                     self.stopActivityIndicator()
                                 }
                             }
@@ -187,7 +220,9 @@ class SwiftyCloudKitTableViewController: UITableViewController, CloudKitFetcher,
                 if let addedRecord = addedRecord {
                     print("Record saved")
                     self.records.insert(addedRecord, at: 0)
+                    self.tableView.beginUpdates()
                     self.tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .top)
+                    self.tableView.endUpdates()
                 }
             }
         }

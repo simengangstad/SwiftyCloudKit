@@ -23,6 +23,7 @@
 		ADEB6F82203CAB6D00C3C02D /* SwiftyCloudKit_watchOS Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = ADEB6F81203CAB6D00C3C02D /* SwiftyCloudKit_watchOS Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		B15A29BD67F08A73918123E5 /* Pods_SwiftyCloudKit_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 390AC867882B01244B9C8A7C /* Pods_SwiftyCloudKit_Tests.framework */; };
 		CB5F8E3DDA259144A862A180 /* Pods_SwiftyCloudKit_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F3F7BD7B8CD26638D536A04 /* Pods_SwiftyCloudKit_Example.framework */; };
+		FCB752F440178F27A96E04A0 /* Pods_SwifyCloudKit_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AB310AF74126A86295E219D /* Pods_SwifyCloudKit_tvOS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 /* Begin PBXFileReference section */
 		2F881FC9397FFDC33A0755BC /* Pods-SwifyCloudKit_tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwifyCloudKit_tvOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwifyCloudKit_tvOS/Pods-SwifyCloudKit_tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		390AC867882B01244B9C8A7C /* Pods_SwiftyCloudKit_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftyCloudKit_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3AB310AF74126A86295E219D /* Pods_SwifyCloudKit_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwifyCloudKit_tvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F3F7BD7B8CD26638D536A04 /* Pods_SwiftyCloudKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftyCloudKit_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD01AFB9204008FA782 /* SwiftyCloudKit_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftyCloudKit_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD1C2D1220322A7D00F0A646 /* CloudKit.framework in Frameworks */,
+				FCB752F440178F27A96E04A0 /* Pods_SwifyCloudKit_tvOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,6 +160,7 @@
 				AD20C1D5202A3E9000DA003F /* CloudKit.framework */,
 				3F3F7BD7B8CD26638D536A04 /* Pods_SwiftyCloudKit_Example.framework */,
 				390AC867882B01244B9C8A7C /* Pods_SwiftyCloudKit_Tests.framework */,
+				3AB310AF74126A86295E219D /* Pods_SwifyCloudKit_tvOS.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -354,7 +358,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
@@ -720,12 +724,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -773,12 +779,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
