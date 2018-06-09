@@ -20,9 +20,9 @@ Pod::Spec.new do |s|
   s.description      = <<-DESC
 	SwiftyCloudKit is a thin layer above CloudKit which makes it easy to add cloud capabilities to Apple environments. 
                        DESC
-
+  s.swift_version    = '4.2'  
   s.homepage         = 'https://github.com/simengangstad/SwiftyCloudKit'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
+  # s.screenshots    = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Simen Gangstad' => 'simen.gangstad@me.com' }
   s.source           = { :git => 'https://github.com/simengangstad/SwiftyCloudKit.git', :tag => s.version.to_s }
