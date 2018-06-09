@@ -1,5 +1,5 @@
 PODS:
-  - SwiftyCloudKit (0.1.4)
+  - SwiftyCloudKit (0.1.0)
 
 DEPENDENCIES:
   - SwiftyCloudKit (from `../`)
@@ -9,8 +9,8 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  SwiftyCloudKit: dd44ed4a2676a631122c29b83d9057da4e4d1fc6
+  SwiftyCloudKit: 0b99dde913abacc15901eb55c800529b89263b05
 
-PODFILE CHECKSUM: e929350b515c615fe5b2a61abed13f4947f04c1b
+PODFILE CHECKSUM: c46772578e563b5eec5cabdc9de59eb098d7fcb2
 
 COCOAPODS: 1.4.0

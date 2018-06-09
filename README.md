@@ -2,7 +2,7 @@
 
 [![CI Status](http://img.shields.io/travis/simengangstad/SwiftyCloudKit.svg?style=flat)](https://travis-ci.org/simengangstad/SwiftyCloudKit) [![Version](https://img.shields.io/cocoapods/v/SwiftyCloudKit.svg?style=flat)](http://cocoapods.org/pods/SwiftyCloudKit) [![License](https://img.shields.io/cocoapods/l/SwiftyCloudKit.svg?style=flat)](http://cocoapods.org/pods/SwiftyCloudKit) [![Platform](https://img.shields.io/cocoapods/p/SwiftyCloudKit.svg?style=flat)](http://cocoapods.org/pods/SwiftyCloudKit)
 
-SwiftyCloudKit is a thin layer above Cloud Kit which makes it easy to implement cloud support into iOS and tvOS apps.
+SwiftyCloudKit is a thin layer above Cloud Kit which makes it easy to implement cloud support into iOS apps.
 
 ## Example
 
@@ -10,9 +10,8 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Requirements
 
-- Swift 4.0
+- Swift 4.2 (use pre 0.1.4 for Swift 4.0)
 - iOS: 10.0+
-- tvOS: 10.0+ (not tested)
 
 ## Installation
 
@@ -175,7 +174,7 @@ restrictTokens(forContainersWithAPITokens containerTokens: [CKContainer: String]
 
 - Add tests
 - Add delegations methods which fires in record fetched block. 
-- Add support for macOS and watchOS
+- Add proper support for macOS, tvOS and watchOS
 
 ## Author
 

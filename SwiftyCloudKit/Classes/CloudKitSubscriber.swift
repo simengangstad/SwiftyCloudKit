@@ -81,6 +81,7 @@ public struct CloudKitNotifications {
 
 private var observerKey: UInt8 = 0
 
+@available(iOS 10.0, *)
 public extension CloudKitSubscriber {
     
     /**

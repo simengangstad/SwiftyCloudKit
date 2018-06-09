@@ -30,6 +30,7 @@ public var offlineSupport = true
  
  - returns: A dictionary of containers and records
  */
+@available(iOS 10.0, *)
 public func retrieveRecords(containerRecordTypes: [CKContainer: [String]]) -> [CKContainer: [CKRecord]] {
     let containers = Array(containerRecordTypes.keys)
     var recordDictionary = [CKContainer: [CKRecord]]()
@@ -89,6 +90,7 @@ private func records(withRecordTypes recordTypes: [String], fromDatabase databas
     return allRecords
 }
 
+@available(iOS 10.0, *)
 extension CKDatabase.Scope {
     static var cases: [CKDatabase.Scope] {
         return [CKDatabase.Scope.public, CKDatabase.Scope.private, CKDatabase.Scope.shared]
@@ -304,6 +306,7 @@ public func unrestrict(container: CKContainer, apiToken: String, webToken: Strin
  
  - returns: Dictionary of the containers and their respective web tokens
  */
+@available(iOS 9.2, *)
 public func restrictTokens(forContainersWithAPITokens containerTokens: [CKContainer: String]) -> [CKContainer:String] {
     var tokens = [CKContainer:String]()
     

@@ -7,22 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		113FEE59F3F1C91F888421AD /* Pods_SwiftyCloudKit_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C852B2224DAE26FEE7DD461D /* Pods_SwiftyCloudKit_Example.framework */; };
+		2899B11015E5587E607566EF /* Pods_SwiftyCloudKit_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FC0E0830CA008A8956F8672 /* Pods_SwiftyCloudKit_Tests.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
-		AD1C2D042032021800F0A646 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1C2D032032021800F0A646 /* AppDelegate.swift */; };
-		AD1C2D092032021800F0A646 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD1C2D072032021800F0A646 /* Main.storyboard */; };
-		AD1C2D0B2032021900F0A646 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD1C2D0A2032021900F0A646 /* Assets.xcassets */; };
-		AD1C2D102032065800F0A646 /* SwiftyCloudKitTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9E5CF72030C8AB00922106 /* SwiftyCloudKitTableViewController.swift */; };
-		AD1C2D1220322A7D00F0A646 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD9E5D0D2030D16A00922106 /* CloudKit.framework */; };
-		AD20C1D6202A3E9000DA003F /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD20C1D5202A3E9000DA003F /* CloudKit.framework */; };
-		AD9E5CF82030C8AB00922106 /* SwiftyCloudKitTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9E5CF72030C8AB00922106 /* SwiftyCloudKitTableViewController.swift */; };
-		ADEB6F82203CAB6D00C3C02D /* SwiftyCloudKit_watchOS Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = ADEB6F81203CAB6D00C3C02D /* SwiftyCloudKit_watchOS Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		B15A29BD67F08A73918123E5 /* Pods_SwiftyCloudKit_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 390AC867882B01244B9C8A7C /* Pods_SwiftyCloudKit_Tests.framework */; };
-		CB5F8E3DDA259144A862A180 /* Pods_SwiftyCloudKit_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F3F7BD7B8CD26638D536A04 /* Pods_SwiftyCloudKit_Example.framework */; };
-		FCB752F440178F27A96E04A0 /* Pods_SwifyCloudKit_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AB310AF74126A86295E219D /* Pods_SwifyCloudKit_tvOS.framework */; };
+		ADE2A2EC20CBD5A00036B548 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADE2A2EB20CBD59F0036B548 /* CloudKit.framework */; };
+		ADE2A2EE20CBD6BF0036B548 /* SwiftyCloudKitTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE2A2ED20CBD6BF0036B548 /* SwiftyCloudKitTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,34 +26,11 @@
 			remoteGlobalIDString = 607FACCF1AFB9204008FA782;
 			remoteInfo = SwiftyCloudKit;
 		};
-		ADEB6F83203CAB6D00C3C02D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 607FACC81AFB9204008FA782 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = ADEB6F80203CAB6D00C3C02D;
-			remoteInfo = "SwiftyCloudKit_watchOS Extension";
-		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		ADEB6F98203CAB6D00C3C02D /* Embed App Extensions */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 13;
-			files = (
-				ADEB6F82203CAB6D00C3C02D /* SwiftyCloudKit_watchOS Extension.appex in Embed App Extensions */,
-			);
-			name = "Embed App Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
-		2F881FC9397FFDC33A0755BC /* Pods-SwifyCloudKit_tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwifyCloudKit_tvOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwifyCloudKit_tvOS/Pods-SwifyCloudKit_tvOS.release.xcconfig"; sourceTree = "<group>"; };
-		390AC867882B01244B9C8A7C /* Pods_SwiftyCloudKit_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftyCloudKit_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3AB310AF74126A86295E219D /* Pods_SwifyCloudKit_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwifyCloudKit_tvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3F3F7BD7B8CD26638D536A04 /* Pods_SwiftyCloudKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftyCloudKit_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		270BA49506474182903227D8 /* Pods-SwiftyCloudKit_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyCloudKit_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftyCloudKit_Example/Pods-SwiftyCloudKit_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		3FC0E0830CA008A8956F8672 /* Pods_SwiftyCloudKit_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftyCloudKit_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD01AFB9204008FA782 /* SwiftyCloudKit_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftyCloudKit_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -70,27 +40,16 @@
 		607FACE51AFB9204008FA782 /* SwiftyCloudKit_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftyCloudKit_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		620BBDE9CCFC58A4B2CC9133 /* Pods-SwiftyCloudKit_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyCloudKit_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftyCloudKit_Tests/Pods-SwiftyCloudKit_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		6AE7C3CB5680D1C1E3993388 /* SwiftyCloudKit.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = SwiftyCloudKit.podspec; path = ../SwiftyCloudKit.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		89520218A6687CCB6FB3345B /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		AD1C2D012032021800F0A646 /* SwifyCloudKit_tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwifyCloudKit_tvOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		AD1C2D032032021800F0A646 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AD1C2D082032021800F0A646 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		AD1C2D0A2032021900F0A646 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		AD1C2D0C2032021900F0A646 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AD1C2D1120322A6D00F0A646 /* SwifyCloudKit_tvOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwifyCloudKit_tvOS.entitlements; sourceTree = "<group>"; };
-		AD20C1D4202A3E8200DA003F /* SwiftyCloudKit_Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftyCloudKit_Example.entitlements; sourceTree = "<group>"; };
-		AD20C1D5202A3E9000DA003F /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
-		AD9E5CF72030C8AB00922106 /* SwiftyCloudKitTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyCloudKitTableViewController.swift; sourceTree = "<group>"; };
-		AD9E5D0D2030D16A00922106 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS11.2.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
-		AD9E5D142030D2F600922106 /* Pods_SwiftyCloudKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_SwiftyCloudKit_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		ADEB6F75203CAB6D00C3C02D /* SwiftyCloudKit_watchOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftyCloudKit_watchOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		ADEB6F81203CAB6D00C3C02D /* SwiftyCloudKit_watchOS Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "SwiftyCloudKit_watchOS Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B192268517754873FD2F242B /* Pods-SwifyCloudKit_tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwifyCloudKit_tvOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwifyCloudKit_tvOS/Pods-SwifyCloudKit_tvOS.debug.xcconfig"; sourceTree = "<group>"; };
-		B7C281D1D120BDF9C29797B6 /* Pods-SwiftyCloudKit_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyCloudKit_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftyCloudKit_Example/Pods-SwiftyCloudKit_Example.release.xcconfig"; sourceTree = "<group>"; };
-		C2E263EECBD18AE0E7E45162 /* Pods-SwiftyCloudKit_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyCloudKit_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftyCloudKit_Tests/Pods-SwiftyCloudKit_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		D732B828A3902EE00A98565D /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		F4CB3469B7CD568DD8FD4325 /* Pods-SwiftyCloudKit_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyCloudKit_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftyCloudKit_Example/Pods-SwiftyCloudKit_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		6F2C6F30A115E0F468D9689D /* SwiftyCloudKit.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = SwiftyCloudKit.podspec; path = ../SwiftyCloudKit.podspec; sourceTree = "<group>"; };
+		9094B1F57C2A6FC16144AE2B /* Pods-SwiftyCloudKit_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyCloudKit_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftyCloudKit_Tests/Pods-SwiftyCloudKit_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		928D2E6306E2D6AA73FC3408 /* Pods-SwiftyCloudKit_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyCloudKit_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftyCloudKit_Example/Pods-SwiftyCloudKit_Example.release.xcconfig"; sourceTree = "<group>"; };
+		A80B930F075ED051BE13E8E2 /* Pods-SwiftyCloudKit_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyCloudKit_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftyCloudKit_Tests/Pods-SwiftyCloudKit_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		ADE2A2EA20CBD59A0036B548 /* SwiftyCloudKit_Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftyCloudKit_Example.entitlements; sourceTree = "<group>"; };
+		ADE2A2EB20CBD59F0036B548 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		ADE2A2ED20CBD6BF0036B548 /* SwiftyCloudKitTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyCloudKitTableViewController.swift; sourceTree = "<group>"; };
+		C852B2224DAE26FEE7DD461D /* Pods_SwiftyCloudKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftyCloudKit_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E87A67045CB0DA006C6C01A4 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		E9ECCACD38AB0586200BEFDF /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,8 +57,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB5F8E3DDA259144A862A180 /* Pods_SwiftyCloudKit_Example.framework in Frameworks */,
-				AD20C1D6202A3E9000DA003F /* CloudKit.framework in Frameworks */,
+				113FEE59F3F1C91F888421AD /* Pods_SwiftyCloudKit_Example.framework in Frameworks */,
+				ADE2A2EC20CBD5A00036B548 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,73 +66,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B15A29BD67F08A73918123E5 /* Pods_SwiftyCloudKit_Tests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		688AFB72BAE370C1077CB6E3 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AD1C2CFE2032021800F0A646 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AD1C2D1220322A7D00F0A646 /* CloudKit.framework in Frameworks */,
-				FCB752F440178F27A96E04A0 /* Pods_SwifyCloudKit_tvOS.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		ADEB6F7E203CAB6D00C3C02D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				2899B11015E5587E607566EF /* Pods_SwiftyCloudKit_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1324196A707213A089EC190B /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				F4CB3469B7CD568DD8FD4325 /* Pods-SwiftyCloudKit_Example.debug.xcconfig */,
-				B7C281D1D120BDF9C29797B6 /* Pods-SwiftyCloudKit_Example.release.xcconfig */,
-				620BBDE9CCFC58A4B2CC9133 /* Pods-SwiftyCloudKit_Tests.debug.xcconfig */,
-				C2E263EECBD18AE0E7E45162 /* Pods-SwiftyCloudKit_Tests.release.xcconfig */,
-				B192268517754873FD2F242B /* Pods-SwifyCloudKit_tvOS.debug.xcconfig */,
-				2F881FC9397FFDC33A0755BC /* Pods-SwifyCloudKit_tvOS.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		13C0C66BE818B4C96E4A14AC /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				AD9E5D142030D2F600922106 /* Pods_SwiftyCloudKit_Example.framework */,
-				AD9E5D0D2030D16A00922106 /* CloudKit.framework */,
-				AD20C1D5202A3E9000DA003F /* CloudKit.framework */,
-				3F3F7BD7B8CD26638D536A04 /* Pods_SwiftyCloudKit_Example.framework */,
-				390AC867882B01244B9C8A7C /* Pods_SwiftyCloudKit_Tests.framework */,
-				3AB310AF74126A86295E219D /* Pods_SwifyCloudKit_tvOS.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
-				AD20C1D4202A3E8200DA003F /* SwiftyCloudKit_Example.entitlements */,
+				ADE2A2EA20CBD59A0036B548 /* SwiftyCloudKit_Example.entitlements */,
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
-				607FACD21AFB9204008FA782 /* SwiftyCloudKit-iOS */,
-				AD1C2D022032021800F0A646 /* SwifyCloudKit_tvOS */,
+				607FACD21AFB9204008FA782 /* Example for SwiftyCloudKit */,
 				607FACE81AFB9204008FA782 /* Tests */,
 				607FACD11AFB9204008FA782 /* Products */,
-				1324196A707213A089EC190B /* Pods */,
-				13C0C66BE818B4C96E4A14AC /* Frameworks */,
+				7545E33904F49B00A600010E /* Pods */,
+				AFEB3AB00DAEEC371DF0F315 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -182,24 +91,21 @@
 			children = (
 				607FACD01AFB9204008FA782 /* SwiftyCloudKit_Example.app */,
 				607FACE51AFB9204008FA782 /* SwiftyCloudKit_Tests.xctest */,
-				AD1C2D012032021800F0A646 /* SwifyCloudKit_tvOS.app */,
-				ADEB6F75203CAB6D00C3C02D /* SwiftyCloudKit_watchOS.app */,
-				ADEB6F81203CAB6D00C3C02D /* SwiftyCloudKit_watchOS Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		607FACD21AFB9204008FA782 /* SwiftyCloudKit-iOS */ = {
+		607FACD21AFB9204008FA782 /* Example for SwiftyCloudKit */ = {
 			isa = PBXGroup;
 			children = (
+				ADE2A2ED20CBD6BF0036B548 /* SwiftyCloudKitTableViewController.swift */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
-				AD9E5CF72030C8AB00922106 /* SwiftyCloudKitTableViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
 			);
-			name = "SwiftyCloudKit-iOS";
+			name = "Example for SwiftyCloudKit";
 			path = SwiftyCloudKit;
 			sourceTree = "<group>";
 		};
@@ -231,23 +137,32 @@
 		607FACF51AFB993E008FA782 /* Podspec Metadata */ = {
 			isa = PBXGroup;
 			children = (
-				6AE7C3CB5680D1C1E3993388 /* SwiftyCloudKit.podspec */,
-				D732B828A3902EE00A98565D /* README.md */,
-				89520218A6687CCB6FB3345B /* LICENSE */,
+				6F2C6F30A115E0F468D9689D /* SwiftyCloudKit.podspec */,
+				E9ECCACD38AB0586200BEFDF /* README.md */,
+				E87A67045CB0DA006C6C01A4 /* LICENSE */,
 			);
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
-		AD1C2D022032021800F0A646 /* SwifyCloudKit_tvOS */ = {
+		7545E33904F49B00A600010E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				AD1C2D1120322A6D00F0A646 /* SwifyCloudKit_tvOS.entitlements */,
-				AD1C2D032032021800F0A646 /* AppDelegate.swift */,
-				AD1C2D072032021800F0A646 /* Main.storyboard */,
-				AD1C2D0A2032021900F0A646 /* Assets.xcassets */,
-				AD1C2D0C2032021900F0A646 /* Info.plist */,
+				270BA49506474182903227D8 /* Pods-SwiftyCloudKit_Example.debug.xcconfig */,
+				928D2E6306E2D6AA73FC3408 /* Pods-SwiftyCloudKit_Example.release.xcconfig */,
+				9094B1F57C2A6FC16144AE2B /* Pods-SwiftyCloudKit_Tests.debug.xcconfig */,
+				A80B930F075ED051BE13E8E2 /* Pods-SwiftyCloudKit_Tests.release.xcconfig */,
 			);
-			path = SwifyCloudKit_tvOS;
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		AFEB3AB00DAEEC371DF0F315 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ADE2A2EB20CBD59F0036B548 /* CloudKit.framework */,
+				C852B2224DAE26FEE7DD461D /* Pods_SwiftyCloudKit_Example.framework */,
+				3FC0E0830CA008A8956F8672 /* Pods_SwiftyCloudKit_Tests.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,12 +172,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "SwiftyCloudKit_Example" */;
 			buildPhases = (
-				9941D3495EFEDA25DFE18C73 /* [CP] Check Pods Manifest.lock */,
+				30425F71CE24BB47BCE5EEB3 /* [CP] Check Pods Manifest.lock */,
 				607FACCC1AFB9204008FA782 /* Sources */,
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
-				69BF90E831496B86ED099555 /* [CP] Embed Pods Frameworks */,
-				D15B8239D7F6497E969DBC8E /* [CP] Copy Pods Resources */,
+				722B285EEC9CEB456F4C80A6 /* [CP] Embed Pods Frameworks */,
+				E60D92E1E6A590B47FCFA113 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -277,12 +192,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACF21AFB9204008FA782 /* Build configuration list for PBXNativeTarget "SwiftyCloudKit_Tests" */;
 			buildPhases = (
-				8708E9BDDFF7A6953BFECC33 /* [CP] Check Pods Manifest.lock */,
+				8F2BA57B12D8440984187526 /* [CP] Check Pods Manifest.lock */,
 				607FACE11AFB9204008FA782 /* Sources */,
 				607FACE21AFB9204008FA782 /* Frameworks */,
 				607FACE31AFB9204008FA782 /* Resources */,
-				3FBDFA2BC1EC08E0D294A85D /* [CP] Embed Pods Frameworks */,
-				5BBD45AB0A7B9FD24EE5A6A0 /* [CP] Copy Pods Resources */,
+				F02598D79B8D6F18F34A8951 /* [CP] Embed Pods Frameworks */,
+				E644D9086643CCEAB9D157BD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -294,79 +209,21 @@
 			productReference = 607FACE51AFB9204008FA782 /* SwiftyCloudKit_Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		AD1C2D002032021800F0A646 /* SwifyCloudKit_tvOS */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = AD1C2D0F2032021900F0A646 /* Build configuration list for PBXNativeTarget "SwifyCloudKit_tvOS" */;
-			buildPhases = (
-				DD4D764738CE2435E4BC2BEF /* [CP] Check Pods Manifest.lock */,
-				AD1C2CFD2032021800F0A646 /* Sources */,
-				AD1C2CFE2032021800F0A646 /* Frameworks */,
-				AD1C2CFF2032021800F0A646 /* Resources */,
-				6EED9B384E9C731B11D714E8 /* [CP] Embed Pods Frameworks */,
-				432B4EAFE4B9EB7B0BDF0C24 /* [CP] Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = SwifyCloudKit_tvOS;
-			productName = SwifyCloudKit_tvOS;
-			productReference = AD1C2D012032021800F0A646 /* SwifyCloudKit_tvOS.app */;
-			productType = "com.apple.product-type.application";
-		};
-		ADEB6F74203CAB6D00C3C02D /* SwiftyCloudKit_watchOS */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = ADEB6F99203CAB6D00C3C02D /* Build configuration list for PBXNativeTarget "SwiftyCloudKit_watchOS" */;
-			buildPhases = (
-				ADEB6F73203CAB6D00C3C02D /* Resources */,
-				ADEB6F98203CAB6D00C3C02D /* Embed App Extensions */,
-				688AFB72BAE370C1077CB6E3 /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				ADEB6F84203CAB6D00C3C02D /* PBXTargetDependency */,
-			);
-			name = SwiftyCloudKit_watchOS;
-			productName = SwiftyCloudKit_watchOS;
-			productReference = ADEB6F75203CAB6D00C3C02D /* SwiftyCloudKit_watchOS.app */;
-			productType = "com.apple.product-type.application.watchapp2";
-		};
-		ADEB6F80203CAB6D00C3C02D /* SwiftyCloudKit_watchOS Extension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = ADEB6F97203CAB6D00C3C02D /* Build configuration list for PBXNativeTarget "SwiftyCloudKit_watchOS Extension" */;
-			buildPhases = (
-				ADEB6F7D203CAB6D00C3C02D /* Sources */,
-				ADEB6F7E203CAB6D00C3C02D /* Frameworks */,
-				ADEB6F7F203CAB6D00C3C02D /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "SwiftyCloudKit_watchOS Extension";
-			productName = "SwiftyCloudKit_watchOS Extension";
-			productReference = ADEB6F81203CAB6D00C3C02D /* SwiftyCloudKit_watchOS Extension.appex */;
-			productType = "com.apple.product-type.watchkit2-extension";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		607FACC81AFB9204008FA782 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0920;
+				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
 						DevelopmentTeam = YT53AFQ724;
-						LastSwiftMigration = 1000;
+						LastSwiftMigration = 0900;
 						SystemCapabilities = {
-							com.apple.ApplicationGroups.iOS = {
-								enabled = 1;
-							};
 							com.apple.Push = {
 								enabled = 1;
 							};
@@ -378,31 +235,8 @@
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
 						DevelopmentTeam = YT53AFQ724;
-						LastSwiftMigration = 1000;
+						LastSwiftMigration = 0900;
 						TestTargetID = 607FACCF1AFB9204008FA782;
-					};
-					AD1C2D002032021800F0A646 = {
-						CreatedOnToolsVersion = 9.2;
-						DevelopmentTeam = YT53AFQ724;
-						ProvisioningStyle = Automatic;
-						SystemCapabilities = {
-							com.apple.Push = {
-								enabled = 1;
-							};
-							com.apple.iCloud = {
-								enabled = 1;
-							};
-						};
-					};
-					ADEB6F74203CAB6D00C3C02D = {
-						CreatedOnToolsVersion = 9.2;
-						DevelopmentTeam = YT53AFQ724;
-						ProvisioningStyle = Automatic;
-					};
-					ADEB6F80203CAB6D00C3C02D = {
-						CreatedOnToolsVersion = 9.2;
-						DevelopmentTeam = YT53AFQ724;
-						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -421,9 +255,6 @@
 			targets = (
 				607FACCF1AFB9204008FA782 /* SwiftyCloudKit_Example */,
 				607FACE41AFB9204008FA782 /* SwiftyCloudKit_Tests */,
-				AD1C2D002032021800F0A646 /* SwifyCloudKit_tvOS */,
-				ADEB6F74203CAB6D00C3C02D /* SwiftyCloudKit_watchOS */,
-				ADEB6F80203CAB6D00C3C02D /* SwiftyCloudKit_watchOS Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -446,141 +277,10 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AD1C2CFF2032021800F0A646 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AD1C2D0B2032021900F0A646 /* Assets.xcassets in Resources */,
-				AD1C2D092032021800F0A646 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		ADEB6F73203CAB6D00C3C02D /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		ADEB6F7F203CAB6D00C3C02D /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3FBDFA2BC1EC08E0D294A85D /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-SwiftyCloudKit_Tests/Pods-SwiftyCloudKit_Tests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/FBSnapshotTestCase/FBSnapshotTestCase.framework",
-				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
-				"${BUILT_PRODUCTS_DIR}/Nimble-Snapshots/Nimble_Snapshots.framework",
-				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSnapshotTestCase.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble_Snapshots.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftyCloudKit_Tests/Pods-SwiftyCloudKit_Tests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		432B4EAFE4B9EB7B0BDF0C24 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwifyCloudKit_tvOS/Pods-SwifyCloudKit_tvOS-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		5BBD45AB0A7B9FD24EE5A6A0 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftyCloudKit_Tests/Pods-SwiftyCloudKit_Tests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		69BF90E831496B86ED099555 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-SwiftyCloudKit_Example/Pods-SwiftyCloudKit_Example-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/SwiftyCloudKit-iOS/SwiftyCloudKit.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyCloudKit.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftyCloudKit_Example/Pods-SwiftyCloudKit_Example-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		6EED9B384E9C731B11D714E8 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-SwifyCloudKit_tvOS/Pods-SwifyCloudKit_tvOS-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/SwiftyCloudKit-tvOS/SwiftyCloudKit.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyCloudKit.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwifyCloudKit_tvOS/Pods-SwifyCloudKit_tvOS-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8708E9BDDFF7A6953BFECC33 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-SwiftyCloudKit_Tests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9941D3495EFEDA25DFE18C73 /* [CP] Check Pods Manifest.lock */ = {
+		30425F71CE24BB47BCE5EEB3 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -598,7 +298,43 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D15B8239D7F6497E969DBC8E /* [CP] Copy Pods Resources */ = {
+		722B285EEC9CEB456F4C80A6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SwiftyCloudKit_Example/Pods-SwiftyCloudKit_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SwiftyCloudKit/SwiftyCloudKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyCloudKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftyCloudKit_Example/Pods-SwiftyCloudKit_Example-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8F2BA57B12D8440984187526 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SwiftyCloudKit_Tests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E60D92E1E6A590B47FCFA113 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -613,22 +349,34 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftyCloudKit_Example/Pods-SwiftyCloudKit_Example-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		DD4D764738CE2435E4BC2BEF /* [CP] Check Pods Manifest.lock */ = {
+		E644D9086643CCEAB9D157BD /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
 			);
-			name = "[CP] Check Pods Manifest.lock";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-SwifyCloudKit_tvOS-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftyCloudKit_Tests/Pods-SwiftyCloudKit_Tests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F02598D79B8D6F18F34A8951 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftyCloudKit_Tests/Pods-SwiftyCloudKit_Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -638,7 +386,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD9E5CF82030C8AB00922106 /* SwiftyCloudKitTableViewController.swift in Sources */,
+				ADE2A2EE20CBD6BF0036B548 /* SwiftyCloudKitTableViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -651,22 +399,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AD1C2CFD2032021800F0A646 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AD1C2D102032065800F0A646 /* SwiftyCloudKitTableViewController.swift in Sources */,
-				AD1C2D042032021800F0A646 /* AppDelegate.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		ADEB6F7D203CAB6D00C3C02D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -674,11 +406,6 @@
 			isa = PBXTargetDependency;
 			target = 607FACCF1AFB9204008FA782 /* SwiftyCloudKit_Example */;
 			targetProxy = 607FACE61AFB9204008FA782 /* PBXContainerItemProxy */;
-		};
-		ADEB6F84203CAB6D00C3C02D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = ADEB6F80203CAB6D00C3C02D /* SwiftyCloudKit_watchOS Extension */;
-			targetProxy = ADEB6F83203CAB6D00C3C02D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -697,14 +424,6 @@
 				607FACDF1AFB9204008FA782 /* Base */,
 			);
 			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
-		AD1C2D072032021800F0A646 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AD1C2D082032021800F0A646 /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -762,6 +481,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -809,50 +529,51 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.2;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
 		607FACF01AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F4CB3469B7CD568DD8FD4325 /* Pods-SwiftyCloudKit_Example.debug.xcconfig */;
+			baseConfigurationReference = 270BA49506474182903227D8 /* Pods-SwiftyCloudKit_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = SwiftyCloudKit_Example.entitlements;
 				DEVELOPMENT_TEAM = YT53AFQ724;
 				INFOPLIST_FILE = SwiftyCloudKit/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = io.github.simengangstad.swiftycloudkit;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
 		607FACF11AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B7C281D1D120BDF9C29797B6 /* Pods-SwiftyCloudKit_Example.release.xcconfig */;
+			baseConfigurationReference = 928D2E6306E2D6AA73FC3408 /* Pods-SwiftyCloudKit_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = SwiftyCloudKit_Example.entitlements;
 				DEVELOPMENT_TEAM = YT53AFQ724;
 				INFOPLIST_FILE = SwiftyCloudKit/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = io.github.simengangstad.swiftycloudkit;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
 		607FACF31AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 620BBDE9CCFC58A4B2CC9133 /* Pods-SwiftyCloudKit_Tests.debug.xcconfig */;
+			baseConfigurationReference = 9094B1F57C2A6FC16144AE2B /* Pods-SwiftyCloudKit_Tests.debug.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = YT53AFQ724;
-				FRAMEWORK_SEARCH_PATHS = "";
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -861,175 +582,23 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
 		607FACF41AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C2E263EECBD18AE0E7E45162 /* Pods-SwiftyCloudKit_Tests.release.xcconfig */;
+			baseConfigurationReference = A80B930F075ED051BE13E8E2 /* Pods-SwiftyCloudKit_Tests.release.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = YT53AFQ724;
-				FRAMEWORK_SEARCH_PATHS = "";
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.2;
-			};
-			name = Release;
-		};
-		AD1C2D0D2032021900F0A646 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B192268517754873FD2F242B /* Pods-SwifyCloudKit_tvOS.debug.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_ENTITLEMENTS = SwifyCloudKit_tvOS/SwifyCloudKit_tvOS.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = YT53AFQ724;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = SwifyCloudKit_tvOS/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "io.github.simengangstad.SwifyCloudKit-tvOS";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = appletvos;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 10.0;
-			};
-			name = Debug;
-		};
-		AD1C2D0E2032021900F0A646 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2F881FC9397FFDC33A0755BC /* Pods-SwifyCloudKit_tvOS.release.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_ENTITLEMENTS = SwifyCloudKit_tvOS/SwifyCloudKit_tvOS.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = YT53AFQ724;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = SwifyCloudKit_tvOS/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "io.github.simengangstad.SwifyCloudKit-tvOS";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = appletvos;
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 10.0;
-			};
-			name = Release;
-		};
-		ADEB6F93203CAB6D00C3C02D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_STYLE = Automatic;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = YT53AFQ724;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				IBSC_MODULE = SwiftyCloudKit_watchOS_Extension;
-				INFOPLIST_FILE = SwiftyCloudKit_watchOS/Info.plist;
-				PRODUCT_BUNDLE_IDENTIFIER = io.github.simengangstad.swiftycloudkit.watchkitapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 4.2;
-			};
-			name = Debug;
-		};
-		ADEB6F94203CAB6D00C3C02D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = YT53AFQ724;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				IBSC_MODULE = SwiftyCloudKit_watchOS_Extension;
-				INFOPLIST_FILE = SwiftyCloudKit_watchOS/Info.plist;
-				PRODUCT_BUNDLE_IDENTIFIER = io.github.simengangstad.swiftycloudkit.watchkitapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 4.2;
-			};
-			name = Release;
-		};
-		ADEB6F95203CAB6D00C3C02D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_STYLE = Automatic;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = YT53AFQ724;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = "SwiftyCloudKit_watchOS Extension/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = io.github.simengangstad.swiftycloudkit.watchkitapp.watchkitextension;
-				PRODUCT_NAME = "${TARGET_NAME}";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 4.2;
-			};
-			name = Debug;
-		};
-		ADEB6F96203CAB6D00C3C02D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = YT53AFQ724;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = "SwiftyCloudKit_watchOS Extension/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = io.github.simengangstad.swiftycloudkit.watchkitapp.watchkitextension;
-				PRODUCT_NAME = "${TARGET_NAME}";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 4.2;
 			};
 			name = Release;
 		};
@@ -1059,33 +628,6 @@
 			buildConfigurations = (
 				607FACF31AFB9204008FA782 /* Debug */,
 				607FACF41AFB9204008FA782 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		AD1C2D0F2032021900F0A646 /* Build configuration list for PBXNativeTarget "SwifyCloudKit_tvOS" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				AD1C2D0D2032021900F0A646 /* Debug */,
-				AD1C2D0E2032021900F0A646 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		ADEB6F97203CAB6D00C3C02D /* Build configuration list for PBXNativeTarget "SwiftyCloudKit_watchOS Extension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				ADEB6F95203CAB6D00C3C02D /* Debug */,
-				ADEB6F96203CAB6D00C3C02D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		ADEB6F99203CAB6D00C3C02D /* Build configuration list for PBXNativeTarget "SwiftyCloudKit_watchOS" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				ADEB6F93203CAB6D00C3C02D /* Debug */,
-				ADEB6F94203CAB6D00C3C02D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

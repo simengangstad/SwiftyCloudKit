@@ -7,136 +7,94 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0F5A5933C7F9B435AAAE1110967C0264 /* Pods-SwifyCloudKit_tvOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B033260A6EA330C4C379E7F4623D4B7F /* Pods-SwifyCloudKit_tvOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		18DDFD2C11AF0226C03F2189282F604C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D154F4805B9715F0E6D79B0363CE280 /* Foundation.framework */; };
-		1FAC4084F060B3CD004692624FE69AF9 /* CloudKitSubscriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A573442E7BA40F36DDFD4255FB11BAE /* CloudKitSubscriber.swift */; };
-		302C55F36678031439B0E1D09A75D1F5 /* SwiftyCloudKit-tvOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FD83F029F4378C765A96D33A4A37B4D1 /* SwiftyCloudKit-tvOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		34BE710E29130F039279861436B4954F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 572DBE63D5360AB71E5F80F979738FD0 /* Foundation.framework */; };
-		3EE8F58DCC4A603584D07C4FD398B51F /* Pods-SwiftyCloudKit_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 199E9EE68BDDB2FBB46681A2DF12AD90 /* Pods-SwiftyCloudKit_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		48E686AF133C18C998658C81AFB71231 /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CC6A93F200EE3855A3BA37BE48E9E2 /* LocalStorage.swift */; };
-		4B4C1C78365CC253339AF15FD0AEA28A /* Pods-SwiftyCloudKit_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0EE7B62B41E5ED4BDFD46571D4FA9F47 /* Pods-SwiftyCloudKit_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		65D657DF853CDA14CE34038518907C1C /* SwiftyCloudKit-iOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 616859081DBBDFE63FB2558EF99A1315 /* SwiftyCloudKit-iOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6AE6F5B773F55F556DB4FD56178346E3 /* SwiftyCloudKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7895F7D893528462DF195FB50B921C18 /* SwiftyCloudKit.swift */; };
-		870469184397E5405500AC1E697C56BD /* CloudKitHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6456AE44AA36C756835483CEBEAA030E /* CloudKitHandler.swift */; };
-		8AE03890A544320CD689B238B1F25590 /* Pods-SwiftyCloudKit_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E2E74B0BF4E941BED4900A2EABA7BC2C /* Pods-SwiftyCloudKit_Example-dummy.m */; };
-		8B271C2648DD166E71C2B6FF2BAB43D6 /* SwiftyCloudKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7895F7D893528462DF195FB50B921C18 /* SwiftyCloudKit.swift */; };
-		942DF812772CF853DC802EF768E1B417 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96393A6081F36BD61BEA6F78B6C72B9 /* Util.swift */; };
-		A0C18408287282848289C09B5BC848D5 /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CC6A93F200EE3855A3BA37BE48E9E2 /* LocalStorage.swift */; };
-		A9AEE6E1893211CFA61CC9F568236B5A /* CloudKitHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6456AE44AA36C756835483CEBEAA030E /* CloudKitHandler.swift */; };
-		A9D77476A18ADF8D3E50585939A8EEB7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D154F4805B9715F0E6D79B0363CE280 /* Foundation.framework */; };
-		AA1C00EF14AA90B2B3902EC87DFF0B6A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D154F4805B9715F0E6D79B0363CE280 /* Foundation.framework */; };
-		ABBF685F0A439565571701D111EE2582 /* Pods-SwifyCloudKit_tvOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 212FEED13978E5B1E9BD679B737BF120 /* Pods-SwifyCloudKit_tvOS-dummy.m */; };
-		B6EEC765A4D58D55C447E5954DE761AA /* CloudKitFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB0CAAC7828007A76975D72AACCAE2D /* CloudKitFetcher.swift */; };
-		BB2055594957AD52D3278C5B7041C8FB /* SwiftyCloudKit-iOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B69280D0B403502863F4315484D080E /* SwiftyCloudKit-iOS-dummy.m */; };
-		C7D6AFA38739AA93729E5BDDA7F3DCF2 /* SwiftyCloudKit-tvOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1B1597BE43401DBDD4DFF277BE377E /* SwiftyCloudKit-tvOS-dummy.m */; };
-		CC4A9D956D6D68D10E67E4F1783A02AA /* Pods-SwiftyCloudKit_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B279297D9ADC4F27CF5A3FFED25DD87 /* Pods-SwiftyCloudKit_Tests-dummy.m */; };
-		CCA9FAB79CF9706DA72C562799C42549 /* CloudKitFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB0CAAC7828007A76975D72AACCAE2D /* CloudKitFetcher.swift */; };
-		D856D2C893082990C60C45B1E2240F5F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 572DBE63D5360AB71E5F80F979738FD0 /* Foundation.framework */; };
-		DE8A2CA96B90F049A0A4A133249069FE /* CloudKitSubscriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A573442E7BA40F36DDFD4255FB11BAE /* CloudKitSubscriber.swift */; };
-		F73D3403E752A5623C46082455B19151 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96393A6081F36BD61BEA6F78B6C72B9 /* Util.swift */; };
+		3EE8F58DCC4A603584D07C4FD398B51F /* Pods-SwiftyCloudKit_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 46B02058A292482D939CF71716643878 /* Pods-SwiftyCloudKit_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		461C673CB518E00B11365B5C9AC6D1EC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		68B13AF210AA79EE4D1A5A2673AF5C8E /* Pods-SwiftyCloudKit_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF0B0A5967CF6CCF2FA14052285F276 /* Pods-SwiftyCloudKit_Example-dummy.m */; };
+		876BDBF213CBB44C51BF9E90FF33E952 /* Pods-SwiftyCloudKit_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 54DC5922DDDBC8C0CAFC75E4624EB500 /* Pods-SwiftyCloudKit_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9BEA0681A207158D305EEDE0516226F2 /* SwiftyCloudKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B07D8D5CF8E1BD2D9C2BED87891E38CF /* SwiftyCloudKit-dummy.m */; };
+		A9D77476A18ADF8D3E50585939A8EEB7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		ADE2A2F520CBD6F20036B548 /* SwiftyCloudKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE2A2EF20CBD6F20036B548 /* SwiftyCloudKit.swift */; };
+		ADE2A2F620CBD6F20036B548 /* SwiftyCloudKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE2A2EF20CBD6F20036B548 /* SwiftyCloudKit.swift */; };
+		ADE2A2F720CBD6F20036B548 /* SwiftyCloudKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE2A2EF20CBD6F20036B548 /* SwiftyCloudKit.swift */; };
+		ADE2A2F820CBD6F20036B548 /* CloudKitSubscriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE2A2F020CBD6F20036B548 /* CloudKitSubscriber.swift */; };
+		ADE2A2F920CBD6F20036B548 /* CloudKitSubscriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE2A2F020CBD6F20036B548 /* CloudKitSubscriber.swift */; };
+		ADE2A2FA20CBD6F20036B548 /* CloudKitSubscriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE2A2F020CBD6F20036B548 /* CloudKitSubscriber.swift */; };
+		ADE2A2FB20CBD6F20036B548 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE2A2F120CBD6F20036B548 /* Util.swift */; };
+		ADE2A2FC20CBD6F20036B548 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE2A2F120CBD6F20036B548 /* Util.swift */; };
+		ADE2A2FD20CBD6F20036B548 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE2A2F120CBD6F20036B548 /* Util.swift */; };
+		ADE2A2FE20CBD6F20036B548 /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE2A2F220CBD6F20036B548 /* LocalStorage.swift */; };
+		ADE2A2FF20CBD6F20036B548 /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE2A2F220CBD6F20036B548 /* LocalStorage.swift */; };
+		ADE2A30020CBD6F20036B548 /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE2A2F220CBD6F20036B548 /* LocalStorage.swift */; };
+		ADE2A30120CBD6F20036B548 /* CloudKitHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE2A2F320CBD6F20036B548 /* CloudKitHandler.swift */; };
+		ADE2A30220CBD6F20036B548 /* CloudKitHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE2A2F320CBD6F20036B548 /* CloudKitHandler.swift */; };
+		ADE2A30320CBD6F20036B548 /* CloudKitHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE2A2F320CBD6F20036B548 /* CloudKitHandler.swift */; };
+		ADE2A30420CBD6F20036B548 /* CloudKitFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE2A2F420CBD6F20036B548 /* CloudKitFetcher.swift */; };
+		ADE2A30520CBD6F20036B548 /* CloudKitFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE2A2F420CBD6F20036B548 /* CloudKitFetcher.swift */; };
+		ADE2A30620CBD6F20036B548 /* CloudKitFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE2A2F420CBD6F20036B548 /* CloudKitFetcher.swift */; };
+		CC4A9D956D6D68D10E67E4F1783A02AA /* Pods-SwiftyCloudKit_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 561FE8CD51C297B0B8A52B8241AD67B0 /* Pods-SwiftyCloudKit_Tests-dummy.m */; };
+		D8F7FE88140B3BB9108B7C0B5D906A71 /* SwiftyCloudKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EBA7892521E151A6DA3AD6EE4FB9F71E /* SwiftyCloudKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DFCCCEE99B866F4FE3433B457752CF6B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		119D74FF1D7A263F1775EA3056CB813D /* PBXContainerItemProxy */ = {
+		43CFA12F918C0C9130E5D0C4B48CD088 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 943F2B2C2E215765494A0FFB55BB563B;
-			remoteInfo = "SwiftyCloudKit-iOS";
-		};
-		1AE7AFAFC210E71C9DF16806B5CEE122 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 20752150E7B779C15AB15EC3DA73E849;
-			remoteInfo = "SwiftyCloudKit-tvOS";
+			remoteGlobalIDString = 28F973DA0B42B4E93609946BD55D33E9;
+			remoteInfo = SwiftyCloudKit;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		086A7BE24F626BFD736FEC4481521661 /* Pods-SwiftyCloudKit_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SwiftyCloudKit_Example-frameworks.sh"; sourceTree = "<group>"; };
-		090BE0411C0F3FD3D99F370388354F53 /* Pods_SwiftyCloudKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SwiftyCloudKit_Example.framework; path = "Pods-SwiftyCloudKit_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		0EE7B62B41E5ED4BDFD46571D4FA9F47 /* Pods-SwiftyCloudKit_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SwiftyCloudKit_Example-umbrella.h"; sourceTree = "<group>"; };
-		109FBA6466CF2619D47C6FABAD1EC980 /* Pods-SwiftyCloudKit_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SwiftyCloudKit_Example.modulemap"; sourceTree = "<group>"; };
-		15934AA93F58EB6736E70235132D149C /* Pods-SwiftyCloudKit_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SwiftyCloudKit_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		181B4D3EC33A3DBCD220A537B82846EC /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1882874D805DF3E0BA17953FA377E839 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		199E9EE68BDDB2FBB46681A2DF12AD90 /* Pods-SwiftyCloudKit_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SwiftyCloudKit_Tests-umbrella.h"; sourceTree = "<group>"; };
-		1F0B7D0A3106A618225A398B79BCF55A /* SwiftyCloudKit-tvOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "SwiftyCloudKit-tvOS-prefix.pch"; path = "../SwiftyCloudKit-tvOS/SwiftyCloudKit-tvOS-prefix.pch"; sourceTree = "<group>"; };
-		212FEED13978E5B1E9BD679B737BF120 /* Pods-SwifyCloudKit_tvOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SwifyCloudKit_tvOS-dummy.m"; sourceTree = "<group>"; };
-		268B735D596C2916D7994BC0148298BB /* SwiftyCloudKit-iOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "SwiftyCloudKit-iOS.xcconfig"; sourceTree = "<group>"; };
-		2A6824ED4320AD05613869A10FCD49F7 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2ACDF6965498DD70CBC7F5A83161661E /* Pods_SwiftyCloudKit_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SwiftyCloudKit_Tests.framework; path = "Pods-SwiftyCloudKit_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2D154F4805B9715F0E6D79B0363CE280 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		3184CE445E58E7F0E4EE92C6A548EEF7 /* Pods-SwiftyCloudKit_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SwiftyCloudKit_Tests-frameworks.sh"; sourceTree = "<group>"; };
-		333F5CB5A33021433B3EFEF210C74A0D /* Pods-SwiftyCloudKit_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SwiftyCloudKit_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		38BF5F7E6396EBE0B4F4FEFD97FA6A46 /* SwiftyCloudKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftyCloudKit.framework; path = "SwiftyCloudKit-iOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3CE6394BEF219062D2637BFBABC203AA /* Pods-SwiftyCloudKit_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SwiftyCloudKit_Example-resources.sh"; sourceTree = "<group>"; };
-		3DB0CAAC7828007A76975D72AACCAE2D /* CloudKitFetcher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CloudKitFetcher.swift; path = SwiftyCloudKit/Classes/CloudKitFetcher.swift; sourceTree = "<group>"; };
-		4227CA3F50619B13D25319F49CAE4E40 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		44EC79CB233B1CC911936D2AB322771C /* SwiftyCloudKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = SwiftyCloudKit.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		4B279297D9ADC4F27CF5A3FFED25DD87 /* Pods-SwiftyCloudKit_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SwiftyCloudKit_Tests-dummy.m"; sourceTree = "<group>"; };
-		4EF65D42F76444109AD2AB0052A02524 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
-		530C2D28ABAA174EFFD0297C080F5FCB /* Pods-SwiftyCloudKit_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SwiftyCloudKit_Tests.modulemap"; sourceTree = "<group>"; };
-		572DBE63D5360AB71E5F80F979738FD0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS10.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		5B69280D0B403502863F4315484D080E /* SwiftyCloudKit-iOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftyCloudKit-iOS-dummy.m"; sourceTree = "<group>"; };
-		616859081DBBDFE63FB2558EF99A1315 /* SwiftyCloudKit-iOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyCloudKit-iOS-umbrella.h"; sourceTree = "<group>"; };
-		6456AE44AA36C756835483CEBEAA030E /* CloudKitHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CloudKitHandler.swift; path = SwiftyCloudKit/Classes/CloudKitHandler.swift; sourceTree = "<group>"; };
-		64FD44C923713710760D0BB2DD26AA59 /* Pods-SwiftyCloudKit_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftyCloudKit_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		7895F7D893528462DF195FB50B921C18 /* SwiftyCloudKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftyCloudKit.swift; path = SwiftyCloudKit/Classes/SwiftyCloudKit.swift; sourceTree = "<group>"; };
-		7A573442E7BA40F36DDFD4255FB11BAE /* CloudKitSubscriber.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CloudKitSubscriber.swift; path = SwiftyCloudKit/Classes/CloudKitSubscriber.swift; sourceTree = "<group>"; };
-		7F94B7232F8BD69E318BAD664E393024 /* Pods-SwifyCloudKit_tvOS-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SwifyCloudKit_tvOS-frameworks.sh"; sourceTree = "<group>"; };
-		8CC7959C04C85E7909098264CDC69D37 /* Pods-SwifyCloudKit_tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwifyCloudKit_tvOS.debug.xcconfig"; sourceTree = "<group>"; };
-		8DC0984CE0BB5A2639EC7B92F95DF646 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../SwiftyCloudKit-tvOS/Info.plist"; sourceTree = "<group>"; };
-		91CC6A93F200EE3855A3BA37BE48E9E2 /* LocalStorage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LocalStorage.swift; path = SwiftyCloudKit/Classes/LocalStorage.swift; sourceTree = "<group>"; };
-		92112B22A5A2D2F7A94ECFD78B520C90 /* Pods-SwifyCloudKit_tvOS-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SwifyCloudKit_tvOS-acknowledgements.plist"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		952921B9640BE0EB7D6DD29512EA1D95 /* Pods-SwifyCloudKit_tvOS-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SwifyCloudKit_tvOS-resources.sh"; sourceTree = "<group>"; };
-		A2E02BD2080B71C6ABE1A371362A4810 /* Pods-SwifyCloudKit_tvOS-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SwifyCloudKit_tvOS-acknowledgements.markdown"; sourceTree = "<group>"; };
-		A868340A8E5EB5EA9DC991B0D2540C8E /* SwiftyCloudKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftyCloudKit.framework; path = "SwiftyCloudKit-tvOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		AC67477C2EE04D90F0A46984B49453C9 /* Pods_SwifyCloudKit_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SwifyCloudKit_tvOS.framework; path = "Pods-SwifyCloudKit_tvOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B033260A6EA330C4C379E7F4623D4B7F /* Pods-SwifyCloudKit_tvOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SwifyCloudKit_tvOS-umbrella.h"; sourceTree = "<group>"; };
-		B36E7279707CBB9C89F8C79E39512FB5 /* SwiftyCloudKit-tvOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "SwiftyCloudKit-tvOS.xcconfig"; path = "../SwiftyCloudKit-tvOS/SwiftyCloudKit-tvOS.xcconfig"; sourceTree = "<group>"; };
-		B498FFF889F16E1E599848AA43AC6E9E /* Pods-SwiftyCloudKit_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftyCloudKit_Example.release.xcconfig"; sourceTree = "<group>"; };
-		C3B207404D464F3EA763435E65270B18 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
-		C4B76205F1E0893816FC9FC01AA72289 /* Pods-SwiftyCloudKit_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SwiftyCloudKit_Tests-resources.sh"; sourceTree = "<group>"; };
-		C96393A6081F36BD61BEA6F78B6C72B9 /* Util.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Util.swift; path = SwiftyCloudKit/Classes/Util.swift; sourceTree = "<group>"; };
-		CC2F4C904652B68F5A4B54C8ABCAFA22 /* Pods-SwiftyCloudKit_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SwiftyCloudKit_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		CDC29D2E07BDD9EC52A549AD3F9718DD /* SwiftyCloudKit-iOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyCloudKit-iOS-prefix.pch"; sourceTree = "<group>"; };
-		DF257F09D48DCAD2EECABEAB5178D1F2 /* Pods-SwifyCloudKit_tvOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SwifyCloudKit_tvOS.modulemap"; sourceTree = "<group>"; };
-		E2DEF33A697DD5B69B24471C484C9762 /* Pods-SwiftyCloudKit_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SwiftyCloudKit_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		E2E74B0BF4E941BED4900A2EABA7BC2C /* Pods-SwiftyCloudKit_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SwiftyCloudKit_Example-dummy.m"; sourceTree = "<group>"; };
-		E361A4D4F18F1AE62BEEA023B2B936B5 /* Pods-SwiftyCloudKit_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftyCloudKit_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		E72F1030CAC2F17451BF09F61B888DE1 /* Pods-SwiftyCloudKit_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftyCloudKit_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		F1DDBCAA6DE7EE6A54375275DF3B4BF7 /* Pods-SwifyCloudKit_tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwifyCloudKit_tvOS.release.xcconfig"; sourceTree = "<group>"; };
-		F48CC839A05AF39E747AD7A8DA08672C /* SwiftyCloudKit-tvOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; name = "SwiftyCloudKit-tvOS.modulemap"; path = "../SwiftyCloudKit-tvOS/SwiftyCloudKit-tvOS.modulemap"; sourceTree = "<group>"; };
-		FA1B1597BE43401DBDD4DFF277BE377E /* SwiftyCloudKit-tvOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "SwiftyCloudKit-tvOS-dummy.m"; path = "../SwiftyCloudKit-tvOS/SwiftyCloudKit-tvOS-dummy.m"; sourceTree = "<group>"; };
-		FC7C7492AA2B75E67457AC831EDD55AE /* SwiftyCloudKit-iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "SwiftyCloudKit-iOS.modulemap"; sourceTree = "<group>"; };
-		FD83F029F4378C765A96D33A4A37B4D1 /* SwiftyCloudKit-tvOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "SwiftyCloudKit-tvOS-umbrella.h"; path = "../SwiftyCloudKit-tvOS/SwiftyCloudKit-tvOS-umbrella.h"; sourceTree = "<group>"; };
+		0C71D94BC828D7E07E5742213F36AF3B /* Pods_SwiftyCloudKit_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftyCloudKit_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		13BFE086686C234477BE1683FB4D9469 /* Pods-SwiftyCloudKit_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftyCloudKit_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		1B40E1643A19092EEE4B5FC1167DE42D /* Pods-SwiftyCloudKit_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SwiftyCloudKit_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		3BF0B0A5967CF6CCF2FA14052285F276 /* Pods-SwiftyCloudKit_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SwiftyCloudKit_Example-dummy.m"; sourceTree = "<group>"; };
+		46B02058A292482D939CF71716643878 /* Pods-SwiftyCloudKit_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SwiftyCloudKit_Tests-umbrella.h"; sourceTree = "<group>"; };
+		509263EBC9571B052B2C447DD25CD245 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		54DC5922DDDBC8C0CAFC75E4624EB500 /* Pods-SwiftyCloudKit_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SwiftyCloudKit_Example-umbrella.h"; sourceTree = "<group>"; };
+		561FE8CD51C297B0B8A52B8241AD67B0 /* Pods-SwiftyCloudKit_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SwiftyCloudKit_Tests-dummy.m"; sourceTree = "<group>"; };
+		5E56C84327F35C9D5A42731F0037EE14 /* Pods-SwiftyCloudKit_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SwiftyCloudKit_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		63B5EE25B0CF86CAE0DD24EC98BD25D2 /* Pods-SwiftyCloudKit_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftyCloudKit_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		688FF305E0CBDBCE9012B27E1EC5E7F3 /* Pods-SwiftyCloudKit_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftyCloudKit_Example.release.xcconfig"; sourceTree = "<group>"; };
+		782C5C2826F4DCD06C7B23D011346E41 /* Pods-SwiftyCloudKit_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SwiftyCloudKit_Tests-frameworks.sh"; sourceTree = "<group>"; };
+		79E097596545FCD4A2BBA9AE131FBE0E /* Pods-SwiftyCloudKit_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SwiftyCloudKit_Example-resources.sh"; sourceTree = "<group>"; };
+		83B5F8A7422092452DE502C9E8595653 /* Pods_SwiftyCloudKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftyCloudKit_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		85C554A3612F551807BBD6BE7DC85E29 /* Pods-SwiftyCloudKit_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftyCloudKit_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		95628083D452C47E9EF88D7835A8DC1E /* SwiftyCloudKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyCloudKit.xcconfig; sourceTree = "<group>"; };
+		998E446ED979FBFCA437A49EA024DDCA /* SwiftyCloudKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = SwiftyCloudKit.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9B6F96F6679012AC2C8556D1A81343F2 /* Pods-SwiftyCloudKit_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SwiftyCloudKit_Example-frameworks.sh"; sourceTree = "<group>"; };
+		9E12621AB3F81FDE9563D7A05E0B3240 /* Pods-SwiftyCloudKit_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SwiftyCloudKit_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		A045FA1602902CA73C551D700237948D /* SwiftyCloudKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyCloudKit-prefix.pch"; sourceTree = "<group>"; };
+		A235E48C2BA3FC2F529582A218F853C2 /* Pods-SwiftyCloudKit_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SwiftyCloudKit_Tests.modulemap"; sourceTree = "<group>"; };
+		AD0EBD39ECAFB8260FC2931F076C2FB8 /* Pods-SwiftyCloudKit_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SwiftyCloudKit_Example.modulemap"; sourceTree = "<group>"; };
+		ADE2A2EF20CBD6F20036B548 /* SwiftyCloudKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyCloudKit.swift; path = SwiftyCloudKit/Classes/SwiftyCloudKit.swift; sourceTree = "<group>"; };
+		ADE2A2F020CBD6F20036B548 /* CloudKitSubscriber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CloudKitSubscriber.swift; path = SwiftyCloudKit/Classes/CloudKitSubscriber.swift; sourceTree = "<group>"; };
+		ADE2A2F120CBD6F20036B548 /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Util.swift; path = SwiftyCloudKit/Classes/Util.swift; sourceTree = "<group>"; };
+		ADE2A2F220CBD6F20036B548 /* LocalStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocalStorage.swift; path = SwiftyCloudKit/Classes/LocalStorage.swift; sourceTree = "<group>"; };
+		ADE2A2F320CBD6F20036B548 /* CloudKitHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CloudKitHandler.swift; path = SwiftyCloudKit/Classes/CloudKitHandler.swift; sourceTree = "<group>"; };
+		ADE2A2F420CBD6F20036B548 /* CloudKitFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CloudKitFetcher.swift; path = SwiftyCloudKit/Classes/CloudKitFetcher.swift; sourceTree = "<group>"; };
+		AE21E5AD3EE3F0F3725922FBE85FF995 /* Pods-SwiftyCloudKit_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SwiftyCloudKit_Tests-resources.sh"; sourceTree = "<group>"; };
+		B07D8D5CF8E1BD2D9C2BED87891E38CF /* SwiftyCloudKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftyCloudKit-dummy.m"; sourceTree = "<group>"; };
+		B88EC690C0C3F5B9963E643D538AC8EF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B9AB4B98CB379E918EAB71E724A2E598 /* SwiftyCloudKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyCloudKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF61BB3B6C36FF53056E7BB1EB0DA693 /* SwiftyCloudKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftyCloudKit.modulemap; sourceTree = "<group>"; };
+		E692AD10857335FA1378F09D9B47813C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EAD5601FABBC706A225E4919273DE0A8 /* Pods-SwiftyCloudKit_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SwiftyCloudKit_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		EBA7892521E151A6DA3AD6EE4FB9F71E /* SwiftyCloudKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyCloudKit-umbrella.h"; sourceTree = "<group>"; };
+		FB1C2929AFD553998CCE748C61FB0150 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		FBA978C47CDF8F22BBF7B10412B82766 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		1869D0465221B8A4B294C29EF29C9EE3 /* Frameworks */ = {
+		6EA11C97747D3CA68404E6EE014AA30A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D856D2C893082990C60C45B1E2240F5F /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4699696AC8F556B8BCEADFC97900ABBF /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				18DDFD2C11AF0226C03F2189282F604C /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5356CF06531D05C3E2ABD60DD9D3DDE6 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AA1C00EF14AA90B2B3902EC87DFF0B6A /* Foundation.framework in Frameworks */,
+				DFCCCEE99B866F4FE3433B457752CF6B /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,210 +106,150 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D18850D06FC63967370554119D34AB45 /* Frameworks */ = {
+		F66CA24A8F5B5DB5673E15884F30947B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34BE710E29130F039279861436B4954F /* Foundation.framework in Frameworks */,
+				461C673CB518E00B11365B5C9AC6D1EC /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		19C3B4832D9F2C89E7F22111C60D438D /* Targets Support Files */ = {
+		07A9E64A0FB7AC70E439734840136386 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				85EF0708C9EA366AA6BAA1CBEA03CCE2 /* Pods-SwiftyCloudKit_Example */,
-				5C2C53EE94ABA1E8E84B8F7959E010E6 /* Pods-SwiftyCloudKit_Tests */,
-				2D71231BCEE59E657578BC5DBD09C7CD /* Pods-SwifyCloudKit_tvOS */,
+				4B65F2127200D30066BFDD949CE306CB /* SwiftyCloudKit */,
 			);
-			name = "Targets Support Files";
+			name = "Development Pods";
 			sourceTree = "<group>";
 		};
-		1E9C3297EFD4EA54128F894AD80EF294 /* SwiftyCloudKit */ = {
+		16C24643EBA036C352BFCBD458BF61BD /* Pods-SwiftyCloudKit_Tests */ = {
 			isa = PBXGroup;
 			children = (
-				3DB0CAAC7828007A76975D72AACCAE2D /* CloudKitFetcher.swift */,
-				6456AE44AA36C756835483CEBEAA030E /* CloudKitHandler.swift */,
-				7A573442E7BA40F36DDFD4255FB11BAE /* CloudKitSubscriber.swift */,
-				91CC6A93F200EE3855A3BA37BE48E9E2 /* LocalStorage.swift */,
-				7895F7D893528462DF195FB50B921C18 /* SwiftyCloudKit.swift */,
-				C96393A6081F36BD61BEA6F78B6C72B9 /* Util.swift */,
-				7F124F941FE6F926DA684C5650BEBA24 /* Pod */,
-				F53D2055100857F793D81D13AC167763 /* Support Files */,
-			);
-			name = SwiftyCloudKit;
-			path = ../..;
-			sourceTree = "<group>";
-		};
-		20F731AE46C73F232AF0C168DC383CF9 /* tvOS */ = {
-			isa = PBXGroup;
-			children = (
-				572DBE63D5360AB71E5F80F979738FD0 /* Foundation.framework */,
-			);
-			name = tvOS;
-			sourceTree = "<group>";
-		};
-		2D71231BCEE59E657578BC5DBD09C7CD /* Pods-SwifyCloudKit_tvOS */ = {
-			isa = PBXGroup;
-			children = (
-				2A6824ED4320AD05613869A10FCD49F7 /* Info.plist */,
-				DF257F09D48DCAD2EECABEAB5178D1F2 /* Pods-SwifyCloudKit_tvOS.modulemap */,
-				A2E02BD2080B71C6ABE1A371362A4810 /* Pods-SwifyCloudKit_tvOS-acknowledgements.markdown */,
-				92112B22A5A2D2F7A94ECFD78B520C90 /* Pods-SwifyCloudKit_tvOS-acknowledgements.plist */,
-				212FEED13978E5B1E9BD679B737BF120 /* Pods-SwifyCloudKit_tvOS-dummy.m */,
-				7F94B7232F8BD69E318BAD664E393024 /* Pods-SwifyCloudKit_tvOS-frameworks.sh */,
-				952921B9640BE0EB7D6DD29512EA1D95 /* Pods-SwifyCloudKit_tvOS-resources.sh */,
-				B033260A6EA330C4C379E7F4623D4B7F /* Pods-SwifyCloudKit_tvOS-umbrella.h */,
-				8CC7959C04C85E7909098264CDC69D37 /* Pods-SwifyCloudKit_tvOS.debug.xcconfig */,
-				F1DDBCAA6DE7EE6A54375275DF3B4BF7 /* Pods-SwifyCloudKit_tvOS.release.xcconfig */,
-			);
-			name = "Pods-SwifyCloudKit_tvOS";
-			path = "Target Support Files/Pods-SwifyCloudKit_tvOS";
-			sourceTree = "<group>";
-		};
-		5089255B97310B29C14DE77336A9AC39 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				090BE0411C0F3FD3D99F370388354F53 /* Pods_SwiftyCloudKit_Example.framework */,
-				2ACDF6965498DD70CBC7F5A83161661E /* Pods_SwiftyCloudKit_Tests.framework */,
-				AC67477C2EE04D90F0A46984B49453C9 /* Pods_SwifyCloudKit_tvOS.framework */,
-				38BF5F7E6396EBE0B4F4FEFD97FA6A46 /* SwiftyCloudKit.framework */,
-				A868340A8E5EB5EA9DC991B0D2540C8E /* SwiftyCloudKit.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		58996781A54EE964D7111D73083A18A5 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				2D154F4805B9715F0E6D79B0363CE280 /* Foundation.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		5C2C53EE94ABA1E8E84B8F7959E010E6 /* Pods-SwiftyCloudKit_Tests */ = {
-			isa = PBXGroup;
-			children = (
-				181B4D3EC33A3DBCD220A537B82846EC /* Info.plist */,
-				530C2D28ABAA174EFFD0297C080F5FCB /* Pods-SwiftyCloudKit_Tests.modulemap */,
-				E2DEF33A697DD5B69B24471C484C9762 /* Pods-SwiftyCloudKit_Tests-acknowledgements.markdown */,
-				15934AA93F58EB6736E70235132D149C /* Pods-SwiftyCloudKit_Tests-acknowledgements.plist */,
-				4B279297D9ADC4F27CF5A3FFED25DD87 /* Pods-SwiftyCloudKit_Tests-dummy.m */,
-				3184CE445E58E7F0E4EE92C6A548EEF7 /* Pods-SwiftyCloudKit_Tests-frameworks.sh */,
-				C4B76205F1E0893816FC9FC01AA72289 /* Pods-SwiftyCloudKit_Tests-resources.sh */,
-				199E9EE68BDDB2FBB46681A2DF12AD90 /* Pods-SwiftyCloudKit_Tests-umbrella.h */,
-				E361A4D4F18F1AE62BEEA023B2B936B5 /* Pods-SwiftyCloudKit_Tests.debug.xcconfig */,
-				64FD44C923713710760D0BB2DD26AA59 /* Pods-SwiftyCloudKit_Tests.release.xcconfig */,
+				509263EBC9571B052B2C447DD25CD245 /* Info.plist */,
+				A235E48C2BA3FC2F529582A218F853C2 /* Pods-SwiftyCloudKit_Tests.modulemap */,
+				5E56C84327F35C9D5A42731F0037EE14 /* Pods-SwiftyCloudKit_Tests-acknowledgements.markdown */,
+				9E12621AB3F81FDE9563D7A05E0B3240 /* Pods-SwiftyCloudKit_Tests-acknowledgements.plist */,
+				561FE8CD51C297B0B8A52B8241AD67B0 /* Pods-SwiftyCloudKit_Tests-dummy.m */,
+				782C5C2826F4DCD06C7B23D011346E41 /* Pods-SwiftyCloudKit_Tests-frameworks.sh */,
+				AE21E5AD3EE3F0F3725922FBE85FF995 /* Pods-SwiftyCloudKit_Tests-resources.sh */,
+				46B02058A292482D939CF71716643878 /* Pods-SwiftyCloudKit_Tests-umbrella.h */,
+				63B5EE25B0CF86CAE0DD24EC98BD25D2 /* Pods-SwiftyCloudKit_Tests.debug.xcconfig */,
+				13BFE086686C234477BE1683FB4D9469 /* Pods-SwiftyCloudKit_Tests.release.xcconfig */,
 			);
 			name = "Pods-SwiftyCloudKit_Tests";
 			path = "Target Support Files/Pods-SwiftyCloudKit_Tests";
+			sourceTree = "<group>";
+		};
+		4B65F2127200D30066BFDD949CE306CB /* SwiftyCloudKit */ = {
+			isa = PBXGroup;
+			children = (
+				ADE2A2F420CBD6F20036B548 /* CloudKitFetcher.swift */,
+				ADE2A2F320CBD6F20036B548 /* CloudKitHandler.swift */,
+				ADE2A2F020CBD6F20036B548 /* CloudKitSubscriber.swift */,
+				ADE2A2F220CBD6F20036B548 /* LocalStorage.swift */,
+				ADE2A2EF20CBD6F20036B548 /* SwiftyCloudKit.swift */,
+				ADE2A2F120CBD6F20036B548 /* Util.swift */,
+				CE5502C35CD4686873AAD936BA5BB1AF /* Pod */,
+				AF1DD9AE1F8BC598AA5AC2A869AE0499 /* Support Files */,
+			);
+			name = SwiftyCloudKit;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				CEA05B69833318CEE1D09B5EB414098A /* Development Pods */,
-				A42F72DC1D780481325DD00969B19BB6 /* Frameworks */,
-				5089255B97310B29C14DE77336A9AC39 /* Products */,
-				19C3B4832D9F2C89E7F22111C60D438D /* Targets Support Files */,
+				07A9E64A0FB7AC70E439734840136386 /* Development Pods */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				F87EDF14B3859CED9701CACD74C278D8 /* Products */,
+				89226ADE906B77BEACB68A4487C42B99 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		7F124F941FE6F926DA684C5650BEBA24 /* Pod */ = {
+		89226ADE906B77BEACB68A4487C42B99 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				4EF65D42F76444109AD2AB0052A02524 /* LICENSE */,
-				C3B207404D464F3EA763435E65270B18 /* README.md */,
-				44EC79CB233B1CC911936D2AB322771C /* SwiftyCloudKit.podspec */,
+				8FA519918CEB0E9710826E287DB5122B /* Pods-SwiftyCloudKit_Example */,
+				16C24643EBA036C352BFCBD458BF61BD /* Pods-SwiftyCloudKit_Tests */,
 			);
-			name = Pod;
+			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		85EF0708C9EA366AA6BAA1CBEA03CCE2 /* Pods-SwiftyCloudKit_Example */ = {
+		8FA519918CEB0E9710826E287DB5122B /* Pods-SwiftyCloudKit_Example */ = {
 			isa = PBXGroup;
 			children = (
-				1882874D805DF3E0BA17953FA377E839 /* Info.plist */,
-				109FBA6466CF2619D47C6FABAD1EC980 /* Pods-SwiftyCloudKit_Example.modulemap */,
-				CC2F4C904652B68F5A4B54C8ABCAFA22 /* Pods-SwiftyCloudKit_Example-acknowledgements.markdown */,
-				333F5CB5A33021433B3EFEF210C74A0D /* Pods-SwiftyCloudKit_Example-acknowledgements.plist */,
-				E2E74B0BF4E941BED4900A2EABA7BC2C /* Pods-SwiftyCloudKit_Example-dummy.m */,
-				086A7BE24F626BFD736FEC4481521661 /* Pods-SwiftyCloudKit_Example-frameworks.sh */,
-				3CE6394BEF219062D2637BFBABC203AA /* Pods-SwiftyCloudKit_Example-resources.sh */,
-				0EE7B62B41E5ED4BDFD46571D4FA9F47 /* Pods-SwiftyCloudKit_Example-umbrella.h */,
-				E72F1030CAC2F17451BF09F61B888DE1 /* Pods-SwiftyCloudKit_Example.debug.xcconfig */,
-				B498FFF889F16E1E599848AA43AC6E9E /* Pods-SwiftyCloudKit_Example.release.xcconfig */,
+				B88EC690C0C3F5B9963E643D538AC8EF /* Info.plist */,
+				AD0EBD39ECAFB8260FC2931F076C2FB8 /* Pods-SwiftyCloudKit_Example.modulemap */,
+				1B40E1643A19092EEE4B5FC1167DE42D /* Pods-SwiftyCloudKit_Example-acknowledgements.markdown */,
+				EAD5601FABBC706A225E4919273DE0A8 /* Pods-SwiftyCloudKit_Example-acknowledgements.plist */,
+				3BF0B0A5967CF6CCF2FA14052285F276 /* Pods-SwiftyCloudKit_Example-dummy.m */,
+				9B6F96F6679012AC2C8556D1A81343F2 /* Pods-SwiftyCloudKit_Example-frameworks.sh */,
+				79E097596545FCD4A2BBA9AE131FBE0E /* Pods-SwiftyCloudKit_Example-resources.sh */,
+				54DC5922DDDBC8C0CAFC75E4624EB500 /* Pods-SwiftyCloudKit_Example-umbrella.h */,
+				85C554A3612F551807BBD6BE7DC85E29 /* Pods-SwiftyCloudKit_Example.debug.xcconfig */,
+				688FF305E0CBDBCE9012B27E1EC5E7F3 /* Pods-SwiftyCloudKit_Example.release.xcconfig */,
 			);
 			name = "Pods-SwiftyCloudKit_Example";
 			path = "Target Support Files/Pods-SwiftyCloudKit_Example";
 			sourceTree = "<group>";
 		};
-		A42F72DC1D780481325DD00969B19BB6 /* Frameworks */ = {
+		AF1DD9AE1F8BC598AA5AC2A869AE0499 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				58996781A54EE964D7111D73083A18A5 /* iOS */,
-				20F731AE46C73F232AF0C168DC383CF9 /* tvOS */,
+				E692AD10857335FA1378F09D9B47813C /* Info.plist */,
+				BF61BB3B6C36FF53056E7BB1EB0DA693 /* SwiftyCloudKit.modulemap */,
+				95628083D452C47E9EF88D7835A8DC1E /* SwiftyCloudKit.xcconfig */,
+				B07D8D5CF8E1BD2D9C2BED87891E38CF /* SwiftyCloudKit-dummy.m */,
+				A045FA1602902CA73C551D700237948D /* SwiftyCloudKit-prefix.pch */,
+				EBA7892521E151A6DA3AD6EE4FB9F71E /* SwiftyCloudKit-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/SwiftyCloudKit";
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D35AF013A5F0BAD4F32504907A52519E /* iOS */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		CEA05B69833318CEE1D09B5EB414098A /* Development Pods */ = {
+		CE5502C35CD4686873AAD936BA5BB1AF /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				1E9C3297EFD4EA54128F894AD80EF294 /* SwiftyCloudKit */,
+				FBA978C47CDF8F22BBF7B10412B82766 /* LICENSE */,
+				FB1C2929AFD553998CCE748C61FB0150 /* README.md */,
+				998E446ED979FBFCA437A49EA024DDCA /* SwiftyCloudKit.podspec */,
 			);
-			name = "Development Pods";
+			name = Pod;
 			sourceTree = "<group>";
 		};
-		F53D2055100857F793D81D13AC167763 /* Support Files */ = {
+		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				4227CA3F50619B13D25319F49CAE4E40 /* Info.plist */,
-				8DC0984CE0BB5A2639EC7B92F95DF646 /* Info.plist */,
-				FC7C7492AA2B75E67457AC831EDD55AE /* SwiftyCloudKit-iOS.modulemap */,
-				268B735D596C2916D7994BC0148298BB /* SwiftyCloudKit-iOS.xcconfig */,
-				5B69280D0B403502863F4315484D080E /* SwiftyCloudKit-iOS-dummy.m */,
-				CDC29D2E07BDD9EC52A549AD3F9718DD /* SwiftyCloudKit-iOS-prefix.pch */,
-				616859081DBBDFE63FB2558EF99A1315 /* SwiftyCloudKit-iOS-umbrella.h */,
-				F48CC839A05AF39E747AD7A8DA08672C /* SwiftyCloudKit-tvOS.modulemap */,
-				B36E7279707CBB9C89F8C79E39512FB5 /* SwiftyCloudKit-tvOS.xcconfig */,
-				FA1B1597BE43401DBDD4DFF277BE377E /* SwiftyCloudKit-tvOS-dummy.m */,
-				1F0B7D0A3106A618225A398B79BCF55A /* SwiftyCloudKit-tvOS-prefix.pch */,
-				FD83F029F4378C765A96D33A4A37B4D1 /* SwiftyCloudKit-tvOS-umbrella.h */,
+				6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */,
 			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/SwiftyCloudKit-iOS";
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		F87EDF14B3859CED9701CACD74C278D8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				83B5F8A7422092452DE502C9E8595653 /* Pods_SwiftyCloudKit_Example.framework */,
+				0C71D94BC828D7E07E5742213F36AF3B /* Pods_SwiftyCloudKit_Tests.framework */,
+				B9AB4B98CB379E918EAB71E724A2E598 /* SwiftyCloudKit.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		2F6789B17319616773E1CCEB40CC9820 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				65D657DF853CDA14CE34038518907C1C /* SwiftyCloudKit-iOS-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5489D544C56195ED3117D957A486229B /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0F5A5933C7F9B435AAAE1110967C0264 /* Pods-SwifyCloudKit_tvOS-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5FE3B5F2B84DEC0CD62949CE65EAA9DB /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				302C55F36678031439B0E1D09A75D1F5 /* SwiftyCloudKit-tvOS-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		7FA5F58DEB3CFCDAD149EBE374A90BE2 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -360,11 +258,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9DBC94FD1EC3EEF21FE97070A1D57642 /* Headers */ = {
+		8AB6BD183B50CFC7AC0EB14B03A3E5E2 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B4C1C78365CC253339AF15FD0AEA28A /* Pods-SwiftyCloudKit_Example-umbrella.h in Headers */,
+				D8F7FE88140B3BB9108B7C0B5D906A71 /* SwiftyCloudKit-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE09F95D8A3DC68A5BAD36AC03FF17DC /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				876BDBF213CBB44C51BF9E90FF33E952 /* Pods-SwiftyCloudKit_Example-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,77 +291,42 @@
 			);
 			name = "Pods-SwiftyCloudKit_Tests";
 			productName = "Pods-SwiftyCloudKit_Tests";
-			productReference = 2ACDF6965498DD70CBC7F5A83161661E /* Pods_SwiftyCloudKit_Tests.framework */;
+			productReference = 0C71D94BC828D7E07E5742213F36AF3B /* Pods_SwiftyCloudKit_Tests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		20752150E7B779C15AB15EC3DA73E849 /* SwiftyCloudKit-tvOS */ = {
+		28F973DA0B42B4E93609946BD55D33E9 /* SwiftyCloudKit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B823B3C0C831F60452C30922052BA1BB /* Build configuration list for PBXNativeTarget "SwiftyCloudKit-tvOS" */;
+			buildConfigurationList = EA3DA0449DE57F66D4E683E3D919AF17 /* Build configuration list for PBXNativeTarget "SwiftyCloudKit" */;
 			buildPhases = (
-				F82E6A1E5C2A870BFB68A54D9F35D066 /* Sources */,
-				1869D0465221B8A4B294C29EF29C9EE3 /* Frameworks */,
-				5FE3B5F2B84DEC0CD62949CE65EAA9DB /* Headers */,
+				726FD9D0B379E388B9CE443C6BBDC08F /* Sources */,
+				6EA11C97747D3CA68404E6EE014AA30A /* Frameworks */,
+				8AB6BD183B50CFC7AC0EB14B03A3E5E2 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "SwiftyCloudKit-tvOS";
-			productName = "SwiftyCloudKit-tvOS";
-			productReference = A868340A8E5EB5EA9DC991B0D2540C8E /* SwiftyCloudKit.framework */;
+			name = SwiftyCloudKit;
+			productName = SwiftyCloudKit;
+			productReference = B9AB4B98CB379E918EAB71E724A2E598 /* SwiftyCloudKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		943F2B2C2E215765494A0FFB55BB563B /* SwiftyCloudKit-iOS */ = {
+		AF83079EFC3C0C229D613B71708B1371 /* Pods-SwiftyCloudKit_Example */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EB72EB312CE27ED9AC2EB718AC325551 /* Build configuration list for PBXNativeTarget "SwiftyCloudKit-iOS" */;
+			buildConfigurationList = 81B08470814487478ADF4E73FAC5F217 /* Build configuration list for PBXNativeTarget "Pods-SwiftyCloudKit_Example" */;
 			buildPhases = (
-				13B2156003315DDBA6DBB25C8585CEBE /* Sources */,
-				5356CF06531D05C3E2ABD60DD9D3DDE6 /* Frameworks */,
-				2F6789B17319616773E1CCEB40CC9820 /* Headers */,
+				A081B012EB9F7B4560BA8A27E45729E3 /* Sources */,
+				F66CA24A8F5B5DB5673E15884F30947B /* Frameworks */,
+				AE09F95D8A3DC68A5BAD36AC03FF17DC /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-			);
-			name = "SwiftyCloudKit-iOS";
-			productName = "SwiftyCloudKit-iOS";
-			productReference = 38BF5F7E6396EBE0B4F4FEFD97FA6A46 /* SwiftyCloudKit.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		E6D70EC3F7AD4AF2DE6864E4CADFC8EC /* Pods-SwiftyCloudKit_Example */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 757DA6C0D117132BAEA9793E06461A47 /* Build configuration list for PBXNativeTarget "Pods-SwiftyCloudKit_Example" */;
-			buildPhases = (
-				76CF2C38E0B3F0C1FDEB4D626238614D /* Sources */,
-				4699696AC8F556B8BCEADFC97900ABBF /* Frameworks */,
-				9DBC94FD1EC3EEF21FE97070A1D57642 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				67AF943B37E0628084EFB4DD300BAC7E /* PBXTargetDependency */,
+				3EFF94901FB148ADAEEA40188284C263 /* PBXTargetDependency */,
 			);
 			name = "Pods-SwiftyCloudKit_Example";
 			productName = "Pods-SwiftyCloudKit_Example";
-			productReference = 090BE0411C0F3FD3D99F370388354F53 /* Pods_SwiftyCloudKit_Example.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		FD298A7B1A8DD44D66042D9E39EE72A2 /* Pods-SwifyCloudKit_tvOS */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 32E0229769382E4728EBD3C20967AAE6 /* Build configuration list for PBXNativeTarget "Pods-SwifyCloudKit_tvOS" */;
-			buildPhases = (
-				66F025B4310205063532002A4B0DC7C5 /* Sources */,
-				D18850D06FC63967370554119D34AB45 /* Frameworks */,
-				5489D544C56195ED3117D957A486229B /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				6F3F2BA5A5870B9413754F3BABCDE0C1 /* PBXTargetDependency */,
-			);
-			name = "Pods-SwifyCloudKit_tvOS";
-			productName = "Pods-SwifyCloudKit_tvOS";
-			productReference = AC67477C2EE04D90F0A46984B49453C9 /* Pods_SwifyCloudKit_tvOS.framework */;
+			productReference = 83B5F8A7422092452DE502C9E8595653 /* Pods_SwiftyCloudKit_Example.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -465,7 +336,18 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 1000;
+				TargetAttributes = {
+					1A3641E577D2BC0C46DD3882640AC087 = {
+						LastSwiftMigration = 1000;
+					};
+					28F973DA0B42B4E93609946BD55D33E9 = {
+						LastSwiftMigration = 1000;
+					};
+					AF83079EFC3C0C229D613B71708B1371 = {
+						LastSwiftMigration = 1000;
+					};
+				};
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -475,15 +357,13 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 5089255B97310B29C14DE77336A9AC39 /* Products */;
+			productRefGroup = F87EDF14B3859CED9701CACD74C278D8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E6D70EC3F7AD4AF2DE6864E4CADFC8EC /* Pods-SwiftyCloudKit_Example */,
+				AF83079EFC3C0C229D613B71708B1371 /* Pods-SwiftyCloudKit_Example */,
 				1A3641E577D2BC0C46DD3882640AC087 /* Pods-SwiftyCloudKit_Tests */,
-				FD298A7B1A8DD44D66042D9E39EE72A2 /* Pods-SwifyCloudKit_tvOS */,
-				943F2B2C2E215765494A0FFB55BB563B /* SwiftyCloudKit-iOS */,
-				20752150E7B779C15AB15EC3DA73E849 /* SwiftyCloudKit-tvOS */,
+				28F973DA0B42B4E93609946BD55D33E9 /* SwiftyCloudKit */,
 			);
 		};
 /* End PBXProject section */
@@ -493,73 +373,124 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADE2A2F620CBD6F20036B548 /* SwiftyCloudKit.swift in Sources */,
+				ADE2A2FF20CBD6F20036B548 /* LocalStorage.swift in Sources */,
 				CC4A9D956D6D68D10E67E4F1783A02AA /* Pods-SwiftyCloudKit_Tests-dummy.m in Sources */,
+				ADE2A30220CBD6F20036B548 /* CloudKitHandler.swift in Sources */,
+				ADE2A30520CBD6F20036B548 /* CloudKitFetcher.swift in Sources */,
+				ADE2A2F920CBD6F20036B548 /* CloudKitSubscriber.swift in Sources */,
+				ADE2A2FC20CBD6F20036B548 /* Util.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		13B2156003315DDBA6DBB25C8585CEBE /* Sources */ = {
+		726FD9D0B379E388B9CE443C6BBDC08F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CCA9FAB79CF9706DA72C562799C42549 /* CloudKitFetcher.swift in Sources */,
-				A9AEE6E1893211CFA61CC9F568236B5A /* CloudKitHandler.swift in Sources */,
-				DE8A2CA96B90F049A0A4A133249069FE /* CloudKitSubscriber.swift in Sources */,
-				A0C18408287282848289C09B5BC848D5 /* LocalStorage.swift in Sources */,
-				BB2055594957AD52D3278C5B7041C8FB /* SwiftyCloudKit-iOS-dummy.m in Sources */,
-				8B271C2648DD166E71C2B6FF2BAB43D6 /* SwiftyCloudKit.swift in Sources */,
-				942DF812772CF853DC802EF768E1B417 /* Util.swift in Sources */,
+				ADE2A2F720CBD6F20036B548 /* SwiftyCloudKit.swift in Sources */,
+				ADE2A30020CBD6F20036B548 /* LocalStorage.swift in Sources */,
+				9BEA0681A207158D305EEDE0516226F2 /* SwiftyCloudKit-dummy.m in Sources */,
+				ADE2A30320CBD6F20036B548 /* CloudKitHandler.swift in Sources */,
+				ADE2A30620CBD6F20036B548 /* CloudKitFetcher.swift in Sources */,
+				ADE2A2FA20CBD6F20036B548 /* CloudKitSubscriber.swift in Sources */,
+				ADE2A2FD20CBD6F20036B548 /* Util.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		66F025B4310205063532002A4B0DC7C5 /* Sources */ = {
+		A081B012EB9F7B4560BA8A27E45729E3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ABBF685F0A439565571701D111EE2582 /* Pods-SwifyCloudKit_tvOS-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		76CF2C38E0B3F0C1FDEB4D626238614D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8AE03890A544320CD689B238B1F25590 /* Pods-SwiftyCloudKit_Example-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F82E6A1E5C2A870BFB68A54D9F35D066 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B6EEC765A4D58D55C447E5954DE761AA /* CloudKitFetcher.swift in Sources */,
-				870469184397E5405500AC1E697C56BD /* CloudKitHandler.swift in Sources */,
-				1FAC4084F060B3CD004692624FE69AF9 /* CloudKitSubscriber.swift in Sources */,
-				48E686AF133C18C998658C81AFB71231 /* LocalStorage.swift in Sources */,
-				C7D6AFA38739AA93729E5BDDA7F3DCF2 /* SwiftyCloudKit-tvOS-dummy.m in Sources */,
-				6AE6F5B773F55F556DB4FD56178346E3 /* SwiftyCloudKit.swift in Sources */,
-				F73D3403E752A5623C46082455B19151 /* Util.swift in Sources */,
+				ADE2A2F520CBD6F20036B548 /* SwiftyCloudKit.swift in Sources */,
+				ADE2A2FE20CBD6F20036B548 /* LocalStorage.swift in Sources */,
+				68B13AF210AA79EE4D1A5A2673AF5C8E /* Pods-SwiftyCloudKit_Example-dummy.m in Sources */,
+				ADE2A30120CBD6F20036B548 /* CloudKitHandler.swift in Sources */,
+				ADE2A30420CBD6F20036B548 /* CloudKitFetcher.swift in Sources */,
+				ADE2A2F820CBD6F20036B548 /* CloudKitSubscriber.swift in Sources */,
+				ADE2A2FB20CBD6F20036B548 /* Util.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		67AF943B37E0628084EFB4DD300BAC7E /* PBXTargetDependency */ = {
+		3EFF94901FB148ADAEEA40188284C263 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = "SwiftyCloudKit-iOS";
-			target = 943F2B2C2E215765494A0FFB55BB563B /* SwiftyCloudKit-iOS */;
-			targetProxy = 119D74FF1D7A263F1775EA3056CB813D /* PBXContainerItemProxy */;
-		};
-		6F3F2BA5A5870B9413754F3BABCDE0C1 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "SwiftyCloudKit-tvOS";
-			target = 20752150E7B779C15AB15EC3DA73E849 /* SwiftyCloudKit-tvOS */;
-			targetProxy = 1AE7AFAFC210E71C9DF16806B5CEE122 /* PBXContainerItemProxy */;
+			name = SwiftyCloudKit;
+			target = 28F973DA0B42B4E93609946BD55D33E9 /* SwiftyCloudKit */;
+			targetProxy = 43CFA12F918C0C9130E5D0C4B48CD088 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		173232C4A62D336128EADACADB32B262 /* Debug */ = {
+		06B8C21430B2025CF405F098C6E66971 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 95628083D452C47E9EF88D7835A8DC1E /* SwiftyCloudKit.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftyCloudKit/SwiftyCloudKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftyCloudKit/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SwiftyCloudKit/SwiftyCloudKit.modulemap";
+				PRODUCT_NAME = SwiftyCloudKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		1583EF686E8C3D086CE81F37A65F095D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 63B5EE25B0CF86CAE0DD24EC98BD25D2 /* Pods-SwiftyCloudKit_Tests.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-SwiftyCloudKit_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SwiftyCloudKit_Tests/Pods-SwiftyCloudKit_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_SwiftyCloudKit_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		5011B865762FC0C0A28ECEC4CB63DC68 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -618,15 +549,16 @@
 				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 4.2;
 				SYMROOT = "${SRCROOT}/../build";
-				TVOS_DEPLOYMENT_TARGET = 10.0;
 			};
 			name = Debug;
 		};
-		5C3156120685FFBE69FDAD9205C132AE /* Release */ = {
+		5654965BEEDFB7BDF6EB4CEE0C10BC0F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F1DDBCAA6DE7EE6A54375275DF3B4BF7 /* Pods-SwifyCloudKit_tvOS.release.xcconfig */;
+			baseConfigurationReference = 95628083D452C47E9EF88D7835A8DC1E /* SwiftyCloudKit.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -636,47 +568,12 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-SwifyCloudKit_tvOS/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-SwifyCloudKit_tvOS/Pods-SwifyCloudKit_tvOS.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_SwifyCloudKit_tvOS;
-				SDKROOT = appletvos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 10.0;
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		6CFF4809D7E958840E12A26EC1C3050E /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 268B735D596C2916D7994BC0148298BB /* SwiftyCloudKit-iOS.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/SwiftyCloudKit-iOS/SwiftyCloudKit-iOS-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SwiftyCloudKit-iOS/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftyCloudKit/SwiftyCloudKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftyCloudKit/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/SwiftyCloudKit-iOS/SwiftyCloudKit-iOS.modulemap";
+				MODULEMAP_FILE = "Target Support Files/SwiftyCloudKit/SwiftyCloudKit.modulemap";
 				PRODUCT_NAME = SwiftyCloudKit;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -690,174 +587,7 @@
 			};
 			name = Release;
 		};
-		7133A5B5DD0835A4407E211C0B9D46F2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 268B735D596C2916D7994BC0148298BB /* SwiftyCloudKit-iOS.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/SwiftyCloudKit-iOS/SwiftyCloudKit-iOS-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SwiftyCloudKit-iOS/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/SwiftyCloudKit-iOS/SwiftyCloudKit-iOS.modulemap";
-				PRODUCT_NAME = SwiftyCloudKit;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		737512C230241B3BA490580BD6DCAB15 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 64FD44C923713710760D0BB2DD26AA59 /* Pods-SwiftyCloudKit_Tests.release.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-SwiftyCloudKit_Tests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-SwiftyCloudKit_Tests/Pods-SwiftyCloudKit_Tests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_SwiftyCloudKit_Tests;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		758400284A796DCFACDC66D2C2776D02 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B36E7279707CBB9C89F8C79E39512FB5 /* SwiftyCloudKit-tvOS.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/SwiftyCloudKit-tvOS/SwiftyCloudKit-tvOS-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SwiftyCloudKit-tvOS/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/SwiftyCloudKit-tvOS/SwiftyCloudKit-tvOS.modulemap";
-				PRODUCT_NAME = SwiftyCloudKit;
-				SDKROOT = appletvos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 10.0;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		89C988F6B0E39F832F220D965B434A4F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E72F1030CAC2F17451BF09F61B888DE1 /* Pods-SwiftyCloudKit_Example.debug.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-SwiftyCloudKit_Example/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-SwiftyCloudKit_Example/Pods-SwiftyCloudKit_Example.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_SwiftyCloudKit_Example;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		99D6EE587D0D78AE5EFEDE046EC5E376 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B498FFF889F16E1E599848AA43AC6E9E /* Pods-SwiftyCloudKit_Example.release.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-SwiftyCloudKit_Example/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-SwiftyCloudKit_Example/Pods-SwiftyCloudKit_Example.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_SwiftyCloudKit_Example;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		A51358CFF9674D8B1332EBB7A660E780 /* Release */ = {
+		827269710C98D60C14D46BC6AF9BF728 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -911,16 +641,89 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_VERSION = 4.2;
 				SYMROOT = "${SRCROOT}/../build";
-				TVOS_DEPLOYMENT_TARGET = 10.0;
 			};
 			name = Release;
 		};
-		A53ECD6A1A1E75FE0439070BE14518C1 /* Debug */ = {
+		8D85F65CBE2FB1DAA65DD727C8BE3D32 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E361A4D4F18F1AE62BEEA023B2B936B5 /* Pods-SwiftyCloudKit_Tests.debug.xcconfig */;
+			baseConfigurationReference = 85C554A3612F551807BBD6BE7DC85E29 /* Pods-SwiftyCloudKit_Example.debug.xcconfig */;
 			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-SwiftyCloudKit_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SwiftyCloudKit_Example/Pods-SwiftyCloudKit_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_SwiftyCloudKit_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B41CAC4EBD547277FE0D449160827DC1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 688FF305E0CBDBCE9012B27E1EC5E7F3 /* Pods-SwiftyCloudKit_Example.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-SwiftyCloudKit_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SwiftyCloudKit_Example/Pods-SwiftyCloudKit_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_SwiftyCloudKit_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B64AFDA35947D8E86AB14B440068992E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 13BFE086686C234477BE1683FB4D9469 /* Pods-SwiftyCloudKit_Tests.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -943,72 +746,8 @@
 				PRODUCT_NAME = Pods_SwiftyCloudKit_Tests;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		A8E70C595C17CC535896EF79F4D35648 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8CC7959C04C85E7909098264CDC69D37 /* Pods-SwifyCloudKit_tvOS.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-SwifyCloudKit_tvOS/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-SwifyCloudKit_tvOS/Pods-SwifyCloudKit_tvOS.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_SwifyCloudKit_tvOS;
-				SDKROOT = appletvos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 10.0;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		F262213DB2ECFB7EAB29CFAD19FB6155 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B36E7279707CBB9C89F8C79E39512FB5 /* SwiftyCloudKit-tvOS.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/SwiftyCloudKit-tvOS/SwiftyCloudKit-tvOS-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SwiftyCloudKit-tvOS/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/SwiftyCloudKit-tvOS/SwiftyCloudKit-tvOS.modulemap";
-				PRODUCT_NAME = SwiftyCloudKit;
-				SDKROOT = appletvos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 10.0;
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1021,17 +760,8 @@
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				173232C4A62D336128EADACADB32B262 /* Debug */,
-				A51358CFF9674D8B1332EBB7A660E780 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		32E0229769382E4728EBD3C20967AAE6 /* Build configuration list for PBXNativeTarget "Pods-SwifyCloudKit_tvOS" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A8E70C595C17CC535896EF79F4D35648 /* Debug */,
-				5C3156120685FFBE69FDAD9205C132AE /* Release */,
+				5011B865762FC0C0A28ECEC4CB63DC68 /* Debug */,
+				827269710C98D60C14D46BC6AF9BF728 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1039,35 +769,26 @@
 		6BDAB8818C444F3EC6726C50D0D77BC1 /* Build configuration list for PBXNativeTarget "Pods-SwiftyCloudKit_Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A53ECD6A1A1E75FE0439070BE14518C1 /* Debug */,
-				737512C230241B3BA490580BD6DCAB15 /* Release */,
+				1583EF686E8C3D086CE81F37A65F095D /* Debug */,
+				B64AFDA35947D8E86AB14B440068992E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		757DA6C0D117132BAEA9793E06461A47 /* Build configuration list for PBXNativeTarget "Pods-SwiftyCloudKit_Example" */ = {
+		81B08470814487478ADF4E73FAC5F217 /* Build configuration list for PBXNativeTarget "Pods-SwiftyCloudKit_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				89C988F6B0E39F832F220D965B434A4F /* Debug */,
-				99D6EE587D0D78AE5EFEDE046EC5E376 /* Release */,
+				8D85F65CBE2FB1DAA65DD727C8BE3D32 /* Debug */,
+				B41CAC4EBD547277FE0D449160827DC1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B823B3C0C831F60452C30922052BA1BB /* Build configuration list for PBXNativeTarget "SwiftyCloudKit-tvOS" */ = {
+		EA3DA0449DE57F66D4E683E3D919AF17 /* Build configuration list for PBXNativeTarget "SwiftyCloudKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				758400284A796DCFACDC66D2C2776D02 /* Debug */,
-				F262213DB2ECFB7EAB29CFAD19FB6155 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		EB72EB312CE27ED9AC2EB718AC325551 /* Build configuration list for PBXNativeTarget "SwiftyCloudKit-iOS" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				7133A5B5DD0835A4407E211C0B9D46F2 /* Debug */,
-				6CFF4809D7E958840E12A26EC1C3050E /* Release */,
+				06B8C21430B2025CF405F098C6E66971 /* Debug */,
+				5654965BEEDFB7BDF6EB4CEE0C10BC0F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

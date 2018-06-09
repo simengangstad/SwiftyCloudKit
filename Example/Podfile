@@ -1,26 +1,11 @@
 use_frameworks!
 
-target 'SwifyCloudKit_tvOS' do 
-  platform :tvos, '10.0'
-  pod 'SwiftyCloudKit', :path => '../'
-end
-
-#target 'SwiftyCloudKit_watchOS' do 
-#  platform :watchos, '3.0'
-#  pod 'SwiftyCloudKit', :path => '../'
-#end
-
-#target 'SwiftyCloudKit_watchOS Extension' do
-#  platform :watchos, '3.0'
-#  pod 'SwiftyCloudKit', :path => '../'
-#end
-
 target 'SwiftyCloudKit_Example' do
-  platform :ios, '10.0'
   pod 'SwiftyCloudKit', :path => '../'
 
   target 'SwiftyCloudKit_Tests' do
     inherit! :search_paths
 
+    
   end
 end
