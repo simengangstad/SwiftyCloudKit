@@ -9,7 +9,7 @@ import CloudKit
 import SwiftyCloudKit
 
 class SwiftyCloudKitTableViewController: UITableViewController, CloudKitFetcher, CloudKitHandler, CloudKitSubscriber {
-    
+	
     // MARK: Model
     
     // The text field in our record
@@ -70,7 +70,27 @@ class SwiftyCloudKitTableViewController: UITableViewController, CloudKitFetcher,
     }
     
     // MARK: Cloud kit fetcher
-    
+	
+	// Specify the database, could also be the publicCloudDatabase if one were to share data between multiple users, but in this case we fetch from our private iCloud database
+	var database: CKDatabase = CKContainer.default().privateCloudDatabase
+	
+	var query: CKQuery? {
+		// Specify that we want all the records stored in the database using the "TRUEPREDICATE" predicate, and that we'll sort them by when they were created
+		let query = CKQuery(recordType: CloudKitRecordType, predicate: NSPredicate(format: "TRUEPREDICATE"))
+		query.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
+		return query
+	}
+	
+	// The amount of records we'll fetch for each request
+	var interval: Int = 5
+	
+	// The cursor is an object which helps us keep track of which records we've fetched, and which records we are to fetch during the next batch. Can be set to nil to start fetching from the start.
+	var cursor: CKQueryOperation.Cursor?
+	
+	var zoneID: CKRecordZone.ID = CKRecordZone.default().zoneID
+	
+	var desiredKeys: [String]? = nil
+	
     private func parseResult(fetchedRecords: [CKRecord]?, error: CKError?) {
         DispatchQueue.main.async { [unowned self] in
             if let error = error {
@@ -102,25 +122,7 @@ class SwiftyCloudKitTableViewController: UITableViewController, CloudKitFetcher,
             self.removeRecords = false
         }
     }
-    
-    // MARK: Cloud Kit Handler
-    
-    // Specify the database, could also be the publicCloudDatabase if one were to share data between multiple users, but in this case we fetch from our private iCloud database
-    var database: CKDatabase = CKContainer.default().privateCloudDatabase
-    
-    var query: CKQuery? {
-        // Specify that we want all the records stored in the database using the "TRUEPREDICATE" predicate, and that we'll sort them by when they were created
-        let query = CKQuery(recordType: CloudKitRecordType, predicate: NSPredicate(format: "TRUEPREDICATE"))
-        query.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
-        return query
-    }
-        
-    // The amount of records we'll fetch for each request
-    var interval: Int = 5
-    
-    // The cursor is an object which helps us keep track of which records we've fetched, and which records we are to fetch during the next batch. Can be set to nil to start fetching from the start.
-    var cursor: CKQueryCursor?
-    
+	
     // MARK: Cloud kit subscriber
     
     // Specify that we want to listen to all updates concering the CloudKitRecordType
@@ -130,7 +132,7 @@ class SwiftyCloudKitTableViewController: UITableViewController, CloudKitFetcher,
                                                subscriptionID: "All records creation, deletions and updates",
                                                options: [.firesOnRecordCreation, .firesOnRecordDeletion, .firesOnRecordUpdate])
         
-        let notificationInfo = CKNotificationInfo()
+		let notificationInfo = CKSubscription.NotificationInfo()
         #if os(iOS) || os(macOS)
             notificationInfo.alertLocalizationKey = "New Records"
         #endif
@@ -159,8 +161,8 @@ class SwiftyCloudKitTableViewController: UITableViewController, CloudKitFetcher,
                                 DispatchQueue.main.async {
                                     self.records.insert(record, at: 0)
                                     self.tableView.beginUpdates()
-                                    self.tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: UITableViewRowAnimation.top)
-                                    self.tableView.endUpdates()
+									self.tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: UITableView.RowAnimation.top)
+									self.tableView.endUpdates()
                                     self.stopActivityIndicator()
                                 }
                             }
@@ -172,8 +174,8 @@ class SwiftyCloudKitTableViewController: UITableViewController, CloudKitFetcher,
                         let index = self.records.index(where: { $0.recordID == recordID })
                         self.records.remove(at: index!)
                         self.tableView.beginUpdates()
-                        self.tableView.deleteRows(at: [IndexPath(row: index!, section: 0)], with: UITableViewRowAnimation.bottom)
-                        self.tableView.endUpdates()
+						self.tableView.deleteRows(at: [IndexPath(row: index!, section: 0)], with: UITableView.RowAnimation.bottom)
+						self.tableView.endUpdates()
                     }
                     
                 case .recordUpdated:
@@ -280,7 +282,7 @@ class SwiftyCloudKitTableViewController: UITableViewController, CloudKitFetcher,
 
     
     // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+	override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             
             delete(record: records[indexPath.row], withCompletionHandler: { [unowned self] (recordID, error) in

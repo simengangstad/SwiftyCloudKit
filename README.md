@@ -170,8 +170,9 @@ restrictTokens(forContainersWithAPITokens containerTokens: [CKContainer: String]
 
 ## Todo
 
-- [ ] Add tests
-- [ ] Add support for macOS and watchOS
+- Add tests
+- Add delegations methods which fires in record fetched block. 
+- Add support for macOS and watchOS
 
 ## Author
 

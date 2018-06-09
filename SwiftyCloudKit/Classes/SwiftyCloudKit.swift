@@ -42,7 +42,7 @@ public func retrieveRecords(containerRecordTypes: [CKContainer: [String]]) -> [C
             }
             
             if let userID = userID {
-                for databaseScope in CKDatabaseScope.cases {
+                for databaseScope in CKDatabase.Scope.cases {
                     recordDictionary[container]! += records(withRecordTypes: containerRecordTypes[container]!, fromDatabase: container.database(with: databaseScope), withUserID: userID)
                 }
             }
@@ -59,10 +59,10 @@ public func retrieveRecords(containerRecordTypes: [CKContainer: [String]]) -> [C
  - recordTypes: The record types to fetch
  - database: The database to fetch the records from
  */
-private func records(withRecordTypes recordTypes: [String], fromDatabase database: CKDatabase, withUserID userID: CKRecordID) -> [CKRecord] {
+private func records(withRecordTypes recordTypes: [String], fromDatabase database: CKDatabase, withUserID userID: CKRecord.ID) -> [CKRecord] {
     var allRecords = [CKRecord]()
     
-    let reference = CKReference(recordID: userID, action: .none)
+    let reference = CKRecord.Reference(recordID: userID, action: .none)
     let predicate = NSPredicate(format: "creatorUserRecordID == %@", reference)
     
     database.fetchAllRecordZones { zones, error in
@@ -89,9 +89,9 @@ private func records(withRecordTypes recordTypes: [String], fromDatabase databas
     return allRecords
 }
 
-extension CKDatabaseScope {
-    static var cases: [CKDatabaseScope] {
-        return [CKDatabaseScope.public, CKDatabaseScope.private, CKDatabaseScope.shared]
+extension CKDatabase.Scope {
+    static var cases: [CKDatabase.Scope] {
+        return [CKDatabase.Scope.public, CKDatabase.Scope.private, CKDatabase.Scope.shared]
     }
 }
 
@@ -188,8 +188,8 @@ public func eraseUserCreatedPublicData(containerRecordTypes: [CKContainer: [Stri
  - userID: The userID to remove records from
  - completionHandler: gets fired after the erase
  */
-private func removeAllInstances(inDatabase database: CKDatabase, ofRecordType recordType: String, fromUserID userID: CKRecordID, completionHandler: @escaping (Error?) -> Void) {
-    let reference = CKReference(recordID: userID, action: .none)
+private func removeAllInstances(inDatabase database: CKDatabase, ofRecordType recordType: String, fromUserID userID: CKRecord.ID, completionHandler: @escaping (Error?) -> Void) {
+    let reference = CKRecord.Reference(recordID: userID, action: .none)
     let predicate = NSPredicate(format: "creatorUserRecordID == %@", reference)
     let query = CKQuery(recordType: recordType, predicate: predicate)
     
@@ -256,7 +256,7 @@ public func restrict(container: CKContainer, apiToken: String, webToken: String,
     }
     
     let baseURL = "https://api.apple-cloudkit.com/database/1/"
-    let apiPath = "\(identifier)/\(env)/private/users/restrict"
+	let apiPath = "\(identifier)/\(String(describing: env))/private/users/restrict"
     let query = "?ckAPIToken=\(apiToken)&ckWebAuthToken=\(webToken)"
     
     let url = URL(string: "\(baseURL)\(apiPath)\(query)")!
@@ -288,7 +288,7 @@ public func unrestrict(container: CKContainer, apiToken: String, webToken: Strin
     }
     
     let baseURL = "https://api.apple-cloudkit.com/database/1/"
-    let apiPath = "\(identifier)/\(env)/private/users/unrestrict"
+	let apiPath = "\(identifier)/\(String(describing: env))/private/users/unrestrict"
     let query = "?ckAPIToken=\(apiToken)&ckWebAuthToken=\(webToken)"
     
     let url = URL(string: "\(baseURL)\(apiPath)\(query)")!
@@ -406,11 +406,11 @@ public extension CKRecord {
         }
     }
 
-    public func reference(_ key: String) -> CKReference? {
-        return self[key] as? CKReference
+    public func reference(_ key: String) -> CKRecord.Reference? {
+        return self[key] as? CKRecord.Reference
     }
 
-    public func set(reference: CKReference?, key: String) {
+    public func set(reference: CKRecord.Reference?, key: String) {
         if let reference = reference {
             self[key] = reference as CKRecordValue
         }
@@ -488,11 +488,11 @@ public extension CKRecord {
         }
     }
     
-    public func references(_ key: String) -> [CKReference]? {
-        return self[key] as? [CKReference]
+    public func references(_ key: String) -> [CKRecord.Reference]? {
+        return self[key] as? [CKRecord.Reference]
     }
     
-    public func set(references: [CKReference]?, key: String) {
+    public func set(references: [CKRecord.Reference]?, key: String) {
         if let references = references {
             self[key] = references as CKRecordValue
         }
@@ -622,9 +622,9 @@ public extension UIImage {
         
         switch fileType {
         case .JPG(let quality):
-            imageData = UIImageJPEGRepresentation(self, quality) as NSData?
+            imageData = self.jpegData(compressionQuality: quality) as NSData?
         case .PNG:
-            imageData = UIImagePNGRepresentation(self) as NSData?
+            imageData = self.pngData() as NSData?
         }
         guard let data = imageData else {
             throw ImageError.UnableToConvertImageToData

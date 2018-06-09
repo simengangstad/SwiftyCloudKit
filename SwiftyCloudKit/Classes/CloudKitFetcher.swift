@@ -27,9 +27,19 @@ public protocol CloudKitFetcher: CloudKitHandler {
     var interval: Int { get }
     
     /**
+     The ID of the zone to fetch from.
+     */
+    var zoneID: CKRecordZone.ID { get }
+	
+	/**
+	The keys to fetch. Set to nil if the fetcher should fetch all the keys.
+	*/
+	var desiredKeys: [String]? { get }
+    
+    /**
      The cursor which keeps control over which records that are to be fetched during the next batch. Is set to nil when all the records are fetched.
      */
-    var cursor: CKQueryCursor? { get set }
+    var cursor: CKQueryOperation.Cursor? { get set }
     
     /**
      Fetches the records stored in iCloud based on the parameters given to the cloud kit fetcher.
@@ -85,7 +95,9 @@ public extension CloudKitFetcher {
         }
         
         operation.resultsLimit = interval
+        operation.zoneID = zoneID
         operation.qualityOfService = .userInitiated
+		operation.desiredKeys = desiredKeys
         operation.recordFetchedBlock = { [unowned self] in
             if self.fetchState == .more {
                 array.append($0)

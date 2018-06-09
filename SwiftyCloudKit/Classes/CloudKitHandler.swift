@@ -39,7 +39,7 @@ public protocol CloudKitHandler: AnyObject {
      
      - important: The completion handler is called from a global asynchronous thread, switch to the main queue before making changes to e.g. the UI. If the method fails the completion handler can either include a CKError or a LocalStorageError depending on whether it failed to delete from iCloud or delete from local storage.
      */
-    func delete(record: CKRecord, withCompletionHandler completionHandler: ((CKRecordID?, Error?) -> Void)?)
+    func delete(record: CKRecord, withCompletionHandler completionHandler: ((CKRecord.ID?, Error?) -> Void)?)
 }
 
 @available (iOS 10.0, tvOS 10.0, OSX 10.12, *)
@@ -86,7 +86,7 @@ public extension CloudKitHandler {
     }
     
 
-    public func delete(record: CKRecord, withCompletionHandler completionHandler: ((CKRecordID?, Error?) -> Void)?) {
+    public func delete(record: CKRecord, withCompletionHandler completionHandler: ((CKRecord.ID?, Error?) -> Void)?) {
         let localRecords = LocalStorage.loadLocalRecords()
         
         // If the record to be deleted exist in the local records
@@ -119,7 +119,7 @@ public extension CloudKitHandler {
          - record: The record which the handler will try to delete again
          - completionHandler: The completion handler given to the delete function
      */
-    func retryDeletionAfter(error: CKError?, withRecord record: CKRecord, andCompletionHandler completionHandler: ((CKRecordID?, Error?) -> Void)?) {
+    func retryDeletionAfter(error: CKError?, withRecord record: CKRecord, andCompletionHandler completionHandler: ((CKRecord.ID?, Error?) -> Void)?) {
         if let retryInterval = error?.userInfo[CKErrorRetryAfterKey] as? TimeInterval {
             DispatchQueue.main.async {
                 Timer.scheduledTimer(withTimeInterval: retryInterval, repeats: false) { [unowned self] (timer) in
