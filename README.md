@@ -36,7 +36,9 @@ The CloudKitFetcher fetches records from iCloud. Remember to set up a record typ
 var database: CKDatabase
 var query: CKQuery?
 var interval: Int
-var cursor: CKQueryCursor?
+var cursor: CKQueryOperation.Cursor?
+var zoneID: CKRecordZone.ID
+var desiredKeys: [String]?
 ```
 
 Then simply call the fetch function in e.g. viewDidAppear to fetch the records:
@@ -55,7 +57,7 @@ CloudKitHandler allows you to upload and delete CloudKit records. If an upload o
 upload(record: CKRecord, withCompletionHandler completionHandler: ((CKRecord?, Error?) -> Void)?)
 ```
 ```swift
-delete(record: CKRecord, withCompletionHandler completionHandler: ((CKRecordID?, Error?) -> Void)?)
+delete(record: CKRecord, withCompletionHandler completionHandler: ((CKRecord.ID?, Error?) -> Void)?)
 ```
 
 An example:
@@ -94,21 +96,22 @@ The prerequisites for subscriptions are:
 - Register for remote notifications in the app delegate and post notifications around the app when a push notification is received, which is done the following way:
 
 ```swift
-func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-    UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
-        // Handle error
-    }
-    application.registerForRemoteNotifications()
-    return true
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+            UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
+        			// Handle errors
+        }
+        application.registerForRemoteNotifications()
+        
+        return true
 }
 
 func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-    let ckqn = CKQueryNotification(fromRemoteNotificationDictionary: userInfo as! [String:NSObject])
-    let notification = Notification(name: NSNotification.Name(rawValue: MyNotificationReceivedKey),
-                                    object: self,
-                                    userInfo: [MyNotificationKey: ckqn])
-    NotificationCenter.default.post(notification)
-}
+        let ckqn = CKQueryNotification(fromRemoteNotificationDictionary: userInfo as! [String:NSObject])
+        let notification = Notification(name: NSNotification.Name(rawValue: CloudKitNotifications.NotificationReceived),
+                                        object: self,
+                                        userInfo: [CloudKitNotifications.NotificationKey: ckqn])
+        NotificationCenter.default.post(notification)
+    }
 ```
 
 The next step is to conform to the protocol:
