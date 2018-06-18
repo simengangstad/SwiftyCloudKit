@@ -42,7 +42,8 @@ public protocol CloudKitFetcher: CloudKitHandler {
     var cursor: CKQueryOperation.Cursor? { get set }
     
     /**
-     Fetches the records stored in iCloud based on the parameters given to the cloud kit fetcher.
+     Fetches the records stored in iCloud based on the parameters given to the cloud kit fetcher. This method will also upload any local records and
+	 try to delete any records which ought to be deleted in iCloud, but failed in the process.
      
      - parameters
      - completionHandler: encapsulates the records fetched and errors, if any.
@@ -114,24 +115,31 @@ public extension CloudKitFetcher {
                 }
             }
             
-            var localRecords = LocalStorage.loadLocalRecords()
-            print("Fetched \(localRecords.count) local records")
-            // Local records
-            if offlineSupport, !localRecords.isEmpty  {
-                // We erase the local storage after storing the records in memory so that we don't duplicate the array every time.
-                LocalStorage.eraseLocalRecords()
+            var savedRecords = localStorageSavedRecords.load()
+			var deletedRecords = localStorageDeletedRecords.load()
 
-                let completion: ((CKRecord?, Error?) -> Void) = { (record, error) in
+			print("Fetched \(savedRecords.count) local records that ought to be uploaded to iCloud")
+			print("Fetched \(deletedRecords.count) local records that ought to be deleted in iCloud")
+
+			array = array.filter { (record) in !deletedRecords.contains(where: { $0.recordID == record.recordID }) }
+			
+            // Local records
+            if offlineSupport && (!savedRecords.isEmpty || !deletedRecords.isEmpty )  {
+                // We erase the local storage after storing the records in memory so that we don't duplicate the array every time.
+                localStorageSavedRecords.erase()
+				localStorageDeletedRecords.erase()
+
+                let savedCompletion: ((CKRecord?, Error?) -> Void) = { (record, error) in
                     // Move uploaded record over to the record and remove it from the local records if the upload is successful.
                     if let record = record {
                         print("Local record uploaded successfully, deleting from local storage")
                         array.append(record)
-                        localRecords.remove(at: localRecords.index(of: record)!)
-                        _ = LocalStorage.delete(localRecord: record)
+                        savedRecords.remove(at: savedRecords.index(of: record)!)
+                        _ = localStorageSavedRecords.delete(record: record)
                     }
                 }
                 
-                localRecords.forEach({ (record) in
+                savedRecords.forEach({ (record) in
                     print("Attempting to upload local record")
                     
                     self.upload(record: record, withCompletionHandler: { (uploadedRecord, error) in
@@ -140,11 +148,34 @@ public extension CloudKitFetcher {
                             return
                         }
                
-                        completion(uploadedRecord, error)
+                        savedCompletion(uploadedRecord, error)
                     })
                 })
+				
+				let deleteCompletion: ((CKRecord?, Error?) -> Void) = { (record, error) in
+					if let record = record {
+						print("Local record deletion success, deleting from local storage")
+						
+						deletedRecords.remove(at: deletedRecords.index(of: record)!)
+						_ = localStorageDeletedRecords.delete(record: record)
+					}
+				}
+				
+				deletedRecords.forEach({ (record) in
+					print("Attempting to delete local record in iCloud")
+					
+					self.delete(record: record, withCompletionHandler: { [record] (_, error) in
+						guard error == nil else {
+							self.retryDeletionAfter(error: error as? CKError, withRecord: record, andCompletionHandler: nil)
+							return
+						}
+						
+						deleteCompletion(record, error)
+					})
+				})
+				
                 
-                array.append(contentsOf: localRecords)
+                array.append(contentsOf: savedRecords)
                 // This will try to sort by the given sort descriptors of the query, but if the record was created offline it will not include
                 // creation date and other parameters of the CKRecord as they seem to be assigned upon successfull upload.
                 // A workaround is to add own parameters for e.g. date and sort by them, as creationDate is read only.

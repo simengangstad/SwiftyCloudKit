@@ -15,30 +15,29 @@ public struct LocalStorageError: Error {
 }
 
 class LocalStorage {
-    static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
-    static let ArchiveURL = DocumentsDirectory.appendingPathComponent("records")
-    
-    class func save(localRecord: CKRecord) -> Bool {
-        var localRecords = loadLocalRecords()
+	let archiveURL: URL
+	
+	init(archiveName: String) {
+		archiveURL = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent(archiveName)
+	}
+	
+    func save(record: CKRecord) -> Bool {
+        var localRecords = load()
         
-        print("Attempting to save record locally... \(localRecord)")
-        localRecords.append(localRecord)
-        
-        let completedSave = NSKeyedArchiver.archiveRootObject(localRecords, toFile: ArchiveURL.path)
-        print("Save completed sucessfully: \(completedSave)")
+        localRecords.append(record)
+        let completedSave = NSKeyedArchiver.archiveRootObject(localRecords, toFile: archiveURL.path)
+        print("Save of local record completed sucessfully: \(completedSave)")
         
         return completedSave
     }
     
-    class func delete(localRecord: CKRecord) -> Bool {
-        var localRecords = loadLocalRecords()
+     func delete(record: CKRecord) -> Bool {
+        var localRecords = load()
         
-        if let index = localRecords.index(where: { $0.recordID == localRecord.recordID }) {
-            print("Attempting to delete local record... \(localRecord)")
+        if let index = localRecords.index(where: { $0.recordID == record.recordID }) {
             localRecords.remove(at: index)
-            
-            let completedDelete = NSKeyedArchiver.archiveRootObject(localRecords, toFile: ArchiveURL.path)
-            print("Deletion completed sucessfully: \(completedDelete)")
+            let completedDelete = NSKeyedArchiver.archiveRootObject(localRecords, toFile: archiveURL.path)
+            print("Deletion of local record completed sucessfully: \(completedDelete)")
             
             return completedDelete
         }
@@ -46,16 +45,15 @@ class LocalStorage {
         return false
     }
     
-    class func eraseLocalRecords() {
-        if !loadLocalRecords().isEmpty {
-            let completed = NSKeyedArchiver.archiveRootObject([], toFile: ArchiveURL.path)
-            print("Attempting to erease local records...")
-            print("Ereasing completed sucessfully: \(completed)")
+    func erase() {
+        if !load().isEmpty {
+            let completed = NSKeyedArchiver.archiveRootObject([], toFile: archiveURL.path)
+            print("Ereasing of local storage records completed sucessfully: \(completed)")
         }
     }
     
-    class func loadLocalRecords() -> [CKRecord] {
-        guard let records = NSKeyedUnarchiver.unarchiveObject(withFile: ArchiveURL.path) as? [CKRecord] else {
+    func load() -> [CKRecord] {
+        guard let records = NSKeyedUnarchiver.unarchiveObject(withFile: archiveURL.path) as? [CKRecord] else {
             return []
         }
         

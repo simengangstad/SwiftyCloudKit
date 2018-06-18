@@ -10,6 +10,18 @@ import UIKit
  */
 public var offlineSupport = true
 
+/**
+ Storage for the records which ought to be uploaded to iCloud, but failed in the process.
+ CloudKitFetcher will try to upload these records in the next fetch call.
+*/
+internal var localStorageSavedRecords = LocalStorage(archiveName: "savedRecords")
+
+/**
+ Storage for the records which ought to be deleted in iCloud, but failed in the process.
+ CloudKitFetcher will try to delete these records in the next fetch call.
+*/
+internal var localStorageDeletedRecords = LocalStorage(archiveName: "deletedRecords")
+
 // MARK: Retrieving a copy of the data
 
 /**
@@ -107,7 +119,8 @@ extension CKDatabase.Scope {
      - completionHandler: gets fired after the erase
  */
 public func erasePrivateData(inContainers containers: [CKContainer], completionHandler: @escaping (Error?) -> Void) {
-    LocalStorage.eraseLocalRecords()
+	localStorageSavedRecords.erase()
+    localStorageDeletedRecords.erase()
     
     for container in containers {
         
@@ -158,7 +171,9 @@ public func erasePrivateData(inContainers containers: [CKContainer], completionH
  
  */
 public func eraseUserCreatedPublicData(containerRecordTypes: [CKContainer: [String]], completionHandler: @escaping (Error?) -> Void) {
-    LocalStorage.eraseLocalRecords()
+    localStorageSavedRecords.erase()
+	localStorageDeletedRecords.erase()
+	
     
     for container in Array(containerRecordTypes.keys) {
         container.fetchUserRecordID { (userID, error) in
