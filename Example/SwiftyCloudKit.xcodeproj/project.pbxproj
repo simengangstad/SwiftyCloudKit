@@ -13,7 +13,9 @@
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
-		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		AD2CA0D420EA5E0700FE7104 /* video.mov in Resources */ = {isa = PBXBuildFile; fileRef = AD2CA0D320EA5E0700FE7104 /* video.mov */; };
+		AD2CA0D520EA5E0700FE7104 /* video.mov in Resources */ = {isa = PBXBuildFile; fileRef = AD2CA0D320EA5E0700FE7104 /* video.mov */; };
+		ADB67F3A20EA594700EBF889 /* LocalStorageTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB67F3920EA594700EBF889 /* LocalStorageTest.swift */; };
 		ADE2A2EC20CBD5A00036B548 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADE2A2EB20CBD59F0036B548 /* CloudKit.framework */; };
 		ADE2A2EE20CBD6BF0036B548 /* SwiftyCloudKitTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE2A2ED20CBD6BF0036B548 /* SwiftyCloudKitTableViewController.swift */; };
 /* End PBXBuildFile section */
@@ -38,12 +40,14 @@
 		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* SwiftyCloudKit_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftyCloudKit_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		6F2C6F30A115E0F468D9689D /* SwiftyCloudKit.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = SwiftyCloudKit.podspec; path = ../SwiftyCloudKit.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9094B1F57C2A6FC16144AE2B /* Pods-SwiftyCloudKit_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyCloudKit_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftyCloudKit_Tests/Pods-SwiftyCloudKit_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		928D2E6306E2D6AA73FC3408 /* Pods-SwiftyCloudKit_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyCloudKit_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftyCloudKit_Example/Pods-SwiftyCloudKit_Example.release.xcconfig"; sourceTree = "<group>"; };
 		A80B930F075ED051BE13E8E2 /* Pods-SwiftyCloudKit_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyCloudKit_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftyCloudKit_Tests/Pods-SwiftyCloudKit_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		AD2CA0CD20EA5B5E00FE7104 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AD2CA0D320EA5E0700FE7104 /* video.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = video.mov; sourceTree = "<group>"; };
+		ADB67F3820EA594600EBF889 /* SwiftyCloudKit_Tests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftyCloudKit_Tests-Bridging-Header.h"; sourceTree = "<group>"; };
+		ADB67F3920EA594700EBF889 /* LocalStorageTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageTest.swift; sourceTree = "<group>"; };
 		ADE2A2EA20CBD59A0036B548 /* SwiftyCloudKit_Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftyCloudKit_Example.entitlements; sourceTree = "<group>"; };
 		ADE2A2EB20CBD59F0036B548 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		ADE2A2ED20CBD6BF0036B548 /* SwiftyCloudKitTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyCloudKitTableViewController.swift; sourceTree = "<group>"; };
@@ -79,8 +83,8 @@
 				ADE2A2EA20CBD59A0036B548 /* SwiftyCloudKit_Example.entitlements */,
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
 				607FACD21AFB9204008FA782 /* Example for SwiftyCloudKit */,
-				607FACE81AFB9204008FA782 /* Tests */,
 				607FACD11AFB9204008FA782 /* Products */,
+				ADB67F3720EA591500EBF889 /* Tests */,
 				7545E33904F49B00A600010E /* Pods */,
 				AFEB3AB00DAEEC371DF0F315 /* Frameworks */,
 			);
@@ -103,6 +107,7 @@
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
+				AD2CA0D320EA5E0700FE7104 /* video.mov */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
 			);
 			name = "Example for SwiftyCloudKit";
@@ -113,23 +118,6 @@
 			isa = PBXGroup;
 			children = (
 				607FACD41AFB9204008FA782 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		607FACE81AFB9204008FA782 /* Tests */ = {
-			isa = PBXGroup;
-			children = (
-				607FACEB1AFB9204008FA782 /* Tests.swift */,
-				607FACE91AFB9204008FA782 /* Supporting Files */,
-			);
-			path = Tests;
-			sourceTree = "<group>";
-		};
-		607FACE91AFB9204008FA782 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				607FACEA1AFB9204008FA782 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -153,6 +141,16 @@
 				A80B930F075ED051BE13E8E2 /* Pods-SwiftyCloudKit_Tests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		ADB67F3720EA591500EBF889 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				AD2CA0CD20EA5B5E00FE7104 /* Info.plist */,
+				ADB67F3920EA594700EBF889 /* LocalStorageTest.swift */,
+				ADB67F3820EA594600EBF889 /* SwiftyCloudKit_Tests-Bridging-Header.h */,
+			);
+			path = Tests;
 			sourceTree = "<group>";
 		};
 		AFEB3AB00DAEEC371DF0F315 /* Frameworks */ = {
@@ -215,7 +213,7 @@
 		607FACC81AFB9204008FA782 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0830;
+				LastSwiftUpdateCheck = 1000;
 				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
@@ -235,7 +233,7 @@
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
 						DevelopmentTeam = YT53AFQ724;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 1000;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
 				};
@@ -264,6 +262,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD2CA0D420EA5E0700FE7104 /* video.mov in Resources */,
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
@@ -274,6 +273,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD2CA0D520EA5E0700FE7104 /* video.mov in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,9 +370,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SwiftyCloudKit_Tests/Pods-SwiftyCloudKit_Tests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -395,7 +398,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACEC1AFB9204008FA782 /* Tests.swift in Sources */,
+				ADB67F3A20EA594700EBF889 /* LocalStorageTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -572,6 +575,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9094B1F57C2A6FC16144AE2B /* Pods-SwiftyCloudKit_Tests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = YT53AFQ724;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -582,8 +587,11 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Tests/SwiftyCloudKit_Tests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.2;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftyCloudKit_Example.app/SwiftyCloudKit_Example";
 			};
 			name = Debug;
 		};
@@ -591,14 +599,18 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A80B930F075ED051BE13E8E2 /* Pods-SwiftyCloudKit_Tests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = YT53AFQ724;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Tests/SwiftyCloudKit_Tests-Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.2;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftyCloudKit_Example.app/SwiftyCloudKit_Example";
 			};
 			name = Release;
 		};

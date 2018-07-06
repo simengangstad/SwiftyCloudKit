@@ -1,6 +1,7 @@
 import CloudKit
 import ObjectiveC
 import UIKit
+import Foundation
 
 // MARK: Offine support
 
@@ -119,8 +120,8 @@ extension CKDatabase.Scope {
      - completionHandler: gets fired after the erase
  */
 public func erasePrivateData(inContainers containers: [CKContainer], completionHandler: @escaping (Error?) -> Void) {
-	localStorageSavedRecords.erase()
-    localStorageDeletedRecords.erase()
+	localStorageSavedRecords.eraseContentOfDirectory()
+    localStorageDeletedRecords.eraseContentOfDirectory()
     
     for container in containers {
         
@@ -171,8 +172,8 @@ public func erasePrivateData(inContainers containers: [CKContainer], completionH
  
  */
 public func eraseUserCreatedPublicData(containerRecordTypes: [CKContainer: [String]], completionHandler: @escaping (Error?) -> Void) {
-    localStorageSavedRecords.erase()
-	localStorageDeletedRecords.erase()
+    localStorageSavedRecords.eraseContentOfDirectory()
+	localStorageDeletedRecords.eraseContentOfDirectory()
 	
     
     for container in Array(containerRecordTypes.keys) {
@@ -602,19 +603,23 @@ public extension CKAsset {
     }
     
     public var image: UIImage? {
-        guard let data = NSData(contentsOf: fileURL), let image = UIImage(data: data as Data) else { return nil }
+        guard let data = NSData(contentsOf: fileURL), let image = UIImage(data: data as Data) else {
+			print("Image file exists at path: \(FileManager.default.fileExists(atPath: fileURL.path))")
+			return nil
+		}
+		
         return image
     }
     
     public func video(withFilename filename: String) -> URL? {
-        return Data.retrieveOrCreateFile(withDataURL: fileURL, andFileName: "video_\(filename)", recreateIfFileExists: false)
+        return Data.retrieveOrCreateFile(withDataURL: fileURL, andFileName: "video_\(filename).mov", recreateIfFileExists: false)
     }
 }
 
 public extension Data {
     static func retrieveOrCreateFile(withDataURL fileURL: URL, andFileName fileName: String, recreateIfFileExists recreate: Bool) -> URL? {
         let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
-        let destinationPath = NSURL(fileURLWithPath: documentsPath).appendingPathComponent("\(fileName).mov", isDirectory: false)
+        let destinationPath = NSURL(fileURLWithPath: documentsPath).appendingPathComponent(fileName, isDirectory: false)
         
         if !recreate && FileManager.default.fileExists(atPath: destinationPath!.path) {
             return destinationPath

@@ -19,128 +19,160 @@ public protocol CloudKitHandler: AnyObject {
     var database: CKDatabase { get }
     
     /**
-     Uploads a CKRecord to a given database.
+     Uploads an array of CKRecords to a given database. Will store the records locally until the upload is successful.
      
      - parameters:
-         - record: Record to upload
-         - database: Database to upload to
+         - records: Records to upload
+		 - priority: The quality of service for the upload. Defaults to user initiated
+		 - perRecordProgress: Fired with information about the upload progress for each record
          - completionHandler: Is fired after an upload attempt
      
      - important: The completion handler is called from a global asynchronous thread, switch to the main queue before making changes to e.g. the UI. If the method fails the completion handler can either include a CKError or a LocalStorageError depending on whether it failed to upload to iCloud or save locally.
      */
-    func upload(record: CKRecord, withCompletionHandler completionHandler: ((CKRecord?, Error?) -> Void)?)
-    
+	func upload(records: [CKRecord], withPriority priority: QualityOfService, perRecordProgress: ((CKRecord, Double) -> Void)?, andCompletionHandler completionHandler: (([CKRecord]?, Error?) -> Void)?)
+
     /**
-     Deletes a CKRecord from a given database.
+     Deletes an array of CKRecords from a given database.
      
      - parameters:
-         - record: Record to delete
-         - completionHandler: Is fired after a deletion attempt
+		- records: Records to delete
+		- priority: The quality of service for the deletion. Defaults to user initiated
+		- perRecordProgress: Fired with information about the deletion progress for each record
+		- completionHandler: Is fired after a deletion attempt
      
      - important: The completion handler is called from a global asynchronous thread, switch to the main queue before making changes to e.g. the UI. If the method fails the completion handler can either include a CKError or a LocalStorageError depending on whether it failed to delete from iCloud or delete from local storage.
      */
-    func delete(record: CKRecord, withCompletionHandler completionHandler: ((CKRecord.ID?, Error?) -> Void)?)
+    func delete(records: [CKRecord], withPriority priority: QualityOfService, perRecordProgress: ((CKRecord, Double) -> Void)?, andCompletionHandler completionHandler: (([CKRecord.ID]?, Error?) -> Void)?)
 }
 
 @available (iOS 10.0, tvOS 10.0, OSX 10.12, *)
 public extension CloudKitHandler {
-
-    public func upload(record: CKRecord, withCompletionHandler completionHandler: ((CKRecord?, Error?) -> Void)?) {
+	
+	func upload(records: [CKRecord], withPriority priority: QualityOfService = .userInitiated, perRecordProgress: ((CKRecord, Double) -> Void)? = nil, andCompletionHandler completionHandler: (([CKRecord]?, Error?) -> Void)? = nil) {
 		if Reachability.isConnectedToNetwork() {
-			database.save(record) { [unowned self] (savedRecord, error) in
-				if let error = error as? CKError {
-					self.retryUploadAfter(error: error, withRecord: record, andCompletionHandler: completionHandler)
+			// Save records temporarily if the upload fails
+			for record in records {
+				localStorageSavedRecords.save(record: record)
+			}
+			
+			let modifyOperation = CKModifyRecordsOperation(recordsToSave: records, recordIDsToDelete: nil)
+			modifyOperation.savePolicy = .allKeys
+			modifyOperation.qualityOfService = priority
+			modifyOperation.perRecordProgressBlock = perRecordProgress
+			modifyOperation.modifyRecordsCompletionBlock = { (uploadedRecords, _, error)  in
+				if let error = error as? CKError  {
+					self.retryUploadAfter(error: error, withRecords: records, andCompletionHandler: completionHandler)
 					return
 				}
 				
-				completionHandler?(savedRecord, error)
-			}
-		}
-		else if offlineSupport {
-			print("Upload failed, saving locally...")
-			if !localStorageSavedRecords.save(record: record) {
-				completionHandler?(nil, LocalStorageError(description: "Error saving local record..."))
-				return
+				if let uploadedRecords = uploadedRecords {
+					for record in uploadedRecords {
+						localStorageSavedRecords.delete(record: record)
+					}
+					
+					completionHandler?(uploadedRecords, nil)
+				}
+				else {
+					completionHandler?(nil, nil)
+				}
 			}
 			
-			completionHandler?(record, nil)
+			database.add(modifyOperation)
+		}
+		else if offlineSupport {
+			print("No connection detected, saving locally...")
+			for record in records {
+				if !localStorageSavedRecords.save(record: record) {
+					completionHandler?(nil, LocalStorageError(description: "Error saving local record..."))
+					return
+				}
+			}
+			
+			completionHandler?(records, nil)
 		}
 		else {
 			completionHandler?(nil, CloudKitHandlerError(description: "No internet connection and offlineSupport is not enabled, failed to upload record"))
 		}
-    }
+	}
     
     /**
      Will set up to retry the upload after a time interval defined by cloud kit [CKErrorRetryAfterKey](https://developer.apple.com/documentation/cloudkit/ckerrorretryafterkey). This function will effectively just wait a bit before it calls the upload function again with the same arguments.
-     
-     - parameters:
-         - error: Rrror causing the record upload to fail
-         - record: Record which the handler will try to upload again
-         - database: The database we will retry to upload to
-         - completionHandler: Completion handler given to the upload function
      */
-    public func retryUploadAfter(error: CKError?, withRecord record: CKRecord, andCompletionHandler completionHandler: ((CKRecord?, Error?) -> Void)?) {
+    public func retryUploadAfter(error: CKError?, withRecords records: [CKRecord], priority: QualityOfService = .userInitiated, perRecordProgress: ((CKRecord, Double) -> Void)? = nil, andCompletionHandler completionHandler: (([CKRecord]?, Error?) -> Void)?) {
         if let retryInterval = error?.userInfo[CKErrorRetryAfterKey] as? TimeInterval {
             DispatchQueue.main.async {
                 Timer.scheduledTimer(withTimeInterval: retryInterval, repeats: false) { [unowned self] (timer) in
-                    self.upload(record: record, withCompletionHandler: completionHandler)
+					self.upload(records: records, withPriority: priority, perRecordProgress: perRecordProgress, andCompletionHandler: completionHandler)
                 }
             }
         }
     }
 	
-    public func delete(record: CKRecord, withCompletionHandler completionHandler: ((CKRecord.ID?, Error?) -> Void)?) {
+	func delete(records: [CKRecord], withPriority priority: QualityOfService = .userInitiated, perRecordProgress: ((CKRecord, Double) -> Void)? = nil, andCompletionHandler completionHandler: (([CKRecord.ID]?, Error?) -> Void)? = nil) {
         let savedLocalRecords = localStorageSavedRecords.load()
-        
-        // If the record to be deleted exist in the local records
-        if offlineSupport, let index = savedLocalRecords.index(where: { $0.recordID == record.recordID }) {
-            let localRecord = savedLocalRecords[index]
-            if localStorageSavedRecords.delete(record: localRecord) {
-                completionHandler?(localRecord.recordID, nil)
-            }
-            else {
-                completionHandler?(nil, LocalStorageError(description: "Could not delete local record..."))
-            }
-        }
-        else {
-			if Reachability.isConnectedToNetwork() {
-				database.delete(withRecordID: record.recordID) { [unowned self, record] (deletedRecordID, error) in
-					if let error = error as? CKError  {
-						self.retryDeletionAfter(error: error, withRecord: record, andCompletionHandler: completionHandler)
-						return
+		// All the records which aren't stored locally
+		var recordsToDelete = records
+		
+		if offlineSupport {
+			for record in records {
+				if let index = savedLocalRecords.index(where: { $0.recordID == record.recordID }) {
+					let localRecord = savedLocalRecords[index]
+					if localStorageSavedRecords.delete(record: localRecord) {
+						recordsToDelete.remove(at: recordsToDelete.lastIndex(where: { $0.recordID == localRecord.recordID  })!)
 					}
-					
-					completionHandler?(deletedRecordID, error)
 				}
 			}
-			else if offlineSupport {
-				print("Deletion failed, saving record locally for an attempt later...")
+			
+			if recordsToDelete.isEmpty {
+				completionHandler?(records.map({ $0.recordID }), nil)
+			}
+		}
+		
+		if Reachability.isConnectedToNetwork() {
+			let modifyOperation = CKModifyRecordsOperation(recordsToSave: nil, recordIDsToDelete: recordsToDelete.map({ $0.recordID }))
+			modifyOperation.savePolicy = .allKeys
+			modifyOperation.qualityOfService = priority
+			modifyOperation.perRecordProgressBlock = perRecordProgress
+			modifyOperation.modifyRecordsCompletionBlock = { (_, deletedRecordIDs, error) in
+				if let error = error as? CKError  {
+					self.retryDeletionAfter(error: error, withRecords: recordsToDelete, andCompletionHandler: completionHandler)
+					return
+				}
+				
+				if let deletedRecordIDs = deletedRecordIDs {
+					completionHandler?(deletedRecordIDs, nil)
+				}
+				else {
+					completionHandler?(nil, nil)
+				}
+			}
+			
+			database.add(modifyOperation)
+		}
+		else if offlineSupport {
+			print("Deletion failed, saving records locally for an attempt later...")
+			for record in recordsToDelete {
 				if !localStorageDeletedRecords.save(record: record) {
 					completionHandler?(nil, LocalStorageError(description: "Error saving local record for deletion later..."))
 					return
 				}
-				
-				completionHandler?(record.recordID, nil)
 			}
-			else {
-				completionHandler?(nil, CloudKitHandlerError(description: "No internet connection and offlineSupport is not enabled, failed to delete record"))
-			}
-        }
+			
+			completionHandler?(recordsToDelete.map({ $0.recordID }), nil)
+		}
+		else {
+			completionHandler?(nil, CloudKitHandlerError(description: "No internet connection and offlineSupport is not enabled, failed to delete record"))
+		}
     }
 
     /**
      Will set up to retry the deletion after a time interval defined by cloud kit [CKErrorRetryAfterKey](https://developer.apple.com/documentation/cloudkit/ckerrorretryafterkey). This function will effectively just wait a bit before it calls the delete function again with the same arguments.
-     
-     - parameters:
-         - error: The error causing the record deletion to fail
-         - record: The record which the handler will try to delete again
-         - completionHandler: The completion handler given to the delete function
      */
-    func retryDeletionAfter(error: CKError?, withRecord record: CKRecord, andCompletionHandler completionHandler: ((CKRecord.ID?, Error?) -> Void)?) {
+	func retryDeletionAfter(error: CKError?, withRecords records: [CKRecord], priority: QualityOfService = .userInitiated, perRecordProgress: ((CKRecord, Double) -> Void)? = nil, andCompletionHandler completionHandler: (([CKRecord.ID]?, Error?) -> Void)?) {
         if let retryInterval = error?.userInfo[CKErrorRetryAfterKey] as? TimeInterval {
             DispatchQueue.main.async {
                 Timer.scheduledTimer(withTimeInterval: retryInterval, repeats: false) { [unowned self] (timer) in
-                    self.delete(record: record, withCompletionHandler: completionHandler)
+                    self.delete(records: records, withPriority: priority, perRecordProgress: perRecordProgress, andCompletionHandler: completionHandler)
                 }
             }
         }

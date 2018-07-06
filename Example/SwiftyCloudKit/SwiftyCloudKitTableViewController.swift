@@ -7,6 +7,7 @@
 import UIKit
 import CloudKit
 import SwiftyCloudKit
+import AVKit
 
 class SwiftyCloudKitTableViewController: UITableViewController, CloudKitFetcher, CloudKitHandler, CloudKitSubscriber {
 	
@@ -82,7 +83,7 @@ class SwiftyCloudKitTableViewController: UITableViewController, CloudKitFetcher,
 	}
 	
 	// The amount of records we'll fetch for each request
-	var interval: Int = 5
+	var interval: Int = 20
 	
 	// The cursor is an object which helps us keep track of which records we've fetched, and which records we are to fetch during the next batch. Can be set to nil to start fetching from the start.
 	var cursor: CKQueryOperation.Cursor?
@@ -208,25 +209,26 @@ class SwiftyCloudKitTableViewController: UITableViewController, CloudKitFetcher,
     @IBAction func addItem(_ sender: UIBarButtonItem) {
         let record = CKRecord(recordType: CloudKitRecordType)
         record.set(string: "\(records.count + 1)", key: CloudKitTextField)
+		record.set(image: UIImage(named: "fall"), key: "image")
+		record.set(video: Bundle.main.url(forResource: "video", withExtension: "mov"), key: "video")
         startActivityIndicator()
-        
-        upload(record: record) { [unowned self] (addedRecord, error) in
-            DispatchQueue.main.async {
-                
-                if let error = error as? CKError {
-                    print(error.localizedDescription)
-                    self.stopActivityIndicator()
-                }
-
-                if let addedRecord = addedRecord {
-                    print("Record saved")
-                    self.records.insert(addedRecord, at: 0)
-                    self.tableView.beginUpdates()
-                    self.tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .top)
-                    self.tableView.endUpdates()
-                }
-            }
-        }
+		
+		upload(records: [record], withPriority: .userInitiated, perRecordProgress: nil) { (addedRecords, error) in
+			DispatchQueue.main.async {
+				if let error = error as? CKError {
+					print(error.localizedDescription)
+					self.stopActivityIndicator()
+				}
+				
+				if let addedRecords = addedRecords, let addedRecord = addedRecords.first {
+					print("Record saved")
+					self.records.insert(addedRecord, at: 0)
+					self.tableView.beginUpdates()
+					self.tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .top)
+					self.tableView.endUpdates()
+				}
+			}
+		}
     }
     
     // MARK: Erasing items and user data
@@ -277,23 +279,36 @@ class SwiftyCloudKitTableViewController: UITableViewController, CloudKitFetcher,
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellIdentifier", for: indexPath)
         // Notice how we access our field, with a call to string passing our constant for the text field type
         cell.textLabel?.text = records[indexPath.row].string(CloudKitTextField)
+		cell.imageView?.image = records[indexPath.row].image("image")
         return cell
     }
 
+	// MARK: Table view delegate
     
     // Override to support editing the table view.
 	override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            
-            delete(record: records[indexPath.row], withCompletionHandler: { [unowned self] (recordID, error) in
-                DispatchQueue.main.async {
-                    print("Record deleted")
-                    self.records.remove(at: indexPath.row)
-                    tableView.deleteRows(at: [indexPath], with: .fade)
-                }
-            })
+			
+			delete(records: [records[indexPath.row]], withPriority: .userInitiated, perRecordProgress: nil) { [unowned self] (recordIDs, error) in
+				DispatchQueue.main.async {
+					print("Record deleted")
+					self.records.remove(at: indexPath.row)
+					tableView.deleteRows(at: [indexPath], with: .fade)
+				}
+			}
         }
     }
+	
+	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		let player = AVPlayer(url: records[indexPath.row].video("video")!)
+		let controller = AVPlayerViewController()
+		controller.player = player
+		
+		// Modally present the player and call the player's play() method when complete.
+		present(controller, animated: true) {
+			player.play()
+		}
+	}
     
     func displayDestructiveAlertMessage(withTitle title: String, andMessage message: String) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)

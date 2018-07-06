@@ -125,55 +125,56 @@ public extension CloudKitFetcher {
 			
             // Local records
             if offlineSupport && (!savedRecords.isEmpty || !deletedRecords.isEmpty )  {
-                // We erase the local storage after storing the records in memory so that we don't duplicate the array every time.
-                localStorageSavedRecords.erase()
-				localStorageDeletedRecords.erase()
-
-                let savedCompletion: ((CKRecord?, Error?) -> Void) = { (record, error) in
-                    // Move uploaded record over to the record and remove it from the local records if the upload is successful.
-                    if let record = record {
-                        print("Local record uploaded successfully, deleting from local storage")
-                        array.append(record)
-                        savedRecords.remove(at: savedRecords.index(of: record)!)
-                        _ = localStorageSavedRecords.delete(record: record)
-                    }
-                }
-                
-                savedRecords.forEach({ (record) in
-                    print("Attempting to upload local record")
-                    
-                    self.upload(record: record, withCompletionHandler: { (uploadedRecord, error) in
-                        guard error == nil else {
-                            self.retryUploadAfter(error: error as? CKError, withRecord: record, andCompletionHandler: nil)
-                            return
-                        }
-               
-                        savedCompletion(uploadedRecord, error)
-                    })
-                })
-				
-				let deleteCompletion: ((CKRecord?, Error?) -> Void) = { (record, error) in
-					if let record = record {
-						print("Local record deletion success, deleting from local storage")
-						
-						deletedRecords.remove(at: deletedRecords.index(of: record)!)
-						_ = localStorageDeletedRecords.delete(record: record)
+				if !savedRecords.isEmpty && Reachability.isConnectedToNetwork() {
+					// We erase the local storage after storing the records in memory so that we don't duplicate the array every time.
+					let savedCompletion: (([CKRecord]?) -> Void) = { (records) in
+						// Move uploaded record over to the record and remove it from the local records if the upload is successful.
+						if let records = records {
+							print("Local records uploaded successfully, deleting from local storage")
+							
+							for record in records {
+								if let index = savedRecords.firstIndex(where: { record.recordID == $0.recordID }) {
+									savedRecords.remove(at: index)
+								}
+								
+								localStorageSavedRecords.delete(record: record)
+							}
+						}
 					}
-				}
-				
-				deletedRecords.forEach({ (record) in
-					print("Attempting to delete local record in iCloud")
 					
-					self.delete(record: record, withCompletionHandler: { [record] (_, error) in
+					self.performModifyOperation(recordsToSave: savedRecords, recordIDsToDelete: nil) { (uploadedRecords, _, error) in
 						guard error == nil else {
-							self.retryDeletionAfter(error: error as? CKError, withRecord: record, andCompletionHandler: nil)
 							return
 						}
 						
-						deleteCompletion(record, error)
-					})
-				})
+						savedCompletion(uploadedRecords)
+					}
+				}
 				
+				if !deletedRecords.isEmpty && Reachability.isConnectedToNetwork() {
+					// We erase the local storage after storing the records in memory so that we don't duplicate the array every time.
+					localStorageDeletedRecords.eraseContentOfDirectory()
+					
+					let deleteCompletion: (([CKRecord.ID]?) -> Void) = { (deletedRecordIDs) in
+						if deletedRecordIDs != nil {
+							print("Local record deletion success, deleting from local storage")
+							
+							for deletedRecordID in deletedRecordIDs! {
+								if let index = deletedRecords.firstIndex(where: { deletedRecordID == $0.recordID }) {
+									localStorageDeletedRecords.delete(record: deletedRecords[index])
+								}
+							}
+						}
+					}
+					
+					self.performModifyOperation(recordsToSave: nil, recordIDsToDelete: deletedRecords.map({ $0.recordID  })) { (_, deletedRecordIDs, error) in
+						guard error == nil else {
+							return
+						}
+						
+						deleteCompletion(deletedRecordIDs)
+					}
+				}
                 
                 array.append(contentsOf: savedRecords)
                 // This will try to sort by the given sort descriptors of the query, but if the record was created offline it will not include
@@ -189,4 +190,15 @@ public extension CloudKitFetcher {
         
         database.add(operation)
     }
+	
+	private func performModifyOperation(recordsToSave: [CKRecord]?, recordIDsToDelete: [CKRecord.ID]?, completionHandler: @escaping (([CKRecord]?, [CKRecord.ID]?, Error?) -> Void)) {
+		let modifyOperation = CKModifyRecordsOperation(recordsToSave: recordsToSave, recordIDsToDelete: recordIDsToDelete)
+		modifyOperation.savePolicy = .allKeys
+		modifyOperation.qualityOfService = .userInitiated
+		modifyOperation.modifyRecordsCompletionBlock = { (uploadedRecords, deletedRecords, error) in
+			completionHandler(uploadedRecords, deletedRecords, error)
+		}
+		
+		database.add(modifyOperation)
+	}
 }

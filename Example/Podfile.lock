@@ -1,7 +1,9 @@
 PODS:
-  - SwiftyCloudKit (0.1.0)
+  - Nimble (7.1.2)
+  - SwiftyCloudKit (0.1.7)
 
 DEPENDENCIES:
+  - Nimble
   - SwiftyCloudKit (from `../`)
 
 EXTERNAL SOURCES:
@@ -9,8 +11,9 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  SwiftyCloudKit: 0b99dde913abacc15901eb55c800529b89263b05
+  Nimble: 3835ba9f459daa6b347f8a8e110aaae8ca1920a8
+  SwiftyCloudKit: 26dfecb8a017d11849d7ebf925ab6b6a0e1519c9
 
-PODFILE CHECKSUM: c46772578e563b5eec5cabdc9de59eb098d7fcb2
+PODFILE CHECKSUM: beceeb62ebd7a50cfe223d2b2b65916bb24c34ad
 
 COCOAPODS: 1.4.0

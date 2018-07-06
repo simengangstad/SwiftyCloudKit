@@ -50,23 +50,24 @@ fetch(withCompletionHandler: { (records, error) in
 
 ### CloudKitHandler
 
-CloudKitHandler allows you to upload and delete CloudKit records. If an upload or deletion operation fails because of an iCloud error, the error included in the completion handler will be a CKError. If the operation fails because the library didn't detect an internet connection and failed to save or delete locally, it will return a LocalStorageError.
+CloudKitHandler allows you to upload and delete mulitple CloudKit records in a single operation. You can specify a priority for the operation and retrieve callbacks on the prorgress for the operation for each record. If an upload or deletion operation fails because of an iCloud error, the error included in the completion handler will be a CKError. If the operation fails because the library didn't detect an internet connection and failed to save or delete locally, it will return a LocalStorageError.
 
 ```swift
-upload(record: CKRecord, withCompletionHandler completionHandler: ((CKRecord?, Error?) -> Void)?)
+upload(records: [CKRecord], withPriority priority: QualityOfService, perRecordProgress: ((CKRecord, Double) -> Void)?, andCompletionHandler completionHandler: (([CKRecord]?, Error?) -> Void)?)
+
 ```
 ```swift
-delete(record: CKRecord, withCompletionHandler completionHandler: ((CKRecord.ID?, Error?) -> Void)?)
+func delete(records: [CKRecord], withPriority priority: QualityOfService, perRecordProgress: ((CKRecord, Double) -> Void)?, andCompletionHandler completionHandler: (([CKRecord.ID]?, Error?) -> Void)?)
 ```
 
 An example:
 ```swift
 let record = CKRecord(recordType: MyRecordType)
 record.set(string: "Hello World", key: MyStringKey)
-upload(record: record, withCompletionHandler: { [unowned self] (record, error) in
+upload(records: [record], withPriority: .userInitiated, perRecordProgress: nil) { (uploadedRecords, error) in
     // Do something with the uploaded record
 })
-delete(record: record, withCompletionHandler: { [unowned self] (recordID, error) in
+delete(records: [record], withPriority: .userInitiated, perRecordProgress: nil) { [unowned self] (recordIDs, error) in
     // Do something when the record is deleted
 })
 ```
@@ -172,8 +173,6 @@ restrictTokens(forContainersWithAPITokens containerTokens: [CKContainer: String]
 
 ## Todo
 
-- Add tests
-- Add delegations methods which fires in record fetched block. 
 - Add proper support for macOS, tvOS and watchOS
 
 ## Author

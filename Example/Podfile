@@ -6,6 +6,7 @@ target 'SwiftyCloudKit_Example' do
   target 'SwiftyCloudKit_Tests' do
     inherit! :search_paths
 
-    
+    use_frameworks!
+    pod 'Nimble' 
   end
 end
