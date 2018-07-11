@@ -126,7 +126,6 @@ public extension CloudKitFetcher {
             // Local records
             if offlineSupport && (!savedRecords.isEmpty || !deletedRecords.isEmpty )  {
 				if !savedRecords.isEmpty && Reachability.isConnectedToNetwork() {
-					// We erase the local storage after storing the records in memory so that we don't duplicate the array every time.
 					let savedCompletion: (([CKRecord]?) -> Void) = { (records) in
 						// Move uploaded record over to the record and remove it from the local records if the upload is successful.
 						if let records = records {
@@ -152,9 +151,6 @@ public extension CloudKitFetcher {
 				}
 				
 				if !deletedRecords.isEmpty && Reachability.isConnectedToNetwork() {
-					// We erase the local storage after storing the records in memory so that we don't duplicate the array every time.
-					localStorageDeletedRecords.eraseContentOfDirectory()
-					
 					let deleteCompletion: (([CKRecord.ID]?) -> Void) = { (deletedRecordIDs) in
 						if deletedRecordIDs != nil {
 							print("Local record deletion success, deleting from local storage")

@@ -403,7 +403,7 @@ public extension CKRecord {
     }
 
     public func video(_ key: String) -> URL? {
-        return (self[key] as? CKAsset)?.video(withFilename: "\(recordID)\(key).mov")
+        return (self[key] as? CKAsset)?.video(withFilename: "\(recordID.recordName)_\(key)")
     }
 
     public func set(video: URL?, key: String) {
