@@ -67,7 +67,7 @@ record.set(string: "Hello World", key: MyStringKey)
 upload(records: [record], withPriority: .userInitiated, perRecordProgress: nil) { (uploadedRecords, error) in
     // Do something with the uploaded record
 })
-delete(records: [record], withPriority: .userInitiated, perRecordProgress: nil) { [unowned self] (recordIDs, error) in
+delete(records: [record], withPriority: .userInitiated, perRecordProgress: nil) { (deletedRecordIDs, error) in
     // Do something when the record is deleted
 })
 ```

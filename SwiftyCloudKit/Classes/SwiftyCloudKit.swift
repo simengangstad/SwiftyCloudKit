@@ -597,7 +597,7 @@ public enum ImageError: Error {
 }
 
 public extension CKAsset {
-    public convenience init(image: UIImage, fileType: ImageFileType = .JPG(compressionQuality: 70)) throws {
+    public convenience init(image: UIImage, fileType: ImageFileType = .JPG(compressionQuality: 0.7)) throws {
         let url = try image.saveToTempLocationWithFileType(fileType: fileType)
         self.init(fileURL: url)
     }
