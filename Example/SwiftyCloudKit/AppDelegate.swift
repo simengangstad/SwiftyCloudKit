@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import UserNotifications
 import CloudKit
 import SwiftyCloudKit
 
@@ -17,12 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Requests authorization to interact with the user when the external notification arrives
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
-            if let error = error {
-                print(error.localizedDescription)
-            }
-        }
         application.registerForRemoteNotifications()
 		
         return true

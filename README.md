@@ -97,9 +97,6 @@ The prerequisites for subscriptions are:
 
 ```swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-            UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
-        			// Handle errors
-        }
         application.registerForRemoteNotifications()
         
         return true
