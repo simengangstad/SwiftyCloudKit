@@ -167,11 +167,6 @@ Reusable API tokens (created in CloudKit Dashboard) and web tokens are required 
 restrictTokens(forContainersWithAPITokens containerTokens: [CKContainer: String]) -> [CKContainer:String]
 ```
 
-
-## Todo
-
-- Add proper support for macOS, tvOS and watchOS
-
 ## Author
 
 Simen Gangstad, simen.gangstad@me.com
