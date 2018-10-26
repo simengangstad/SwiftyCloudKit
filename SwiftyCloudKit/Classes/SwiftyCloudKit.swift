@@ -120,7 +120,7 @@ extension CKDatabase.Scope {
      - completionHandler: gets fired after the erase
  */
 public func erasePrivateData(inContainers containers: [CKContainer], completionHandler: @escaping (Error?) -> Void) {
-	localStorageSavedRecords.eraseContentOfDirectory()
+    localStorageSavedRecords.eraseContentOfDirectory()
     localStorageDeletedRecords.eraseContentOfDirectory()
     
     for container in containers {
@@ -137,19 +137,12 @@ public func erasePrivateData(inContainers containers: [CKContainer], completionH
             let deletionOperation = CKModifyRecordZonesOperation(recordZonesToSave: nil, recordZoneIDsToDelete: zoneIDs)
             
             deletionOperation.modifyRecordZonesCompletionBlock = { _, deletedZones, error in
-                guard error == nil else {
-                    completionHandler(error)
-                    return
-                }
-                
-                print("Records successfully deleted in zones \(deletedZones!)")
+                completionHandler(error)
             }
             
             container.privateCloudDatabase.add(deletionOperation)
         }
     }
-    
-    completionHandler(nil)
 }
 
 /**
