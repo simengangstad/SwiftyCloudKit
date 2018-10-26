@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SwiftyCloudKit'
-  s.version          = '0.1.9'
+  s.version          = '0.2.0'
   s.summary          = 'A simple library for adding iCloud support.'
 
 # This description is used to generate tags and improve search results.
@@ -18,9 +18,9 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-	SwiftyCloudKit is a thin layer above CloudKit which makes it easy to add cloud capabilities to Apple environments. 
+	SwiftyCloudKit is a thin layer above CloudKit which makes it easy to add cloud capabilities to Apple environments.
                        DESC
-  s.swift_version    = '4.2'  
+  s.swift_version    = '4.2'
   s.homepage         = 'https://github.com/simengangstad/SwiftyCloudKit'
   # s.screenshots    = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
@@ -34,12 +34,12 @@ Pod::Spec.new do |s|
   # s.macos.deployment_target = '10.12'
 
   s.source_files = 'SwiftyCloudKit/Classes/**/*'
-  
+
   # s.resource_bundles = {
   #   'SwiftyCloudKit' => ['SwiftyCloudKit/Assets/*.png']
   # }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit' 
+  # s.frameworks = 'UIKit'
   # s.dependency 'Disk', :git => 'https://github.com/simengangstad/Disk.git'
 end
