@@ -48,7 +48,7 @@ public class LocalStorage {
 		
 		for key in record.allKeys() {
 			if let value = record[key] as? CKAsset {
-				if let data = try? Data(contentsOf: value.fileURL) {
+                if let data = try? Data(contentsOf: value.fileURL!) {
 					let fileName: String = "\(record.recordID.recordName)_\(key)"
 					do {
 						try data.write(to: directory.appendingPathComponent(fileName))
