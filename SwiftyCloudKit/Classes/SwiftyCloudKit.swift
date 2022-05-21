@@ -596,7 +596,7 @@ public extension CKAsset {
     }
     
     public var image: UIImage? {
-        guard let data = NSData(contentsOf: fileURL), let image = UIImage(data: data as Data) else {
+        guard let data = NSData(contentsOf: fileURL!), let image = UIImage(data: data as Data) else {
             print("Image file exists at path: \(FileManager.default.fileExists(atPath: fileURL!.path))")
 			return nil
 		}
