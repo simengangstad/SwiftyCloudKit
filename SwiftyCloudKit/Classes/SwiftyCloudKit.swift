@@ -596,8 +596,8 @@ public extension CKAsset {
     }
     
     public var image: UIImage? {
-        guard let data = NSData(contentsOf: fileURL), let image = UIImage(data: data as Data) else {
-			print("Image file exists at path: \(FileManager.default.fileExists(atPath: fileURL.path))")
+        guard let data = NSData(contentsOf: fileURL!), let image = UIImage(data: data as Data) else {
+            print("Image file exists at path: \(FileManager.default.fileExists(atPath: fileURL!.path))")
 			return nil
 		}
 		
@@ -605,7 +605,7 @@ public extension CKAsset {
     }
     
     public func video(withFilename filename: String) -> URL? {
-        return Data.retrieveOrCreateFile(withDataURL: fileURL, andFileName: "video_\(filename).mov", recreateIfFileExists: false)
+        return Data.retrieveOrCreateFile(withDataURL: fileURL!, andFileName: "video_\(filename).mov", recreateIfFileExists: false)
     }
 }
 
